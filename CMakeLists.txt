@@ -12,7 +12,8 @@ include(download_dir)
 # Add the third party dependencies
 add_subdirectory(thirdparty)
 
-file(GLOB SOURCES "src/*")
+file(GLOB HEADERS "src/*.h")
+file(GLOB SOURCES "src/*.cpp")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 include_directories(${SQLITE_INCLUDE_DIR})
 
@@ -48,3 +49,5 @@ if(BUILD_DOCUMENTATION)
         COMMENT "Generating API documentation with Doxygen"
         VERBATIM)
 endif()
+
+install(FILES ${HEADERS} DESTINATION include/SQLiteXX)
