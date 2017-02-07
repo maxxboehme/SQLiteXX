@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 2.8)
+project(SQLiteXXTests CXX)
+find_package(Threads REQUIRED)
+
+file(GLOB SOURCES "src/*.cpp")
+
+include_directories(${SQLITE_INCLUDE_DIR})
+include_directories(${CATCH_INCLUDE_DIR})
+include_directories(${SQLITECXX_INCLUDE_DIR})
+
+link_directories(${SQLITE_LIBRARIES_DIR})
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic")
+add_executable(SQLiteXXTests ${SOURCES})
+target_link_libraries(SQLiteXXTests sqlite3)
+add_dependencies(SQLiteXXTests SQLiteXX)
+add_dependencies(SQLiteXXTests Catch)
+target_compile_features(SQLiteXXTests PUBLIC cxx_range_for cxx_noexcept)
+target_link_libraries(SQLiteXXTests ${CMAKE_THREAD_LIBS_INIT})
+
+add_test(SQLiteXX_DBConnection   SQLiteXXTests [DBConnection])
+add_test(SQLiteXX_Statement      SQLiteXXTests [Statement])
+add_test(SQLiteXX_Value          SQLiteXXTests [Value])
+add_test(SQLiteXX_Transaction    SQLiteXXTests [Transaction])
+add_test(SQLiteXX_Backup         SQLiteXXTests [Backup])
+add_test(SQLiteXX_Threading      SQLiteXXTests [Threading])

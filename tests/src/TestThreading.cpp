@@ -1,0 +1,270 @@
+#include "catch/catch.hpp"
+#include "SQLiteXX.h"
+
+#include <thread>
+#include <string>
+#include <vector>
+#include <cstdio>
+#include <iostream>
+
+static void table_insert_shared_connection(SQLite::DBConnection connection, std::string text, int count) {
+    SQLite::Lock lock(connection.getMutex());
+    {
+        SQLite::Transaction transaction(connection);
+        for (int i = 0; i < count; ++i) {
+            Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+        }
+        REQUIRE_NOTHROW(transaction.commit());
+    }
+}
+
+TEST_CASE("Sharing a database connection", "[Threading]") {
+    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+
+    SQLite::Statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
+    REQUIRE_NOTHROW(query.execute());
+
+    int count = 1000;
+    size_t numThreads = 4;
+    std::vector<std::thread> threadpool;
+    for (size_t i = 0; i < numThreads; ++i) {
+        threadpool.push_back(std::thread(table_insert_shared_connection, connection, "thread" + std::to_string(i), count));
+    }
+    for (size_t i = 0; i < threadpool.size(); ++i) {
+        threadpool[i].join();
+    }
+
+    REQUIRE(connection.rowId() == (count * threadpool.size()));
+}
+
+
+void table_insert_default_busy_timeout(std::string filename, std::string text, int count) {
+    SQLite::DBConnection connection(filename.c_str());
+    {
+        for (int i = 0; i < count; ++i) {
+            REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text));
+        }
+    }
+}
+
+void table_insert_transaction_default_busy_timeout(std::string filename, std::string text, int count) {
+    SQLite::DBConnection connection(filename.c_str());
+    {
+        SQLite::Transaction t(connection);
+        for (int i = 0; i < count; ++i) {
+            REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text));
+        }
+        t.commit();
+    }
+}
+
+
+#define RETRY_BUSY_BEGIN( statement, ... ) \
+    bool retry = false; \
+    do { \
+        retry = false; \
+        try { \
+            Execute(connection, statement, __VA_ARGS__); \
+        } catch (SQLite::BusyException &) { \
+            retry = true; \
+        } \
+    } while (retry)
+
+void table_insert_using_busy_exception2(std::string filename, std::string text, int count) {
+    SQLite::DBConnection connection(filename.c_str(), 0);
+    for (int i = 0; i < count; ++i) {
+        RETRY_BUSY_BEGIN("INSERT INTO test VALUES (NULL, ?)", text);
+    }
+}
+
+void table_insert_using_busy_exception(std::string filename, std::string text, int count) {
+    SQLite::DBConnection connection(filename.c_str(), 0);
+    for (int i = 0; i < count; ++i) {
+        bool retry = false;
+        do {
+            retry = false;
+            try {
+                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+            } catch (SQLite::BusyException &e) {
+                if (e.errcode == SQLITE_BUSY) {
+                    retry = true;
+                }
+            } catch (SQLite::Exception &e) {
+                if (e.errcode == SQLITE_BUSY) {
+                    retry = true;
+                }
+            }
+        } while (retry);
+    }
+}
+
+void table_insert_transaction_using_busy_exception(std::string filename, std::string text, int count) {
+    SQLite::DBConnection connection(filename.c_str(), 0);
+    bool retry = false;
+    do {
+        SQLite::Transaction t(connection);
+        retry = false;
+        try {
+            for (int i = 0; i < count; ++i) {
+                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+            }
+        } catch (SQLite::BusyException &e) {
+            if (e.errcode == SQLITE_BUSY) {
+                retry = true;
+            }
+        }
+        if (!retry) {
+            do {
+                retry = false;
+                try {
+                    t.commit();
+                } catch (SQLite::BusyException &e) {
+                    if (e.errcode == SQLITE_BUSY) {
+                        retry = true;
+                    }
+                }
+            } while (retry);
+        }
+    } while (retry);
+}
+
+TEST_CASE("Thread-local connection", "[Threading]") {
+    std::string testFile = "test_Threading.db";
+    remove(testFile.c_str());
+
+    {
+        SQLite::DBConnection connection(testFile.c_str());
+        SQLite::Statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
+        REQUIRE_NOTHROW(query.execute());
+    }
+
+    int count = 50;
+    size_t numThreads = 4;
+    std::vector<std::thread> threadpool;
+
+    std::set<std::string> expectedStringValues;
+    for(size_t i = 0; i < numThreads; ++i) {
+        expectedStringValues.insert("thread" + std::to_string(i));
+    }
+
+    SECTION("Using default busy timeout") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_default_busy_timeout, testFile, "thread" + std::to_string(i), count));
+        }
+
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+
+        SQLite::DBConnection connection(testFile.c_str());
+        int numRows = 0;
+        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+            ++numRows;
+            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+        }
+
+        REQUIRE(numRows == (count * threadpool.size()));
+    }
+
+    SECTION("Using busy Exception") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_using_busy_exception, testFile, "thread" + std::to_string(i), count));
+        }
+
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+
+        SQLite::DBConnection connection(testFile.c_str());
+        int numRows = 0;
+        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+            ++numRows;
+            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+        }
+
+        REQUIRE(numRows == (count * threadpool.size()));
+    }
+
+    SECTION("Using transaction with default") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_transaction_default_busy_timeout, testFile, "thread" + std::to_string(i), count));
+        }
+
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+
+        SQLite::DBConnection connection(testFile.c_str());
+        int numRows = 0;
+        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+            ++numRows;
+            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+        }
+
+        REQUIRE(numRows == (count * threadpool.size()));
+    }
+
+    SECTION("Using transaction with busy Exception") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_transaction_using_busy_exception, testFile, "thread" + std::to_string(i), count));
+        }
+
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+
+        SQLite::DBConnection connection(testFile.c_str());
+        int numRows = 0;
+        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+            ++numRows;
+            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+        }
+
+        REQUIRE(numRows == (count * threadpool.size()));
+    }
+}
+
+TEST_CASE("Thread-local connection different transactions", "[Threading]") {
+    std::string testFile = "test_Threading.db";
+    remove(testFile.c_str());
+
+    {
+        SQLite::DBConnection connection(testFile.c_str());
+        SQLite::Statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
+        REQUIRE_NOTHROW(query.execute());
+    }
+
+    int count = 50;
+    size_t numThreads = 4;
+    std::vector<std::thread> threadpool;
+
+    SECTION("Using deferred transaction") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_transaction_using_busy_exception, testFile, "thread" + std::to_string(i), count));
+        }
+
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+    }
+
+    SECTION("Using immediate transaction") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_transaction_using_busy_exception, testFile, "thread" + std::to_string(i), count));
+        }
+
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+    }
+
+    SECTION("Using exclusive transaction") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_transaction_using_busy_exception, testFile, "thread" + std::to_string(i), count));
+        }
+
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+    }
+}
