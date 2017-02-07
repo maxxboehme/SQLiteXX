@@ -8,7 +8,6 @@ set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
 include(BuildType)
 include(ExternalProject)
 include(download_dir)
-include(CppLint)
 
 # Add the third party dependencies
 add_subdirectory(thirdparty)
@@ -25,11 +24,8 @@ target_link_libraries(SQLiteXX sqlite3)
 target_compile_features(SQLiteXX PUBLIC cxx_range_for cxx_noexcept)
 set(SQLITECXX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/src)
 
-add_style_check_target(lint ${SOURCES})
-
 enable_testing()
 add_subdirectory(tests)
-
 
 # add a target to generate API documentation with Doxygen
 find_package(Doxygen)
@@ -38,7 +34,7 @@ set(doxy_main_page ${CMAKE_CURRENT_SOURCE_DIR}/ReadMe.md)
 
 if(BUILD_DOCUMENTATION)
     if(NOT DOXYGEN_FOUND)
-        message(FATAL_ERROR "Doxygen is needed to build the documentation.")
+        message(FATAL_ERROR "Doxygen is needed to build documentation.")
     endif()
 
     set(doxyfile_in ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
