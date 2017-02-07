@@ -1,2 +1,2 @@
-# SQLiteXX (SQLite++)
+# SQLite++
 A C++ wrapper for SQLite
