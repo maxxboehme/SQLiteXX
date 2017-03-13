@@ -758,9 +758,17 @@ namespace SQLite
         F && callback,
         Args && ... args)
     {
-        auto userCallback = [&](const std::vector<std::string> &colValues, const std::vector<std::string> &colNames) {
-            callback(colValues, colNames, std::forward<Args>(args)...);
-        };
+// TODO: Decide whether to go with lambda or with bind
+//        auto userCallback = [&](const std::vector<std::string> &colValues, const std::vector<std::string> &colNames) {
+//            callback(colValues, colNames, std::forward<Args>(args)...);
+//        };
+
+        auto userCallback =
+            std::bind(
+               std::forward<F>(callback),
+               std::placeholders::_1,
+               std::placeholders::_2,
+               std::forward<Args>(args)...);
 
         typedef decltype(userCallback) Call;
 

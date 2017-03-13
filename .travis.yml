@@ -8,11 +8,9 @@ matrix:
         - compiler: gcc
           before_install:
               - sudo apt-get -qq update
-              - sudo apt-get install -y libpthread-stubs0-dev
         - compiler: clang
           before_install:
               - sudo apt-get -qq update
-              - sudo apt-get install -y libpthread-stubs0-dev
           os: linux
         - compiler: clang
           os: osx
