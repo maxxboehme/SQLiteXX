@@ -26,6 +26,9 @@ target_compile_features(SQLiteXX PUBLIC cxx_range_for cxx_noexcept)
 set(SQLITECXX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/src)
 
 enable_testing()
+include(CTest)
+find_program( MEMORYCHECK_COMMAND valgrind )
+set(MEMORYCHECK_COMMAND_OPTIONS "--trace-children=yes --leak-check=full")
 add_subdirectory(tests)
 
 # add a target to generate API documentation with Doxygen

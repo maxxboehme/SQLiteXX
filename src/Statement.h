@@ -1,28 +1,90 @@
 #ifndef __SQLITECXX_SQLITE_STATEMENT_H__
 #define __SQLITECXX_SQLITE_STATEMENT_H__
 
-#include <sqlite3.h>
-
 #include "DBConnection.h"
 
+#include <sqlite3.h>
+
 #include <cassert>
-#include <string>
+#include <cstring>
+#include <functional>
+#include <iostream>
 #include <map>
 #include <memory>
-#include <iostream>
+#include <string>
 #include <utility>
 #include <vector>
-#include <functional>
 
 namespace SQLite
 {
-    enum class Type
-    {
+    enum class Type: int {
         Integer = SQLITE_INTEGER,
         Float   = SQLITE_FLOAT,
         Blob    = SQLITE_BLOB,
         Null    = SQLITE_NULL,
         Text    = SQLITE_TEXT,
+    };
+
+    enum class BindType: int {
+        Static,
+        Transient
+    };
+
+    class Blob
+    {
+        public:
+        explicit Blob(const void * data, int size) :
+            m_data(data != nullptr? new char[size]: nullptr),
+            m_size(size)
+        {
+            assert(data == nullptr? size == 0: size > 0);
+            memcpy(m_data.get(), data, size);
+        }
+
+        Blob(const Blob &other) :
+            m_data(other.m_size == 0? nullptr: new char[other.m_size]),
+            m_size(other.m_size)
+        {
+            memcpy(m_data.get(), other.m_data.get(), other.m_size);
+        }
+
+        Blob(Blob &&other) :
+            m_data(std::move(other.m_data)),
+            m_size(other.m_size)
+        {}
+
+        Blob& operator=(const Blob &other) {
+            if (this != &other) {
+                m_data.reset(other.m_size == 0? nullptr: new char[other.m_size]);
+                memcpy(m_data.get(), other.m_data.get(), other.m_size);
+
+                m_size = other.m_size;
+            }
+
+            return *this;
+        }
+
+        Blob& operator=(Blob &&other) {
+            assert(this != &other);
+            m_data = std::move(other.m_data);
+            m_size = other.m_size;
+            return *this;
+        }
+
+        const void * data() const {
+            return m_data.get();
+        }
+
+        /** Used to get the size of the contained 'blob'.
+         * @returns the size in bytes of the contained 'blob'
+         */
+        int size() const {
+            return m_size;
+        }
+
+        private:
+        std::unique_ptr<char[]> m_data;
+        int m_size;
     };
 
     /** A SQLite dynamically typed value object, aka "sqlite3_value".
@@ -42,6 +104,28 @@ namespace SQLite
         Value(const sqlite3_value * const value) :
             m_handle(sqlite3_value_dup(value), sqlite3_value_free)
         {}
+
+        Value(const Value &other) :
+            m_handle(sqlite3_value_dup(other.m_handle.get()), sqlite3_value_free)
+        {}
+
+        Value(Value &&other) :
+            m_handle(std::move(other.m_handle))
+        {}
+
+        Value& operator=(const Value &other) {
+            if (this != &other) {
+                m_handle.reset(sqlite3_value_dup(other.m_handle.get()));
+            }
+
+            return *this;
+        }
+
+        Value& operator=(Value && other) {
+            assert(this != &other);
+            m_handle = std::move(other.m_handle);
+            return *this;
+        }
 
         /** Returns pointer to the underlying "sqlite3_value" object.
          * */
@@ -69,34 +153,27 @@ namespace SQLite
             return sqlite3_value_double(getHandle());
         }
 
-        const void* getBlob() const noexcept
+        const Blob getBlob() const noexcept
         {
-            return sqlite3_value_blob(getHandle());
+            const void *blob = sqlite3_value_blob(getHandle());
+            return Blob(blob, getBytes());
         }
 
-        const char* getString() const noexcept
+        const std::string getString() const noexcept
         {
-            return reinterpret_cast<const char *>(sqlite3_value_text(getHandle()));
+            const char *txt = getText();
+            return std::string(txt, getTextLength());
         }
 
-        /** Extracts a UTF-16 string in the native byte-order of the host machine.
-         * Please pay attention to the fact that the pointer returned from:
-         * getBlob(), getString(), or getWideString() can be invalidated by a subsequent call to
-         * getBytes(), getBytes16(), getString(), getWideString().
-         * */
-        const char16_t* getWideString() const noexcept
+        const std::u16string getU16String() const noexcept
         {
-            return reinterpret_cast<char16_t const *>(sqlite3_value_text16(getHandle()));
+            const char16_t *txt = getText16();
+            return std::u16string(txt, getText16Length());
         }
 
-        int getStringLength() const noexcept
+        int getBytes() const noexcept
         {
             return sqlite3_value_bytes(getHandle());
-        }
-
-        int getWideStringLength() const noexcept
-        {
-            return sqlite3_value_bytes16(getHandle()) / sizeof(char16_t);
         }
 
         Type getType() const noexcept
@@ -129,19 +206,9 @@ namespace SQLite
             return getDouble();
         }
 
-        operator const void*() const
+        operator const Blob() const
         {
             return getBlob();
-        }
-
-        operator const char*() const
-        {
-            return getString();
-        }
-
-        operator const char16_t*() const
-        {
-            return getWideString();
         }
 
         operator const std::string() const
@@ -151,71 +218,96 @@ namespace SQLite
 
         operator const std::u16string() const
         {
-            return getWideString();
+            return getU16String();
         }
 
         private:
+
         using ValueHandle = std::unique_ptr<sqlite3_value, decltype(&sqlite3_value_free)>;
         ValueHandle m_handle;
+
+        const char* getText() const noexcept
+        {
+            return reinterpret_cast<const char *>(sqlite3_value_text(getHandle()));
+        }
+
+        /** Extracts a UTF-16 string in the native byte-order of the host machine.
+         * Please pay attention to the fact that the pointer returned from:
+         * getBlob(), getString(), or getWideString() can be invalidated by a subsequent call to
+         * getBytes(), getBytes16(), getString(), getWideString().
+         * */
+        const char16_t* getText16() const noexcept
+        {
+            return reinterpret_cast<const char16_t *>(sqlite3_value_text16(getHandle()));
+        }
+
+        int getTextLength() const noexcept
+        {
+            // Make sure to only call this function after getText or getBlob was called
+            // otherwise will not return correct value.
+            return sqlite3_value_bytes(getHandle());
+        }
+
+        int getText16Length() const noexcept
+        {
+            return sqlite3_value_bytes16(getHandle()) / sizeof(char16_t);
+        }
+
     };
 
 
     template <typename T>
     struct Reader
     {
-        int getInt(const int column = 0) const noexcept
+        int getInt(const int column) const noexcept
         {
             return sqlite3_column_int(static_cast<T const *>(this)->getHandle(), column);
         }
 
-        int64_t getInt64(const int column = 0) const noexcept
+        int64_t getInt64(const int column) const noexcept
         {
             return sqlite3_column_int64(static_cast<T const *>(this)->getHandle(), column);
         }
 
-        unsigned int getUInt(const int column = 0) const noexcept
+        unsigned int getUInt(const int column) const noexcept
         {
             return static_cast<unsigned int>(getInt64(column));
         }
 
-        double getDouble(const int column = 0) const noexcept
+        double getDouble(const int column) const noexcept
         {
             return sqlite3_column_double(static_cast<T const *>(this)->getHandle(), column);
         }
 
-        const void* getBlob(const int column = 0) const noexcept
+        const Blob getBlob(const int column) const noexcept
         {
-            return sqlite3_column_blob(static_cast<T const *>(this)->getHandle(), column);
+            const void *blob = sqlite3_column_blob(static_cast<T const *>(this)->getHandle(), column);
+            return Blob(blob, getBytes(column));
         }
 
-        const char* getString(const int column = 0) const noexcept
+        const std::string getString(const int column) const noexcept
         {
-            return reinterpret_cast<char const *>(sqlite3_column_text(
-                    static_cast<T const *>(this)->getHandle(), column));
+            const char *txt = getText(column);
+            return std::string(txt, getTextLength(column));
         }
 
-        const char16_t* getWideString(const int column = 0) const noexcept
+        const std::u16string getU16String(const int column) const noexcept
         {
-            return reinterpret_cast<char16_t const *>(sqlite3_column_text16(
-                    static_cast<T const *>(this)->getHandle(), column));
+            const char16_t *txt = getText16(column);
+            return std::u16string(txt, getText16Length(column));
         }
 
-        int getStringLength(const int column = 0) const noexcept
+        int getBytes(const int column) const noexcept
         {
             return sqlite3_column_bytes(static_cast<T const *>(this)->getHandle(), column);
         }
 
-        int getWideStringLength(const int column = 0) const noexcept
-        {
-            return sqlite3_column_bytes16(static_cast<T const *>(this)->getHandle(), column) / sizeof(char16_t);
-        }
-
-        Type getType(const int column = 0) const noexcept
+        Type getType(const int column) const noexcept
         {
             return static_cast<Type>(sqlite3_column_type(static_cast<T const *>(this)->getHandle(), column));
         }
 
-        Value getValue(const int column = 0) const noexcept
+        Value getValue(const int column) const noexcept
         {
             return Value(sqlite3_column_value(static_cast<T const *>(this)->getHandle(), column));
         }
@@ -241,7 +333,7 @@ namespace SQLite
             return sqlite3_column_name16(static_cast<T const *>(this)->getHandle(), index);
         }
 
-        int getColumnIndex(const char * name) const
+        int getColumnIndex(const std::string &name) const
         {
             std::map<std::string, int> columnNamesToIndex;
 
@@ -258,6 +350,31 @@ namespace SQLite
             }
             return index->second;
         }
+
+        private:
+
+        const char* getText(const int column) const noexcept
+        {
+            return reinterpret_cast<char const *>(sqlite3_column_text(
+                    static_cast<T const *>(this)->getHandle(), column));
+        }
+
+        const char16_t* getText16(const int column) const noexcept
+        {
+            return reinterpret_cast<char16_t const *>(sqlite3_column_text16(
+                    static_cast<T const *>(this)->getHandle(), column));
+        }
+
+        int getTextLength(const int column) const noexcept
+        {
+            return sqlite3_column_bytes(static_cast<T const *>(this)->getHandle(), column);
+        }
+
+        int getText16Length(const int column) const noexcept
+        {
+            return sqlite3_column_bytes16(static_cast<T const *>(this)->getHandle(), column) / sizeof(char16_t);
+        }
+
 
     };
 
@@ -279,6 +396,11 @@ namespace SQLite
         Row(sqlite3_stmt * const statement) noexcept :
             m_statement(statement)
             {}
+
+        Value operator[](int column) const {
+            return Value(sqlite3_column_value(getHandle(), column));
+        }
+
     };
 
 
@@ -289,7 +411,8 @@ namespace SQLite
     {
         public:
         Statement() noexcept :
-            m_handle(nullptr, sqlite3_finalize)
+            m_handle(nullptr, sqlite3_finalize),
+            m_done(false)
         {}
 
         template <typename C, typename ... Values>
@@ -297,7 +420,8 @@ namespace SQLite
             DBConnection const & connection,
             C const * const text,
             Values && ... values) :
-        m_handle(nullptr, sqlite3_finalize)
+        m_handle(nullptr, sqlite3_finalize),
+        m_done(false)
         {
             prepare(connection, text, std::forward<Values>(values) ...);
         }
@@ -343,24 +467,38 @@ namespace SQLite
         }
 
         /** Evaluates a prepared statement.
-         * This method can be called one or emore times to evaluate the statement.
+         * This method can be called one or more times to evaluate the statement.
          * @returns true when there are more rows to iterate through and false when there are no more
          * @throws SQLite::Exception or a derived class
          */
         bool step() const
         {
+            // This is to signal when the user has reached the end but
+            // calls step again. The offical SQLite 3 API specifies that "sqlite3_step"
+            // should not be called again after done before a reset. We just want it to
+            // return false signaling done and be a NOP.
+            if (m_done) return false;
+
             const int result =  sqlite3_step(getHandle());
 
             if (result == SQLITE_ROW) return true;
-            if (result == SQLITE_DONE) return false;
+            if (result == SQLITE_DONE) {
+                m_done = true;
+                return false;
+            }
 
             throwLastError();
+            std::cout << result << std::endl;
             return false;
         }
 
         int execute() const
         {
-            assert(!step());
+            bool done = !step();
+            // This variable is only used for the assert.
+            // Doing this so there is no warnings on release builds.
+            ((void)done);
+            assert(done);
 
             return sqlite3_changes(sqlite3_db_handle(getHandle()));
         }
@@ -385,25 +523,33 @@ namespace SQLite
             }
         }
 
-        void bind(const int index, const void * const value, const int size) const
+        void bind(const int index, const void * const value, const int size, BindType type = BindType::Transient) const
         {
-            if (SQLITE_OK != sqlite3_bind_blob(getHandle(), index, value, size, SQLITE_TRANSIENT))
+            if (SQLITE_OK != sqlite3_bind_blob(getHandle(), index, value, size, type == BindType::Transient? SQLITE_TRANSIENT : SQLITE_STATIC))
             {
                 throwLastError();
             }
         }
 
-        void bind(const int index, const char * const value, const int size = -1) const
+        void bind(const int index, const Blob &value) const
         {
-            if (SQLITE_OK != sqlite3_bind_text(getHandle(), index, value, size, SQLITE_STATIC))
+            if (SQLITE_OK != sqlite3_bind_blob(getHandle(), index, value.data(), value.size(), SQLITE_TRANSIENT))
             {
                 throwLastError();
             }
         }
 
-        void bind(const int index, const char16_t * const value, const int size = -1) const
+        void bind(const int index, const char * const value, const int size = -1, BindType type = BindType::Transient) const
         {
-            if (SQLITE_OK != sqlite3_bind_text16(getHandle(), index, value, size, SQLITE_STATIC))
+            if (SQLITE_OK != sqlite3_bind_text(getHandle(), index, value, size, type == BindType::Transient? SQLITE_TRANSIENT : SQLITE_STATIC))
+            {
+                throwLastError();
+            }
+        }
+
+        void bind(const int index, const char16_t * const value, const int size = -1, BindType type = BindType::Transient) const
+        {
+            if (SQLITE_OK != sqlite3_bind_text16(getHandle(), index, value, size, type == BindType::Transient? SQLITE_TRANSIENT : SQLITE_STATIC))
             {
                 throwLastError();
             }
@@ -419,7 +565,7 @@ namespace SQLite
             bind(index, value.c_str(), value.size() * sizeof(char16_t));
         }
 
-        void bind(const int index, const std::string && value) const
+        void bind(const int index, std::string &&value) const
         {
             if (SQLITE_OK != sqlite3_bind_text(getHandle(), index, value.c_str(), value.size(), SQLITE_TRANSIENT))
             {
@@ -427,7 +573,7 @@ namespace SQLite
             }
         }
 
-        void bind(const int index, const std::u16string && value) const
+        void bind(const int index, std::u16string &&value) const
         {
             if (SQLITE_OK != sqlite3_bind_text16(getHandle(), index, value.c_str(), value.size() * sizeof(char16_t), SQLITE_TRANSIENT))
             {
@@ -436,7 +582,7 @@ namespace SQLite
         }
 
         template <typename T>
-        void bindByName(const char *name, const T &value)
+        void bindByName(const char *name, T &&value)
         {
             const int index = sqlite3_bind_parameter_index(getHandle(), name);
             bind(index, value);
@@ -457,11 +603,14 @@ namespace SQLite
             }
 
             bindAll(values ...);
+            m_done = false;
         }
 
         private:
         using StatementHandle = std::unique_ptr<sqlite3_stmt, decltype(&sqlite3_finalize)>;
         StatementHandle m_handle;
+
+        mutable bool m_done;
 
         template <typename F, typename C, typename ... Values>
         void internalPrepare(
@@ -609,17 +758,14 @@ namespace SQLite
         F && callback,
         Args && ... args)
     {
-        typedef decltype(std::bind(std::forward<F>(callback), std::placeholders::_1, std::placeholders::_2, std::forward<Args>(args)...)) Call;
+        auto userCallback = [&](const std::vector<std::string> &colValues, const std::vector<std::string> &colNames) {
+            callback(colValues, colNames, std::forward<Args>(args)...);
+        };
 
-        Call userCallback =
-            std::bind(
-               std::forward<F>(callback),
-               std::placeholders::_1,
-               std::placeholders::_2,
-               std::forward<Args>(args)...);
+        typedef decltype(userCallback) Call;
 
-        char *errmsgPtr = NULL;
-        sqlite3_exec(connection.getHandle(), sql.c_str(), internal_execute_callback<Call>, (void *)&userCallback, NULL);
+        char *errmsgPtr = nullptr;
+        sqlite3_exec(connection.getHandle(), sql.c_str(), internal_execute_callback<Call>, (void *)&userCallback, nullptr);
         delete errmsgPtr;
 
         connection.throwLastError();

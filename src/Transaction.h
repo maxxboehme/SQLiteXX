@@ -1,29 +1,33 @@
 #ifndef __SQLITECXX_SQLITE_TRANSACTION_H__
 #define __SQLITECXX_SQLITE_TRANSACTION_H__
 
-#include <sqlite3.h>
-
 #include "DBConnection.h"
 #include "Statement.h"
 
+#include <sqlite3.h>
+
+
 namespace SQLite
 {
+    enum class TransactionType : int {
+        Deferred,
+        Immediate,
+        Exclusive
+    };
+
     /** RAII encapsulation of the SQLite Transactions
     */
+    template <TransactionType T>
     class Transaction
     {
         public:
-
-        enum Type {
-            DEFERRED,
-            IMMEDIATE,
-            EXCLUSIVE
-        };
+        const TransactionType type;
 
         /** Begins the SQLite transaction.
-         * @param connection [in] the database connection to begin the transaction on
+         * @param[in] connection the database connection to begin the transaction on
          */
-        Transaction(DBConnection &connection, const Type type = DEFERRED) :
+        Transaction(DBConnection &connection) :
+            type(T),
             m_connection(connection),
             m_commited(false)
         {
@@ -41,7 +45,7 @@ namespace SQLite
 
         /** Safely rollback the transaction if it has not been commited.
         */
-        ~Transaction() noexcept
+        virtual ~Transaction() noexcept
         {
             if (!m_commited)
             {
@@ -55,23 +59,29 @@ namespace SQLite
         }
 
         private:
+
         DBConnection m_connection;
         bool m_commited;
 
         Transaction(const Transaction&) = delete;
         Transaction& operator=(const Transaction&) = delete;
 
-        const std::map<Type, std::string> m_transactionBeginnings = {
-            {Type::DEFERRED, "BEGIN DEFERRED"},
-            {Type::IMMEDIATE, "BEGIN IMMEDIATE"},
-            {Type::EXCLUSIVE, "BEGIN EXCLUSIVE"}
+        const std::map<TransactionType, std::string> m_transactionBeginnings = {
+            {TransactionType::Deferred, "BEGIN DEFERRED"},
+            {TransactionType::Immediate, "BEGIN IMMEDIATE"},
+            {TransactionType::Exclusive, "BEGIN EXCLUSIVE"}
         };
 
         const std::string COMMIT = "COMMIT";
         const std::string ROLLBACK = "ROLLBACK";
+    };
 
-
-   };
+    using DeferredTransaction  = Transaction<TransactionType::Deferred>;
+    using ImmediateTransaction = Transaction<TransactionType::Immediate>;
+    using ExclusiveTransaction = Transaction<TransactionType::Exclusive>;
+//    typedef Transaction<TransactionType::Deferred>  DeferredTransaction;
+//    typedef Transaction<TransactionType::Immediate> ImmediateTransaction;
+//    typedef Transaction<TransactionType::Exclusive> ExclusiveTransaction;
 }
 
 #endif

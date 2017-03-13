@@ -6,6 +6,7 @@
 #include "Statement.h"
 #include "Backup.h"
 #include "Transaction.h"
+#include "Functions.h"
 
 inline void profileHandler(void *, char const * const statement, unsigned long long const time)
 {

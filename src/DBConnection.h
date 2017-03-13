@@ -1,15 +1,17 @@
 #ifndef __SQLITECXX_SQLITE_DBCONNECTION_H__
 #define __SQLITECXX_SQLITE_DBCONNECTION_H__
 
-#include <memory>
+#include "Open.h"
+
+#include <cassert>
 #include <chrono>
+#include <memory>
 #include <thread>
 
 
 namespace SQLite
 {
-    // 10 minutes
-    static const int DEFAULT_TIMEOUT = 600000;
+    static const std::chrono::minutes DEFAULT_TIMEOUT(10);
 
     inline const char* sqliteLibVersion() noexcept
     {
@@ -97,7 +99,7 @@ namespace SQLite
         ConnectionHandle m_handle;
 
         template <typename F, typename C>
-        void internalOpen(F open, C const * const filename)
+        void internalOpen(F open, const C  * const filename)
         {
             sqlite3 *connection;
             if (SQLITE_OK != open(filename, &connection)) {
@@ -113,13 +115,17 @@ namespace SQLite
 
         DBConnection() noexcept :
             m_handle()
-            {}
+        {}
 
         DBConnection(const DBConnection &other) noexcept :
             m_handle(other.m_handle)
-            {}
+        {}
 
-        DBConnection operator=(const DBConnection &other) noexcept
+        DBConnection(DBConnection &&other) noexcept :
+            m_handle(std::move(other.m_handle))
+        {}
+
+        DBConnection& operator=(const DBConnection &other) noexcept
         {
             if (this != &other) {
                 m_handle = other.m_handle;
@@ -128,22 +134,62 @@ namespace SQLite
             return *this;
         }
 
+        DBConnection& operator=(DBConnection &&other) noexcept
+        {
+            assert(this != &other);
+            m_handle = std::move(other.m_handle);
+            return *this;
+        }
+
         /** Returns a Mutex that serializes access to the database.
          */
         Mutex getMutex()
         {
-            return Mutex(sqlite3_db_mutex(m_handle.get()));
+            sqlite3_mutex *mutexPtr = sqlite3_db_mutex(m_handle.get());
+            if (mutexPtr == nullptr) {
+                //TODO: throw exeption
+            }
+            return Mutex(mutexPtr);
         }
 
         /** Open the provided database UTF-8 filename.
-         * @param filename [in] UTF-8/UTF-16 path/uri to the database database file
-         * @param timeout [in] Amoutn of milliseconds to wait before returning SQLite::BusyException when a table is locked
+         * @param[in] filename UTF-8 path/uri to the database database file
+         * @param[in] mode     file opening options specified by combination of OpenMode flags
+         * @param[in] timeout  amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
          */
-        template <typename C>
-        explicit DBConnection(C const * const filename, int timeout = DEFAULT_TIMEOUT)
+        explicit DBConnection(const std::string &filename,
+            OpenMode mode = OpenMode::ReadWrite | OpenMode::Create,
+            const std::chrono::milliseconds timeout = DEFAULT_TIMEOUT)
+        {
+            open(filename, mode);
+            sqlite3_busy_timeout(getHandle(), timeout.count());
+            // 278.817s
+            // sqlite3_busy_handler(getHandle(), infinit_busy_handler, NULL);
+        }
+
+        /** Open the provided database UTF-8 filename.
+         * @param[in] filename UTF-8 path/uri to the database database file
+         * @param[in] timeout  amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
+         */
+        explicit DBConnection(const std::string &filename,
+            const std::chrono::milliseconds timeout)
+        {
+            this->internalOpen(sqlite3_open, filename.c_str());
+            sqlite3_busy_timeout(getHandle(), timeout.count());
+            // 278.817s
+            // sqlite3_busy_handler(getHandle(), infinit_busy_handler, NULL);
+        }
+
+        /** Open the provided database UTF-16 filename.
+         * @param[in] filename UTF-16 path/uri to the database database file
+         * @param[in] timeout  Amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
+         */
+        explicit DBConnection(
+            const std::u16string &filename,
+            const std::chrono::milliseconds timeout = DEFAULT_TIMEOUT)
         {
             open(filename);
-            sqlite3_busy_timeout(getHandle(), timeout);
+            sqlite3_busy_timeout(getHandle(), timeout.count());
             // 278.817s
             // sqlite3_busy_handler(getHandle(), infinit_busy_handler, NULL);
         }
@@ -179,21 +225,28 @@ namespace SQLite
             throwErrorCode(getHandle());
         }
 
-        /** Open an SQLite database file as specified by the filname argument.
+        /** Open an SQLite database file as specified by the filename argument.
          * @param filename path to SQLite file
          */
-        void open(char const * const filename)
+        void open(const std::string &filename, OpenMode mode = OpenMode::ReadWrite | OpenMode::Create)
         {
-            this->internalOpen(sqlite3_open, filename);
+            sqlite3 *connection;
+            if (SQLITE_OK != sqlite3_open_v2(filename.c_str(), &connection, static_cast<int>(mode), nullptr)) {
+                const SQLite::Exception exception(connection);
+                sqlite3_close(connection);
+                throw exception;
+            }
+
+            m_handle.reset(connection, sqlite3_close);
         }
 
         /** Open an SQLite database file as specified by the filname argument.
          * The database file will have UTF-16 native byte order.
          * @param filename path to SQLite file
          */
-        void open(char16_t const * const filename)
+        void open(const std::u16string &filename)
         {
-            this->internalOpen(sqlite3_open16, filename);
+            this->internalOpen(sqlite3_open16, filename.c_str());
         }
 
         /** Returns the rowid of the most recent successful "INSERT" into

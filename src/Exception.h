@@ -46,6 +46,7 @@ namespace SQLite
     {
         const int errcode = sqlite3_extended_errcode(connection);
         if (errcode == SQLITE_OK) return;
+        if (errcode == SQLITE_DONE) return;
 
         switch(errcode)
         {
@@ -61,6 +62,7 @@ namespace SQLite
     inline void throwErrorCode(const int errcode, const std::string& message)
     {
         if (errcode == SQLITE_OK) return;
+        if (errcode == SQLITE_DONE) return;
 
         switch(errcode)
         {

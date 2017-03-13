@@ -7,7 +7,7 @@ TEST_CASE("Test Uses of Transactions", "[Transaction]") {
    SQLite::DBConnection connection = SQLite::DBConnection::memory();
 
    {
-      SQLite::Transaction transaction(connection);
+      SQLite::DeferredTransaction transaction(connection);
 
       REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)") == 0);
       REQUIRE(Execute(connection, "INSERT INTO test VALUES (NULL, \"first\")") == 1);
@@ -16,7 +16,7 @@ TEST_CASE("Test Uses of Transactions", "[Transaction]") {
    }
 
    {
-      SQLite::Transaction transaction(connection);
+      SQLite::DeferredTransaction transaction(connection);
 
       REQUIRE(Execute(connection, "INSERT INTO test VALUES (NULL, \"second\")") == 1);
    }
@@ -36,7 +36,7 @@ TEST_CASE("Test Uses of Transactions", "[Transaction]") {
 TEST_CASE("Test double transaction commit", "[Transaction]") {
    SQLite::DBConnection connection = SQLite::DBConnection::memory();
 
-   SQLite::Transaction transaction(connection);
+   SQLite::DeferredTransaction transaction(connection);
 
    REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)") == 0);
    REQUIRE(Execute(connection, "INSERT INTO test VALUES (NULL, \"first\")") == 1);
@@ -51,7 +51,7 @@ TEST_CASE("Test using different transaction types", "[Transaction]") {
    REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)") == 0);
 
    {
-       SQLite::Transaction transaction(connection, SQLite::Transaction::DEFERRED);
+       SQLite::DeferredTransaction transaction(connection);
 
        REQUIRE(Execute(connection, "INSERT INTO test VALUES (NULL, \"deferred\")") == 1);
 
@@ -60,7 +60,7 @@ TEST_CASE("Test using different transaction types", "[Transaction]") {
    }
 
    {
-       SQLite::Transaction transaction(connection, SQLite::Transaction::IMMEDIATE);
+       SQLite::ImmediateTransaction transaction(connection);
 
        REQUIRE(Execute(connection, "INSERT INTO test VALUES (NULL, \"immediate\")") == 1);
 
@@ -69,7 +69,7 @@ TEST_CASE("Test using different transaction types", "[Transaction]") {
    }
 
    {
-       SQLite::Transaction transaction(connection, SQLite::Transaction::EXCLUSIVE);
+       SQLite::ExclusiveTransaction transaction(connection);
 
        REQUIRE(Execute(connection, "INSERT INTO test VALUES (NULL, \"exclusive\")") == 1);
 

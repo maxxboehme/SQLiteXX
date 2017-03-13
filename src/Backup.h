@@ -12,9 +12,9 @@ namespace SQLite
     class Backup
     {
         using BackupHandle = std::unique_ptr<sqlite3_backup, decltype(&sqlite3_backup_finish)>;
-
         BackupHandle m_handle;
-        DBConnection const * m_destination = nullptr;
+
+        const DBConnection  *m_destination = nullptr;
 
         public:
 
@@ -22,18 +22,17 @@ namespace SQLite
         Backup& operator=(Backup& other) = delete;
 
         Backup(
-                DBConnection const & source,
-                DBConnection const & destination,
-                char const * const sourceName = "main",
-                char const * const destinationName = "main"
-              ) :
+            DBConnection const & source,
+            DBConnection const & destination,
+            const std::string &sourceName = "main",
+            const std::string &destinationName = "main") :
             m_handle(
-                    sqlite3_backup_init(
-                        destination.getHandle(),
-                        destinationName,
-                        source.getHandle(),
-                        sourceName),
-                    sqlite3_backup_finish),
+                sqlite3_backup_init(
+                    destination.getHandle(),
+                    destinationName.c_str(),
+                    source.getHandle(),
+                    sourceName.c_str()),
+                sqlite3_backup_finish),
             m_destination(&destination)
         {
             if (!m_handle)
@@ -42,7 +41,7 @@ namespace SQLite
             }
         }
 
-        bool step(int const pages = -1)
+        bool step(const int pages = -1)
         {
             int const result = sqlite3_backup_step(m_handle.get(), pages);
 
@@ -70,7 +69,7 @@ namespace SQLite
         }
     };
 
-    inline void SaveToDisk(DBConnection const & source, char const * const filename)
+    inline void SaveToDisk(const DBConnection &source, const std::string &filename)
     {
         DBConnection destination(filename);
         Backup backup(destination, source);
