@@ -1,0 +1,22 @@
+
+# request for ubuntu 14.04 Trusty VM
+sudo: true
+dist: trusty
+
+matrix:
+    include:
+        - compiler: gcc
+        - compiler: clang
+          os: linux
+        - compiler: clang
+          os: osx
+          osx_image: xcode8
+
+before_script:
+    - mkdir build
+    - cd build
+    - cmake ..
+
+script:
+    - cmake --build .
+    - ctest --verbose --output-on-failure
