@@ -1,7 +1,10 @@
 #ifndef __SQLITECXX_SQLITE_DBCONNECTION_H__
 #define __SQLITECXX_SQLITE_DBCONNECTION_H__
 
+#include "Exception.h"
 #include "Open.h"
+
+#include <sqlite3.h>
 
 #include <cassert>
 #include <chrono>

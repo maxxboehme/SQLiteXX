@@ -1,6 +1,10 @@
 #ifndef __SQLITECXX_SQLITE_OPEN_H__
 #define __SQLITECXX_SQLITE_OPEN_H__
 
+#include <sqlite3.h>
+
+#include <type_traits>
+
 namespace SQLite
 {
     /** Different ways to open a DBConnection.

@@ -1,12 +1,13 @@
-#ifndef __SQLITECXX_SQLITE_SQLITECXX_H__
-#define __SQLITECXX_SQLITE_SQLITECXX_H__
+#ifndef __SQLITECXX_SQLITE_SQLITEXX_H__
+#define __SQLITECXX_SQLITE_SQLITEXX_H__
 
-#include "Exception.h"
-#include "DBConnection.h"
-#include "Statement.h"
 #include "Backup.h"
-#include "Transaction.h"
+#include "DBConnection.h"
+#include "Exception.h"
 #include "Functions.h"
+#include "Open.h"
+#include "Statement.h"
+#include "Transaction.h"
 
 inline void profileHandler(void *, char const * const statement, unsigned long long const time)
 {

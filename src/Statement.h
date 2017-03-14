@@ -14,6 +14,7 @@
 #include <string>
 #include <utility>
 #include <vector>
+#include <limits.h>
 
 namespace SQLite
 {
@@ -191,12 +192,24 @@ namespace SQLite
             return static_cast<unsigned int>(getInt64());
         }
 
-        operator long long() const
+#if (LONG_MAX == INT_MAX) // sizeof(long)==4 means long is equivalent to int
+        operator long() const
+        {
+            return getInt();
+        }
+
+        operator unsigned long() const
+        {
+            return getUInt();
+        }
+#else
+        operator long() const
         {
             return getInt64();
         }
+#endif
 
-        operator int64_t() const
+        operator long long() const
         {
             return getInt64();
         }

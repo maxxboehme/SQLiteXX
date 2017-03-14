@@ -4,6 +4,8 @@
 #include "DBConnection.h"
 #include "Statement.h"
 
+#include <sqlite3.h>
+
 #include <functional>
 #include <string>
 #include <vector>
@@ -23,14 +25,14 @@ namespace SQLite
 
     inline TextEncoding operator|(TextEncoding lhs, FunctionType rhs) {
         return static_cast<TextEncoding>(
-                static_cast<std::underlying_type<OpenMode>::type>(lhs) |
-                static_cast<std::underlying_type<OpenMode>::type>(rhs));
+                static_cast<std::underlying_type<TextEncoding>::type>(lhs) |
+                static_cast<std::underlying_type<FunctionType>::type>(rhs));
     }
 
     inline TextEncoding operator|(FunctionType lhs, TextEncoding rhs) {
         return static_cast<TextEncoding>(
-                static_cast<std::underlying_type<OpenMode>::type>(lhs) |
-                static_cast<std::underlying_type<OpenMode>::type>(rhs));
+                static_cast<std::underlying_type<TextEncoding>::type>(lhs) |
+                static_cast<std::underlying_type<TextEncoding>::type>(rhs));
     }
 
     /**
