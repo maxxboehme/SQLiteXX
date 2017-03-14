@@ -17,11 +17,9 @@ file(GLOB SOURCES "src/*.cpp")
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 include_directories(${SQLITE_INCLUDE_DIR})
 
-link_directories(${SQLITE_LIBRARIES_DIR})
-
 add_executable(SQLiteXX ${SOURCES})
 add_dependencies(SQLiteXX sqlite)
-target_link_libraries(SQLiteXX sqlite3)
+target_link_libraries(SQLiteXX ${SQLITE_LIBRARIES})
 target_compile_features(SQLiteXX PUBLIC cxx_range_for cxx_noexcept)
 set(SQLITECXX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/src)
 

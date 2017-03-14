@@ -8,15 +8,13 @@ include_directories(${SQLITE_INCLUDE_DIR})
 include_directories(${CATCH_INCLUDE_DIR})
 include_directories(${SQLITECXX_INCLUDE_DIR})
 
-link_directories(${SQLITE_LIBRARIES_DIR})
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic")
 add_executable(SQLiteXXTests ${SOURCES})
-target_link_libraries(SQLiteXXTests sqlite3)
+target_link_libraries(SQLiteXXTests ${SQLITE_LIBRARIES})
 add_dependencies(SQLiteXXTests SQLiteXX)
 add_dependencies(SQLiteXXTests Catch)
 target_compile_features(SQLiteXXTests PUBLIC cxx_range_for cxx_noexcept)
-target_link_libraries(SQLiteXXTests ${CMAKE_THREAD_LIBS_INIT})
+target_link_libraries(SQLiteXXTests ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 
 add_test(SQLiteXX_DBConnection   SQLiteXXTests [DBConnection])
 add_test(SQLiteXX_Statement      SQLiteXXTests [Statement])

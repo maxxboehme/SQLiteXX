@@ -45,4 +45,17 @@ ExternalProject_Add(
 ExternalProject_Get_Property(sqlite install_dir)
 ExternalProject_Get_Property(sqlite binary_dir)
 set(SQLITE_INCLUDE_DIR ${install_dir}/include CACHE INTERNAL "")
-set(SQLITE_LIBRARIES_DIR ${binary_dir}/${CMAKE_BUILD_TYPE} CACHE INTERNAL "")
+set(SQLITE_LIBRARIES_DIR ${install_dir}/lib)
+
+if(WIN32)
+    set(prefix "")
+    set(suffix ".lib")
+elseif(APPLE)
+    set(prefix "lib")
+    set(suffix ".a")
+else()
+    set(prefix "lib")
+    set(suffix ".a")
+endif()
+
+set(SQLITE_LIBRARIES "${SQLITE_LIBRARIES_DIR}/${prefix}sqlite3${suffix}" CACHE INTERNAL "")
