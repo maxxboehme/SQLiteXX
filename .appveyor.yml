@@ -1,0 +1,16 @@
+version: "{build}"
+
+configuration:
+    - Debug
+
+install:
+
+
+before_build:
+    - mkdir build
+    - cd build
+    - cmake ..
+
+build_script:
+    - cmake --build .
+    - ctest --output-on-failure
