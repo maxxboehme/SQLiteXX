@@ -1,25 +1,87 @@
-
-# request for ubuntu 14.04 Trusty VM
-sudo: true
-dist: trusty
+language: cpp
+sudo: false
 
 matrix:
     include:
-        - compiler: gcc
-          before_install:
-              - sudo apt-get -qq update
-        - compiler: clang
-          before_install:
-              - sudo apt-get -qq update
-          os: linux
-        - compiler: clang
-          os: osx
+        # 1: Linux Clang Builds
+        - os: linux
+          compiler: clang
+          addons: &clang38
+            apt:
+                sources:
+                    - llvm-toolchain-precise-3.8
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - clang-3.8
+          env:
+              - CC=clang-3.8
+              - CXX=clang++-3.8
+              - BUILD_TYPE='Release'
+
+        - os: linux
+          compiler: clang
+          addons: *clang38
+          env:
+              - CC=clang-3.8
+              - CXX=clang++-3.8
+              - BUILD_TYPE='Debug'
+
+        # 2: Linux GCC Builds
+        - os: linux
+          compiler: gcc
+          addons: &gcc5
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-5
+          env:
+              - CC=gcc-5
+              - CXX=g++-5
+              - BUILD_TYPE='Release'
+
+        - os: linux
+          compiler: gcc
+          addons: *gcc5
+          env:
+              - CC=gcc-5
+              - CXX=g++-5
+              - BUILD_TYPE='Debug'
+
+        - os: linux
+          compiler: gcc
+          addons: &gcc6
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-6
+          env:
+              - CC=gcc-6
+              - CXX=g++-6
+              - BUILD_TYPE='Release'
+
+        - os: linux
+          compiler: gcc
+          addons: *gcc6
+          env:
+              - CC=gcc-6
+              - CXX=g++-6
+              - BUILD_TYPE='Debug'
+
+        # 3: OSX Clang Builds
+        - os: osx
+          compiler: clang
           osx_image: xcode8
+          env:
+              - CC=clang-3.8
+              - CXX=clang++-3.8
+              - BUILD_TYPE='Debug'
 
 before_script:
     - mkdir build
     - cd build
-    - cmake ..
+    - cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ..
 
 script:
     - cmake --build .
