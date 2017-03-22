@@ -21,13 +21,16 @@ namespace SQLite
         return sqlite3_libversion();
     }
 
-    inline const int sqliteLibVersionNumber() noexcept
+    inline int sqliteLibVersionNumber() noexcept
     {
         return sqlite3_libversion_number();
     }
 
     inline int infinit_busy_handler(void * arg, int numCalls)
     {
+        (void)arg;
+        (void)numCalls;
+
         std::chrono::duration<int, std::milli> duration(20);
         std::this_thread::sleep_for(duration);
         return 1;

@@ -446,7 +446,7 @@ namespace SQLite
 
         /** Returns pointer to the underlying "sqlite3_stmt" object.
          * */
-        sqlite3_stmt * const getHandle() const noexcept
+        sqlite3_stmt* getHandle() const noexcept
         {
             return m_handle.get();
         }
@@ -501,7 +501,6 @@ namespace SQLite
             }
 
             throwLastError();
-            std::cout << result << std::endl;
             return false;
         }
 
@@ -692,7 +691,7 @@ namespace SQLite
             return *this;
         }
 
-        bool operator!=(const RowIterator & other) const noexcept
+        bool operator!=(const RowIterator &other) const noexcept
         {
             return m_statement != other.m_statement;
         }
@@ -707,13 +706,17 @@ namespace SQLite
 
     };
 
-    inline RowIterator begin(Statement const & statement) noexcept
+    inline RowIterator begin(const Statement &statement) noexcept
     {
         return RowIterator(statement);
     }
 
-    inline RowIterator end(Statement const & statement) noexcept
+    inline RowIterator end(const Statement &statement) noexcept
     {
+        // statement argument is unused because the end is a nullptr.
+        // This will stop warnings
+        (void)statement;
+
         return RowIterator();
     }
 
