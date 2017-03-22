@@ -4,7 +4,6 @@ find_package(Threads REQUIRED)
 
 file(GLOB SOURCES "src/*.cpp")
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic")
 add_executable(SQLiteXXTests ${SOURCES})
 add_dependencies(SQLiteXXTests SQLiteXX)
 add_dependencies(SQLiteXXTests Catch)
