@@ -79,6 +79,14 @@ matrix:
           env:
               - CC=clang-3.8
               - CXX=clang++-3.8
+              - BUILD_TYPE='Release'
+
+        - os: osx
+          compiler: clang
+          osx_image: xcode8
+          env:
+              - CC=clang-3.8
+              - CXX=clang++-3.8
               - BUILD_TYPE='Debug'
 
 before_script:
