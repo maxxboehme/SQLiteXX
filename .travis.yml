@@ -1,5 +1,8 @@
 language: cpp
-sudo: false
+
+# request for Ubuntu 14.04 Trusty VM
+sudo: true
+dist: trusty
 
 matrix:
     include:
