@@ -20,8 +20,11 @@ before_build:
     - cd build
     - cmake .. -A%PLATFORM%
 
-build_script:
-    - cmake --build .
+# build with MSBuild
+build:
+    project: ALL_BUILD.sln
+    parallel: true
+    verbosity: normal
 
 test_script:
     - ctest -C %CONFIGURATION% --output-on-failure
