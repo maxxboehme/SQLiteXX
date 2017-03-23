@@ -22,7 +22,7 @@ before_build:
 
 # build with MSBuild
 build:
-    project: ALL_BUILD.sln
+    project: ALL_BUILD.vcxproj
     parallel: true
     verbosity: normal
 
