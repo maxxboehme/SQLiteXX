@@ -19,6 +19,7 @@ before_build:
     - mkdir build
     - cd build
     - cmake .. -A%PLATFORM%
+    - dir
 
 # build with MSBuild
 build:
