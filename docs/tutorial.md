@@ -1,4 +1,6 @@
 # How To Use SQLiteXX
+The following are simple examples to help start using SQLiteXX.
+The tests are also a good area to explore to find examples of how to use the API.
 
 ## Connecting to a Database
 To create a connection to an sqlite3 database you can use the DBConnection class.
@@ -47,6 +49,7 @@ int main(int argc, const char *argv[]) {
 
     return 0;
 }
+```
 
 ## Handling Transactions on a Database
 SQLiteXX has classes to help in handling transactions on a database.
@@ -73,6 +76,7 @@ int main(int argc, const char *argv[]) {
 
     return 0;
 }
+```
 
 ## Backup a Database
 
@@ -100,6 +104,7 @@ int main(int argc, const char *argv[]) {
 
     return 0;
 }
+```
 
 ## Creating a Function for a Database
 ```c++
@@ -153,3 +158,5 @@ int main(int argc, const char *argv[]) {
     }
     return 0;
 }
+```
+
