@@ -89,6 +89,26 @@ matrix:
               - CXX=clang++-3.8
               - BUILD_TYPE='Debug'
 
+        # Coverals documentation on setup at https://github.com/eddyxu/cpp-coveralls
+        # This build is just for coveralls
+        - os: linux
+          compiler: gcc
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-6
+          env:
+              - CC=gcc-6
+              - CXX=g++-6
+              - CXXFLAGS=--coverage
+              - BUILD_TYPE='Debug'
+          before_install:
+              - pip install --user cpp-coveralls
+          after_success:
+              - coveralls --root .. -e tests -e build/thirdpary --gcov-options '\-lp'
+
 before_script:
     - mkdir build
     - cd build
