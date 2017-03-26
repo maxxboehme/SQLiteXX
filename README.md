@@ -2,6 +2,7 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/maxxboehme/SQLiteXX/blob/master/LICENSE.txt)
 [![Travis CI Linux/Mac Build Status](https://travis-ci.org/maxxboehme/SQLiteXX.svg?branch=master)](https://travis-ci.org/maxxboehme/SQLiteXX)
 [![AppVeyor Windows Build status](https://ci.appveyor.com/api/projects/status/wkrlgfv2p5mm5cgg/branch/master?svg=true)](https://ci.appveyor.com/project/maxxboehme/sqlitexx/branch/master)
+[![Coverage Status](https://coveralls.io/repos/github/maxxboehme/SQLiteXX/badge.svg)](https://coveralls.io/github/maxxboehme/SQLiteXX)
 
 ## What is SQLiteXX
 A C++ wrapper for sqlite3 that uses features in C++11.

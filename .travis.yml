@@ -107,7 +107,7 @@ matrix:
           before_install:
               - pip install --user cpp-coveralls
           after_success:
-              - coveralls --root .. -e tests -e build/thirdpary --gcov-options '\-lp'
+              - coveralls --root .. -e tests -e build/thirdparty -e build/dependencies --gcov-options '\-lp'
 
 before_script:
     - mkdir build
