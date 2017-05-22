@@ -33,7 +33,7 @@ target_compile_features(SQLiteXX PUBLIC cxx_range_for cxx_noexcept)
 
 # Setting for use in testing component
 set(SQLITEXX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/src)
-set(SQLITEXX_LIBRARIES ${CMAKE_CURRENT_BINARY_DIR}/libSQLiteXX.a)
+set(SQLITEXX_LIBRARIES $<TARGET_LINKER_FILE_DIR:SQLiteXX>/$<TARGET_LINKER_FILE_NAME:SQLiteXX>)
 
 # === Creating CMake Package Files for SQLiteXX ===
 include(CMakePackageConfigHelpers)
