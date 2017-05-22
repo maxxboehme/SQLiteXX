@@ -11,11 +11,6 @@ namespace SQLite
 {
     class Backup
     {
-        using BackupHandle = std::unique_ptr<sqlite3_backup, decltype(&sqlite3_backup_finish)>;
-        BackupHandle m_handle;
-
-        const DBConnection  *m_destination = nullptr;
-
         public:
 
         Backup(const Backup& other) = delete;
@@ -25,56 +20,35 @@ namespace SQLite
             DBConnection const & source,
             DBConnection const & destination,
             const std::string &sourceName = "main",
-            const std::string &destinationName = "main") :
-            m_handle(
-                sqlite3_backup_init(
-                    destination.getHandle(),
-                    destinationName.c_str(),
-                    source.getHandle(),
-                    sourceName.c_str()),
-                sqlite3_backup_finish),
-            m_destination(&destination)
-        {
-            if (!m_handle)
-            {
-                destination.throwLastError();
-            }
-        }
+            const std::string &destinationName = "main");
 
-        bool step(const int pages = -1)
-        {
-            int const result = sqlite3_backup_step(m_handle.get(), pages);
+        bool step(const int pages = -1);
+        int getTotalPageCount();
+        int getRemainingPageCount();
+        sqlite3_backup* getHandle() const noexcept;
 
-            if (result == SQLITE_OK) return true;
-            if (result == SQLITE_DONE) return false;
+        private:
+        using BackupHandle = std::unique_ptr<sqlite3_backup, decltype(&sqlite3_backup_finish)>;
+        BackupHandle m_handle;
 
-            m_handle.reset();
-            m_destination->throwLastError();
-            return false;
-        }
-
-        int getTotalPageCount()
-        {
-            return sqlite3_backup_pagecount(m_handle.get());
-        }
-
-        int getRemainingPageCount()
-        {
-            return sqlite3_backup_remaining(m_handle.get());
-        }
-
-        sqlite3_backup * getHandle() const noexcept
-        {
-            return m_handle.get();
-        }
+        const DBConnection *m_destination = nullptr;
     };
 
-    inline void SaveToDisk(const DBConnection &source, const std::string &filename)
+    inline int Backup::getTotalPageCount()
     {
-        DBConnection destination(filename);
-        Backup backup(destination, source);
-        backup.step();
+        return sqlite3_backup_pagecount(m_handle.get());
     }
+
+    inline int Backup::getRemainingPageCount()
+    {
+        return sqlite3_backup_remaining(m_handle.get());
+    }
+
+    inline sqlite3_backup* Backup::getHandle() const noexcept
+    {
+        return m_handle.get();
+    }
+
 }
 
 #endif

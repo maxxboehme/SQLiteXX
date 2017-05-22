@@ -29,8 +29,7 @@ TEST_CASE("Create Scalar function", "[Functions]") {
 
     SECTION("Create function with function reference") {
         REQUIRE_NOTHROW(
-            CreateScalarFunction(
-                connection,
+                connection.createScalarFunction(
                 "multiply",
                 testMultiply,
                 SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic));
@@ -45,8 +44,7 @@ TEST_CASE("Create Scalar function", "[Functions]") {
 
     SECTION("Create function with lambda") {
         REQUIRE_NOTHROW(
-            CreateScalarFunction(
-                connection,
+            connection.createScalarFunction(
                 "multiply",
                 [](const std::vector<SQLite::Value> &values) -> int {
                     int product = 1;
@@ -67,8 +65,7 @@ TEST_CASE("Create Scalar function", "[Functions]") {
 
     SECTION("Create function specific number of arguments and using more") {
         REQUIRE_NOTHROW(
-            CreateScalarFunction(
-                connection,
+            connection.createScalarFunction(
                 "multiply",
                 [](const std::vector<SQLite::Value> &values) -> int {
                     return values[0].getInt() * values[1].getInt();
@@ -81,8 +78,7 @@ TEST_CASE("Create Scalar function", "[Functions]") {
 
     SECTION("Create function specific number of arguments and using less") {
         REQUIRE_NOTHROW(
-            CreateScalarFunction(
-                connection,
+            connection.createScalarFunction(
                 "multiply",
                 [](const std::vector<SQLite::Value> &values) -> int {
                     return values[0].getInt() * values[1].getInt();

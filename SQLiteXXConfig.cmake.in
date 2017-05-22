@@ -1,8 +1,7 @@
-set(SQLITEXX_VERSION x.y.z)
+include("${CMAKE_CURRENT_LIST_DIR}/SQLiteXXTargets.cmake")
 
 @PACKAGE_INIT@
 
 set_and_check(SQLITEXX_INCLUDE_DIR "@PACKAGE_INCLUDE_INSTALL_DIR@")
-set_and_check(SQLITEXX_SYSCONFIG_DIR "@PACKAGE_SYSCONFIG_INSTALL_DIR@")
 
 check_required_components(SQLiteXX)

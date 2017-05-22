@@ -79,7 +79,6 @@ TEST_CASE("Combinations of OpenMode mutex flags", "[DBConnection]") {
             "testDBConnection.db",
             SQLite::OpenMode::ReadWrite | SQLite::OpenMode::Create | SQLite::OpenMode::NoMutex);
 
-        // TODO: This call should throw
-        // REQUIRE_THROWS_AS(connection.getMutex(), SQLite::Exception);
+        REQUIRE_THROWS_AS(connection.getMutex(), SQLite::SQLiteXXException);
     }
 }

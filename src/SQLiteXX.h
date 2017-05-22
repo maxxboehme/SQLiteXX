@@ -9,15 +9,26 @@
 #include "Statement.h"
 #include "Transaction.h"
 
-inline void profileHandler(void *, char const * const statement, unsigned long long const time)
+
+#define SQLITEXX_VERSION "0.1.0"
+
+
+namespace SQLite
 {
-   unsigned long long const ms = time / 1000000;
+    inline const char* SQliteLibVersion() noexcept
+    {
+        return sqlite3_libversion();
+    }
 
+    inline int SQliteLibVersionNumber() noexcept
+    {
+        return sqlite3_libversion_number();
+    }
 
-   if (ms > 10)
-   {
-      printf("Profiler (%lld) %s\n", ms, statement);
-   }
+    inline const char* SQLiteXXLibVersion() noexcept
+    {
+        return SQLITEXX_VERSION;
+    }
 }
 
 #endif
