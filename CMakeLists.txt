@@ -33,6 +33,11 @@ target_include_directories(SQLiteXX PRIVATE ${SQLITE_INCLUDE_DIR})
 target_link_libraries(SQLiteXX ${SQLITE_LIBRARIES})
 target_compile_features(SQLiteXX PRIVATE cxx_nullptr)
 target_compile_features(SQLiteXX PUBLIC cxx_rvalue_references cxx_noexcept cxx_variadic_templates cxx_strong_enums)
+set_target_properties(SQLiteXX PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED YES
+    CXX_EXTENSIONS NO
+)
 
 # Setting for use in testing component
 set(SQLITEXX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/src)
