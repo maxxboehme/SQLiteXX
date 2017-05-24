@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 2.8)
 project(SQLiteXX C CXX)
 
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(SQLITEXX_VERSION_MAJOR 0)
 set(SQLITEXX_VERSION_MINOR 1)
 set(SQLITEXX_VERSION_PATCH 0)
@@ -29,7 +31,8 @@ generate_export_header(SQLiteXX)
 target_include_directories(SQLiteXX PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(SQLiteXX PRIVATE ${SQLITE_INCLUDE_DIR})
 target_link_libraries(SQLiteXX ${SQLITE_LIBRARIES})
-target_compile_features(SQLiteXX PUBLIC cxx_range_for cxx_noexcept)
+target_compile_features(SQLiteXX PRIVATE cxx_nullptr)
+target_compile_features(SQLiteXX PUBLIC cxx_rvalue_references cxx_noexcept cxx_variadic_templates cxx_strong_enums)
 
 # Setting for use in testing component
 set(SQLITEXX_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/src)

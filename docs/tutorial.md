@@ -108,13 +108,8 @@ int main(int argc, const char *argv[]) {
 
 ## Creating a Function for a Database
 ```c++
-int multiply(const std::vector<SQLite::Value> &values) {
-    int product = 1;
-    for (size_t i = 0; i < values.size(); ++i) {
-        product *= values[i].getInt();
-    }
-
-    return product;
+int multiply(int x, int y) {
+    return x * y;
 }
 
 int main(int argc, const char *argv[]) {
@@ -126,7 +121,7 @@ int main(int argc, const char *argv[]) {
     SQLite::Execute(connection, "INSERT INTO test VALUES (5)");
 
     // Create a scalar function from a function.
-    SQLite::CreateScalarFunction(connection, "multiply", multiply);
+    connection.createFunction("multiply", multiply);
 
     for(auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
         int num = row.getInt(0);
@@ -135,21 +130,14 @@ int main(int argc, const char *argv[]) {
     }
 
     // Create a scalar function from a lambda.
-    // You can also specify the number of expected arguments and the 
-    // prefered text encoding of string values and specify if the function is deterministic
-    SQLite::CreateScalarFunction(
-        connection,
+    // You can also specify the prefered text encoding of string values
+    // and specify if the function is deterministic to improve performance.
+    connection.createFunction(
         "power",
-        [](const std::vector<SQLite::Value> &values) -> int {
-            int product = 1;
-            for (size_t i = 0; i < values.size(); ++i) {
-                product *= values[i].getInt();
-            }
-            return product;
+        [](int x, int y) -> int {
+            return x * y;
         },
-        SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic,
-        2
-    );
+        SQLite::TextEncoding::UTF8);
 
     for(auto row : SQLite::Statement(connection, "SELECT num, power(num, num) FROM test")) {
         int num = row.getInt(0);

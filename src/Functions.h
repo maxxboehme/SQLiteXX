@@ -8,7 +8,24 @@
 
 #include <functional>
 #include <string>
+#include <utility>
 #include <vector>
+
+namespace SQLite {
+    template<std::size_t N>
+    struct placeholder_template {
+        static placeholder_template pt;
+    };
+
+    template<std::size_t N>
+    placeholder_template<N> placeholder_template<N>::pt;
+}
+
+namespace std {
+    template<std::size_t N>
+    struct is_placeholder<SQLite::placeholder_template<N> > : std::integral_constant<std::size_t, N> {
+    };
+}
 
 namespace SQLite
 {
@@ -150,8 +167,57 @@ namespace SQLite
         typedef std::function<R(const std::vector<Value> &)> f_type;
     };
 
+    template<typename T>
+    inline typename std::remove_reference<T>::type get(sqlite3_value **values, const std::size_t index) {
+        return Value(values[index]);
+    }
+
+    template<typename F, typename C, std::size_t... Is>
+    typename function_traits<F>::f_type
+    bind_this(F method, C* classObject, std::index_sequence<Is...>) {
+        return std::bind(method, classObject, placeholder_template<Is+1>::pt...);
+    }
+
+    template<typename F, typename C>
+    typename function_traits<F>::f_type
+    bind_this(F method, C* classObject) {
+        return bind_this(method, classObject, std::make_index_sequence<function_traits<F>::nargs>{});
+    }
+
+    template<typename R, typename... Args, std::size_t... Is>
+    R invoke(std::function<R(Args...)> func, sqlite3_value **values, std::index_sequence<Is...>) {
+        return func(get<typename function_traits<decltype(func)>::template arg<Is>::type>(values, Is) ...);
+    }
+
+    template<typename R, typename... Args>
+    R invoke(std::function<R(Args...)> func, sqlite3_value **values) {
+        return invoke(func, values, std::index_sequence_for<Args...>{});
+    }
+
     template <typename F>
     inline void internal_scalar_function(sqlite3_context* context, int argc, sqlite3_value **values) {
+        // This argument is needed so this function can be used in the
+        // SQLite create function interface. Adding this line so no warning is generated
+        (void)argc;
+        F *userScalarFunction = static_cast<F *>(sqlite3_user_data(context));
+        assert(userScalarFunction != 0);
+
+        try {
+            auto result = invoke(*userScalarFunction, values);
+            return_result(context, result);
+        } catch (const std::bad_alloc &e) {
+            sqlite3_result_error_nomem(context);
+        } catch (const SQLite::Exception &e) {
+            sqlite3_result_error(context, e.what(), e.errcode);
+        } catch (const std::exception &e) {
+            sqlite3_result_error(context, e.what(), SQLITE_ABORT);
+        } catch (...) {
+            sqlite3_result_error_code(context, SQLITE_ABORT);
+        }
+    }
+
+    template <typename F>
+    inline void internal_general_scalar_function(sqlite3_context* context, int argc, sqlite3_value **values) {
         F *userScalarFunction = static_cast<F *>(sqlite3_user_data(context));
         assert(userScalarFunction != 0);
 
@@ -182,6 +248,75 @@ namespace SQLite
         delete callback;
     }
 
+    template<typename T>
+    class aggregate_wrapper {
+        public:
+        aggregate_wrapper() :
+            m_implementation(new T)
+        {}
+
+        void step(sqlite3_context* context, int argc, sqlite3_value **values) {
+            (void)context;
+            (void)argc;
+            invoke(bind_this(&T::step, m_implementation.get()), values);
+        }
+
+        void finalize(sqlite3_context* context) {
+            return_result(context, m_implementation->finalize());
+        }
+
+        void reset() {
+            m_implementation.reset(new T);
+        }
+
+        private:
+        std::unique_ptr<T> m_implementation;
+    };
+
+    template <typename T>
+    inline void internal_step(sqlite3_context* context, int argc, sqlite3_value **values) {
+        T* wrapper = static_cast<T*>(sqlite3_user_data(context));
+        assert(wrapper != 0);
+
+        try {
+            wrapper->step(context, argc, values);
+        } catch (const std::bad_alloc &e) {
+            sqlite3_result_error_nomem(context);
+        } catch (const SQLite::Exception &e) {
+            sqlite3_result_error(context, e.what(), e.errcode);
+        } catch (const std::exception &e) {
+            sqlite3_result_error(context, e.what(), SQLITE_ABORT);
+        } catch (...) {
+            sqlite3_result_error_code(context, SQLITE_ABORT);
+        }
+    }
+
+    template <typename T>
+    inline void internal_final(sqlite3_context* context) {
+        T* wrapper = static_cast<T*>(sqlite3_user_data(context));
+        assert(wrapper != 0);
+
+        try {
+            wrapper->finalize(context);
+            wrapper->reset();
+        } catch (const std::bad_alloc &e) {
+            sqlite3_result_error_nomem(context);
+        } catch (const SQLite::Exception &e) {
+            sqlite3_result_error(context, e.what(), e.errcode);
+        } catch (const std::exception &e) {
+            sqlite3_result_error(context, e.what(), SQLITE_ABORT);
+        } catch (...) {
+            sqlite3_result_error_code(context, SQLITE_ABORT);
+        }
+    }
+
+    template <typename T>
+    inline void internal_dispose(void *user_data) {
+        T* wrapper = static_cast<T *>(user_data);
+        assert(wrapper != 0);
+
+        delete wrapper;
+    }
 
 //    template <typename F>
 //    inline void CreateScalarFunction(

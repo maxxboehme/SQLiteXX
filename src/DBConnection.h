@@ -90,8 +90,14 @@ namespace SQLite
          */
         long long rowId() const noexcept;
 
+        /*
+         * @param name The name of the function to be used in an SQL query
+         * @param function
+         * @param flags
+         * @param nargs
+         */
         template <typename F>
-        void createScalarFunction(
+        void createGeneralFunction(
             const std::string &name,
             F &&function,
             const TextEncoding flags = SQLite::TextEncoding::UTF8,
@@ -107,10 +113,62 @@ namespace SQLite
                 nargs,
                 static_cast<int>(flags),
                 (void*)userFunction,
+                &internal_general_scalar_function<FunctionType>,
+                nullptr,
+                nullptr,
+                &internal_delete<FunctionType>);
+        }
+
+        /*
+         * @param name The name of the function to be used in an SQL query
+         * @param function
+         * @param flags
+         */
+        template <typename F>
+        void createFunction(
+            const std::string &name,
+            F &&function,
+            const TextEncoding flags = SQLite::TextEncoding::UTF8)
+        {
+            using FunctionType = typename function_traits<F>::f_type;
+
+            FunctionType *userFunction = new FunctionType(function);
+
+            sqlite3_create_function_v2(
+                getHandle(),
+                name.c_str(),
+                function_traits<F>::nargs,
+                static_cast<int>(flags),
+                (void*)userFunction,
                 &internal_scalar_function<FunctionType>,
                 nullptr,
                 nullptr,
                 &internal_delete<FunctionType>);
+        }
+
+        /*
+         * @param name The name of the function to be used in an SQL query
+         * @param flags
+         */
+        template <typename A>
+        void createAggregate(
+            const std::string &name,
+            const TextEncoding flags = SQLite::TextEncoding::UTF8)
+        {
+            using StepFunctionType = function_traits<decltype(&A::step)>;
+
+            aggregate_wrapper<A> *wrapper = new aggregate_wrapper<A>;
+
+            sqlite3_create_function_v2(
+                getHandle(),
+                name.c_str(),
+                StepFunctionType::nargs,
+                static_cast<int>(flags),
+                (void*)wrapper,
+                nullptr,
+                &internal_step<aggregate_wrapper<A> >,
+                &internal_final<aggregate_wrapper<A> >,
+                &internal_dispose<aggregate_wrapper<A> >);
         }
 
         template <typename F>
