@@ -174,14 +174,14 @@ namespace SQLite
 
     template<typename F, typename C, std::size_t... Is>
     typename function_traits<F>::f_type
-    bind_this(F method, C* classObject, std::index_sequence<Is...>) {
+    bind_method_class(F method, C* classObject, std::index_sequence<Is...>) {
         return std::bind(method, classObject, placeholder_template<Is+1>::pt...);
     }
 
     template<typename F, typename C>
     typename function_traits<F>::f_type
-    bind_this(F method, C* classObject) {
-        return bind_this(method, classObject, std::make_index_sequence<function_traits<F>::nargs>{});
+    bind_method_class(F method, C* classObject) {
+        return bind_method_class(method, classObject, std::make_index_sequence<function_traits<F>::nargs>{});
     }
 
     template<typename R, typename... Args, std::size_t... Is>
