@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 2.8)
 project(SQLiteXXTests CXX)
 find_package(Threads REQUIRED)
 
@@ -13,11 +13,8 @@ target_include_directories(SQLiteXXTests PRIVATE ${SQLITEXX_INCLUDE_DIR})
 target_link_libraries(SQLiteXXTests ${SQLITE_LIBRARIES})
 target_link_libraries(SQLiteXXTests ${SQLITEXX_LIBRARIES})
 target_link_libraries(SQLiteXXTests ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
-set_target_properties(SQLiteXXTests PROPERTIES
-    CXX_STANDARD 14
-    CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS YES
-)
+target_compile_features(SQLiteXXTests PUBLIC cxx_range_for cxx_noexcept cxx_generic_lambdas)
+
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     target_compile_options(SQLiteXXTests PRIVATE /W4)
 elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang|AppleClang|GNU")
