@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 project(SQLiteXX C CXX)
 
+message(STATUS "CMake version: ${CMAKE_VERSION}")
+
 set(SQLITEXX_VERSION_MAJOR 0)
 set(SQLITEXX_VERSION_MINOR 1)
 set(SQLITEXX_VERSION_PATCH 0)

@@ -1,8 +1,9 @@
-language: cpp
-
 # request for Ubuntu 14.04 Trusty VM
 sudo: true
 dist: trusty
+
+# No language, so that we can set CXX and CC env vars as required ourselves
+# language: cpp
 
 matrix:
     include:
