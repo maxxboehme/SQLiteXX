@@ -17,6 +17,7 @@ matrix:
                     - ubuntu-toolchain-r-test
                 packages:
                     - clang-3.8
+                    - g++-5 # Need newer version of libstdc++
           env:
               - CC=clang-3.8
               - CXX=clang++-3.8
@@ -78,16 +79,16 @@ matrix:
           compiler: clang
           osx_image: xcode8
           env:
-              - CC=clang-3.8
-              - CXX=clang++-3.8
+              - CC=clang
+              - CXX=clang++
               - BUILD_TYPE='Release'
 
         - os: osx
           compiler: clang
           osx_image: xcode8
           env:
-              - CC=clang-3.8
-              - CXX=clang++-3.8
+              - CC=clang
+              - CXX=clang++
               - BUILD_TYPE='Debug'
 
         # Coverals documentation on setup at https://github.com/eddyxu/cpp-coveralls
