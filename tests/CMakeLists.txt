@@ -16,7 +16,7 @@ target_link_libraries(SQLiteXXTests ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 set_target_properties(SQLiteXXTests PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO
+    CXX_EXTENSIONS YES
 )
 if(CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
     target_compile_options(SQLiteXXTests PRIVATE /W4)

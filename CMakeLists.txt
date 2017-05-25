@@ -34,7 +34,7 @@ target_compile_features(SQLiteXX PUBLIC cxx_rvalue_references cxx_noexcept cxx_v
 set_target_properties(SQLiteXX PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED YES
-    CXX_EXTENSIONS NO
+    CXX_EXTENSIONS YES
 )
 
 # Setting for use in testing component
