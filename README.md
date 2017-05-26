@@ -5,13 +5,16 @@
 [![Coverage Status](https://coveralls.io/repos/github/maxxboehme/SQLiteXX/badge.svg)](https://coveralls.io/github/maxxboehme/SQLiteXX)
 
 ## What is SQLiteXX
-A C++ wrapper for sqlite3 that uses features in C++11.
+A C++ wrapper for sqlite3 that uses features in C++14.
 
 ## How to use it
 The following links will direct you to helpful documents on how to use SQLiteXX.
 
 * [Tutorial](docs/tutorial.md) - Getting Started
 * [Reference](docs/ReadMe.md) - all the details
+
+## How to build it
+You will need a compiler that supports C++14. The Travis-CI YAML file shows some of the supported compilers.
 
 ## More
 * Issues and bugs can be raised on the [Issue tracker on Github](https://github.com/maxxboehme/SQLiteXX/issues)
