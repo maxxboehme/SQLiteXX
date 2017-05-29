@@ -111,6 +111,40 @@ matrix:
           after_success:
               - coveralls --root .. -e tests -e build/thirdparty -e build/dependencies -E ".*feature_tests.*" -E ".*CompilerId.*" --gcov-options '\-lp'
 
+        # The fallowing build will test after install
+        - os: linux
+          compiler: gcc
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-6
+          env:
+              - CC=gcc-6
+              - CXX=g++-6
+              - BUILD_TYPE='Debug'
+          after_success:
+              - cmake --build . --target install
+              - cmake -DSQLITEXX_TEST_INSTALL=1 ..
+              - ctest --output-on-failure
+        - os: linux
+          compiler: gcc
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-6
+          env:
+              - CC=gcc-6
+              - CXX=g++-6
+              - BUILD_TYPE='Release'
+          after_success:
+              - cmake --build . --target install
+              - cmake -DSQLITEXX_TEST_INSTALL=1 ..
+              - ctest --output-on-failure
+
 before_script:
     - mkdir build
     - cd build

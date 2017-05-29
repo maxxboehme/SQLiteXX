@@ -93,19 +93,25 @@ namespace SQLite
         /*
          * @param name The name of the function to be used in an SQL query
          * @param function
-         * @param flags
+         * @param isDeterministic
+         * @param textEncoding
          * @param nargs
          */
         template <typename F>
         void createGeneralFunction(
             const std::string &name,
             F &&function,
-            const TextEncoding flags = SQLite::TextEncoding::UTF8,
+            int isDeterministic = false,
+            const TextEncoding textEncoding = SQLite::TextEncoding::UTF8,
             int nargs = -1)
         {
             using FunctionType = typename SQLiteFunctionTraits<F>::f_type;
-
             FunctionType *userFunction = new FunctionType(function);
+
+            int flags = static_cast<int>(textEncoding);
+            if (isDeterministic) {
+                flags |= SQLITE_DETERMINISTIC;
+            }
 
             sqlite3_create_function_v2(
                 getHandle(),
@@ -122,23 +128,29 @@ namespace SQLite
         /*
          * @param name The name of the function to be used in an SQL query
          * @param function
-         * @param flags
+         * @param isDeterministic
+         * @param textEncoding
          */
         template <typename F>
         void createFunction(
             const std::string &name,
             F &&function,
-            const TextEncoding flags = SQLite::TextEncoding::UTF8)
+            bool isDeterministic = false,
+            const TextEncoding textEncoding = SQLite::TextEncoding::UTF8)
         {
             using FunctionType = typename function_traits<F>::f_type;
-
             FunctionType *userFunction = new FunctionType(function);
+
+            int flags = static_cast<int>(textEncoding);
+            if (isDeterministic) {
+                flags |= SQLITE_DETERMINISTIC;
+            }
 
             sqlite3_create_function_v2(
                 getHandle(),
                 name.c_str(),
                 function_traits<F>::nargs,
-                static_cast<int>(flags),
+                flags,
                 (void*)userFunction,
                 &internal_scalar_function<FunctionType>,
                 nullptr,
@@ -148,16 +160,22 @@ namespace SQLite
 
         /*
          * @param name The name of the function to be used in an SQL query
-         * @param flags
+         * @param isDeterministic
+         * @param textEncoding
          */
         template <typename A>
         void createAggregate(
             const std::string &name,
-            const TextEncoding flags = SQLite::TextEncoding::UTF8)
+            bool isDeterministic = false,
+            const TextEncoding textEncoding = SQLite::TextEncoding::UTF8)
         {
             using StepFunctionType = function_traits<decltype(&A::step)>;
-
             aggregate_wrapper<A> *wrapper = new aggregate_wrapper<A>;
+
+            int flags = static_cast<int>(textEncoding);
+            if (isDeterministic) {
+                flags |= SQLITE_DETERMINISTIC;
+            }
 
             sqlite3_create_function_v2(
                 getHandle(),

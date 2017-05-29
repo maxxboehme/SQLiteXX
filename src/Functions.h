@@ -29,28 +29,12 @@ namespace std {
 
 namespace SQLite
 {
-    enum class FunctionType: int {
-        Deterministic = SQLITE_DETERMINISTIC
-    };
-
     enum class TextEncoding: int {
         UTF8 = SQLITE_UTF8,
         UTF16LE = SQLITE_UTF16LE,
         UTF16BE = SQLITE_UTF16BE,
         UTF16 = SQLITE_UTF16,
     };
-
-    inline TextEncoding operator|(TextEncoding lhs, FunctionType rhs) {
-        return static_cast<TextEncoding>(
-                static_cast<std::underlying_type<TextEncoding>::type>(lhs) |
-                static_cast<std::underlying_type<FunctionType>::type>(rhs));
-    }
-
-    inline TextEncoding operator|(FunctionType lhs, TextEncoding rhs) {
-        return static_cast<TextEncoding>(
-                static_cast<std::underlying_type<TextEncoding>::type>(lhs) |
-                static_cast<std::underlying_type<TextEncoding>::type>(rhs));
-    }
 
     /**
      * Helpers for setting result of scalar functions.
@@ -252,25 +236,25 @@ namespace SQLite
     class aggregate_wrapper {
         public:
         aggregate_wrapper() :
-            m_implementation(new T)
+            m_implementation()
         {}
 
         void step(sqlite3_context* context, int argc, sqlite3_value **values) {
             (void)context;
             (void)argc;
-            invoke(bind_class_method(&T::step, m_implementation.get()), values);
+            invoke(bind_class_method(&T::step, &m_implementation), values);
         }
 
         void finalize(sqlite3_context* context) {
-            return_result(context, m_implementation->finalize());
+            return_result(context, m_implementation.finalize());
         }
 
         void reset() {
-            m_implementation.reset(new T);
+            m_implementation = T();
         }
 
         private:
-        std::unique_ptr<T> m_implementation;
+        T m_implementation;
     };
 
     template <typename T>

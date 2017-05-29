@@ -32,7 +32,7 @@ TEST_CASE("Create General Scalar Functions", "[Functions]") {
                 connection.createGeneralFunction(
                 "multiply",
                 testGeneralMultiply,
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic));
+                true));
 
         int i = 0;
         for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
@@ -53,7 +53,7 @@ TEST_CASE("Create General Scalar Functions", "[Functions]") {
                     }
                     return product;
                 },
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic));
+                true));
 
         int i = 0;
         for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
@@ -70,7 +70,8 @@ TEST_CASE("Create General Scalar Functions", "[Functions]") {
                 [](const std::vector<SQLite::Value> &values) -> int {
                     return values[0].getInt() * values[1].getInt();
                 },
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic,
+                true,
+                SQLite::TextEncoding::UTF8,
                 2));
 
         REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num, num, num) FROM test"), SQLite::Exception);
@@ -83,7 +84,8 @@ TEST_CASE("Create General Scalar Functions", "[Functions]") {
                 [](const std::vector<SQLite::Value> &values) -> int {
                     return values[0].getInt() * values[1].getInt();
                 },
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic,
+                true,
+                SQLite::TextEncoding::UTF8,
                 2));
 
         REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num) FROM test"), SQLite::Exception);
@@ -115,7 +117,7 @@ TEST_CASE("Create Scalar Function", "[Functions]") {
                 connection.createFunction(
                 "multiply",
                 testMultiply,
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic));
+                true));
 
         int i = 0;
         for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
@@ -132,7 +134,7 @@ TEST_CASE("Create Scalar Function", "[Functions]") {
                 [](int x, int y) -> int {
                     return x * y;
                 },
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic));
+                true));
 
         int i = 0;
         for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
@@ -149,7 +151,7 @@ TEST_CASE("Create Scalar Function", "[Functions]") {
                 [](int x, int y) -> int {
                     return x * y;
                 },
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic));
+                true));
 
         REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num, num, num) FROM test"), SQLite::Exception);
     }
@@ -161,7 +163,7 @@ TEST_CASE("Create Scalar Function", "[Functions]") {
                 [](int x, int y) -> int {
                     return x * y;
                 },
-                SQLite::TextEncoding::UTF8 | SQLite::FunctionType::Deterministic));
+                true));
 
         REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num) FROM test"), SQLite::Exception);
     }

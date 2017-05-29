@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 project(SQLiteXX C CXX)
+find_package(Threads REQUIRED)
 
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
@@ -31,6 +32,7 @@ generate_export_header(SQLiteXX)
 target_include_directories(SQLiteXX PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(SQLiteXX PRIVATE ${SQLITE_INCLUDE_DIR})
 target_link_libraries(SQLiteXX ${SQLITE_LIBRARIES})
+target_link_libraries(SQLiteXX ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 target_compile_features(SQLiteXX PRIVATE cxx_nullptr)
 target_compile_features(SQLiteXX PUBLIC cxx_rvalue_references cxx_noexcept cxx_variadic_templates cxx_strong_enums cxx_generic_lambdas)
 
@@ -41,18 +43,17 @@ set(SQLITEXX_LIBRARIES $<TARGET_LINKER_FILE_DIR:SQLiteXX>/$<TARGET_LINKER_FILE_N
 # === Creating CMake Package Files for SQLiteXX ===
 include(CMakePackageConfigHelpers)
 
-set(INCLUDE_INSTALL_DIR include/SQLiteXX CACHE INTERNAL "")
+set(INCLUDE_INSTALL_DIR include/${PROJECT_NAME} CACHE INTERNAL "")
 set(LIB_INSTALL_DIR lib CACHE INTERNAL "")
-set(CONFIG_INSTALL_DIR ${LIB_INSTALL_DIR}/cmake CACHE INTERNAL "")
-set(SYSCONFIG_INSTALL_DIR etc/SQLiteXX CACHE INTERNAL "")
+set(CONFIG_INSTALL_DIR ${LIB_INSTALL_DIR}/cmake/${PROJECT_NAME} CACHE INTERNAL "")
 
 configure_package_config_file(
     SQLiteXXConfig.cmake.in
     ${CMAKE_BINARY_DIR}/SQLiteXX/SQLiteXXConfig.cmake
-    INSTALL_DESTINATION ${LIB_INSTALL_DIR}
-    PATH_VARS INCLUDE_INSTALL_DIR SYSCONFIG_INSTALL_DIR)
+    INSTALL_DESTINATION ${CONFIG_INSTALL_DIR}
+    PATH_VARS INCLUDE_INSTALL_DIR LIB_INSTALL_DIR)
 write_basic_package_version_file(
-    "${CMAKE_CURRENT_BINARY_DIR}/SQLiteXX/SQLiteXXConfigVersion.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake"
     VERSION ${SQLITEXX_VERSION}
     COMPATIBILITY SameMajorVersion)
 
@@ -69,8 +70,8 @@ install(EXPORT SQLiteXXTargets
     DESTINATION ${CONFIG_INSTALL_DIR})
 install(
     FILES
-        ${CMAKE_BINARY_DIR}/SQLiteXX/SQLiteXXConfig.cmake
-        ${CMAKE_CURRENT_BINARY_DIR}/SQLiteXX/SQLiteXXConfigVersion.cmake
+        ${CMAKE_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}Config.cmake
+        ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}/${PROJECT_NAME}ConfigVersion.cmake
     DESTINATION
         ${CONFIG_INSTALL_DIR})
 install(
