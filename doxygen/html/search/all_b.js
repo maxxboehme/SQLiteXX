@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['placeholder_5ftemplate',['placeholder_template',['../struct_s_q_lite_1_1placeholder__template.html',1,'SQLite']]],
-  ['prepare',['prepare',['../class_s_q_lite_1_1_statement.html#a1ecd8e2636b542314521eb68fbf1000e',1,'SQLite::Statement::prepare(DBConnection const &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)'],['../class_s_q_lite_1_1_statement.html#a0d422eadca4b2e3f2e1b6e13af69f3cc',1,'SQLite::Statement::prepare(const DBConnection &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)']]]
+  ['transaction',['Transaction',['../a00009.html',1,'SQLite']]],
+  ['transaction',['Transaction',['../a00009.html#a27add1a1db2dd8cd5935c78a63ad556b',1,'SQLite::Transaction']]],
+  ['trylock',['tryLock',['../a00005.html#a95b5ebd5fef0bd37b30e3867d60389f8',1,'SQLite::Mutex']]]
 ];

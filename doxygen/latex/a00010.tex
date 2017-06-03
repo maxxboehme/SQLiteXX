@@ -1,0 +1,33 @@
+\hypertarget{a00010}{\section{S\-Q\-Lite\-:\-:Value Class Reference}
+\label{a00010}\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}}
+}
+
+
+A S\-Q\-Lite dynamically typed value object, aka \char`\"{}sqlite3\-\_\-value\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$Value.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{a00010_adc0c8d347cbd6dbbd38c85ff755c9100}{sqlite3\-\_\-value $\ast$ \hyperlink{a00010_adc0c8d347cbd6dbbd38c85ff755c9100}{get\-Handle} () const noexcept}\label{a00010_adc0c8d347cbd6dbbd38c85ff755c9100}
+
+\begin{DoxyCompactList}\small\item\em Returns pointer to the underlying \char`\"{}sqlite3\-\_\-value\char`\"{} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A S\-Q\-Lite dynamically typed value object, aka \char`\"{}sqlite3\-\_\-value\char`\"{}. 
+
+\hyperlink{a00010}{Value} objects represent all values that can be stored in a database table. A \hyperlink{a00010}{Value} object may be either \char`\"{}protected\char`\"{} or \char`\"{}unprotected\char`\"{} which refers to whether or not a mutex is held. An internal mutex is held for a protected value object but not for an unprotected one. If S\-Q\-Lite is compiled to be single-\/threaded or if S\-Q\-Lite is run in one of reduced mutex modes then there is no distinction between protected and unprotected sqlite3\-\_\-value objects. A \hyperlink{a00010}{Value} objects will always be \char`\"{}protected\char`\"{} as it stores a sqlite3\-\_\-value objects created from calling the sqlite3\-\_\-value\-\_\-dup() interface which produces a \char`\"{}protected\char`\"{} \char`\"{}sqlite3\-\_\-value\char`\"{} from an \char`\"{}unprotected\char`\"{} one. Only use a \hyperlink{a00010}{Value} object in the same thread as the S\-Q\-L function that created it. 
+
+Definition at line 25 of file Value.\-h.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/Value.\-h\item 
+src/Value.\-cpp\end{DoxyCompactItemize}

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['memory',['memory',['../class_s_q_lite_1_1_d_b_connection.html#a5bd49a76155ffede0dca70f54c794159',1,'SQLite::DBConnection']]],
-  ['mutex',['Mutex',['../class_s_q_lite_1_1_mutex.html',1,'SQLite']]]
+  ['row',['Row',['../a00006.html',1,'SQLite']]],
+  ['rowid',['rowId',['../a00002.html#a0959fda218112d849700b7a9b58e0505',1,'SQLite::DBConnection']]],
+  ['rowiterator',['RowIterator',['../a00007.html',1,'SQLite']]]
 ];

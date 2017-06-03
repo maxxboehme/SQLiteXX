@@ -1,0 +1,64 @@
+\hypertarget{a00009}{\section{S\-Q\-Lite\-:\-:Transaction Class Reference}
+\label{a00009}\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}}
+}
+
+
+R\-A\-I\-I encapsulation of the S\-Q\-Lite Transactions.  
+
+
+
+
+{\ttfamily \#include $<$Transaction.\-h$>$}
+
+
+
+Inherited by S\-Q\-Lite\-::\-Deferred\-Transaction, S\-Q\-Lite\-::\-Exclusive\-Transaction, and S\-Q\-Lite\-::\-Immediate\-Transaction.
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00009_a27add1a1db2dd8cd5935c78a63ad556b}{Transaction} (\hyperlink{a00002}{D\-B\-Connection} \&connection, const Transaction\-Type type)
+\begin{DoxyCompactList}\small\item\em Begins the S\-Q\-Lite transaction. \end{DoxyCompactList}\item 
+\hypertarget{a00009_a43c5e67a10b9698b7f6dad73539feb94}{virtual \hyperlink{a00009_a43c5e67a10b9698b7f6dad73539feb94}{$\sim$\-Transaction} () noexcept}\label{a00009_a43c5e67a10b9698b7f6dad73539feb94}
+
+\begin{DoxyCompactList}\small\item\em Safely rollback the transaction if it has not been commited. \end{DoxyCompactList}\item 
+\hypertarget{a00009_a9b251d84198cdc2c0208ad566fec0287}{virtual void \hyperlink{a00009_a9b251d84198cdc2c0208ad566fec0287}{commit} ()}\label{a00009_a9b251d84198cdc2c0208ad566fec0287}
+
+\begin{DoxyCompactList}\small\item\em Commit the transaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\-A\-I\-I encapsulation of the S\-Q\-Lite Transactions. 
+
+Definition at line 21 of file Transaction.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00009_a27add1a1db2dd8cd5935c78a63ad556b}{\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}!Transaction@{Transaction}}
+\index{Transaction@{Transaction}!SQLite::Transaction@{S\-Q\-Lite\-::\-Transaction}}
+\subsubsection[{Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Transaction\-::\-Transaction (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-B\-Connection} \&}]{connection, }
+\item[{const Transaction\-Type}]{type}
+\end{DoxyParamCaption}
+)}}\label{a00009_a27add1a1db2dd8cd5935c78a63ad556b}
+
+
+Begins the S\-Q\-Lite transaction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & the database connection to begin the transaction on \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file Transaction.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/Transaction.\-h\item 
+src/Transaction.\-cpp\end{DoxyCompactItemize}

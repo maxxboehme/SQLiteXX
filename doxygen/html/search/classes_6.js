@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lock',['Lock',['../class_s_q_lite_1_1_lock.html',1,'SQLite']]]
+  ['statement',['Statement',['../a00008.html',1,'SQLite']]]
 ];

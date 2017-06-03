@@ -1,0 +1,59 @@
+\hypertarget{a00005}{\section{S\-Q\-Lite\-:\-:Mutex Class Reference}
+\label{a00005}\index{S\-Q\-Lite\-::\-Mutex@{S\-Q\-Lite\-::\-Mutex}}
+}
+
+
+Helps with serializing access to a database connection.  
+
+
+
+
+{\ttfamily \#include $<$Mutex.\-h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{a00005_a56ba1f0c1411940ab52279497d15812a}{void \hyperlink{a00005_a56ba1f0c1411940ab52279497d15812a}{lock} () noexcept}\label{a00005_a56ba1f0c1411940ab52279497d15812a}
+
+\begin{DoxyCompactList}\small\item\em Locks the mutex, blocks if the mutex is not available. \end{DoxyCompactList}\item 
+bool \hyperlink{a00005_a95b5ebd5fef0bd37b30e3867d60389f8}{try\-Lock} () noexcept
+\begin{DoxyCompactList}\small\item\em Tries to lock the mutex, returns if the mutex is not available. \end{DoxyCompactList}\item 
+\hypertarget{a00005_ad9238aeb94205ac18d67c9652dcc6ef9}{void \hyperlink{a00005_ad9238aeb94205ac18d67c9652dcc6ef9}{unlock} () noexcept}\label{a00005_ad9238aeb94205ac18d67c9652dcc6ef9}
+
+\begin{DoxyCompactList}\small\item\em Unlocks the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helps with serializing access to a database connection. 
+
+Mutexes are only useful when threading mode is set to \char`\"{}\-Serialized\char`\"{}. 
+
+Definition at line 12 of file Mutex.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00005_a95b5ebd5fef0bd37b30e3867d60389f8}{\index{S\-Q\-Lite\-::\-Mutex@{S\-Q\-Lite\-::\-Mutex}!try\-Lock@{try\-Lock}}
+\index{try\-Lock@{try\-Lock}!SQLite::Mutex@{S\-Q\-Lite\-::\-Mutex}}
+\subsubsection[{try\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-Q\-Lite\-::\-Mutex\-::try\-Lock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00005_a95b5ebd5fef0bd37b30e3867d60389f8}
+
+
+Tries to lock the mutex, returns if the mutex is not available. 
+
+\begin{DoxyReturn}{Returns}
+True if able to obtain lock. False otherwise. 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file Mutex.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/Mutex.\-h\item 
+src/Mutex.\-cpp\end{DoxyCompactItemize}
