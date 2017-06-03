@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.2)
-project(SQLiteXX C CXX)
-find_package(Threads REQUIRED)
-
+cmake_policy(SET CMP0048 NEW)
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
 set(SQLITEXX_VERSION_MAJOR 0)
 set(SQLITEXX_VERSION_MINOR 1)
 set(SQLITEXX_VERSION_PATCH 0)
-set(SQLITEXX_VERSION
-    ${SQLITEXX_VERSION_MAJOR}.${SQLITEXX_VERSION_MINOR}.${SQLITEXX_VERSION_PATCH})
+set(SQLITEXX_VERSION ${SQLITEXX_VERSION_MAJOR}.${SQLITEXX_VERSION_MINOR}.${SQLITEXX_VERSION_PATCH})
+project(SQLiteXX VERSION ${SQLITEXX_VERSION} LANGUAGES C CXX)
+find_package(Threads REQUIRED)
+
 
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
    ${CMAKE_MODULE_PATH})
@@ -91,7 +91,7 @@ add_subdirectory(tests)
 # add a target to generate API documentation with Doxygen
 find_package(Doxygen)
 option(BUILD_DOCUMENTATION "Create and install the HTML based API documentation (requires Doxygen)" ${DOXYGEN_FOUND})
-set(doxy_main_page ${CMAKE_CURRENT_SOURCE_DIR}/ReadMe.md)
+set(doxy_main_page ${CMAKE_CURRENT_SOURCE_DIR}/README.md)
 
 if(BUILD_DOCUMENTATION)
     if(NOT DOXYGEN_FOUND)
