@@ -17,14 +17,6 @@ echo 'Setting up the script...'
 # Exit with nonzero exit code if anything fails
 set -e
 
-# Checking that we are on master branch as do not want to update documentation
-# if on a different branch.
-BRANCH=$(git rev-parse --abbrev-ref HEAD)
-if [[ "$BRANCH" != "master" ]]; then
-    echo 'Aborting script as not on master branch: ${BRANCH}';
-    exit 1
-fi
-
 mkdir -p code_docs
 cd code_docs
 
