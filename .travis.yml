@@ -175,7 +175,7 @@ matrix:
               - cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_DOCUMENTATION=1 ..
           after_success:
               - cmake --build . --target doc
-              - bash ../deploy/deployDoxygen.sh
+              - bash ../deploy/deployGHPages.sh
 
 
 before_script:

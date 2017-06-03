@@ -41,6 +41,10 @@ mkdir -p ./doxygen
 # Copying doxygen output into gh-pages directory.
 cp -r ../../Documentation/* ./doxygen/
 
+# Copying over README and docs files in case of updates
+cp ../../../README.md README.md
+cp -r ../../../docs/* ./docs/
+
 ##### Upload the documentation to the gh-pages branch
 # Only upload if Doxygen successfully created the documentation.
 # Check this by verifying that the html directory and the file html/index.html
