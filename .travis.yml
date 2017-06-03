@@ -4,6 +4,10 @@ dist: trusty
 
 # No language, so that we can set CXX and CC env vars as required ourselves
 # language: cpp
+#
+branches:
+    only:
+      - master
 
 matrix:
     include:
@@ -111,7 +115,7 @@ matrix:
           after_success:
               - coveralls --root .. -e tests -e build/thirdparty -e build/dependencies -E ".*feature_tests.*" -E ".*CompilerId.*" --gcov-options '\-lp'
 
-        # The fallowing build will test after install
+        # The following build will test after install
         - os: linux
           compiler: gcc
           addons:
@@ -144,6 +148,35 @@ matrix:
               - cmake --build . --target install
               - cmake -DSQLITEXX_TEST_INSTALL=1 ..
               - ctest --output-on-failure
+
+        # The following build will deploy doxygen to gh-pages
+        - os: linux
+          compiler: gcc
+          addons:
+            apt:
+                sources:
+                    - ubuntu-toolchain-r-test
+                packages:
+                    - g++-6
+                    - doxygen
+                    - doxygen-doc
+                    - doxygen-latex
+                    - doxygen-gui
+                    - graphviz
+          env:
+              - CC=gcc-6
+              - CXX=g++-6
+              - BUILD_TYPE='Debug'
+              - GH_REPO_NAME='SQLiteXX'
+              - GH_REPO_REF='github.com/maxxboehme/SQLiteXX.git'
+          before_script:
+              - mkdir build
+              - cd build
+              - cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_DOCUMENTATION=1 ..
+          after_success:
+              - cmake --build . --target doc
+              - bash ../../deploy/deployDoxygen.sh
+
 
 before_script:
     - mkdir build
