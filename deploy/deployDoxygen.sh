@@ -21,7 +21,7 @@ set -e
 # if on a different branch.
 BRANCH=$(git rev-parse --abbrev-ref HEAD)
 if [[ "$BRANCH" != "master" ]]; then
-    echo 'Aborting script as not on master branch';
+    echo 'Aborting script as not on master branch: ${BRANCH}';
     exit 1
 fi
 
