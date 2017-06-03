@@ -11,6 +11,7 @@ A C++ wrapper for sqlite3 that uses features in C++14.
 The following links will direct you to helpful documents on how to use SQLiteXX.
 
 * [Tutorial](docs/tutorial.md) - Getting Started
+* [Doxygen](https://maxxboehme.github.io/SQLiteXX/doxygen/html) - Documentation for the API
 * [Reference](docs/ReadMe.md) - all the details
 
 ## How to build it
