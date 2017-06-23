@@ -84,7 +84,7 @@ TEST_CASE("Combinations of OpenMode mutex flags", "[DBConnection]") {
 }
 
 TEST_CASE("DBConnection UTF8 Support", "[DBConnection]") {
-    remove("testDBConnection_utf8.db");
+    remove("testDBConnection_utf16.db");
 
     SECTION("Memory database") {
         SQLite::DBConnection connection = SQLite::DBConnection::wideMemory();
@@ -98,7 +98,7 @@ TEST_CASE("DBConnection UTF8 Support", "[DBConnection]") {
 
     SECTION("File database using open") {
         SQLite::DBConnection connection;
-        connection.open(L"testDBConnection_utf8.db");
+        connection.open(u"testDBConnection_utf16.db");
 
         REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
         REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
@@ -108,7 +108,7 @@ TEST_CASE("DBConnection UTF8 Support", "[DBConnection]") {
     }
 
     SECTION("File database from contructor") {
-        SQLite::DBConnection connection(L"testDBConnection_utf8.db");
+        SQLite::DBConnection connection(u"testDBConnection_utf16.db");
 
         REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
         REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
