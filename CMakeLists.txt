@@ -91,7 +91,7 @@ add_subdirectory(tests)
 # add a target to generate API documentation with Doxygen
 find_package(Doxygen)
 option(BUILD_DOCUMENTATION "Create and install the HTML based API documentation (requires Doxygen)" ${DOXYGEN_FOUND})
-set(doxy_main_page ${CMAKE_CURRENT_SOURCE_DIR}/README.md)
+set(doxy_main_page ${CMAKE_CURRENT_SOURCE_DIR}/Doxygen_Main.md)
 
 if(BUILD_DOCUMENTATION)
     if(NOT DOXYGEN_FOUND)

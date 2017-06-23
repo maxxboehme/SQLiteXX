@@ -20,6 +20,20 @@ static void table_insert_shared_connection(SQLite::DBConnection connection, std:
     }
 }
 
+static void table_insert_shared_connection_try_lock(SQLite::DBConnection connection, std::string text, int count) {
+    SQLite::Mutex mutex = connection.getMutex();
+    {
+        int i = 0;
+        while (i < count) {
+            if (mutex.tryLock()) {
+                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+                ++i;
+                mutex.unlock();
+            }
+        }
+    }
+}
+
 TEST_CASE("Sharing a database connection", "[Threading]") {
     SQLite::DBConnection connection = SQLite::DBConnection::memory();
 
@@ -29,14 +43,28 @@ TEST_CASE("Sharing a database connection", "[Threading]") {
     int count = 1000;
     size_t numThreads = kNumberOfThreads;
     std::vector<std::thread> threadpool;
-    for (size_t i = 0; i < numThreads; ++i) {
-        threadpool.push_back(std::thread(table_insert_shared_connection, connection, "thread" + std::to_string(i), count));
-    }
-    for (size_t i = 0; i < threadpool.size(); ++i) {
-        threadpool[i].join();
+
+    SECTION("Using SQLite::Lock") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_shared_connection, connection, "thread" + std::to_string(i), count));
+        }
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+
+        REQUIRE(connection.rowId() == (count * threadpool.size()));
     }
 
-    REQUIRE(connection.rowId() == (count * threadpool.size()));
+    SECTION("Using Mutex tryLock") {
+        for (size_t i = 0; i < numThreads; ++i) {
+            threadpool.push_back(std::thread(table_insert_shared_connection_try_lock, connection, "thread" + std::to_string(i), count));
+        }
+        for (size_t i = 0; i < threadpool.size(); ++i) {
+            threadpool[i].join();
+        }
+
+        REQUIRE(connection.rowId() == (count * threadpool.size()));
+    }
 }
 
 

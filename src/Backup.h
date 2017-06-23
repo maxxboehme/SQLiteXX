@@ -49,6 +49,7 @@ namespace SQLite
         return m_handle.get();
     }
 
+    void SaveToDisk(const DBConnection &source, const std::string &filename);
 }
 
 #endif

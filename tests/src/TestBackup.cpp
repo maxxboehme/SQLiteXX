@@ -60,4 +60,22 @@ TEST_CASE("Backup process", "[Backup]") {
         REQUIRE(query.getDouble(2) == 2.0);
         REQUIRE(query.step() == false);
     }
+
+    SECTION("Save to disk") {
+        remove("SaveToDiskResults.db");
+        SQLite::SaveToDisk(src, "SaveToDiskResults.db");
+
+        SQLite::DBConnection connection("SaveToDiskResults.db");
+
+        SQLite::Statement query(connection, "SELECT * FROM test ORDER BY id ASC");
+        REQUIRE(query.step() == true);
+        REQUIRE(query.getInt(0) == 1);
+        REQUIRE(query.getString(1) == std::string("one"));
+        REQUIRE(query.getDouble(2) == 1.0);
+        REQUIRE(query.step() == true);
+        REQUIRE(query.getInt(0) == 2);
+        REQUIRE(query.getString(1) == std::string("two"));
+        REQUIRE(query.getDouble(2) == 2.0);
+        REQUIRE(query.step() == false);
+    }
 }

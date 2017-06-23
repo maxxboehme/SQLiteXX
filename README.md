@@ -10,9 +10,9 @@ A C++ wrapper for sqlite3 that uses features in C++14.
 ## How to use it
 The following links will direct you to helpful documents on how to use SQLiteXX.
 
-* [Tutorial](https://github.com/maxxboehme/SQLiteXX/blob/master/docs/tutorial.md) - Getting Started
+* [Tutorial](docs/tutorial.md) - Getting Started
 * [Doxygen](https://maxxboehme.github.io/SQLiteXX/doxygen/html) - Documentation for the API
-* [Reference](https://github.com/maxxboehme/SQLiteXX/blob/master/docs/ReadMe.md) - all the details
+* [Reference](docs/ReadMe.md) - all the details
 
 ## How to build it
 You will need a compiler that supports C++14. The Travis-CI YAML file shows some of the supported compilers.

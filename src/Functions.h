@@ -301,30 +301,6 @@ namespace SQLite
 
         delete wrapper;
     }
-
-//    template <typename F>
-//    inline void CreateScalarFunction(
-//        DBConnection &connection,
-//        const std::string &name,
-//        F &&function,
-//        const TextEncoding flags = SQLite::TextEncoding::UTF8,
-//        int nargs = -1)
-//    {
-//        using FunctionType = typename SQLiteFunctionTraits<F>::f_type;
-//
-//        FunctionType *userFunction = new FunctionType(function);
-//
-//        sqlite3_create_function_v2(
-//            connection.getHandle(),
-//            name.c_str(),
-//            nargs,
-//            static_cast<int>(flags),
-//            (void*)userFunction,
-//            &internal_scalar_function<FunctionType>,
-//            nullptr,
-//            nullptr,
-//            &internal_delete<FunctionType>);
-//    }
 }
 
 #endif

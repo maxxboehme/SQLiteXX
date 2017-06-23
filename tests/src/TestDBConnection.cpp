@@ -82,3 +82,38 @@ TEST_CASE("Combinations of OpenMode mutex flags", "[DBConnection]") {
         REQUIRE_THROWS_AS(connection.getMutex(), SQLite::SQLiteXXException);
     }
 }
+
+TEST_CASE("DBConnection UTF8 Support", "[DBConnection]") {
+    remove("testDBConnection_utf8.db");
+
+    SECTION("Memory database") {
+        SQLite::DBConnection connection = SQLite::DBConnection::wideMemory();
+
+        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+
+        SQLite::Statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.getColumnCount() == 2);
+    }
+
+    SECTION("File database using open") {
+        SQLite::DBConnection connection;
+        connection.open(L"testDBConnection_utf8.db");
+
+        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+
+        SQLite::Statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.getColumnCount() == 2);
+    }
+
+    SECTION("File database from contructor") {
+        SQLite::DBConnection connection(L"testDBConnection_utf8.db");
+
+        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+
+        SQLite::Statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.getColumnCount() == 2);
+    }
+}

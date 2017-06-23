@@ -7,7 +7,7 @@ namespace SQLite
     void SaveToDisk(const DBConnection &source, const std::string &filename)
     {
         DBConnection destination(filename);
-        Backup backup(destination, source);
+        Backup backup(source, destination);
         backup.step();
     }
 
