@@ -172,7 +172,7 @@ matrix:
           before_script:
               - mkdir build
               - cd build
-              - cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_DOCUMENTATION=1 ..
+              - cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DBUILD_DOCUMENTATION:Bool=True -DFORCE_EXTERNAL_PROJECTS:Bool=True ..
           after_success:
               - cmake --build . --target doc
               - bash ../deploy/deployGHPages.sh
@@ -181,7 +181,7 @@ matrix:
 before_script:
     - mkdir build
     - cd build
-    - cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} ..
+    - cmake -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DFORCE_EXTERNAL_PROJECTS:Bool=True ..
 
 script:
     - cmake --build .
