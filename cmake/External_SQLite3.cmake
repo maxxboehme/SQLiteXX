@@ -58,4 +58,4 @@ else()
     set(suffix ".a")
 endif()
 
-set(SQLITE3_LIBRARIES "${SQLITE3_LIBRARIES_DIR}/${prefix}sqlite3${suffix}" CACHE INTERNAL "")
+set(SQLITE3_LIBRARY "${SQLITE3_LIBRARIES_DIR}/${prefix}sqlite3${suffix}" CACHE INTERNAL "")
