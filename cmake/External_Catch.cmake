@@ -22,4 +22,4 @@ ExternalProject_Add(
 )
 
 ExternalProject_Get_Property(Catch install_dir)
-set(CATCH_INCLUDE_DIR ${install_dir}/include CACHE INTERNAL "Path to include folder for Catch")
+set(CATCH_INCLUDE_DIR ${install_dir}/include/catch CACHE INTERNAL "Path to include folder for Catch")

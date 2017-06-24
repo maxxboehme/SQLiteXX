@@ -1,4 +1,4 @@
-#include "catch/catch.hpp"
+#include "catch.hpp"
 #include <SQLiteXX.h>
 
 TEST_CASE("Initialization with non empty database", "[Backup]") {

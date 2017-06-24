@@ -19,33 +19,33 @@ file(WRITE ${CMAKE_BINARY_DIR}/temp/CMakeLists.txt
 )
 
 ExternalProject_Add(
-    sqlite
+    SQLite3
     # DEPENDS
     TMP_DIR           ${CMAKE_BINARY_DIR}/temp
     STAMP_DIR         ${CMAKE_BINARY_DIR}/stamp
     #--Download step--------------
-    DOWNLOAD_DIR      ${download_dir}/sqlite
+    DOWNLOAD_DIR      ${download_dir}/SQLite3
     URL               http://www.sqlite.org/2017/sqlite-autoconf-3160200.tar.gz
     URL_HASH          SHA1=64ca578ad44a94115b1db0406740e14288f74bb8
     #--Update/Patch step----------
     UPDATE_COMMAND    ${CMAKE_COMMAND} -E copy
                            ${CMAKE_BINARY_DIR}/temp/CMakeLists.txt
-                           ${CMAKE_CURRENT_BINARY_DIR}/sqlite/CMakeLists.txt
+                           ${CMAKE_CURRENT_BINARY_DIR}/SQLite3/CMakeLists.txt
     #--Configure step-------------
-    SOURCE_DIR        ${CMAKE_CURRENT_BINARY_DIR}/sqlite
+    SOURCE_DIR        ${CMAKE_CURRENT_BINARY_DIR}/SQLite3
     CMAKE_ARGS        -DCMAKE_INSTALL_PREFIX:PATH=${DEPENDENCY_INSTALL_PREFIX}
                       -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
     #--Build step-----------------
-    BINARY_DIR        ${CMAKE_BINARY_DIR}/sqlite
+    BINARY_DIR        ${CMAKE_BINARY_DIR}/SQLite3
     BUILD_COMMAND     ${CMAKE_COMMAND} --build .
     #--Install step----------------
     INSTALL_DIR       ${DEPENDENCY_INSTALL_PREFIX}
 )
 
-ExternalProject_Get_Property(sqlite install_dir)
-ExternalProject_Get_Property(sqlite binary_dir)
-set(SQLITE_INCLUDE_DIR ${install_dir}/include CACHE INTERNAL "")
-set(SQLITE_LIBRARIES_DIR ${install_dir}/lib)
+ExternalProject_Get_Property(SQLite3 install_dir)
+ExternalProject_Get_Property(SQLite3 binary_dir)
+set(SQLITE3_INCLUDE_DIR ${install_dir}/include CACHE INTERNAL "")
+set(SQLITE3_LIBRARIES_DIR ${install_dir}/lib)
 
 if(WIN32)
     set(prefix "")
@@ -58,4 +58,4 @@ else()
     set(suffix ".a")
 endif()
 
-set(SQLITE_LIBRARIES "${SQLITE_LIBRARIES_DIR}/${prefix}sqlite3${suffix}" CACHE INTERNAL "")
+set(SQLITE3_LIBRARIES "${SQLITE3_LIBRARIES_DIR}/${prefix}sqlite3${suffix}" CACHE INTERNAL "")

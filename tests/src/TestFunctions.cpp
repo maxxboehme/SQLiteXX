@@ -1,5 +1,5 @@
 #include "SQLiteXX.h"
-#include "catch/catch.hpp"
+#include "catch.hpp"
 
 
 int testGeneralMultiply(const std::vector<SQLite::Value> &values) {

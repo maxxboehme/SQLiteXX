@@ -1,5 +1,5 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
-#include "catch/catch.hpp"
+#include "catch.hpp"
 
 inline void profileHandler(void *, char const * const statement, unsigned long long const time)
 {
