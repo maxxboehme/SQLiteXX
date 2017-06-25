@@ -21,22 +21,18 @@ file(WRITE ${CMAKE_BINARY_DIR}/temp/CMakeLists.txt
 ExternalProject_Add(
     SQLite3
     # DEPENDS
-    TMP_DIR           ${CMAKE_BINARY_DIR}/temp
-    STAMP_DIR         ${CMAKE_BINARY_DIR}/stamp
+    PREFIX            ${DEPENDENCY_PREFIX}
     #--Download step--------------
-    DOWNLOAD_DIR      ${download_dir}/SQLite3
     URL               http://www.sqlite.org/2017/sqlite-autoconf-3160200.tar.gz
     URL_HASH          SHA1=64ca578ad44a94115b1db0406740e14288f74bb8
     #--Update/Patch step----------
     UPDATE_COMMAND    ${CMAKE_COMMAND} -E copy
                            ${CMAKE_BINARY_DIR}/temp/CMakeLists.txt
-                           ${CMAKE_CURRENT_BINARY_DIR}/SQLite3/CMakeLists.txt
+                           ${DEPENDENCY_PREFIX}/src/SQLite3/CMakeLists.txt
     #--Configure step-------------
-    SOURCE_DIR        ${CMAKE_CURRENT_BINARY_DIR}/SQLite3
     CMAKE_ARGS        -DCMAKE_INSTALL_PREFIX:PATH=${DEPENDENCY_INSTALL_PREFIX}
                       -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
     #--Build step-----------------
-    BINARY_DIR        ${CMAKE_BINARY_DIR}/SQLite3
     BUILD_COMMAND     ${CMAKE_COMMAND} --build .
     #--Install step----------------
     INSTALL_DIR       ${DEPENDENCY_INSTALL_PREFIX}

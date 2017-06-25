@@ -146,7 +146,7 @@ namespace SQLite
                 flags |= SQLITE_DETERMINISTIC;
             }
 
-            sqlite3_create_function_v2(
+            int errorcode = sqlite3_create_function_v2(
                 getHandle(),
                 name.c_str(),
                 function_traits<F>::nargs,
@@ -156,6 +156,8 @@ namespace SQLite
                 nullptr,
                 nullptr,
                 &internal_delete<FunctionType>);
+
+            throwErrorCode(errorcode, "");
         }
 
         /*
@@ -177,7 +179,7 @@ namespace SQLite
                 flags |= SQLITE_DETERMINISTIC;
             }
 
-            sqlite3_create_function_v2(
+            int errorcode = sqlite3_create_function_v2(
                 getHandle(),
                 name.c_str(),
                 StepFunctionType::nargs,
@@ -187,6 +189,8 @@ namespace SQLite
                 &internal_step<aggregate_wrapper<A> >,
                 &internal_final<aggregate_wrapper<A> >,
                 &internal_dispose<aggregate_wrapper<A> >);
+
+            throwErrorCode(errorcode, "");
         }
 
         template <typename F>

@@ -1,3 +1,4 @@
+set(DEPENDENCY_PREFIX ${CMAKE_BINARY_DIR}/thirdparty CACHE STRING "Location where external dependencies will be installed." FORCE)
 set(DEPENDENCY_INSTALL_PREFIX ${CMAKE_BINARY_DIR}/dependencies CACHE STRING "Location where external dependencies will be installed." FORCE)
 
 include(ExternalProject)

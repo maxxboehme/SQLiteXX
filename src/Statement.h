@@ -259,7 +259,7 @@ namespace SQLite
             prepare(connection, text, std::forward<Values>(values) ...);
         }
 
-        explicit operator bool() const noexcept;
+        operator bool() const noexcept;
 
         /** Returns pointer to the underlying "sqlite3_stmt" object.
          * */

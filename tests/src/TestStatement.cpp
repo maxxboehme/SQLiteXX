@@ -27,6 +27,7 @@ TEST_CASE("Query in Memory Database", "[Statement]") {
         REQUIRE_THROWS_AS(query.bind(1, 12345), SQLite::Exception);
         REQUIRE_THROWS_AS(query.bind(2, 12345), SQLite::Exception);
         REQUIRE_THROWS_AS(query.bind(2, "abc"), SQLite::Exception);
+        REQUIRE_THROWS_AS(query.bind(2, u"abc"), SQLite::Exception);
     }
 
     SECTION("Insert a row") {
@@ -408,4 +409,33 @@ TEST_CASE("Using callback function with lambda", "[Statement]") {
     REQUIRE(allColumnData[0].size() == 3);
     REQUIRE(allColumnData[1].size() == 3);
     REQUIRE(allColumnData[2].size() == 3);
+}
+
+TEST_CASE("Statement to Bool conversion", "[Statement]") {
+    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+
+    REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, string TEXT, double REAL)") == 0);
+
+    REQUIRE(Execute(connection, "INSERT INTO test VALUES (1, \"one\", 1.0)") == 1);
+    REQUIRE(Execute(connection, "INSERT INTO test VALUES (2, \"two\", 2.0)") == 1);
+    REQUIRE(Execute(connection, "INSERT INTO test VALUES (3, \"three\", 3.0)") == 1);
+
+    SQLite::Statement query;
+    REQUIRE(query == false);
+
+    query.prepare(connection, "SELECT * FROM test");
+    REQUIRE(query == true);
+}
+
+TEST_CASE("UTF16 Support") {
+    SQLite::DBConnection connection = SQLite::DBConnection::wideMemory();
+
+    REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, string TEXT, double REAL)") == 0);
+
+    REQUIRE(Execute(connection, "INSERT INTO test VALUES (1, ?, ?)", u"first", 1.0) == 1);
+
+    SQLite::Statement insert(connection, "INSERT INTO test VALUES (1, ?, ?)");
+    insert.bind(1, u"second");
+    insert.bind(2, 2.0);
+    REQUIRE(insert.execute() == 1);
 }

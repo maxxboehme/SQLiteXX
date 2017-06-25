@@ -2,10 +2,8 @@
 ExternalProject_Add(
     DrMemory
     # DEPENDS
-    TMP_DIR           ${CMAKE_BINARY_DIR}/temp
-    STAMP_DIR         ${CMAKE_BINARY_DIR}/stamp
+    PREFIX            ${DEPENDENCY_PREFIX}
     #--Download step--------------
-    DOWNLOAD_DIR      ${download_dir}/DrMemory
     URL               https://github.com/DynamoRIO/drmemory/releases/download/release_1.11.0/DrMemory-Linux-1.11.0-2.tar.gz
     URL_HASH          SHA1=bdcaa95a117ae69a7fcf81094fe41f68f6d0189f
     #--Update/Patch step----------

@@ -3,7 +3,7 @@
 
 namespace SQLite
 {
-    Blob::Blob(const void * data, int size) :
+    Blob::Blob(const void * data, size_t size) :
         m_data(data != nullptr? new char[size]: nullptr),
         m_size(size)
     {
@@ -41,11 +41,11 @@ namespace SQLite
         return *this;
     }
 
-    const void * Blob::data() const {
+    const void* Blob::data() const {
         return m_data.get();
     }
 
-    int Blob::size() const {
+    size_t Blob::size() const {
         return m_size;
     }
 }

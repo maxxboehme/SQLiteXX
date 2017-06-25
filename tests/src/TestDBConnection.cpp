@@ -117,3 +117,33 @@ TEST_CASE("DBConnection UTF8 Support", "[DBConnection]") {
         REQUIRE(query.getColumnCount() == 2);
     }
 }
+
+TEST_CASE("DBConnectionTest Assignment Operators", "[DBConnection]") {
+    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+
+    REQUIRE(Execute(connection, "CREATE TABLE test (txt1 TEXT, txt2 TEXT)") == 0);
+    REQUIRE(Execute(connection, "INSERT INTO test VALUES (\"first\", \"second\")") == 1);
+
+    SQLite::Statement query(connection, "SELECT * FROM test");
+    REQUIRE(query.getColumnCount() == 2);
+
+    SECTION("L-value assignment operator") {
+        SQLite::DBConnection testConnection;
+
+        // Testing assignment
+        testConnection = connection;
+
+        SQLite::Statement query(testConnection, "SELECT * FROM test");
+        REQUIRE(query.getColumnCount() == 2);
+    }
+
+    SECTION("R-value assignment operator") {
+        SQLite::DBConnection testConnection;
+
+        // Testing assignment
+        testConnection = SQLite::DBConnection(connection);
+
+        SQLite::Statement query(testConnection, "SELECT * FROM test");
+        REQUIRE(query.getColumnCount() == 2);
+    }
+}

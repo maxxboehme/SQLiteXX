@@ -197,3 +197,37 @@ TEST_CASE("Converting between string types", "[Value]") {
         REQUIRE(string16 == u"first");
     }
 }
+
+TEST_CASE("Value Test Assignment Operators", "[Value]") {
+    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+
+    REQUIRE(Execute(connection, "CREATE TABLE test (txt1 TEXT, txt2 TEXT)") == 0);
+    REQUIRE(Execute(connection, "INSERT INTO test VALUES (\"first\", \"second\")") == 1);
+
+    SQLite::Statement query(connection, "SELECT * FROM test");
+    REQUIRE(query.getColumnCount() == 2);
+    query.step();
+
+    SECTION("L-value assignment operator") {
+        SQLite::Value value = query.getValue(0);
+        REQUIRE(value.getString() == std::string("first"));
+
+        SQLite::Value value2 = query.getValue(1);
+        REQUIRE(value2.getString() == std::string("second"));
+
+        // Testing assignment
+        value = value2;
+        REQUIRE(value.getString() == std::string("second"));
+    }
+
+    SECTION("R-value assignment operator") {
+        SQLite::Value value = query.getValue(0);
+        REQUIRE(value.getString() == std::string("first"));
+
+        // Testing assignment
+        value = query.getValue(1);
+        REQUIRE(value.getString() == std::string("second"));
+    }
+}
+
+

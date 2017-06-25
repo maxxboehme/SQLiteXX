@@ -170,6 +170,9 @@ namespace SQLite
 
     template<typename R, typename... Args, std::size_t... Is>
     R invoke(std::function<R(Args...)> func, sqlite3_value **values, std::index_sequence<Is...>) {
+        // So there is no warnings when no arguments are given to function.
+        (void)values;
+
         return func(get<typename function_traits<decltype(func)>::template arg<Is>::type>(values, Is) ...);
     }
 
