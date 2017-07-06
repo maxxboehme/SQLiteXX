@@ -427,15 +427,24 @@ TEST_CASE("Statement to Bool conversion", "[Statement]") {
     REQUIRE(query == true);
 }
 
-TEST_CASE("UTF16 Support") {
+TEST_CASE("UTF16 Support", "[Statement]") {
     SQLite::DBConnection connection = SQLite::DBConnection::wideMemory();
 
     REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, string TEXT, double REAL)") == 0);
 
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (1, ?, ?)", u"first", 1.0) == 1);
+    REQUIRE(Execute(connection, "INSERT INTO test VALUES (NULL, ?, ?)", u"first", 1.0) == 1);
 
-    SQLite::Statement insert(connection, "INSERT INTO test VALUES (1, ?, ?)");
+    SQLite::Statement insert(connection, "INSERT INTO test VALUES (NULL, ?, ?)");
     insert.bind(1, u"second");
     insert.bind(2, 2.0);
     REQUIRE(insert.execute() == 1);
+
+    SQLite::Statement query(connection, "SELECT * FROM test");
+    query.step();
+    REQUIRE(query.getU16String(1) == u"first");
+    REQUIRE(query.getDouble(2) == 1.0);
+
+    query.step();
+    REQUIRE(query.getU16String(1) == u"second");
+    REQUIRE(query.getDouble(2) == 2.0);
 }

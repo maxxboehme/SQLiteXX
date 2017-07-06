@@ -1,6 +1,7 @@
 #include "catch.hpp"
 #include "SQLiteXX.h"
 
+
 TEST_CASE("Blob Constructors", "[Blob]") {
     SQLite::Blob src("Hello World", 11);
 
@@ -12,7 +13,7 @@ TEST_CASE("Blob Constructors", "[Blob]") {
     }
 
     SECTION("R-Value Copy constructor") {
-        SQLite::Blob copy = SQLite::Blob(src);
+        SQLite::Blob copy(std::move(src));
 
         REQUIRE(copy.size() == 11);
         REQUIRE(std::string(static_cast<const char*>(copy.data()), copy.size()) == std::string("Hello World"));

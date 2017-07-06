@@ -304,8 +304,8 @@ class BadAllocAggregateFinalize {
     }
 
     double finalize() {
-        return m_sum;
         throw std::bad_alloc();
+        return m_sum;
     }
 
     private:
@@ -323,8 +323,8 @@ class SQLiteExceptionAggregateFinalize {
     }
 
     double finalize() {
-        return m_sum;
         throw SQLite::Exception(1, "test Exception");
+        return m_sum;
     }
 
     private:
@@ -342,8 +342,8 @@ class StdExceptionAggregateFinalize {
     }
 
     double finalize() {
-        return m_sum;
         throw std::exception();
+        return m_sum;
     }
 
     private:
@@ -361,8 +361,8 @@ class RandomExceptionAggregateFinalize {
     }
 
     double finalize() {
-        return m_sum;
         throw "test exception";
+        return m_sum;
     }
 
     private:
@@ -378,40 +378,76 @@ TEST_CASE("Throwing Exceptions from functions", "[Functions]") {
     REQUIRE(Execute(connection, "INSERT INTO test VALUES (3)") == 1);
     REQUIRE(Execute(connection, "INSERT INTO test VALUES (123)") == 1);
 
+    SECTION("Generic Scalar function Exceptions") {
+        connection.createGeneralFunction(
+                "badAlloc",
+                [](const std::vector<SQLite::Value>&) -> int {
+                    throw std::bad_alloc();
+                    return 1;
+                });
+
+        connection.createGeneralFunction(
+                "SQLiteException",
+                [](const std::vector<SQLite::Value>&) -> int {
+                    throw SQLite::Exception(1, "test Exception");
+                    return 1;
+                });
+
+        connection.createGeneralFunction(
+                "stdException",
+                [](const std::vector<SQLite::Value>&) -> int {
+                    throw std::exception();
+                    return 1;
+                });
+
+        connection.createGeneralFunction(
+                "randomException",
+                [](const std::vector<SQLite::Value>&) -> int {
+                    throw "test Exception";
+                    return 1;
+                });
+
+
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
+    }
+
     SECTION("Scalar function Exceptions") {
         connection.createFunction(
                 "badAlloc",
-                []() -> int {
+                [](int) -> int {
                     throw std::bad_alloc();
                     return 1;
                 });
 
         connection.createFunction(
                 "SQLiteException",
-                []() -> int {
+                [](int) -> int {
                     throw SQLite::Exception(1, "test Exception");
                     return 1;
                 });
 
         connection.createFunction(
                 "stdException",
-                []() -> int {
+                [](int) -> int {
                     throw std::exception();
                     return 1;
                 });
 
         connection.createFunction(
                 "randomException",
-                []() -> int {
+                [](int) -> int {
                     throw "test Exception";
                     return 1;
                 });
 
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc FROM test"), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException FROM test"), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException FROM test"), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException FROM test"), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
     }
 
     SECTION("Aggregate function exceptions in step") {
@@ -420,10 +456,10 @@ TEST_CASE("Throwing Exceptions from functions", "[Functions]") {
         REQUIRE_NOTHROW(connection.createAggregate<StdExceptionAggregate>("stdException"));
         REQUIRE_NOTHROW(connection.createAggregate<RandomExceptionAggregate>("randomException"));
 
-        // TODO: FIX REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test"), SQLite::Exception);
-        // REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test"), SQLite::Exception);
-        // REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test"), SQLite::Exception);
-        // REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test"), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
     }
 
     SECTION("Aggregate function exceptions in finalize") {
@@ -432,9 +468,9 @@ TEST_CASE("Throwing Exceptions from functions", "[Functions]") {
         REQUIRE_NOTHROW(connection.createAggregate<StdExceptionAggregateFinalize>("stdException"));
         REQUIRE_NOTHROW(connection.createAggregate<RandomExceptionAggregateFinalize>("randomException"));
 
-        // TODO: FIX REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test"), SQLite::Exception);
-        // REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test"), SQLite::Exception);
-        // REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test"), SQLite::Exception);
-        // REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test"), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
     }
 }

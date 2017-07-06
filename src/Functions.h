@@ -152,7 +152,7 @@ namespace SQLite
     };
 
     template<typename T>
-    inline typename std::remove_reference<T>::type get(sqlite3_value **values, const std::size_t index) {
+    typename std::remove_reference<T>::type get(sqlite3_value **values, const std::size_t index) {
         return Value(values[index]);
     }
 
@@ -182,7 +182,7 @@ namespace SQLite
     }
 
     template <typename F>
-    inline void internal_scalar_function(sqlite3_context* context, int argc, sqlite3_value **values) {
+    void internal_scalar_function(sqlite3_context* context, int argc, sqlite3_value **values) {
         // This argument is needed so this function can be used in the
         // SQLite create function interface. Adding this line so no warning is generated
         (void)argc;
@@ -204,7 +204,7 @@ namespace SQLite
     }
 
     template <typename F>
-    inline void internal_general_scalar_function(sqlite3_context* context, int argc, sqlite3_value **values) {
+    void internal_general_scalar_function(sqlite3_context* context, int argc, sqlite3_value **values) {
         F *userScalarFunction = static_cast<F *>(sqlite3_user_data(context));
         assert(userScalarFunction != 0);
 
@@ -228,7 +228,7 @@ namespace SQLite
     }
 
     template<typename Call>
-    inline void internal_delete(void *user_data) {
+    void internal_delete(void *user_data) {
         Call *callback = static_cast<Call *>(user_data);
         assert(callback != 0);
 
@@ -261,7 +261,7 @@ namespace SQLite
     };
 
     template <typename T>
-    inline void internal_step(sqlite3_context* context, int argc, sqlite3_value **values) {
+    void internal_step(sqlite3_context* context, int argc, sqlite3_value **values) {
         T* wrapper = static_cast<T*>(sqlite3_user_data(context));
         assert(wrapper != 0);
 
@@ -279,7 +279,7 @@ namespace SQLite
     }
 
     template <typename T>
-    inline void internal_final(sqlite3_context* context) {
+    void internal_final(sqlite3_context* context) {
         T* wrapper = static_cast<T*>(sqlite3_user_data(context));
         assert(wrapper != 0);
 
@@ -298,7 +298,7 @@ namespace SQLite
     }
 
     template <typename T>
-    inline void internal_dispose(void *user_data) {
+    void internal_dispose(void *user_data) {
         T* wrapper = static_cast<T *>(user_data);
         assert(wrapper != 0);
 
