@@ -238,7 +238,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    };</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">inline</span> <span class="keyword">typename</span> std::remove_reference&lt;T&gt;::type <span class="keyword">get</span>(sqlite3_value **values, <span class="keyword">const</span> std::size_t index) {</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keyword">typename</span> std::remove_reference&lt;T&gt;::type <span class="keyword">get</span>(sqlite3_value **values, <span class="keyword">const</span> std::size_t index) {</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        <span class="keywordflow">return</span> Value(values[index]);</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
@@ -268,7 +268,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> internal_scalar_function(sqlite3_context* context, <span class="keywordtype">int</span> argc, sqlite3_value **values) {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">void</span> internal_scalar_function(sqlite3_context* context, <span class="keywordtype">int</span> argc, sqlite3_value **values) {</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="comment">// This argument is needed so this function can be used in the</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        <span class="comment">// SQLite create function interface. Adding this line so no warning is generated</span></div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        (void)argc;</div>
@@ -290,7 +290,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> internal_general_scalar_function(sqlite3_context* context, <span class="keywordtype">int</span> argc, sqlite3_value **values) {</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordtype">void</span> internal_general_scalar_function(sqlite3_context* context, <span class="keywordtype">int</span> argc, sqlite3_value **values) {</div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        F *userScalarFunction = <span class="keyword">static_cast&lt;</span>F *<span class="keyword">&gt;</span>(sqlite3_user_data(context));</div>
 <div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        assert(userScalarFunction != 0);</div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
@@ -314,7 +314,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;    }</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> Call&gt;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> internal_delete(<span class="keywordtype">void</span> *user_data) {</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">void</span> internal_delete(<span class="keywordtype">void</span> *user_data) {</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;        Call *callback = <span class="keyword">static_cast&lt;</span>Call *<span class="keyword">&gt;</span>(user_data);</div>
 <div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        assert(callback != 0);</div>
 <div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;</div>
@@ -347,7 +347,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    };</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> internal_step(sqlite3_context* context, <span class="keywordtype">int</span> argc, sqlite3_value **values) {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordtype">void</span> internal_step(sqlite3_context* context, <span class="keywordtype">int</span> argc, sqlite3_value **values) {</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        T* wrapper = <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(sqlite3_user_data(context));</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        assert(wrapper != 0);</div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;</div>
@@ -365,7 +365,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    }</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> internal_final(sqlite3_context* context) {</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordtype">void</span> internal_final(sqlite3_context* context) {</div>
 <div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        T* wrapper = <span class="keyword">static_cast&lt;</span>T*<span class="keyword">&gt;</span>(sqlite3_user_data(context));</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        assert(wrapper != 0);</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
@@ -384,7 +384,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
 <div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;</div>
 <div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> internal_dispose(<span class="keywordtype">void</span> *user_data) {</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;    <span class="keywordtype">void</span> internal_dispose(<span class="keywordtype">void</span> *user_data) {</div>
 <div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        T* wrapper = <span class="keyword">static_cast&lt;</span>T *<span class="keyword">&gt;</span>(user_data);</div>
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        assert(wrapper != 0);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
@@ -397,7 +397,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 25 2017 22:47:36 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jul 6 2017 04:26:05 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
