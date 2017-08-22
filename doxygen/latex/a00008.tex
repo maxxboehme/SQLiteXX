@@ -1,144 +1,61 @@
-\hypertarget{a00008}{\section{S\-Q\-Lite\-:\-:Statement Class Reference}
-\label{a00008}\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}}
+\hypertarget{a00008}{\section{S\-Q\-Lite\-:\-:Immediate\-Transaction Class Reference}
+\label{a00008}\index{S\-Q\-Lite\-::\-Immediate\-Transaction@{S\-Q\-Lite\-::\-Immediate\-Transaction}}
 }
 
 
-Represents a single S\-Q\-L statement that has been compiled into binary form and is ready to be evaluated, aka \char`\"{}sqlite3\-\_\-stmt\char`\"{}.  
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} immediate transaction.  
 
 
 
 
-{\ttfamily \#include $<$Statement.\-h$>$}
+{\ttfamily \#include $<$Transaction.\-h$>$}
 
-
-
-Inherits S\-Q\-Lite\-::\-Reader$<$ T $>$.
-
+Inheritance diagram for S\-Q\-Lite\-:\-:Immediate\-Transaction\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00008}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{a00008_a9052c143879aca6cf253925336464a8b}{sqlite3\-\_\-stmt $\ast$ \hyperlink{a00008_a9052c143879aca6cf253925336464a8b}{get\-Handle} () const noexcept}\label{a00008_a9052c143879aca6cf253925336464a8b}
+\hyperlink{a00008_a3c6f88a4f4f6b299461c4a30a79b17e1}{Immediate\-Transaction} (\hyperlink{a00004}{D\-B\-Connection} \&connection)
+\begin{DoxyCompactList}\small\item\em Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} immediate transaction. \end{DoxyCompactList}\item 
+\hypertarget{a00014_a9b251d84198cdc2c0208ad566fec0287}{virtual void \hyperlink{a00014_a9b251d84198cdc2c0208ad566fec0287}{commit} ()}\label{a00014_a9b251d84198cdc2c0208ad566fec0287}
 
-\begin{DoxyCompactList}\small\item\em Returns pointer to the underlying \char`\"{}sqlite3\-\_\-stmt\char`\"{} object. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00008_a1ecd8e2636b542314521eb68fbf1000e}{prepare} (\hyperlink{a00002}{D\-B\-Connection} const \&connection, const std\-::string \&text, Values \&\&...values)
-\begin{DoxyCompactList}\small\item\em Turn an S\-Q\-L query into byte code. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00008_a0d422eadca4b2e3f2e1b6e13af69f3cc}{prepare} (const \hyperlink{a00002}{D\-B\-Connection} \&connection, const std\-::u16string \&text, Values \&\&...values)
-\begin{DoxyCompactList}\small\item\em Turn an S\-Q\-L query into byte code. \end{DoxyCompactList}\item 
-bool \hyperlink{a00008_a6251d1119e978d1366113b4aa30899ef}{step} () const 
-\begin{DoxyCompactList}\small\item\em Evaluates a prepared statement. \end{DoxyCompactList}\item 
-void \hyperlink{a00008_a0d4999fce90145852287c18c0d218ac6}{bind} (const int index, const int value) const 
-\begin{DoxyCompactList}\small\item\em Binds an integer value to a parameters in an S\-Q\-L prepared statement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Commit the transaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Represents a single S\-Q\-L statement that has been compiled into binary form and is ready to be evaluated, aka \char`\"{}sqlite3\-\_\-stmt\char`\"{}. 
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} immediate transaction. 
 
-Definition at line 235 of file Statement.\-h.
+Definition at line 70 of file Transaction.\-h.
 
 
 
-\subsection{Member Function Documentation}
-\hypertarget{a00008_a0d4999fce90145852287c18c0d218ac6}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
-\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
-\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00008_a3c6f88a4f4f6b299461c4a30a79b17e1}{\index{S\-Q\-Lite\-::\-Immediate\-Transaction@{S\-Q\-Lite\-::\-Immediate\-Transaction}!Immediate\-Transaction@{Immediate\-Transaction}}
+\index{Immediate\-Transaction@{Immediate\-Transaction}!SQLite::ImmediateTransaction@{S\-Q\-Lite\-::\-Immediate\-Transaction}}
+\subsubsection[{Immediate\-Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Immediate\-Transaction\-::\-Immediate\-Transaction (
 \begin{DoxyParamCaption}
-\item[{const int}]{index, }
-\item[{const int}]{value}
+\item[{{\bf D\-B\-Connection} \&}]{connection}
 \end{DoxyParamCaption}
-) const}}\label{a00008_a0d4999fce90145852287c18c0d218ac6}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00008_a3c6f88a4f4f6b299461c4a30a79b17e1}
 
 
-Binds an integer value to a parameters in an S\-Q\-L prepared statement. 
+Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} immediate transaction. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em index} & of the S\-Q\-L parameter to be set \\
-\hline
-{\em The} & integer value to bind to the parameter. \\
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & the database connection to begin the transaction on \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 72 of file Statement.\-cpp.
-
-\hypertarget{a00008_a1ecd8e2636b542314521eb68fbf1000e}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!prepare@{prepare}}
-\index{prepare@{prepare}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
-\subsubsection[{prepare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ void S\-Q\-Lite\-::\-Statement\-::prepare (
-\begin{DoxyParamCaption}
-\item[{{\bf D\-B\-Connection} const \&}]{connection, }
-\item[{const std\-::string \&}]{text, }
-\item[{Values \&\&...}]{values}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00008_a1ecd8e2636b542314521eb68fbf1000e}
-
-
-Turn an S\-Q\-L query into byte code. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em connection} & a successfully opened database connection \\
-\hline
-{\em text} & the statement to be compiled, encoded as U\-T\-F-\/8 \\
-\hline
-{\em values} & possible bindings \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 274 of file Statement.\-h.
-
-\hypertarget{a00008_a0d422eadca4b2e3f2e1b6e13af69f3cc}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!prepare@{prepare}}
-\index{prepare@{prepare}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
-\subsubsection[{prepare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ void S\-Q\-Lite\-::\-Statement\-::prepare (
-\begin{DoxyParamCaption}
-\item[{const {\bf D\-B\-Connection} \&}]{connection, }
-\item[{const std\-::u16string \&}]{text, }
-\item[{Values \&\&...}]{values}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00008_a0d422eadca4b2e3f2e1b6e13af69f3cc}
-
-
-Turn an S\-Q\-L query into byte code. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em connection} & a successfully opened database connection \\
-\hline
-{\em text} & the statement to be compiled, encoded as U\-T\-F-\/16 \\
-\hline
-{\em values} & possible bindings \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 288 of file Statement.\-h.
-
-\hypertarget{a00008_a6251d1119e978d1366113b4aa30899ef}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!step@{step}}
-\index{step@{step}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
-\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-Q\-Lite\-::\-Statement\-::step (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const}}\label{a00008_a6251d1119e978d1366113b4aa30899ef}
-
-
-Evaluates a prepared statement. 
-
-This method can be called one or more times to evaluate the statement. \begin{DoxyReturn}{Returns}
-true when there are more rows to iterate through and false when there are no more 
-\end{DoxyReturn}
-
-\begin{DoxyExceptions}{Exceptions}
-{\em \hyperlink{a00003}{S\-Q\-Lite\-::\-Exception}} & or a derived class \\
-\hline
-\end{DoxyExceptions}
-
-
-Definition at line 37 of file Statement.\-cpp.
+Definition at line 76 of file Transaction.\-h.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-src/Statement.\-h\item 
-src/Statement.\-cpp\end{DoxyCompactItemize}
+src/\hyperlink{a00034}{Transaction.\-h}\end{DoxyCompactItemize}

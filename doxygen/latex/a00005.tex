@@ -1,59 +1,61 @@
-\hypertarget{a00005}{\section{S\-Q\-Lite\-:\-:Mutex Class Reference}
-\label{a00005}\index{S\-Q\-Lite\-::\-Mutex@{S\-Q\-Lite\-::\-Mutex}}
+\hypertarget{a00005}{\section{S\-Q\-Lite\-:\-:Deferred\-Transaction Class Reference}
+\label{a00005}\index{S\-Q\-Lite\-::\-Deferred\-Transaction@{S\-Q\-Lite\-::\-Deferred\-Transaction}}
 }
 
 
-Helps with serializing access to a database connection.  
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} deferred transaction.  
 
 
 
 
-{\ttfamily \#include $<$Mutex.\-h$>$}
+{\ttfamily \#include $<$Transaction.\-h$>$}
 
+Inheritance diagram for S\-Q\-Lite\-:\-:Deferred\-Transaction\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00005}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{a00005_a56ba1f0c1411940ab52279497d15812a}{void \hyperlink{a00005_a56ba1f0c1411940ab52279497d15812a}{lock} () noexcept}\label{a00005_a56ba1f0c1411940ab52279497d15812a}
+\hyperlink{a00005_ae1b880ce4c3796565b6ea4d492f61202}{Deferred\-Transaction} (\hyperlink{a00004}{D\-B\-Connection} \&connection)
+\begin{DoxyCompactList}\small\item\em Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} deferred transaction. \end{DoxyCompactList}\item 
+\hypertarget{a00014_a9b251d84198cdc2c0208ad566fec0287}{virtual void \hyperlink{a00014_a9b251d84198cdc2c0208ad566fec0287}{commit} ()}\label{a00014_a9b251d84198cdc2c0208ad566fec0287}
 
-\begin{DoxyCompactList}\small\item\em Locks the mutex, blocks if the mutex is not available. \end{DoxyCompactList}\item 
-bool \hyperlink{a00005_a95b5ebd5fef0bd37b30e3867d60389f8}{try\-Lock} () noexcept
-\begin{DoxyCompactList}\small\item\em Tries to lock the mutex, returns if the mutex is not available. \end{DoxyCompactList}\item 
-\hypertarget{a00005_ad9238aeb94205ac18d67c9652dcc6ef9}{void \hyperlink{a00005_ad9238aeb94205ac18d67c9652dcc6ef9}{unlock} () noexcept}\label{a00005_ad9238aeb94205ac18d67c9652dcc6ef9}
-
-\begin{DoxyCompactList}\small\item\em Unlocks the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Commit the transaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Helps with serializing access to a database connection. 
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} deferred transaction. 
 
-Mutexes are only useful when threading mode is set to \char`\"{}\-Serialized\char`\"{}. 
-
-Definition at line 12 of file Mutex.\-h.
+Definition at line 57 of file Transaction.\-h.
 
 
 
-\subsection{Member Function Documentation}
-\hypertarget{a00005_a95b5ebd5fef0bd37b30e3867d60389f8}{\index{S\-Q\-Lite\-::\-Mutex@{S\-Q\-Lite\-::\-Mutex}!try\-Lock@{try\-Lock}}
-\index{try\-Lock@{try\-Lock}!SQLite::Mutex@{S\-Q\-Lite\-::\-Mutex}}
-\subsubsection[{try\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-Q\-Lite\-::\-Mutex\-::try\-Lock (
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00005_ae1b880ce4c3796565b6ea4d492f61202}{\index{S\-Q\-Lite\-::\-Deferred\-Transaction@{S\-Q\-Lite\-::\-Deferred\-Transaction}!Deferred\-Transaction@{Deferred\-Transaction}}
+\index{Deferred\-Transaction@{Deferred\-Transaction}!SQLite::DeferredTransaction@{S\-Q\-Lite\-::\-Deferred\-Transaction}}
+\subsubsection[{Deferred\-Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Deferred\-Transaction\-::\-Deferred\-Transaction (
 \begin{DoxyParamCaption}
-{}
+\item[{{\bf D\-B\-Connection} \&}]{connection}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00005_a95b5ebd5fef0bd37b30e3867d60389f8}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00005_ae1b880ce4c3796565b6ea4d492f61202}
 
 
-Tries to lock the mutex, returns if the mutex is not available. 
-
-\begin{DoxyReturn}{Returns}
-True if able to obtain lock. False otherwise. 
-\end{DoxyReturn}
+Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} deferred transaction. 
 
 
-Definition at line 22 of file Mutex.\-cpp.
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & the database connection to begin the transaction on \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 63 of file Transaction.\-h.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-src/Mutex.\-h\item 
-src/Mutex.\-cpp\end{DoxyCompactItemize}
+src/\hyperlink{a00034}{Transaction.\-h}\end{DoxyCompactItemize}

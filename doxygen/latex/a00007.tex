@@ -1,25 +1,61 @@
-\hypertarget{a00007}{\section{S\-Q\-Lite\-:\-:Row\-Iterator Class Reference}
-\label{a00007}\index{S\-Q\-Lite\-::\-Row\-Iterator@{S\-Q\-Lite\-::\-Row\-Iterator}}
+\hypertarget{a00007}{\section{S\-Q\-Lite\-:\-:Exclusive\-Transaction Class Reference}
+\label{a00007}\index{S\-Q\-Lite\-::\-Exclusive\-Transaction@{S\-Q\-Lite\-::\-Exclusive\-Transaction}}
 }
 
 
-Helps when iterating over rows in a \char`\"{}\-S\-E\-L\-E\-C\-T\char`\"{} statement.  
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} exclusive transaction.  
 
 
 
 
-{\ttfamily \#include $<$Statement.\-h$>$}
+{\ttfamily \#include $<$Transaction.\-h$>$}
 
+Inheritance diagram for S\-Q\-Lite\-:\-:Exclusive\-Transaction\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00007}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00007_a70f16f1e9764fd35b0c7e9fbf7314a1f}{Exclusive\-Transaction} (\hyperlink{a00004}{D\-B\-Connection} \&connection)
+\begin{DoxyCompactList}\small\item\em Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} exclusive transaction. \end{DoxyCompactList}\item 
+\hypertarget{a00014_a9b251d84198cdc2c0208ad566fec0287}{virtual void \hyperlink{a00014_a9b251d84198cdc2c0208ad566fec0287}{commit} ()}\label{a00014_a9b251d84198cdc2c0208ad566fec0287}
+
+\begin{DoxyCompactList}\small\item\em Commit the transaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Helps when iterating over rows in a \char`\"{}\-S\-E\-L\-E\-C\-T\char`\"{} statement. 
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} exclusive transaction. 
 
-Definition at line 392 of file Statement.\-h.
+Definition at line 83 of file Transaction.\-h.
 
 
 
-The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00007_a70f16f1e9764fd35b0c7e9fbf7314a1f}{\index{S\-Q\-Lite\-::\-Exclusive\-Transaction@{S\-Q\-Lite\-::\-Exclusive\-Transaction}!Exclusive\-Transaction@{Exclusive\-Transaction}}
+\index{Exclusive\-Transaction@{Exclusive\-Transaction}!SQLite::ExclusiveTransaction@{S\-Q\-Lite\-::\-Exclusive\-Transaction}}
+\subsubsection[{Exclusive\-Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Exclusive\-Transaction\-::\-Exclusive\-Transaction (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-B\-Connection} \&}]{connection}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00007_a70f16f1e9764fd35b0c7e9fbf7314a1f}
+
+
+Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} exclusive transaction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & the database connection to begin the transaction on \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 89 of file Transaction.\-h.
+
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 
-src/Statement.\-h\item 
-src/Statement.\-cpp\end{DoxyCompactItemize}
+src/\hyperlink{a00034}{Transaction.\-h}\end{DoxyCompactItemize}

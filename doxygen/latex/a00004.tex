@@ -1,27 +1,462 @@
-\hypertarget{a00004}{\section{S\-Q\-Lite\-:\-:Lock Class Reference}
-\label{a00004}\index{S\-Q\-Lite\-::\-Lock@{S\-Q\-Lite\-::\-Lock}}
+\hypertarget{a00004}{\section{S\-Q\-Lite\-:\-:D\-B\-Connection Class Reference}
+\label{a00004}\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
 }
 
 
-Locks the given \hyperlink{a00005}{Mutex}.  
+Class that represents a connection to a database.  
 
 
 
 
-{\ttfamily \#include $<$Mutex.\-h$>$}
+{\ttfamily \#include $<$D\-B\-Connection.\-h$>$}
 
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{a00004_a17fcc9926aa16b05b61bbce2613fe57a}{\hyperlink{a00004_a17fcc9926aa16b05b61bbce2613fe57a}{D\-B\-Connection} () noexcept}\label{a00004_a17fcc9926aa16b05b61bbce2613fe57a}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00004_ab3dbee23694c323481260b84ff901403}{D\-B\-Connection} (const \hyperlink{a00004}{D\-B\-Connection} \&other) noexcept
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00004_a41cc922e68047f709c25283b9d0176d5}{D\-B\-Connection} (\hyperlink{a00004}{D\-B\-Connection} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00004_acc17774b1187ee5b9706398d5ed7786b}{D\-B\-Connection} (const std\-::string \&filename, \hyperlink{a00038_a0d8721ab00cfcf85ba4eed715ccfecec}{Open\-Mode} mode=\hyperlink{a00038_a0d8721ab00cfcf85ba4eed715ccfececa70a2a84088d405a2e3f1e3accaa16723}{Open\-Mode\-::\-Read\-Write}$\vert$\hyperlink{a00038_a0d8721ab00cfcf85ba4eed715ccfececa686e697538050e4664636337cc3b834f}{Open\-Mode\-::\-Create}, const std\-::chrono\-::milliseconds timeout=D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T)
+\begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/8 filename. \end{DoxyCompactList}\item 
+\hyperlink{a00004_a62ddef495423a8da480a811c7f8bda1f}{D\-B\-Connection} (const std\-::string \&filename, const std\-::chrono\-::milliseconds timeout)
+\begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/8 filename. \end{DoxyCompactList}\item 
+\hyperlink{a00004_a801e3c745e0236c2b55b91c47cc73da8}{D\-B\-Connection} (const std\-::u16string \&filename, const std\-::chrono\-::milliseconds timeout=D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T)
+\begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/16 filename. \end{DoxyCompactList}\item 
+\hyperlink{a00004}{D\-B\-Connection} \& \hyperlink{a00004_abf18d7c37cf19fe46af7b6c7c0f0e8f2}{operator=} (const \hyperlink{a00004}{D\-B\-Connection} \&other) noexcept
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{a00004}{D\-B\-Connection} \& \hyperlink{a00004_a2d10766ea45bfb79f4959e62d432feeb}{operator=} (\hyperlink{a00004}{D\-B\-Connection} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{a00009}{Mutex} \hyperlink{a00004_afd4961c42310aebf750d28d3487a9425}{get\-Mutex} ()
+\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{a00009}{Mutex} that serializes access to the database. \end{DoxyCompactList}\item 
+\hyperlink{a00004_a794e7d4d92aa19bd67f3cff4aaf50020}{operator bool} () const noexcept
+\begin{DoxyCompactList}\small\item\em Specifies if the \hyperlink{a00004}{D\-B\-Connection} has a open database connection. \end{DoxyCompactList}\item 
+\hypertarget{a00004_a33f0b378dc147a3b2ff947e23994f71c}{sqlite3 $\ast$ \hyperlink{a00004_a33f0b378dc147a3b2ff947e23994f71c}{get\-Handle} () const noexcept}\label{a00004_a33f0b378dc147a3b2ff947e23994f71c}
+
+\begin{DoxyCompactList}\small\item\em Returns pointer to the underlying \char`\"{}sqlite3\char`\"{} object. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_aec696fc408d91e582d16727adff82445}{open} (const std\-::string \&filename, \hyperlink{a00038_a0d8721ab00cfcf85ba4eed715ccfecec}{Open\-Mode} mode=\hyperlink{a00038_a0d8721ab00cfcf85ba4eed715ccfececa70a2a84088d405a2e3f1e3accaa16723}{Open\-Mode\-::\-Read\-Write}$\vert$\hyperlink{a00038_a0d8721ab00cfcf85ba4eed715ccfececa686e697538050e4664636337cc3b834f}{Open\-Mode\-::\-Create})
+\begin{DoxyCompactList}\small\item\em Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filename argument. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_ab5f3dbc9164bd435f6770f8625c0a79c}{open} (const std\-::u16string \&filename)
+\begin{DoxyCompactList}\small\item\em Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filname argument. \end{DoxyCompactList}\item 
+long long \hyperlink{a00004_a0959fda218112d849700b7a9b58e0505}{row\-Id} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the rowid of the most recent successful \char`\"{}\-I\-N\-S\-E\-R\-T\char`\"{} into a rowid table or virtual table on database connection. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F $>$ }\\void \hyperlink{a00004_adace26a4acf443ac5c8cea3fe5c913e1}{create\-General\-Function} (const std\-::string \&name, F \&\&function, int is\-Deterministic=false, const Text\-Encoding text\-Encoding=S\-Q\-Lite\-::\-Text\-Encoding\-::\-U\-T\-F8, int nargs=-\/1)
+\begin{DoxyCompactList}\small\item\em Used to add S\-Q\-L functions or redefine the behavior of existing S\-Q\-L functions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename F $>$ }\\void \hyperlink{a00004_ae8758a2e46148ba81aa18b71e17149b5}{create\-Function} (const std\-::string \&name, F \&\&function, bool is\-Deterministic=false, const Text\-Encoding text\-Encoding=S\-Q\-Lite\-::\-Text\-Encoding\-::\-U\-T\-F8)
+\begin{DoxyCompactList}\small\item\em Used to add S\-Q\-L functions or redefine the behavior of existing S\-Q\-L functions. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename A $>$ }\\void \hyperlink{a00004_aafcfe62eae1364129c3346500f6ad5d2}{create\-Aggregate} (const std\-::string \&name, bool is\-Deterministic=false, const Text\-Encoding text\-Encoding=S\-Q\-Lite\-::\-Text\-Encoding\-::\-U\-T\-F8)
+\begin{DoxyCompactList}\small\item\em Used to add S\-Q\-L aggregate functions or redefine the behavior of existing S\-Q\-L aggregate functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{a00004}{D\-B\-Connection} \hyperlink{a00004_a5bd49a76155ffede0dca70f54c794159}{memory} ()
+\begin{DoxyCompactList}\small\item\em Create a purely in memory database. \end{DoxyCompactList}\item 
+static \hyperlink{a00004}{D\-B\-Connection} \hyperlink{a00004_a40beb5c2c30cd861a8b7c743b5e8881e}{wide\-Memory} ()
+\begin{DoxyCompactList}\small\item\em Create a purely in memory database with U\-T\-F-\/16 as the native byte order. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Locks the given \hyperlink{a00005}{Mutex}. 
+Class that represents a connection to a database. 
 
-Uses R\-A\-I\-I to help with locking and unlocking the given \hyperlink{a00005}{Mutex}. 
+\hyperlink{a00004}{D\-B\-Connection} is a wrapper around the \char`\"{}sqlite3\char`\"{} structure. 
 
-Definition at line 38 of file Mutex.\-h.
+Definition at line 24 of file D\-B\-Connection.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00004_ab3dbee23694c323481260b84ff901403}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
+\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-B\-Connection} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00004_ab3dbee23694c323481260b84ff901403}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00004}{D\-B\-Connection} object to use as source to initialize object with. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 11 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a41cc922e68047f709c25283b9d0176d5}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
+\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-B\-Connection} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00004_a41cc922e68047f709c25283b9d0176d5}
+
+
+Copy constructor. 
+
+Constructs a \hyperlink{a00004}{D\-B\-Connection} object with a copy of the contents of other using move semantics. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00004}{D\-B\-Connection} object to use as source to initialize object with. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 15 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_acc17774b1187ee5b9706398d5ed7786b}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
+\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename, }
+\item[{{\bf Open\-Mode}}]{mode = {\ttfamily {\bf Open\-Mode\-::\-Read\-Write}~$\vert$~{\bf Open\-Mode\-::\-Create}}, }
+\item[{const std\-::chrono\-::milliseconds}]{timeout = {\ttfamily DEFAULT\-\_\-TIMEOUT}}
+\end{DoxyParamCaption}
+)}}\label{a00004_acc17774b1187ee5b9706398d5ed7786b}
+
+
+Open the provided database U\-T\-F-\/8 filename. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & U\-T\-F-\/8 path/uri to the database database file \\
+\hline
+\mbox{\tt in}  & {\em mode} & file opening options specified by combination of Open\-Mode flags \\
+\hline
+\mbox{\tt in}  & {\em timeout} & amount of milliseconds to wait before returning \hyperlink{a00003}{S\-Q\-Lite\-::\-Busy\-Exception} when a table is locked \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 40 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a62ddef495423a8da480a811c7f8bda1f}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
+\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename, }
+\item[{const std\-::chrono\-::milliseconds}]{timeout}
+\end{DoxyParamCaption}
+)}}\label{a00004_a62ddef495423a8da480a811c7f8bda1f}
+
+
+Open the provided database U\-T\-F-\/8 filename. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & U\-T\-F-\/8 path/uri to the database database file \\
+\hline
+\mbox{\tt in}  & {\em timeout} & amount of milliseconds to wait before returning \hyperlink{a00003}{S\-Q\-Lite\-::\-Busy\-Exception} when a table is locked \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 53 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a801e3c745e0236c2b55b91c47cc73da8}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
+\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\begin{DoxyParamCaption}
+\item[{const std\-::u16string \&}]{filename, }
+\item[{const std\-::chrono\-::milliseconds}]{timeout = {\ttfamily DEFAULT\-\_\-TIMEOUT}}
+\end{DoxyParamCaption}
+)}}\label{a00004_a801e3c745e0236c2b55b91c47cc73da8}
+
+
+Open the provided database U\-T\-F-\/16 filename. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & U\-T\-F-\/16 path/uri to the database database file \\
+\hline
+\mbox{\tt in}  & {\em timeout} & Amount of milliseconds to wait before returning \hyperlink{a00003}{S\-Q\-Lite\-::\-Busy\-Exception} when a table is locked \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 65 of file D\-B\-Connection.\-cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00004_aafcfe62eae1364129c3346500f6ad5d2}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!create\-Aggregate@{create\-Aggregate}}
+\index{create\-Aggregate@{create\-Aggregate}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{create\-Aggregate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename A $>$ void S\-Q\-Lite\-::\-D\-B\-Connection\-::create\-Aggregate (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{bool}]{is\-Deterministic = {\ttfamily false}, }
+\item[{const Text\-Encoding}]{text\-Encoding = {\ttfamily SQLite\-:\-:TextEncoding\-:\-:UTF8}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00004_aafcfe62eae1364129c3346500f6ad5d2}
+
+
+Used to add S\-Q\-L aggregate functions or redefine the behavior of existing S\-Q\-L aggregate functions. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em A} & The class to use as the aggregate function. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name of the aggregate function to be used in an S\-Q\-L query \\
+\hline
+\mbox{\tt in}  & {\em is\-Deterministic} & specifies if the function will always return the same result given the same inputs within a single S\-Q\-L statement. \\
+\hline
+\mbox{\tt in}  & {\em text\-Encoding} & specifies the test encoding the S\-Q\-L function prefers for its parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 201 of file D\-B\-Connection.\-h.
+
+\hypertarget{a00004_ae8758a2e46148ba81aa18b71e17149b5}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!create\-Function@{create\-Function}}
+\index{create\-Function@{create\-Function}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{create\-Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename F $>$ void S\-Q\-Lite\-::\-D\-B\-Connection\-::create\-Function (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{F \&\&}]{function, }
+\item[{bool}]{is\-Deterministic = {\ttfamily false}, }
+\item[{const Text\-Encoding}]{text\-Encoding = {\ttfamily SQLite\-:\-:TextEncoding\-:\-:UTF8}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00004_ae8758a2e46148ba81aa18b71e17149b5}
+
+
+Used to add S\-Q\-L functions or redefine the behavior of existing S\-Q\-L functions. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name of the function to be used in an S\-Q\-L query \\
+\hline
+\mbox{\tt in}  & {\em function} & the implementation to the function \\
+\hline
+\mbox{\tt in}  & {\em is\-Deterministic} & specifies if the function will always return the same result given the same inputs within a single S\-Q\-L statement. \\
+\hline
+\mbox{\tt in}  & {\em text\-Encoding} & specifies the test encoding the S\-Q\-L function prefers for its parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file D\-B\-Connection.\-h.
+
+\hypertarget{a00004_adace26a4acf443ac5c8cea3fe5c913e1}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!create\-General\-Function@{create\-General\-Function}}
+\index{create\-General\-Function@{create\-General\-Function}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{create\-General\-Function}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename F $>$ void S\-Q\-Lite\-::\-D\-B\-Connection\-::create\-General\-Function (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{F \&\&}]{function, }
+\item[{int}]{is\-Deterministic = {\ttfamily false}, }
+\item[{const Text\-Encoding}]{text\-Encoding = {\ttfamily SQLite\-:\-:TextEncoding\-:\-:UTF8}, }
+\item[{int}]{nargs = {\ttfamily -\/1}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00004_adace26a4acf443ac5c8cea3fe5c913e1}
+
+
+Used to add S\-Q\-L functions or redefine the behavior of existing S\-Q\-L functions. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & The name of the function to be used in an S\-Q\-L query \\
+\hline
+\mbox{\tt in}  & {\em function} & the implementation to the function \\
+\hline
+\mbox{\tt in}  & {\em is\-Deterministic} & specifies if the function will always return the same result given the same inputs within a single S\-Q\-L statement. \\
+\hline
+\mbox{\tt in}  & {\em text\-Encoding} & specifies the text encoding the S\-Q\-L function prefers for its parameters. \\
+\hline
+\mbox{\tt in}  & {\em nargs} & the number of arguments that the S\-Q\-L function takes. -\/1 means the S\-Q\-L function can take any number of arguments. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 130 of file D\-B\-Connection.\-h.
+
+\hypertarget{a00004_afd4961c42310aebf750d28d3487a9425}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!get\-Mutex@{get\-Mutex}}
+\index{get\-Mutex@{get\-Mutex}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{get\-Mutex}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Mutex} S\-Q\-Lite\-::\-D\-B\-Connection\-::get\-Mutex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{a00004_afd4961c42310aebf750d28d3487a9425}
+
+
+Returns a \hyperlink{a00009}{Mutex} that serializes access to the database. 
+
+\begin{DoxyReturn}{Returns}
+A \hyperlink{a00009}{Mutex} object for the database connection. 
+\end{DoxyReturn}
+
+
+Definition at line 83 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a5bd49a76155ffede0dca70f54c794159}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!memory@{memory}}
+\index{memory@{memory}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-B\-Connection} S\-Q\-Lite\-::\-D\-B\-Connection\-::memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{a00004_a5bd49a76155ffede0dca70f54c794159}
+
+
+Create a purely in memory database. 
+
+\begin{DoxyReturn}{Returns}
+a purely in memory \hyperlink{a00004}{S\-Q\-Lite\-::\-D\-B\-Connection} 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_aec696fc408d91e582d16727adff82445}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!open@{open}}
+\index{open@{open}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-D\-B\-Connection\-::open (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{filename, }
+\item[{{\bf Open\-Mode}}]{mode = {\ttfamily {\bf Open\-Mode\-::\-Read\-Write}~$\vert$~{\bf Open\-Mode\-::\-Create}}}
+\end{DoxyParamCaption}
+)}}\label{a00004_aec696fc408d91e582d16727adff82445}
+
+
+Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filename argument. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & path to \hyperlink{a00038}{S\-Q\-Lite} file \\
+\hline
+\mbox{\tt in}  & {\em mode} & specifies the privileges to use when opening the database. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 102 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_ab5f3dbc9164bd435f6770f8625c0a79c}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!open@{open}}
+\index{open@{open}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-D\-B\-Connection\-::open (
+\begin{DoxyParamCaption}
+\item[{const std\-::u16string \&}]{filename}
+\end{DoxyParamCaption}
+)}}\label{a00004_ab5f3dbc9164bd435f6770f8625c0a79c}
+
+
+Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filname argument. 
+
+The database file will have U\-T\-F-\/16 native byte order. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & path to \hyperlink{a00038}{S\-Q\-Lite} file \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 114 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a794e7d4d92aa19bd67f3cff4aaf50020}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}}\label{a00004_a794e7d4d92aa19bd67f3cff4aaf50020}
+
+
+Specifies if the \hyperlink{a00004}{D\-B\-Connection} has a open database connection. 
+
+\begin{DoxyReturn}{Returns}
+Returns true if the \hyperlink{a00004}{D\-B\-Connection} has a open database connection associated associated with it. 
+\end{DoxyReturn}
+
+
+Definition at line 92 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_abf18d7c37cf19fe46af7b6c7c0f0e8f2}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-B\-Connection} \& S\-Q\-Lite\-::\-D\-B\-Connection\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-B\-Connection} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00004_abf18d7c37cf19fe46af7b6c7c0f0e8f2}
+
+
+Copy assignment operator. 
+
+Replaces the contents with those of other. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00004}{D\-B\-Connection} object to use as source to initialize object with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+
+
+Definition at line 19 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a2d10766ea45bfb79f4959e62d432feeb}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-B\-Connection} \& S\-Q\-Lite\-::\-D\-B\-Connection\-::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-B\-Connection} \&\&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00004_a2d10766ea45bfb79f4959e62d432feeb}
+
+
+Move assignment operator. 
+
+Replaces the contents with those of other using move semantics. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00004}{D\-B\-Connection} object to use as source to initialize object with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a0959fda218112d849700b7a9b58e0505}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!row\-Id@{row\-Id}}
+\index{row\-Id@{row\-Id}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{row\-Id}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-Q\-Lite\-::\-D\-B\-Connection\-::row\-Id (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00004_a0959fda218112d849700b7a9b58e0505}
+
+
+Returns the rowid of the most recent successful \char`\"{}\-I\-N\-S\-E\-R\-T\char`\"{} into a rowid table or virtual table on database connection. 
+
+\begin{DoxyReturn}{Returns}
+rowid of the most recent successful \char`\"{}\-I\-N\-S\-E\-R\-T\char`\"{} into the database, or 0 if there was none. 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file D\-B\-Connection.\-cpp.
+
+\hypertarget{a00004_a40beb5c2c30cd861a8b7c743b5e8881e}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!wide\-Memory@{wide\-Memory}}
+\index{wide\-Memory@{wide\-Memory}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\subsubsection[{wide\-Memory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-B\-Connection} S\-Q\-Lite\-::\-D\-B\-Connection\-::wide\-Memory (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{a00004_a40beb5c2c30cd861a8b7c743b5e8881e}
+
+
+Create a purely in memory database with U\-T\-F-\/16 as the native byte order. 
+
+\begin{DoxyReturn}{Returns}
+a purely in memory \hyperlink{a00004}{S\-Q\-Lite\-::\-D\-B\-Connection} 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file D\-B\-Connection.\-cpp.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-src/Mutex.\-h\item 
-src/Mutex.\-cpp\end{DoxyCompactItemize}
+src/\hyperlink{a00022}{D\-B\-Connection.\-h}\item 
+src/D\-B\-Connection.\-cpp\end{DoxyCompactItemize}

@@ -1,0 +1,1150 @@
+\hypertarget{a00013}{\section{S\-Q\-Lite\-:\-:Statement Class Reference}
+\label{a00013}\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}}
+}
+
+
+Represents a single S\-Q\-L statement that has been compiled into binary form and is ready to be evaluated, aka \char`\"{}sqlite3\-\_\-stmt\char`\"{}.  
+
+
+
+
+{\ttfamily \#include $<$Statement.\-h$>$}
+
+Inheritance diagram for S\-Q\-Lite\-:\-:Statement\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00013}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00013_a1c724c3934925a5988aa83909857589c}{Statement} () noexcept
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Values$>$ }\\\hyperlink{a00013_ac4f1af971f094f30c445bcc18ffc4e27}{Statement} (const \hyperlink{a00004}{D\-B\-Connection} \&connection, const std\-::string \&text, Values \&\&...values)
+\begin{DoxyCompactList}\small\item\em Creates, prepares, and binds values into an S\-Q\-L statement. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Values$>$ }\\\hyperlink{a00013_a3857ee340dd2769fafe10259cf4858a3}{Statement} (const \hyperlink{a00004}{D\-B\-Connection} \&connection, const std\-::u16string \&text, Values \&\&...values)
+\begin{DoxyCompactList}\small\item\em Creates, prepares, and binds values into an S\-Q\-L statement. \end{DoxyCompactList}\item 
+\hyperlink{a00013_a3b7793f1490a321159690cf096ec74d6}{operator bool} () const noexcept
+\begin{DoxyCompactList}\small\item\em Used to specify if the \hyperlink{a00013}{Statement} object has a prepared \hyperlink{a00038}{S\-Q\-Lite} statement. \end{DoxyCompactList}\item 
+sqlite3\-\_\-stmt $\ast$ \hyperlink{a00013_a9052c143879aca6cf253925336464a8b}{get\-Handle} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns pointer to the underlying \char`\"{}sqlite3\-\_\-stmt\char`\"{} object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_a1ecd8e2636b542314521eb68fbf1000e}{prepare} (\hyperlink{a00004}{D\-B\-Connection} const \&connection, const std\-::string \&text, Values \&\&...values)
+\begin{DoxyCompactList}\small\item\em Turn an S\-Q\-L query into byte code. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_a0d422eadca4b2e3f2e1b6e13af69f3cc}{prepare} (const \hyperlink{a00004}{D\-B\-Connection} \&connection, const std\-::u16string \&text, Values \&\&...values)
+\begin{DoxyCompactList}\small\item\em Turn an S\-Q\-L query into byte code. \end{DoxyCompactList}\item 
+bool \hyperlink{a00013_a6251d1119e978d1366113b4aa30899ef}{step} () const 
+\begin{DoxyCompactList}\small\item\em Evaluates a prepared statement. \end{DoxyCompactList}\item 
+int \hyperlink{a00013_a9b489a2dc2707543eba55ce1e5d3682c}{execute} () const 
+\begin{DoxyCompactList}\small\item\em Executes a prepared statement and will return the number of changes to the database. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_a0d4999fce90145852287c18c0d218ac6}{bind} (const int index, const int value) const 
+\begin{DoxyCompactList}\small\item\em Binds an integer value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_ace8156c735b1e630e82a3840910e02cf}{bind} (const int index, const double value) const 
+\begin{DoxyCompactList}\small\item\em Binds an double value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_aab00e4b2d9a0d85ccaf2b058d0cc9523}{bind} (const int index, const void $\ast$const value, const int size, \hyperlink{a00038_a32877e51b309dd8f2a28c21c0ba4a6fd}{Bind\-Type} type=\hyperlink{a00038_a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475}{Bind\-Type\-::\-Transient}) const 
+\begin{DoxyCompactList}\small\item\em Binds an blob value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_afc5e0d9485bfedc71e9863cdb3c3d11a}{bind} (const int index, const \hyperlink{a00002}{Blob} \&value) const 
+\begin{DoxyCompactList}\small\item\em Binds an \hyperlink{a00002}{Blob} value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_a3ed628586d99205a1443790e7dc1e36f}{bind} (const int index, const char $\ast$const value, const int size=-\/1, \hyperlink{a00038_a32877e51b309dd8f2a28c21c0ba4a6fd}{Bind\-Type} type=\hyperlink{a00038_a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475}{Bind\-Type\-::\-Transient}) const 
+\begin{DoxyCompactList}\small\item\em Binds an string value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_a6b983503e072b56f2255b140dd271381}{bind} (const int index, const char16\-\_\-t $\ast$const value, const int size=-\/1, \hyperlink{a00038_a32877e51b309dd8f2a28c21c0ba4a6fd}{Bind\-Type} type=\hyperlink{a00038_a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475}{Bind\-Type\-::\-Transient}) const 
+\begin{DoxyCompactList}\small\item\em Binds an U\-T\-F-\/16 string value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_a2e33406ed4170291b9e3da490383a224}{bind} (const int index, const std\-::string \&value) const 
+\begin{DoxyCompactList}\small\item\em Binds an string value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_a0a2d97dc865a1ebefb58f982fe5689a0}{bind} (const int index, const std\-::u16string \&value) const 
+\begin{DoxyCompactList}\small\item\em Binds an U\-T\-F-\/16 string value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{a00013_a30d8dec0baa340a358ce65a49ace23d8}{bind\-By\-Name} (const std\-::string \&name, T \&\&value)
+\begin{DoxyCompactList}\small\item\em Binds an value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_a9b04cc93fd0242ea34d3e9e3a9cd88d3}{bind\-All} (Values \&\&...values) const 
+\begin{DoxyCompactList}\small\item\em Binds values to parameters in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_a7139b0e838a43de61f03367a8631ee76}{clear\-Bindings} (Values \&\&...values) const 
+\begin{DoxyCompactList}\small\item\em Resets all S\-Q\-L parameters to N\-U\-L\-L. \end{DoxyCompactList}\item 
+void \hyperlink{a00013_a13a776f0e97da001cdcac81c13bff4c1}{reset} () const 
+\begin{DoxyCompactList}\small\item\em Resets a prepared statement object back to its initial state. \end{DoxyCompactList}\item 
+int \hyperlink{a00010_a82c5bc45048b8328a2fcc9bb4ff975f2}{get\-Int} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as an integer. \end{DoxyCompactList}\item 
+int \hyperlink{a00010_a87dd8234c2bd5f19466813f8a68ab80a}{get\-Int} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as an integer. \end{DoxyCompactList}\item 
+int64\-\_\-t \hyperlink{a00010_adb7b9705a4638d6d5af5ca26dfa474ff}{get\-Int64} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a 64-\/bit integer. \end{DoxyCompactList}\item 
+int64\-\_\-t \hyperlink{a00010_aea6d24bb9247bfc52fe77d62be961dd2}{get\-Int64} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a 64-\/bit integer. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{a00010_a971fb706b9215a89532ac48640f94832}{get\-U\-Int} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as an unsigned integer. \end{DoxyCompactList}\item 
+unsigned int \hyperlink{a00010_a18315a8379249158c3f827441e8f6de0}{get\-U\-Int} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as an unsigned integer. \end{DoxyCompactList}\item 
+double \hyperlink{a00010_a679e56078c78e01c99fa08ad0b7ee782}{get\-Double} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a double. \end{DoxyCompactList}\item 
+double \hyperlink{a00010_a45e9dd813439e8cda7608e18c1ccce5f}{get\-Double} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a double. \end{DoxyCompactList}\item 
+const \hyperlink{a00002}{Blob} \hyperlink{a00010_a80028dc9f221648fe2398b40bd380c31}{get\-Blob} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a Blob object. \end{DoxyCompactList}\item 
+const \hyperlink{a00002}{Blob} \hyperlink{a00010_a4e50d9ec365c547b5edb7d062aeba72b}{get\-Blob} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a Blob object. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{a00010_a0920d021f6962f75e7b555e3f20fc0fc}{get\-String} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a string. \end{DoxyCompactList}\item 
+const std\-::string \hyperlink{a00010_a44f9f5da46aa91b869fe26a188e803fa}{get\-String} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a string. \end{DoxyCompactList}\item 
+const std\-::u16string \hyperlink{a00010_a2b48f9e2ffbcfe787d85b4372a7ee29d}{get\-U16\-String} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a U\-T\-F-\/16 string. \end{DoxyCompactList}\item 
+const std\-::u16string \hyperlink{a00010_ad6024ad6e74ee1ac47ad0ce79f905026}{get\-U16\-String} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a U\-T\-F-\/16 string. \end{DoxyCompactList}\item 
+\hyperlink{a00015}{Value} \hyperlink{a00010_a41fcbc5da6eb3fe6fc75e4faed208fc6}{get\-Value} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a Value object. \end{DoxyCompactList}\item 
+\hyperlink{a00015}{Value} \hyperlink{a00010_ad352a7124ee46d756462c8a1b014599a}{get\-Value} (const std\-::string \&name) const
+\begin{DoxyCompactList}\small\item\em Returns the specified column value as a Value object. \end{DoxyCompactList}\item 
+int \hyperlink{a00010_aeb571e9157ef46c42ed48fc229b7842d}{get\-Bytes} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the size in bytes of the column value. \end{DoxyCompactList}\item 
+int \hyperlink{a00010_ad183a562774f9590273bf35c6e232a1a}{get\-Bytes} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the size in bytes of the column value. \end{DoxyCompactList}\item 
+\hyperlink{a00038_ad7a8ff5f375eca25eb6e3a51d746a04c}{Type} \hyperlink{a00010_a0450ea397b1a9d8dd636b82c8757d33e}{get\-Type} (const int column) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the type of the specified column. \end{DoxyCompactList}\item 
+\hyperlink{a00038_ad7a8ff5f375eca25eb6e3a51d746a04c}{Type} \hyperlink{a00010_ae4f049a45c69b9e1bf6db4cf63699f64}{get\-Type} (const std\-::string \&name) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the type of the specified column. \end{DoxyCompactList}\item 
+int \hyperlink{a00010_a9e6b9d0d99dea8964a34a3c2f08e99bc}{get\-Column\-Count} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the number of columns in the result set returned by the prepared statement. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{a00010_a5004961d65336631d45de411ffb87cd5}{get\-Column\-Name} (const int index) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the name assigned to a particular column. \end{DoxyCompactList}\item 
+const char16\-\_\-t $\ast$ \hyperlink{a00010_af46d30137ad020b1e22ad703810ea002}{get\-Column\-Wide\-Name} (const int index) const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the name assigned to a particular column. \end{DoxyCompactList}\item 
+int \hyperlink{a00010_ae7eaa050a97cda893e9737bca416f0cb}{get\-Column\-Index} (const std\-::string \&name) const
+\begin{DoxyCompactList}\small\item\em Returns the position of a column with the specified name. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a single S\-Q\-L statement that has been compiled into binary form and is ready to be evaluated, aka \char`\"{}sqlite3\-\_\-stmt\char`\"{}. 
+
+Definition at line 341 of file Statement.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00013_a1c724c3934925a5988aa83909857589c}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!Statement@{Statement}}
+\index{Statement@{Statement}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{Statement}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Statement\-::\-Statement (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00013_a1c724c3934925a5988aa83909857589c}
+
+
+Default constructor. 
+
+Constructs an un-\/prepared Statment object. 
+
+Definition at line 20 of file Statement.\-cpp.
+
+\hypertarget{a00013_ac4f1af971f094f30c445bcc18ffc4e27}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!Statement@{Statement}}
+\index{Statement@{Statement}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{Statement}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ S\-Q\-Lite\-::\-Statement\-::\-Statement (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-B\-Connection} \&}]{connection, }
+\item[{const std\-::string \&}]{text, }
+\item[{Values \&\&...}]{values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_ac4f1af971f094f30c445bcc18ffc4e27}
+
+
+Creates, prepares, and binds values into an S\-Q\-L statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & a database connection to execute the statement on \\
+\hline
+\mbox{\tt in}  & {\em text} & the S\-Q\-L query \\
+\hline
+\mbox{\tt in}  & {\em values} & possible values to bind to S\-Q\-L query if containing bind parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 355 of file Statement.\-h.
+
+\hypertarget{a00013_a3857ee340dd2769fafe10259cf4858a3}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!Statement@{Statement}}
+\index{Statement@{Statement}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{Statement}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ S\-Q\-Lite\-::\-Statement\-::\-Statement (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-B\-Connection} \&}]{connection, }
+\item[{const std\-::u16string \&}]{text, }
+\item[{Values \&\&...}]{values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_a3857ee340dd2769fafe10259cf4858a3}
+
+
+Creates, prepares, and binds values into an S\-Q\-L statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & a database connection to execute the statement on \\
+\hline
+\mbox{\tt in}  & {\em text} & U\-T\-F-\/16 encoded S\-Q\-L query \\
+\hline
+\mbox{\tt in}  & {\em values} & possible values to bind to S\-Q\-L query if containing bind parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 372 of file Statement.\-h.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{a00013_a0d4999fce90145852287c18c0d218ac6}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const int}]{value}
+\end{DoxyParamCaption}
+) const}}\label{a00013_a0d4999fce90145852287c18c0d218ac6}
+
+
+Binds an integer value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Statement.\-cpp.
+
+\hypertarget{a00013_ace8156c735b1e630e82a3840910e02cf}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const double}]{value}
+\end{DoxyParamCaption}
+) const}}\label{a00013_ace8156c735b1e630e82a3840910e02cf}
+
+
+Binds an double value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Statement.\-cpp.
+
+\hypertarget{a00013_aab00e4b2d9a0d85ccaf2b058d0cc9523}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const void $\ast$const}]{value, }
+\item[{const int}]{size, }
+\item[{{\bf Bind\-Type}}]{type = {\ttfamily {\bf Bind\-Type\-::\-Transient}}}
+\end{DoxyParamCaption}
+) const}}\label{a00013_aab00e4b2d9a0d85ccaf2b058d0cc9523}
+
+
+Binds an blob value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\mbox{\tt in}  & {\em size} & in bytes the size of the blob object \\
+\hline
+\mbox{\tt in}  & {\em type} & the way to bind this parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 84 of file Statement.\-cpp.
+
+\hypertarget{a00013_afc5e0d9485bfedc71e9863cdb3c3d11a}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const {\bf Blob} \&}]{value}
+\end{DoxyParamCaption}
+) const}}\label{a00013_afc5e0d9485bfedc71e9863cdb3c3d11a}
+
+
+Binds an \hyperlink{a00002}{Blob} value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 92 of file Statement.\-cpp.
+
+\hypertarget{a00013_a3ed628586d99205a1443790e7dc1e36f}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const char $\ast$const}]{value, }
+\item[{const int}]{size = {\ttfamily -\/1}, }
+\item[{{\bf Bind\-Type}}]{type = {\ttfamily {\bf Bind\-Type\-::\-Transient}}}
+\end{DoxyParamCaption}
+) const}}\label{a00013_a3ed628586d99205a1443790e7dc1e36f}
+
+
+Binds an string value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\mbox{\tt in}  & {\em size} & the number of bytes of the value. \\
+\hline
+\mbox{\tt in}  & {\em type} & the way to bind this parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 100 of file Statement.\-cpp.
+
+\hypertarget{a00013_a6b983503e072b56f2255b140dd271381}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const char16\-\_\-t $\ast$const}]{value, }
+\item[{const int}]{size = {\ttfamily -\/1}, }
+\item[{{\bf Bind\-Type}}]{type = {\ttfamily {\bf Bind\-Type\-::\-Transient}}}
+\end{DoxyParamCaption}
+) const}}\label{a00013_a6b983503e072b56f2255b140dd271381}
+
+
+Binds an U\-T\-F-\/16 string value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\mbox{\tt in}  & {\em size} & the number of bytes of the value. \\
+\hline
+\mbox{\tt in}  & {\em type} & the way to bind this parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 108 of file Statement.\-cpp.
+
+\hypertarget{a00013_a2e33406ed4170291b9e3da490383a224}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const std\-::string \&}]{value}
+\end{DoxyParamCaption}
+) const}}\label{a00013_a2e33406ed4170291b9e3da490383a224}
+
+
+Binds an string value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 116 of file Statement.\-cpp.
+
+\hypertarget{a00013_a0a2d97dc865a1ebefb58f982fe5689a0}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind@{bind}}
+\index{bind@{bind}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::bind (
+\begin{DoxyParamCaption}
+\item[{const int}]{index, }
+\item[{const std\-::u16string \&}]{value}
+\end{DoxyParamCaption}
+) const}}\label{a00013_a0a2d97dc865a1ebefb58f982fe5689a0}
+
+
+Binds an U\-T\-F-\/16 string value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & specifies the index of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 121 of file Statement.\-cpp.
+
+\hypertarget{a00013_a9b04cc93fd0242ea34d3e9e3a9cd88d3}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind\-All@{bind\-All}}
+\index{bind\-All@{bind\-All}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind\-All}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ void S\-Q\-Lite\-::\-Statement\-::bind\-All (
+\begin{DoxyParamCaption}
+\item[{Values \&\&...}]{values}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_a9b04cc93fd0242ea34d3e9e3a9cd88d3}
+
+
+Binds values to parameters in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em values} & the values to bind to S\-Q\-L parameters \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 502 of file Statement.\-h.
+
+\hypertarget{a00013_a30d8dec0baa340a358ce65a49ace23d8}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!bind\-By\-Name@{bind\-By\-Name}}
+\index{bind\-By\-Name@{bind\-By\-Name}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{bind\-By\-Name}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void S\-Q\-Lite\-::\-Statement\-::bind\-By\-Name (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name, }
+\item[{T \&\&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_a30d8dec0baa340a358ce65a49ace23d8}
+
+
+Binds an value to a parameter in an S\-Q\-L prepared statement. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & specifies the name of the S\-Q\-L parameter to be set \\
+\hline
+\mbox{\tt in}  & {\em value} & the value to bind to the parameter. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 492 of file Statement.\-h.
+
+\hypertarget{a00013_a7139b0e838a43de61f03367a8631ee76}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!clear\-Bindings@{clear\-Bindings}}
+\index{clear\-Bindings@{clear\-Bindings}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{clear\-Bindings}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ void S\-Q\-Lite\-::\-Statement\-::clear\-Bindings (
+\begin{DoxyParamCaption}
+\item[{Values \&\&...}]{values}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_a7139b0e838a43de61f03367a8631ee76}
+
+
+Resets all S\-Q\-L parameters to N\-U\-L\-L. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em values} & Possible values to to bind to S\-Q\-L parameters. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 511 of file Statement.\-h.
+
+\hypertarget{a00013_a9b489a2dc2707543eba55ce1e5d3682c}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!execute@{execute}}
+\index{execute@{execute}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{execute}]{\setlength{\rightskip}{0pt plus 5cm}int S\-Q\-Lite\-::\-Statement\-::execute (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{a00013_a9b489a2dc2707543eba55ce1e5d3682c}
+
+
+Executes a prepared statement and will return the number of changes to the database. 
+
+\begin{DoxyReturn}{Returns}
+The number of changes to the database. 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file Statement.\-cpp.
+
+\hypertarget{a00010_a80028dc9f221648fe2398b40bd380c31}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Blob@{get\-Blob}}
+\index{get\-Blob@{get\-Blob}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Blob}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Blob} {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Blob (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a80028dc9f221648fe2398b40bd380c31}
+
+
+Returns the specified column value as a Blob object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file Statement.\-h.
+
+\hypertarget{a00010_a4e50d9ec365c547b5edb7d062aeba72b}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Blob@{get\-Blob}}
+\index{get\-Blob@{get\-Blob}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Blob}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Blob} {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Blob (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a4e50d9ec365c547b5edb7d062aeba72b}
+
+
+Returns the specified column value as a Blob object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 126 of file Statement.\-h.
+
+\hypertarget{a00010_aeb571e9157ef46c42ed48fc229b7842d}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Bytes@{get\-Bytes}}
+\index{get\-Bytes@{get\-Bytes}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Bytes (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_aeb571e9157ef46c42ed48fc229b7842d}
+
+
+Returns the size in bytes of the column value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size in bytes of the column value 
+\end{DoxyReturn}
+
+
+Definition at line 196 of file Statement.\-h.
+
+\hypertarget{a00010_ad183a562774f9590273bf35c6e232a1a}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Bytes@{get\-Bytes}}
+\index{get\-Bytes@{get\-Bytes}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Bytes (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_ad183a562774f9590273bf35c6e232a1a}
+
+
+Returns the size in bytes of the column value. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size in bytes of the column value 
+\end{DoxyReturn}
+
+
+Definition at line 205 of file Statement.\-h.
+
+\hypertarget{a00010_a9e6b9d0d99dea8964a34a3c2f08e99bc}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Column\-Count@{get\-Column\-Count}}
+\index{get\-Column\-Count@{get\-Column\-Count}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Column\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Column\-Count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a9e6b9d0d99dea8964a34a3c2f08e99bc}
+
+
+Returns the number of columns in the result set returned by the prepared statement. 
+
+If this method returns 0, that means the prepared statment returns no data (for example an U\-P\-D\-A\-T\-E). \begin{DoxyReturn}{Returns}
+The number of columns in the result set. 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file Statement.\-h.
+
+\hypertarget{a00010_ae7eaa050a97cda893e9737bca416f0cb}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Column\-Index@{get\-Column\-Index}}
+\index{get\-Column\-Index@{get\-Column\-Index}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Column\-Index}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Column\-Index (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}}\label{a00010_ae7eaa050a97cda893e9737bca416f0cb}
+
+
+Returns the position of a column with the specified name. 
+
+\begin{DoxyReturn}{Returns}
+The position of the column 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em S\-Q\-Lite\-X\-X\-Exception} & if no column with specified name was found \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 261 of file Statement.\-h.
+
+\hypertarget{a00010_a5004961d65336631d45de411ffb87cd5}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Column\-Name@{get\-Column\-Name}}
+\index{get\-Column\-Name@{get\-Column\-Name}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Column\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const char$\ast$ {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Column\-Name (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a5004961d65336631d45de411ffb87cd5}
+
+
+Returns the name assigned to a particular column. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & the position of the column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The name of the specified column. 
+\end{DoxyReturn}
+
+
+Definition at line 243 of file Statement.\-h.
+
+\hypertarget{a00010_af46d30137ad020b1e22ad703810ea002}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Column\-Wide\-Name@{get\-Column\-Wide\-Name}}
+\index{get\-Column\-Wide\-Name@{get\-Column\-Wide\-Name}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Column\-Wide\-Name}]{\setlength{\rightskip}{0pt plus 5cm}const char16\-\_\-t$\ast$ {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Column\-Wide\-Name (
+\begin{DoxyParamCaption}
+\item[{const int}]{index}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_af46d30137ad020b1e22ad703810ea002}
+
+
+Returns the name assigned to a particular column. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em index} & the position of the column \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The name of the specified column. 
+\end{DoxyReturn}
+
+
+Definition at line 252 of file Statement.\-h.
+
+\hypertarget{a00010_a679e56078c78e01c99fa08ad0b7ee782}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Double@{get\-Double}}
+\index{get\-Double@{get\-Double}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Double}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Double (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a679e56078c78e01c99fa08ad0b7ee782}
+
+
+Returns the specified column value as a double. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file Statement.\-h.
+
+\hypertarget{a00010_a45e9dd813439e8cda7608e18c1ccce5f}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Double@{get\-Double}}
+\index{get\-Double@{get\-Double}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Double}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Double (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a45e9dd813439e8cda7608e18c1ccce5f}
+
+
+Returns the specified column value as a double. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 106 of file Statement.\-h.
+
+\hypertarget{a00013_a9052c143879aca6cf253925336464a8b}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Handle@{get\-Handle}}
+\index{get\-Handle@{get\-Handle}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Handle}]{\setlength{\rightskip}{0pt plus 5cm}sqlite3\-\_\-stmt $\ast$ S\-Q\-Lite\-::\-Statement\-::get\-Handle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00013_a9052c143879aca6cf253925336464a8b}
+
+
+Returns pointer to the underlying \char`\"{}sqlite3\-\_\-stmt\char`\"{} object. 
+
+The returned sqlite3\-\_\-stmt object pointer will be automatically deleted on the destruction of the parent \hyperlink{a00013}{Statement} object. 
+
+Definition at line 32 of file Statement.\-cpp.
+
+\hypertarget{a00010_a82c5bc45048b8328a2fcc9bb4ff975f2}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Int@{get\-Int}}
+\index{get\-Int@{get\-Int}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Int (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a82c5bc45048b8328a2fcc9bb4ff975f2}
+
+
+Returns the specified column value as an integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 40 of file Statement.\-h.
+
+\hypertarget{a00010_a87dd8234c2bd5f19466813f8a68ab80a}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Int@{get\-Int}}
+\index{get\-Int@{get\-Int}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Int (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a87dd8234c2bd5f19466813f8a68ab80a}
+
+
+Returns the specified column value as an integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Statement.\-h.
+
+\hypertarget{a00010_adb7b9705a4638d6d5af5ca26dfa474ff}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Int64@{get\-Int64}}
+\index{get\-Int64@{get\-Int64}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Int64}]{\setlength{\rightskip}{0pt plus 5cm}int64\-\_\-t {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Int64 (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_adb7b9705a4638d6d5af5ca26dfa474ff}
+
+
+Returns the specified column value as a 64-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 59 of file Statement.\-h.
+
+\hypertarget{a00010_aea6d24bb9247bfc52fe77d62be961dd2}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Int64@{get\-Int64}}
+\index{get\-Int64@{get\-Int64}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Int64}]{\setlength{\rightskip}{0pt plus 5cm}int64\-\_\-t {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Int64 (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_aea6d24bb9247bfc52fe77d62be961dd2}
+
+
+Returns the specified column value as a 64-\/bit integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file Statement.\-h.
+
+\hypertarget{a00010_a0920d021f6962f75e7b555e3f20fc0fc}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-String@{get\-String}}
+\index{get\-String@{get\-String}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-String}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-String (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a0920d021f6962f75e7b555e3f20fc0fc}
+
+
+Returns the specified column value as a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 136 of file Statement.\-h.
+
+\hypertarget{a00010_a44f9f5da46aa91b869fe26a188e803fa}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-String@{get\-String}}
+\index{get\-String@{get\-String}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-String}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-String (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a44f9f5da46aa91b869fe26a188e803fa}
+
+
+Returns the specified column value as a string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 146 of file Statement.\-h.
+
+\hypertarget{a00010_a0450ea397b1a9d8dd636b82c8757d33e}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Type (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a0450ea397b1a9d8dd636b82c8757d33e}
+
+
+Returns the type of the specified column. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The S\-Q\-Lite\-X\-X\-::\-Type value for a column 
+\end{DoxyReturn}
+
+
+Definition at line 215 of file Statement.\-h.
+
+\hypertarget{a00010_ae4f049a45c69b9e1bf6db4cf63699f64}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Type@{get\-Type}}
+\index{get\-Type@{get\-Type}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Type (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_ae4f049a45c69b9e1bf6db4cf63699f64}
+
+
+Returns the type of the specified column. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The S\-Q\-Lite\-X\-X\-::\-Type value for a column 
+\end{DoxyReturn}
+
+
+Definition at line 224 of file Statement.\-h.
+
+\hypertarget{a00010_a2b48f9e2ffbcfe787d85b4372a7ee29d}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-U16\-String@{get\-U16\-String}}
+\index{get\-U16\-String@{get\-U16\-String}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-U16\-String}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::u16string {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-U16\-String (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a2b48f9e2ffbcfe787d85b4372a7ee29d}
+
+
+Returns the specified column value as a U\-T\-F-\/16 string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 156 of file Statement.\-h.
+
+\hypertarget{a00010_ad6024ad6e74ee1ac47ad0ce79f905026}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-U16\-String@{get\-U16\-String}}
+\index{get\-U16\-String@{get\-U16\-String}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-U16\-String}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::u16string {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-U16\-String (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_ad6024ad6e74ee1ac47ad0ce79f905026}
+
+
+Returns the specified column value as a U\-T\-F-\/16 string. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 166 of file Statement.\-h.
+
+\hypertarget{a00010_a971fb706b9215a89532ac48640f94832}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-U\-Int@{get\-U\-Int}}
+\index{get\-U\-Int@{get\-U\-Int}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-U\-Int}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-U\-Int (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a971fb706b9215a89532ac48640f94832}
+
+
+Returns the specified column value as an unsigned integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Statement.\-h.
+
+\hypertarget{a00010_a18315a8379249158c3f827441e8f6de0}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-U\-Int@{get\-U\-Int}}
+\index{get\-U\-Int@{get\-U\-Int}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-U\-Int}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-U\-Int (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a18315a8379249158c3f827441e8f6de0}
+
+
+Returns the specified column value as an unsigned integer. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file Statement.\-h.
+
+\hypertarget{a00010_a41fcbc5da6eb3fe6fc75e4faed208fc6}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Value (
+\begin{DoxyParamCaption}
+\item[{const int}]{column}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}, {\ttfamily [inherited]}}}\label{a00010_a41fcbc5da6eb3fe6fc75e4faed208fc6}
+
+
+Returns the specified column value as a Value object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em column} & position of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 176 of file Statement.\-h.
+
+\hypertarget{a00010_ad352a7124ee46d756462c8a1b014599a}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!get\-Value@{get\-Value}}
+\index{get\-Value@{get\-Value}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{get\-Value}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} {\bf S\-Q\-Lite\-::\-Reader}$<$ {\bf Statement}  $>$\-::get\-Value (
+\begin{DoxyParamCaption}
+\item[{const std\-::string \&}]{name}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [inherited]}}}\label{a00010_ad352a7124ee46d756462c8a1b014599a}
+
+
+Returns the specified column value as a Value object. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em name} & name of the column to return \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of column as integer 
+\end{DoxyReturn}
+
+
+Definition at line 185 of file Statement.\-h.
+
+\hypertarget{a00013_a3b7793f1490a321159690cf096ec74d6}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!operator bool@{operator bool}}
+\index{operator bool@{operator bool}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{operator bool}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Statement\-::operator bool (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00013_a3b7793f1490a321159690cf096ec74d6}
+
+
+Used to specify if the \hyperlink{a00013}{Statement} object has a prepared \hyperlink{a00038}{S\-Q\-Lite} statement. 
+
+\begin{DoxyReturn}{Returns}
+The returns true if the \hyperlink{a00013}{Statement} object has been assigned a \hyperlink{a00038}{S\-Q\-Lite} prepared statement. 
+\end{DoxyReturn}
+
+
+Definition at line 25 of file Statement.\-cpp.
+
+\hypertarget{a00013_a1ecd8e2636b542314521eb68fbf1000e}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!prepare@{prepare}}
+\index{prepare@{prepare}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{prepare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ void S\-Q\-Lite\-::\-Statement\-::prepare (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-B\-Connection} const \&}]{connection, }
+\item[{const std\-::string \&}]{text, }
+\item[{Values \&\&...}]{values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_a1ecd8e2636b542314521eb68fbf1000e}
+
+
+Turn an S\-Q\-L query into byte code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & a successfully opened database connection \\
+\hline
+\mbox{\tt in}  & {\em text} & the statement to be compiled, encoded as U\-T\-F-\/8 \\
+\hline
+\mbox{\tt in}  & {\em values} & possible bindings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 399 of file Statement.\-h.
+
+\hypertarget{a00013_a0d422eadca4b2e3f2e1b6e13af69f3cc}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!prepare@{prepare}}
+\index{prepare@{prepare}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{prepare}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename... Values$>$ void S\-Q\-Lite\-::\-Statement\-::prepare (
+\begin{DoxyParamCaption}
+\item[{const {\bf D\-B\-Connection} \&}]{connection, }
+\item[{const std\-::u16string \&}]{text, }
+\item[{Values \&\&...}]{values}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_a0d422eadca4b2e3f2e1b6e13af69f3cc}
+
+
+Turn an S\-Q\-L query into byte code. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & a successfully opened database connection \\
+\hline
+\mbox{\tt in}  & {\em text} & the statement to be compiled, encoded as U\-T\-F-\/16 \\
+\hline
+\mbox{\tt in}  & {\em values} & possible bindings \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 413 of file Statement.\-h.
+
+\hypertarget{a00013_a13a776f0e97da001cdcac81c13bff4c1}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!reset@{reset}}
+\index{reset@{reset}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-Statement\-::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}}\label{a00013_a13a776f0e97da001cdcac81c13bff4c1}
+
+
+Resets a prepared statement object back to its initial state. 
+
+Any S\-Q\-L statment parameters that had values bound to them using the bind method return their values. Use clear\-Bindings to reset the bindings. 
+
+Definition at line 526 of file Statement.\-h.
+
+\hypertarget{a00013_a6251d1119e978d1366113b4aa30899ef}{\index{S\-Q\-Lite\-::\-Statement@{S\-Q\-Lite\-::\-Statement}!step@{step}}
+\index{step@{step}!SQLite::Statement@{S\-Q\-Lite\-::\-Statement}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-Q\-Lite\-::\-Statement\-::step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}\label{a00013_a6251d1119e978d1366113b4aa30899ef}
+
+
+Evaluates a prepared statement. 
+
+This method can be called one or more times to evaluate the statement. \begin{DoxyReturn}{Returns}
+true when there are more rows to iterate through and false when there are no more 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \hyperlink{a00006}{S\-Q\-Lite\-::\-Exception}} & or a derived class \\
+\hline
+\end{DoxyExceptions}
+
+
+Definition at line 37 of file Statement.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{a00032}{Statement.\-h}\item 
+src/Statement.\-cpp\end{DoxyCompactItemize}

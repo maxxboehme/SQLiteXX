@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,26 +83,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>SQLite</b></li><li class="navelem"><a class="el" href="a00008.html">Statement</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00002.html">Blob</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">SQLite::Statement Member List</div>  </div>
+<div class="title">SQLite::Blob Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00008.html">SQLite::Statement</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00002.html">SQLite::Blob</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00008.html#a0d4999fce90145852287c18c0d218ac6">bind</a>(const int index, const int value) const </td><td class="entry"><a class="el" href="a00008.html">SQLite::Statement</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00008.html#a9052c143879aca6cf253925336464a8b">getHandle</a>() const noexcept</td><td class="entry"><a class="el" href="a00008.html">SQLite::Statement</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00008.html#a1ecd8e2636b542314521eb68fbf1000e">prepare</a>(DBConnection const &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)</td><td class="entry"><a class="el" href="a00008.html">SQLite::Statement</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00008.html#a0d422eadca4b2e3f2e1b6e13af69f3cc">prepare</a>(const DBConnection &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)</td><td class="entry"><a class="el" href="a00008.html">SQLite::Statement</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00008.html#a6251d1119e978d1366113b4aa30899ef">step</a>() const </td><td class="entry"><a class="el" href="a00008.html">SQLite::Statement</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#a74ff754db13f481b91edcd7b5bcd9d32">Blob</a>(const void *data, size_t size)</td><td class="entry"><a class="el" href="a00002.html">SQLite::Blob</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00002.html#a4f525d8e11e4361b808692eccb4e12a5">Blob</a>(const Blob &amp;other)</td><td class="entry"><a class="el" href="a00002.html">SQLite::Blob</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#ae458297c2b9be504111c7b23636942e0">Blob</a>(Blob &amp;&amp;other)</td><td class="entry"><a class="el" href="a00002.html">SQLite::Blob</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00002.html#a112b54351792991f10563295e33600e2">data</a>() const </td><td class="entry"><a class="el" href="a00002.html">SQLite::Blob</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#af34146d8ac8d1414c5ad1673ca05669e">operator=</a>(const Blob &amp;other)</td><td class="entry"><a class="el" href="a00002.html">SQLite::Blob</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00002.html#ae6409ebce61480b97f01c072f9e49276">operator=</a>(Blob &amp;&amp;other)</td><td class="entry"><a class="el" href="a00002.html">SQLite::Blob</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#a689d499b628faaa148424af8d545c29e">size</a>() const </td><td class="entry"><a class="el" href="a00002.html">SQLite::Blob</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 04:26:05 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 22 2017 05:17:25 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

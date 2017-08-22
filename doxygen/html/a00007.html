@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::RowIterator Class Reference</title>
+<title>SQLiteXX: SQLite::ExclusiveTransaction Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,33 +83,88 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>SQLite</b></li><li class="navelem"><a class="el" href="a00007.html">RowIterator</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00007.html">ExclusiveTransaction</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="a00042.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00053.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::RowIterator Class Reference</div>  </div>
+<div class="title">SQLite::ExclusiveTransaction Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Helps when iterating over rows in a "SELECT" statement.  
+<p>RAII encapsulation of the <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction.  
  <a href="a00007.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00027_source.html">Statement.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00034_source.html">Transaction.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SQLite::ExclusiveTransaction:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="a00007.png" usemap="#SQLite::ExclusiveTransaction_map" alt=""/>
+  <map id="SQLite::ExclusiveTransaction_map" name="SQLite::ExclusiveTransaction_map">
+<area href="a00014.html" title="RAII encapsulation of the SQLite Transactions. " alt="SQLite::Transaction" shape="rect" coords="0,0,176,24"/>
+</map>
+ </div></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a70f16f1e9764fd35b0c7e9fbf7314a1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a70f16f1e9764fd35b0c7e9fbf7314a1f">ExclusiveTransaction</a> (<a class="el" href="a00004.html">DBConnection</a> &amp;connection)</td></tr>
+<tr class="memdesc:a70f16f1e9764fd35b0c7e9fbf7314a1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a strictly scope-based <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction.  <a href="#a70f16f1e9764fd35b0c7e9fbf7314a1f">More...</a><br/></td></tr>
+<tr class="separator:a70f16f1e9764fd35b0c7e9fbf7314a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b251d84198cdc2c0208ad566fec0287"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b251d84198cdc2c0208ad566fec0287"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a9b251d84198cdc2c0208ad566fec0287">commit</a> ()</td></tr>
+<tr class="memdesc:a9b251d84198cdc2c0208ad566fec0287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commit the transaction. <br/></td></tr>
+<tr class="separator:a9b251d84198cdc2c0208ad566fec0287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helps when iterating over rows in a "SELECT" statement. </p>
+<div class="textblock"><p>RAII encapsulation of the <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction. </p>
 
-<p>Definition at line <a class="el" href="a00027_source.html#l00392">392</a> of file <a class="el" href="a00027_source.html">Statement.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="a00027_source.html">Statement.h</a></li>
-<li>src/<a class="el" href="a00026_source.html">Statement.cpp</a></li>
+<p>Definition at line <a class="el" href="a00034_source.html#l00083">83</a> of file <a class="el" href="a00034_source.html">Transaction.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a70f16f1e9764fd35b0c7e9fbf7314a1f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::ExclusiveTransaction::ExclusiveTransaction </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramname"><em>connection</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Implements a strictly scope-based <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">connection</td><td>the database connection to begin the transaction on </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00034_source.html#l00089">89</a> of file <a class="el" href="a00034_source.html">Transaction.h</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>src/<a class="el" href="a00034_source.html">Transaction.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 04:26:05 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 22 2017 05:17:26 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

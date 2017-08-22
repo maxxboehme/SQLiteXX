@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::BusyException Class Reference</title>
+<title>SQLiteXX: SQLite::Backup Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,41 +83,201 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>SQLite</b></li><li class="navelem"><a class="el" href="a00001.html">BusyException</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00001.html">Backup</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="a00037.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="a00040.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::BusyException Class Reference</div>  </div>
+<div class="title">SQLite::Backup Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Encapsulation of the SQLITE_BUSY error code derived from <a class="el" href="a00003.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a>.  
+<p>Used to aid in the process of backing up a database.  
  <a href="a00001.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00019_source.html">Exception.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for SQLite::BusyException:</div>
-<div class="dyncontent">
- <div class="center">
-  <img src="a00001.png" usemap="#SQLite::BusyException_map" alt=""/>
-  <map id="SQLite::BusyException_map" name="SQLite::BusyException_map">
-<area href="a00003.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. " alt="SQLite::Exception" shape="rect" coords="0,0,139,24"/>
-</map>
- </div></div>
+<p><code>#include &lt;<a class="el" href="a00018_source.html">Backup.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a363301d27d042970ce86c2487d33351c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a363301d27d042970ce86c2487d33351c">Backup</a> (const <a class="el" href="a00004.html">DBConnection</a> &amp;source, const <a class="el" href="a00004.html">DBConnection</a> &amp;destination, const std::string &amp;sourceName=&quot;main&quot;, const std::string &amp;destinationName=&quot;main&quot;)</td></tr>
+<tr class="memdesc:a363301d27d042970ce86c2487d33351c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a backup object.  <a href="#a363301d27d042970ce86c2487d33351c">More...</a><br/></td></tr>
+<tr class="separator:a363301d27d042970ce86c2487d33351c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ec2f5a0d8db598c15311437c4b9aa43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">step</a> (const int pages=-1)</td></tr>
+<tr class="memdesc:a6ec2f5a0d8db598c15311437c4b9aa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will copy a specified number of pages to the destination database.  <a href="#a6ec2f5a0d8db598c15311437c4b9aa43">More...</a><br/></td></tr>
+<tr class="separator:a6ec2f5a0d8db598c15311437c4b9aa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83fc69146f90276d5ccfe308e054c25b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">getTotalPageCount</a> () noexcept</td></tr>
+<tr class="memdesc:a83fc69146f90276d5ccfe308e054c25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of pages in the source database.  <a href="#a83fc69146f90276d5ccfe308e054c25b">More...</a><br/></td></tr>
+<tr class="separator:a83fc69146f90276d5ccfe308e054c25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">getRemainingPageCount</a> () noexcept</td></tr>
+<tr class="memdesc:a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of pages still to be backed up.  <a href="#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">More...</a><br/></td></tr>
+<tr class="separator:a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65c099db1b55215c85f962fdc33d2f21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65c099db1b55215c85f962fdc33d2f21"></a>
+sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">getHandle</a> () noexcept</td></tr>
+<tr class="memdesc:a65c099db1b55215c85f962fdc33d2f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pointer to the underlying sqlite3_backup object. <br/></td></tr>
+<tr class="separator:a65c099db1b55215c85f962fdc33d2f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Encapsulation of the SQLITE_BUSY error code derived from <a class="el" href="a00003.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a>. </p>
+<div class="textblock"><p>Used to aid in the process of backing up a database. </p>
+<p>The <a class="el" href="a00001.html" title="Used to aid in the process of backing up a database. ">Backup</a> object records state information about an ongoing online backup operation. It us useful either for creating backups of databases or for copying in-memory databases to or from persistent files. </p>
 
-<p>Definition at line <a class="el" href="a00019_source.html#l00033">33</a> of file <a class="el" href="a00019_source.html">Exception.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/<a class="el" href="a00019_source.html">Exception.h</a></li>
+<p>Definition at line <a class="el" href="a00018_source.html#l00020">20</a> of file <a class="el" href="a00018_source.html">Backup.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a363301d27d042970ce86c2487d33351c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::Backup::Backup </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramname"><em>source</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramname"><em>destination</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>sourceName</em> = <code>&quot;main&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>destinationName</em> = <code>&quot;main&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a backup object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">source</td><td>the database that will be the source of copied information </td></tr>
+    <tr><td class="paramname">destination</td><td>the database that will be backed up to </td></tr>
+    <tr><td class="paramname">sourceName</td><td>the source database name </td></tr>
+    <tr><td class="paramname">destinationName</td><td>the destination database name</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a></td><td>If an error occurs when initializing a <a class="el" href="a00001.html" title="Used to aid in the process of backing up a database. ">Backup</a> then an <a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a> will be raised. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00017_source.html#l00014">14</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a5cb7d3bfbe87c8fe07b4eca01f6b04aa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SQLite::Backup::getRemainingPageCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of pages still to be backed up. </p>
+<p>The values returned by this function is only updated by <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of pages still to be backed up. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00017_source.html#l00051">51</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a83fc69146f90276d5ccfe308e054c25b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int SQLite::Backup::getTotalPageCount </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the total number of pages in the source database. </p>
+<p>The values returned by this function is only updated by <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>The total number of pages in the source database. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00017_source.html#l00046">46</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ec2f5a0d8db598c15311437c4b9aa43"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SQLite::Backup::step </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>pages</em> = <code>-1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Will copy a specified number of pages to the destination database. </p>
+<p>If pages is negative, all remaining source pages are copied.</p>
+<p>pages the number of pages to copy from source to destination database. </p>
+<dl class="section return"><dt>Returns</dt><dd>The returne value will be true if there are more pages to copy. False otherwise.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a></td><td>If an error occurs when initializing a <a class="el" href="a00001.html" title="Used to aid in the process of backing up a database. ">Backup</a> then an <a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a> will be raised. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00017_source.html#l00034">34</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/<a class="el" href="a00018_source.html">Backup.h</a></li>
+<li>src/<a class="el" href="a00017_source.html">Backup.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 04:26:05 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 22 2017 05:17:25 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

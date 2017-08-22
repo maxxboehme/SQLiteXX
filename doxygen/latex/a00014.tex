@@ -1,0 +1,82 @@
+\hypertarget{a00014}{\section{S\-Q\-Lite\-:\-:Transaction Class Reference}
+\label{a00014}\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}}
+}
+
+
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} Transactions.  
+
+
+
+
+{\ttfamily \#include $<$Transaction.\-h$>$}
+
+Inheritance diagram for S\-Q\-Lite\-:\-:Transaction\-:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{a00014}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00014_a27add1a1db2dd8cd5935c78a63ad556b}{Transaction} (\hyperlink{a00004}{D\-B\-Connection} \&connection, const \hyperlink{a00038_af94f2dd6dcae8699eada7a0382e48e66}{Transaction\-Type} type)
+\begin{DoxyCompactList}\small\item\em Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} transaction. \end{DoxyCompactList}\item 
+virtual \hyperlink{a00014_a43c5e67a10b9698b7f6dad73539feb94}{$\sim$\-Transaction} () noexcept
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+\hypertarget{a00014_a9b251d84198cdc2c0208ad566fec0287}{virtual void \hyperlink{a00014_a9b251d84198cdc2c0208ad566fec0287}{commit} ()}\label{a00014_a9b251d84198cdc2c0208ad566fec0287}
+
+\begin{DoxyCompactList}\small\item\em Commit the transaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} Transactions. 
+
+Definition at line 26 of file Transaction.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{a00014_a27add1a1db2dd8cd5935c78a63ad556b}{\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}!Transaction@{Transaction}}
+\index{Transaction@{Transaction}!SQLite::Transaction@{S\-Q\-Lite\-::\-Transaction}}
+\subsubsection[{Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Transaction\-::\-Transaction (
+\begin{DoxyParamCaption}
+\item[{{\bf D\-B\-Connection} \&}]{connection, }
+\item[{const {\bf Transaction\-Type}}]{type}
+\end{DoxyParamCaption}
+)}}\label{a00014_a27add1a1db2dd8cd5935c78a63ad556b}
+
+
+Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} transaction. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em connection} & the database connection to begin the transaction on \\
+\hline
+\mbox{\tt in}  & {\em type} & the transaction type to be used. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file Transaction.\-cpp.
+
+\hypertarget{a00014_a43c5e67a10b9698b7f6dad73539feb94}{\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}!$\sim$\-Transaction@{$\sim$\-Transaction}}
+\index{$\sim$\-Transaction@{$\sim$\-Transaction}!SQLite::Transaction@{S\-Q\-Lite\-::\-Transaction}}
+\subsubsection[{$\sim$\-Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Transaction\-::$\sim$\-Transaction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}}\label{a00014_a43c5e67a10b9698b7f6dad73539feb94}
+
+
+Destructor. 
+
+Safely rollback the transaction if it has not been commited. 
+
+Definition at line 19 of file Transaction.\-cpp.
+
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{a00034}{Transaction.\-h}\item 
+src/Transaction.\-cpp\end{DoxyCompactItemize}

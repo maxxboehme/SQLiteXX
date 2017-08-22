@@ -1,225 +1,195 @@
-\hypertarget{a00002}{\section{S\-Q\-Lite\-:\-:D\-B\-Connection Class Reference}
-\label{a00002}\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
+\hypertarget{a00002}{\section{S\-Q\-Lite\-:\-:Blob Class Reference}
+\label{a00002}\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}}
 }
 
 
-Class that represents a connection to the database.  
+A \char`\"{}\-Binary Large O\-Bject\char`\"{}.  
 
 
 
 
-{\ttfamily \#include $<$D\-B\-Connection.\-h$>$}
+{\ttfamily \#include $<$Blob.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00002_acc17774b1187ee5b9706398d5ed7786b}{D\-B\-Connection} (const std\-::string \&filename, Open\-Mode mode=Open\-Mode\-::\-Read\-Write$\vert$Open\-Mode\-::\-Create, const std\-::chrono\-::milliseconds timeout=D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T)
-\begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/8 filename. \end{DoxyCompactList}\item 
-\hyperlink{a00002_a62ddef495423a8da480a811c7f8bda1f}{D\-B\-Connection} (const std\-::string \&filename, const std\-::chrono\-::milliseconds timeout)
-\begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/8 filename. \end{DoxyCompactList}\item 
-\hyperlink{a00002_a801e3c745e0236c2b55b91c47cc73da8}{D\-B\-Connection} (const std\-::u16string \&filename, const std\-::chrono\-::milliseconds timeout=D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T)
-\begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/16 filename. \end{DoxyCompactList}\item 
-\hypertarget{a00002_afd4961c42310aebf750d28d3487a9425}{\hyperlink{a00005}{Mutex} \hyperlink{a00002_afd4961c42310aebf750d28d3487a9425}{get\-Mutex} ()}\label{a00002_afd4961c42310aebf750d28d3487a9425}
-
-\begin{DoxyCompactList}\small\item\em Returns a \hyperlink{a00005}{Mutex} that serializes access to the database. \end{DoxyCompactList}\item 
-void \hyperlink{a00002_aec696fc408d91e582d16727adff82445}{open} (const std\-::string \&filename, Open\-Mode mode=Open\-Mode\-::\-Read\-Write$\vert$Open\-Mode\-::\-Create)
-\begin{DoxyCompactList}\small\item\em Open an S\-Q\-Lite database file as specified by the filename argument. \end{DoxyCompactList}\item 
-void \hyperlink{a00002_ab5f3dbc9164bd435f6770f8625c0a79c}{open} (const std\-::u16string \&filename)
-\begin{DoxyCompactList}\small\item\em Open an S\-Q\-Lite database file as specified by the filname argument. \end{DoxyCompactList}\item 
-long long \hyperlink{a00002_a0959fda218112d849700b7a9b58e0505}{row\-Id} () const noexcept
-\begin{DoxyCompactList}\small\item\em Returns the rowid of the most recent successful \char`\"{}\-I\-N\-S\-E\-R\-T\char`\"{} into a rowid table or virtual table on database connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-static \hyperlink{a00002}{D\-B\-Connection} \hyperlink{a00002_a5bd49a76155ffede0dca70f54c794159}{memory} ()
-\begin{DoxyCompactList}\small\item\em Create a purely in memory database. \end{DoxyCompactList}\item 
-static \hyperlink{a00002}{D\-B\-Connection} \hyperlink{a00002_a40beb5c2c30cd861a8b7c743b5e8881e}{wide\-Memory} ()
-\begin{DoxyCompactList}\small\item\em Create a purely in memory database with U\-T\-F-\/16 as the native byte order. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{a00002_a74ff754db13f481b91edcd7b5bcd9d32}{Blob} (const void $\ast$\hyperlink{a00002_a112b54351792991f10563295e33600e2}{data}, size\-\_\-t \hyperlink{a00002_a689d499b628faaa148424af8d545c29e}{size})
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{a00002}{Blob} object with contents of data. \end{DoxyCompactList}\item 
+\hyperlink{a00002_a4f525d8e11e4361b808692eccb4e12a5}{Blob} (const \hyperlink{a00002}{Blob} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00002_ae458297c2b9be504111c7b23636942e0}{Blob} (\hyperlink{a00002}{Blob} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
+\hyperlink{a00002}{Blob} \& \hyperlink{a00002_af34146d8ac8d1414c5ad1673ca05669e}{operator=} (const \hyperlink{a00002}{Blob} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{a00002}{Blob} \& \hyperlink{a00002_ae6409ebce61480b97f01c072f9e49276}{operator=} (\hyperlink{a00002}{Blob} \&\&other)
+\begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
+const void $\ast$ \hyperlink{a00002_a112b54351792991f10563295e33600e2}{data} () const 
+\begin{DoxyCompactList}\small\item\em The raw data of the \hyperlink{a00002}{Blob}'s contents. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{a00002_a689d499b628faaa148424af8d545c29e}{size} () const 
+\begin{DoxyCompactList}\small\item\em Used to get the size of the contained 'blob'. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Class that represents a connection to the database. 
+A \char`\"{}\-Binary Large O\-Bject\char`\"{}. 
 
-\hyperlink{a00002}{D\-B\-Connection} is a wrapper around the \char`\"{}sqlite3\char`\"{} structure. 
+A collection of binary data stored as a single entity in a database management system. Blobs are typically images, audo or other multimedia object though they can be any form of data. 
 
-Definition at line 22 of file D\-B\-Connection.\-h.
+Definition at line 20 of file Blob.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{a00002_acc17774b1187ee5b9706398d5ed7786b}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
-\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\hypertarget{a00002_a74ff754db13f481b91edcd7b5bcd9d32}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!Blob@{Blob}}
+\index{Blob@{Blob}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
+\subsubsection[{Blob}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Blob\-::\-Blob (
 \begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{filename, }
-\item[{Open\-Mode}]{mode = {\ttfamily OpenMode\-:\-:ReadWrite~$\vert$~OpenMode\-:\-:Create}, }
-\item[{const std\-::chrono\-::milliseconds}]{timeout = {\ttfamily DEFAULT\-\_\-TIMEOUT}}
+\item[{const void $\ast$}]{data, }
+\item[{size\-\_\-t}]{size}
 \end{DoxyParamCaption}
-)}}\label{a00002_acc17774b1187ee5b9706398d5ed7786b}
+)}}\label{a00002_a74ff754db13f481b91edcd7b5bcd9d32}
 
 
-Open the provided database U\-T\-F-\/8 filename. 
+Constructs a \hyperlink{a00002}{Blob} object with contents of data. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em filename} & U\-T\-F-\/8 path/uri to the database database file \\
+\mbox{\tt in}  & {\em data} & the information you want the \hyperlink{a00002}{Blob} to contain \\
 \hline
-\mbox{\tt in}  & {\em mode} & file opening options specified by combination of Open\-Mode flags \\
-\hline
-\mbox{\tt in}  & {\em timeout} & amount of milliseconds to wait before returning \hyperlink{a00001}{S\-Q\-Lite\-::\-Busy\-Exception} when a table is locked \\
+\mbox{\tt in}  & {\em size} & the size in bytes of the data \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 40 of file D\-B\-Connection.\-cpp.
+Definition at line 6 of file Blob.\-cpp.
 
-\hypertarget{a00002_a62ddef495423a8da480a811c7f8bda1f}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
-\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\hypertarget{a00002_a4f525d8e11e4361b808692eccb4e12a5}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!Blob@{Blob}}
+\index{Blob@{Blob}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
+\subsubsection[{Blob}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Blob\-::\-Blob (
 \begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{filename, }
-\item[{const std\-::chrono\-::milliseconds}]{timeout}
+\item[{const {\bf Blob} \&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_a62ddef495423a8da480a811c7f8bda1f}
+)}}\label{a00002_a4f525d8e11e4361b808692eccb4e12a5}
 
 
-Open the provided database U\-T\-F-\/8 filename. 
+Copy constructor. 
 
-
+Constructs a \hyperlink{a00002}{Blob} object with a copy of the contents of other 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em filename} & U\-T\-F-\/8 path/uri to the database database file \\
-\hline
-\mbox{\tt in}  & {\em timeout} & amount of milliseconds to wait before returning \hyperlink{a00001}{S\-Q\-Lite\-::\-Busy\-Exception} when a table is locked \\
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 53 of file D\-B\-Connection.\-cpp.
+Definition at line 14 of file Blob.\-cpp.
 
-\hypertarget{a00002_a801e3c745e0236c2b55b91c47cc73da8}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!D\-B\-Connection@{D\-B\-Connection}}
-\index{D\-B\-Connection@{D\-B\-Connection}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{D\-B\-Connection}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-D\-B\-Connection\-::\-D\-B\-Connection (
+\hypertarget{a00002_ae458297c2b9be504111c7b23636942e0}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!Blob@{Blob}}
+\index{Blob@{Blob}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
+\subsubsection[{Blob}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Blob\-::\-Blob (
 \begin{DoxyParamCaption}
-\item[{const std\-::u16string \&}]{filename, }
-\item[{const std\-::chrono\-::milliseconds}]{timeout = {\ttfamily DEFAULT\-\_\-TIMEOUT}}
+\item[{{\bf Blob} \&\&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_a801e3c745e0236c2b55b91c47cc73da8}
+)}}\label{a00002_ae458297c2b9be504111c7b23636942e0}
 
 
-Open the provided database U\-T\-F-\/16 filename. 
+Move constructor. 
 
-
+Constructs a \hyperlink{a00002}{Blob} object with a copy of the contents of other using move semantics 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em filename} & U\-T\-F-\/16 path/uri to the database database file \\
-\hline
-\mbox{\tt in}  & {\em timeout} & Amount of milliseconds to wait before returning \hyperlink{a00001}{S\-Q\-Lite\-::\-Busy\-Exception} when a table is locked \\
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 65 of file D\-B\-Connection.\-cpp.
+Definition at line 21 of file Blob.\-cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{a00002_a5bd49a76155ffede0dca70f54c794159}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!memory@{memory}}
-\index{memory@{memory}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{memory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-B\-Connection} S\-Q\-Lite\-::\-D\-B\-Connection\-::memory (
+\hypertarget{a00002_a112b54351792991f10563295e33600e2}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!data@{data}}
+\index{data@{data}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}const void $\ast$ S\-Q\-Lite\-::\-Blob\-::data (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{a00002_a5bd49a76155ffede0dca70f54c794159}
+) const}}\label{a00002_a112b54351792991f10563295e33600e2}
 
 
-Create a purely in memory database. 
+The raw data of the \hyperlink{a00002}{Blob}'s contents. 
 
 \begin{DoxyReturn}{Returns}
-a purely in memory \hyperlink{a00002}{S\-Q\-Lite\-::\-D\-B\-Connection} 
+The raw data that the \hyperlink{a00002}{Blob} object is storing. 
 \end{DoxyReturn}
 
 
-Definition at line 73 of file D\-B\-Connection.\-cpp.
+Definition at line 44 of file Blob.\-cpp.
 
-\hypertarget{a00002_aec696fc408d91e582d16727adff82445}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!open@{open}}
-\index{open@{open}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-D\-B\-Connection\-::open (
+\hypertarget{a00002_af34146d8ac8d1414c5ad1673ca05669e}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Blob} \& S\-Q\-Lite\-::\-Blob\-::operator= (
 \begin{DoxyParamCaption}
-\item[{const std\-::string \&}]{filename, }
-\item[{Open\-Mode}]{mode = {\ttfamily OpenMode\-:\-:ReadWrite~$\vert$~OpenMode\-:\-:Create}}
+\item[{const {\bf Blob} \&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_aec696fc408d91e582d16727adff82445}
+)}}\label{a00002_af34146d8ac8d1414c5ad1673ca05669e}
 
 
-Open an S\-Q\-Lite database file as specified by the filename argument. 
+Copy assignment operator. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em filename} & path to S\-Q\-Lite file \\
+Replaces the contents with those of other 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$\ast$this 
+\end{DoxyReturn}
 
 
-Definition at line 102 of file D\-B\-Connection.\-cpp.
+Definition at line 26 of file Blob.\-cpp.
 
-\hypertarget{a00002_ab5f3dbc9164bd435f6770f8625c0a79c}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!open@{open}}
-\index{open@{open}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void S\-Q\-Lite\-::\-D\-B\-Connection\-::open (
+\hypertarget{a00002_ae6409ebce61480b97f01c072f9e49276}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!operator=@{operator=}}
+\index{operator=@{operator=}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Blob} \& S\-Q\-Lite\-::\-Blob\-::operator= (
 \begin{DoxyParamCaption}
-\item[{const std\-::u16string \&}]{filename}
+\item[{{\bf Blob} \&\&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_ab5f3dbc9164bd435f6770f8625c0a79c}
+)}}\label{a00002_ae6409ebce61480b97f01c072f9e49276}
 
 
-Open an S\-Q\-Lite database file as specified by the filname argument. 
+Move assignment operator. 
 
-The database file will have U\-T\-F-\/16 native byte order. 
-\begin{DoxyParams}{Parameters}
-{\em filename} & path to S\-Q\-Lite file \\
+Replaces the contents with those of other using move semantics 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
-
-
-Definition at line 114 of file D\-B\-Connection.\-cpp.
-
-\hypertarget{a00002_a0959fda218112d849700b7a9b58e0505}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!row\-Id@{row\-Id}}
-\index{row\-Id@{row\-Id}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{row\-Id}]{\setlength{\rightskip}{0pt plus 5cm}long long S\-Q\-Lite\-::\-D\-B\-Connection\-::row\-Id (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00002_a0959fda218112d849700b7a9b58e0505}
-
-
-Returns the rowid of the most recent successful \char`\"{}\-I\-N\-S\-E\-R\-T\char`\"{} into a rowid table or virtual table on database connection. 
-
 \begin{DoxyReturn}{Returns}
-rowid of the most recent successful \char`\"{}\-I\-N\-S\-E\-R\-T\char`\"{} into the database, or 0 if there was none. 
+$\ast$this 
 \end{DoxyReturn}
 
 
-Definition at line 126 of file D\-B\-Connection.\-cpp.
+Definition at line 37 of file Blob.\-cpp.
 
-\hypertarget{a00002_a40beb5c2c30cd861a8b7c743b5e8881e}{\index{S\-Q\-Lite\-::\-D\-B\-Connection@{S\-Q\-Lite\-::\-D\-B\-Connection}!wide\-Memory@{wide\-Memory}}
-\index{wide\-Memory@{wide\-Memory}!SQLite::DBConnection@{S\-Q\-Lite\-::\-D\-B\-Connection}}
-\subsubsection[{wide\-Memory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf D\-B\-Connection} S\-Q\-Lite\-::\-D\-B\-Connection\-::wide\-Memory (
+\hypertarget{a00002_a689d499b628faaa148424af8d545c29e}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!size@{size}}
+\index{size@{size}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t S\-Q\-Lite\-::\-Blob\-::size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{a00002_a40beb5c2c30cd861a8b7c743b5e8881e}
+) const}}\label{a00002_a689d499b628faaa148424af8d545c29e}
 
 
-Create a purely in memory database with U\-T\-F-\/16 as the native byte order. 
+Used to get the size of the contained 'blob'. 
 
 \begin{DoxyReturn}{Returns}
-a purely in memory \hyperlink{a00002}{S\-Q\-Lite\-::\-D\-B\-Connection} 
+The size in bytes of the contained 'blob'. 
 \end{DoxyReturn}
 
 
-Definition at line 78 of file D\-B\-Connection.\-cpp.
+Definition at line 48 of file Blob.\-cpp.
 
 
 
 The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-src/D\-B\-Connection.\-h\item 
-src/D\-B\-Connection.\-cpp\end{DoxyCompactItemize}
+src/\hyperlink{a00020}{Blob.\-h}\item 
+src/Blob.\-cpp\end{DoxyCompactItemize}

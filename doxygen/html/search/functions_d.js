@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7etransaction',['~Transaction',['../a00009.html#a43c5e67a10b9698b7f6dad73539feb94',1,'SQLite::Transaction']]]
+  ['unlock',['unlock',['../a00009.html#ad9238aeb94205ac18d67c9652dcc6ef9',1,'SQLite::Mutex']]]
 ];

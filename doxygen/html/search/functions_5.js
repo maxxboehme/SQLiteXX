@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memory',['memory',['../a00002.html#a5bd49a76155ffede0dca70f54c794159',1,'SQLite::DBConnection']]]
+  ['immediatetransaction',['ImmediateTransaction',['../a00008.html#a3c6f88a4f4f6b299461c4a30a79b17e1',1,'SQLite::ImmediateTransaction']]]
 ];

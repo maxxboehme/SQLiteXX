@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: src/Exception.cpp Source File</title>
+<title>SQLiteXX: src/Backup.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -68,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,51 +85,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">Exception.cpp</div>  </div>
+<div class="title">Backup.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;Exception.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">namespace </span>SQLite</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">void</span> throwErrorCode(sqlite3 *connection)</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> errcode = sqlite3_extended_errcode(connection);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordflow">if</span> (errcode == SQLITE_OK) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <span class="keywordflow">if</span> (errcode == SQLITE_DONE) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordflow">switch</span>(errcode)</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordflow">case</span> SQLITE_BUSY:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <span class="keywordflow">throw</span> BusyException(connection);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                <span class="keywordflow">throw</span> Exception(connection);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> throwErrorCode(<span class="keyword">const</span> <span class="keywordtype">int</span> errcode, <span class="keyword">const</span> std::string&amp; message)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (errcode == SQLITE_OK) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (errcode == SQLITE_DONE) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">switch</span>(errcode)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            <span class="keywordflow">case</span> SQLITE_BUSY:</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">throw</span> BusyException(message);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="keywordflow">throw</span> Exception(errcode, message);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<a href="a00018.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#ifndef __SQLITEXX_SQLITE_BACKUP_H__</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define __SQLITEXX_SQLITE_BACKUP_H__</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00022.html">DBConnection.h</a>&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;sqlite3.h&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>SQLite</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="a00001.html">   20</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00001.html">Backup</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="a00001.html#a363301d27d042970ce86c2487d33351c">Backup</a>(</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keyword">const</span> <a class="code" href="a00004.html">DBConnection</a>&amp; source,</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <span class="keyword">const</span> <a class="code" href="a00004.html">DBConnection</a>&amp; destination,</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keyword">const</span> std::string&amp; sourceName = <span class="stringliteral">&quot;main&quot;</span>,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <span class="keyword">const</span> std::string&amp; destinationName = <span class="stringliteral">&quot;main&quot;</span>);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">step</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> pages = -1);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">getTotalPageCount</a>() noexcept;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">getRemainingPageCount</a>() noexcept;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        sqlite3_backup* <a class="code" href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">getHandle</a>() noexcept;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">using</span> BackupHandle = std::unique_ptr&lt;sqlite3_backup, decltype(&amp;sqlite3_backup_finish)&gt;;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        BackupHandle m_handle;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keyword">const</span> <a class="code" href="a00004.html">DBConnection</a> *m_destination = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="a00001.html#a363301d27d042970ce86c2487d33351c">Backup</a>(<span class="keyword">const</span> <a class="code" href="a00001.html">Backup</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="a00001.html">Backup</a>&amp; operator=(<a class="code" href="a00001.html">Backup</a>&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    };</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> SaveToDisk(<span class="keyword">const</span> <a class="code" href="a00004.html">DBConnection</a> &amp;source, <span class="keyword">const</span> std::string &amp;filename);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00022_html"><div class="ttname"><a href="a00022.html">DBConnection.h</a></div></div>
+<div class="ttc" id="a00001_html_a65c099db1b55215c85f962fdc33d2f21"><div class="ttname"><a href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">SQLite::Backup::getHandle</a></div><div class="ttdeci">sqlite3_backup * getHandle() noexcept</div><div class="ttdoc">Returns the pointer to the underlying sqlite3_backup object. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00056">Backup.cpp:56</a></div></div>
+<div class="ttc" id="a00001_html"><div class="ttname"><a href="a00001.html">SQLite::Backup</a></div><div class="ttdoc">Used to aid in the process of backing up a database. </div><div class="ttdef"><b>Definition:</b> <a href="a00018_source.html#l00020">Backup.h:20</a></div></div>
+<div class="ttc" id="a00001_html_a6ec2f5a0d8db598c15311437c4b9aa43"><div class="ttname"><a href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">SQLite::Backup::step</a></div><div class="ttdeci">bool step(const int pages=-1)</div><div class="ttdoc">Will copy a specified number of pages to the destination database. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00034">Backup.cpp:34</a></div></div>
+<div class="ttc" id="a00001_html_a363301d27d042970ce86c2487d33351c"><div class="ttname"><a href="a00001.html#a363301d27d042970ce86c2487d33351c">SQLite::Backup::Backup</a></div><div class="ttdeci">Backup(const DBConnection &amp;source, const DBConnection &amp;destination, const std::string &amp;sourceName=&quot;main&quot;, const std::string &amp;destinationName=&quot;main&quot;)</div><div class="ttdoc">Construct a backup object. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00014">Backup.cpp:14</a></div></div>
+<div class="ttc" id="a00001_html_a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><div class="ttname"><a href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">SQLite::Backup::getRemainingPageCount</a></div><div class="ttdeci">int getRemainingPageCount() noexcept</div><div class="ttdoc">Returns the number of pages still to be backed up. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00051">Backup.cpp:51</a></div></div>
+<div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">SQLite::DBConnection</a></div><div class="ttdoc">Class that represents a connection to a database. </div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00024">DBConnection.h:24</a></div></div>
+<div class="ttc" id="a00001_html_a83fc69146f90276d5ccfe308e054c25b"><div class="ttname"><a href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">SQLite::Backup::getTotalPageCount</a></div><div class="ttdeci">int getTotalPageCount() noexcept</div><div class="ttdoc">Returns the total number of pages in the source database. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00046">Backup.cpp:46</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 04:26:05 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 22 2017 05:17:25 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

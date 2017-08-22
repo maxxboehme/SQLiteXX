@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['widememory',['wideMemory',['../a00002.html#a40beb5c2c30cd861a8b7c743b5e8881e',1,'SQLite::DBConnection']]]
+  ['transaction',['Transaction',['../a00014.html#a27add1a1db2dd8cd5935c78a63ad556b',1,'SQLite::Transaction']]],
+  ['trylock',['tryLock',['../a00009.html#a95b5ebd5fef0bd37b30e3867d60389f8',1,'SQLite::Mutex']]]
 ];

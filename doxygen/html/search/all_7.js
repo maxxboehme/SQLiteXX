@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['open',['open',['../a00002.html#aec696fc408d91e582d16727adff82445',1,'SQLite::DBConnection::open(const std::string &amp;filename, OpenMode mode=OpenMode::ReadWrite|OpenMode::Create)'],['../a00002.html#ab5f3dbc9164bd435f6770f8625c0a79c',1,'SQLite::DBConnection::open(const std::u16string &amp;filename)']]]
+  ['lock',['lock',['../a00009.html#a56ba1f0c1411940ab52279497d15812a',1,'SQLite::Mutex']]]
 ];

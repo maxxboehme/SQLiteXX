@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::Lock Class Reference</title>
+<title>SQLiteXX: SQLite::DBConnection Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,34 +83,751 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>SQLite</b></li><li class="navelem"><a class="el" href="a00004.html">Lock</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00004.html">DBConnection</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="a00039.html">List of all members</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="a00042.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::Lock Class Reference</div>  </div>
+<div class="title">SQLite::DBConnection Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>Locks the given <a class="el" href="a00005.html" title="Helps with serializing access to a database connection. ">Mutex</a>.  
+<p>Class that represents a connection to a database.  
  <a href="a00004.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00022_source.html">Mutex.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="a00022_source.html">DBConnection.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a17fcc9926aa16b05b61bbce2613fe57a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a17fcc9926aa16b05b61bbce2613fe57a"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a17fcc9926aa16b05b61bbce2613fe57a">DBConnection</a> () noexcept</td></tr>
+<tr class="memdesc:a17fcc9926aa16b05b61bbce2613fe57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br/></td></tr>
+<tr class="separator:a17fcc9926aa16b05b61bbce2613fe57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3dbee23694c323481260b84ff901403"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#ab3dbee23694c323481260b84ff901403">DBConnection</a> (const <a class="el" href="a00004.html">DBConnection</a> &amp;other) noexcept</td></tr>
+<tr class="memdesc:ab3dbee23694c323481260b84ff901403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#ab3dbee23694c323481260b84ff901403">More...</a><br/></td></tr>
+<tr class="separator:ab3dbee23694c323481260b84ff901403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a41cc922e68047f709c25283b9d0176d5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a41cc922e68047f709c25283b9d0176d5">DBConnection</a> (<a class="el" href="a00004.html">DBConnection</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a41cc922e68047f709c25283b9d0176d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a41cc922e68047f709c25283b9d0176d5">More...</a><br/></td></tr>
+<tr class="separator:a41cc922e68047f709c25283b9d0176d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc17774b1187ee5b9706398d5ed7786b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#acc17774b1187ee5b9706398d5ed7786b">DBConnection</a> (const std::string &amp;filename, <a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfecec">OpenMode</a> mode=<a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa70a2a84088d405a2e3f1e3accaa16723">OpenMode::ReadWrite</a>|<a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa686e697538050e4664636337cc3b834f">OpenMode::Create</a>, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)</td></tr>
+<tr class="memdesc:acc17774b1187ee5b9706398d5ed7786b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the provided database UTF-8 filename.  <a href="#acc17774b1187ee5b9706398d5ed7786b">More...</a><br/></td></tr>
+<tr class="separator:acc17774b1187ee5b9706398d5ed7786b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62ddef495423a8da480a811c7f8bda1f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a62ddef495423a8da480a811c7f8bda1f">DBConnection</a> (const std::string &amp;filename, const std::chrono::milliseconds timeout)</td></tr>
+<tr class="memdesc:a62ddef495423a8da480a811c7f8bda1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the provided database UTF-8 filename.  <a href="#a62ddef495423a8da480a811c7f8bda1f">More...</a><br/></td></tr>
+<tr class="separator:a62ddef495423a8da480a811c7f8bda1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a801e3c745e0236c2b55b91c47cc73da8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a801e3c745e0236c2b55b91c47cc73da8">DBConnection</a> (const std::u16string &amp;filename, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)</td></tr>
+<tr class="memdesc:a801e3c745e0236c2b55b91c47cc73da8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the provided database UTF-16 filename.  <a href="#a801e3c745e0236c2b55b91c47cc73da8">More...</a><br/></td></tr>
+<tr class="separator:a801e3c745e0236c2b55b91c47cc73da8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf18d7c37cf19fe46af7b6c7c0f0e8f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#abf18d7c37cf19fe46af7b6c7c0f0e8f2">operator=</a> (const <a class="el" href="a00004.html">DBConnection</a> &amp;other) noexcept</td></tr>
+<tr class="memdesc:abf18d7c37cf19fe46af7b6c7c0f0e8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator.  <a href="#abf18d7c37cf19fe46af7b6c7c0f0e8f2">More...</a><br/></td></tr>
+<tr class="separator:abf18d7c37cf19fe46af7b6c7c0f0e8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d10766ea45bfb79f4959e62d432feeb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a2d10766ea45bfb79f4959e62d432feeb">operator=</a> (<a class="el" href="a00004.html">DBConnection</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a2d10766ea45bfb79f4959e62d432feeb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <a href="#a2d10766ea45bfb79f4959e62d432feeb">More...</a><br/></td></tr>
+<tr class="separator:a2d10766ea45bfb79f4959e62d432feeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4961c42310aebf750d28d3487a9425"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00009.html">Mutex</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#afd4961c42310aebf750d28d3487a9425">getMutex</a> ()</td></tr>
+<tr class="memdesc:afd4961c42310aebf750d28d3487a9425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a <a class="el" href="a00009.html" title="Helps with serializing access to a database connection. ">Mutex</a> that serializes access to the database.  <a href="#afd4961c42310aebf750d28d3487a9425">More...</a><br/></td></tr>
+<tr class="separator:afd4961c42310aebf750d28d3487a9425"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a794e7d4d92aa19bd67f3cff4aaf50020"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a794e7d4d92aa19bd67f3cff4aaf50020">operator bool</a> () const noexcept</td></tr>
+<tr class="memdesc:a794e7d4d92aa19bd67f3cff4aaf50020"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies if the <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> has a open database connection.  <a href="#a794e7d4d92aa19bd67f3cff4aaf50020">More...</a><br/></td></tr>
+<tr class="separator:a794e7d4d92aa19bd67f3cff4aaf50020"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33f0b378dc147a3b2ff947e23994f71c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a33f0b378dc147a3b2ff947e23994f71c"></a>
+sqlite3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a33f0b378dc147a3b2ff947e23994f71c">getHandle</a> () const noexcept</td></tr>
+<tr class="memdesc:a33f0b378dc147a3b2ff947e23994f71c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying "sqlite3" object. <br/></td></tr>
+<tr class="separator:a33f0b378dc147a3b2ff947e23994f71c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec696fc408d91e582d16727adff82445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#aec696fc408d91e582d16727adff82445">open</a> (const std::string &amp;filename, <a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfecec">OpenMode</a> mode=<a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa70a2a84088d405a2e3f1e3accaa16723">OpenMode::ReadWrite</a>|<a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa686e697538050e4664636337cc3b834f">OpenMode::Create</a>)</td></tr>
+<tr class="memdesc:aec696fc408d91e582d16727adff82445"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filename argument.  <a href="#aec696fc408d91e582d16727adff82445">More...</a><br/></td></tr>
+<tr class="separator:aec696fc408d91e582d16727adff82445"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f3dbc9164bd435f6770f8625c0a79c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#ab5f3dbc9164bd435f6770f8625c0a79c">open</a> (const std::u16string &amp;filename)</td></tr>
+<tr class="memdesc:ab5f3dbc9164bd435f6770f8625c0a79c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filname argument.  <a href="#ab5f3dbc9164bd435f6770f8625c0a79c">More...</a><br/></td></tr>
+<tr class="separator:ab5f3dbc9164bd435f6770f8625c0a79c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0959fda218112d849700b7a9b58e0505"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a0959fda218112d849700b7a9b58e0505">rowId</a> () const noexcept</td></tr>
+<tr class="memdesc:a0959fda218112d849700b7a9b58e0505"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the rowid of the most recent successful "INSERT" into a rowid table or virtual table on database connection.  <a href="#a0959fda218112d849700b7a9b58e0505">More...</a><br/></td></tr>
+<tr class="separator:a0959fda218112d849700b7a9b58e0505"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adace26a4acf443ac5c8cea3fe5c913e1"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:adace26a4acf443ac5c8cea3fe5c913e1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00004.html#adace26a4acf443ac5c8cea3fe5c913e1">createGeneralFunction</a> (const std::string &amp;name, F &amp;&amp;function, int isDeterministic=false, const TextEncoding textEncoding=SQLite::TextEncoding::UTF8, int nargs=-1)</td></tr>
+<tr class="memdesc:adace26a4acf443ac5c8cea3fe5c913e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to add SQL functions or redefine the behavior of existing SQL functions.  <a href="#adace26a4acf443ac5c8cea3fe5c913e1">More...</a><br/></td></tr>
+<tr class="separator:adace26a4acf443ac5c8cea3fe5c913e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8758a2e46148ba81aa18b71e17149b5"><td class="memTemplParams" colspan="2">template&lt;typename F &gt; </td></tr>
+<tr class="memitem:ae8758a2e46148ba81aa18b71e17149b5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00004.html#ae8758a2e46148ba81aa18b71e17149b5">createFunction</a> (const std::string &amp;name, F &amp;&amp;function, bool isDeterministic=false, const TextEncoding textEncoding=SQLite::TextEncoding::UTF8)</td></tr>
+<tr class="memdesc:ae8758a2e46148ba81aa18b71e17149b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to add SQL functions or redefine the behavior of existing SQL functions.  <a href="#ae8758a2e46148ba81aa18b71e17149b5">More...</a><br/></td></tr>
+<tr class="separator:ae8758a2e46148ba81aa18b71e17149b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafcfe62eae1364129c3346500f6ad5d2"><td class="memTemplParams" colspan="2">template&lt;typename A &gt; </td></tr>
+<tr class="memitem:aafcfe62eae1364129c3346500f6ad5d2"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00004.html#aafcfe62eae1364129c3346500f6ad5d2">createAggregate</a> (const std::string &amp;name, bool isDeterministic=false, const TextEncoding textEncoding=SQLite::TextEncoding::UTF8)</td></tr>
+<tr class="memdesc:aafcfe62eae1364129c3346500f6ad5d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to add SQL aggregate functions or redefine the behavior of existing SQL aggregate functions.  <a href="#aafcfe62eae1364129c3346500f6ad5d2">More...</a><br/></td></tr>
+<tr class="separator:aafcfe62eae1364129c3346500f6ad5d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5bd49a76155ffede0dca70f54c794159"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00004.html">DBConnection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a5bd49a76155ffede0dca70f54c794159">memory</a> ()</td></tr>
+<tr class="memdesc:a5bd49a76155ffede0dca70f54c794159"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a purely in memory database.  <a href="#a5bd49a76155ffede0dca70f54c794159">More...</a><br/></td></tr>
+<tr class="separator:a5bd49a76155ffede0dca70f54c794159"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40beb5c2c30cd861a8b7c743b5e8881e"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00004.html">DBConnection</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a40beb5c2c30cd861a8b7c743b5e8881e">wideMemory</a> ()</td></tr>
+<tr class="memdesc:a40beb5c2c30cd861a8b7c743b5e8881e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a purely in memory database with UTF-16 as the native byte order.  <a href="#a40beb5c2c30cd861a8b7c743b5e8881e">More...</a><br/></td></tr>
+<tr class="separator:a40beb5c2c30cd861a8b7c743b5e8881e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Locks the given <a class="el" href="a00005.html" title="Helps with serializing access to a database connection. ">Mutex</a>. </p>
-<p>Uses RAII to help with locking and unlocking the given <a class="el" href="a00005.html" title="Helps with serializing access to a database connection. ">Mutex</a>. </p>
+<div class="textblock"><p>Class that represents a connection to a database. </p>
+<p><a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> is a wrapper around the "sqlite3" structure. </p>
 
-<p>Definition at line <a class="el" href="a00022_source.html#l00038">38</a> of file <a class="el" href="a00022_source.html">Mutex.h</a>.</p>
-</div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="a00022_source.html">Mutex.h</a></li>
-<li>src/<a class="el" href="a00021_source.html">Mutex.cpp</a></li>
+<p>Definition at line <a class="el" href="a00022_source.html#l00024">24</a> of file <a class="el" href="a00022_source.html">DBConnection.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="ab3dbee23694c323481260b84ff901403"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::DBConnection::DBConnection </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>another <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> object to use as source to initialize object with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00011">11</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a41cc922e68047f709c25283b9d0176d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::DBConnection::DBConnection </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00004.html">DBConnection</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy constructor. </p>
+<p>Constructs a <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> object with a copy of the contents of other using move semantics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>another <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> object to use as source to initialize object with. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00015">15</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acc17774b1187ee5b9706398d5ed7786b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::DBConnection::DBConnection </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfecec">OpenMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa70a2a84088d405a2e3f1e3accaa16723">OpenMode::ReadWrite</a>&#160;|&#160;<a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa686e697538050e4664636337cc3b834f">OpenMode::Create</a></code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::chrono::milliseconds&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>DEFAULT_TIMEOUT</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open the provided database UTF-8 filename. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>UTF-8 path/uri to the database database file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>file opening options specified by combination of OpenMode flags </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>amount of milliseconds to wait before returning <a class="el" href="a00003.html" title="Encapsulation of the SQLITE_BUSY error code derived from SQLite::Exception. ">SQLite::BusyException</a> when a table is locked </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00040">40</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a62ddef495423a8da480a811c7f8bda1f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::DBConnection::DBConnection </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::chrono::milliseconds&#160;</td>
+          <td class="paramname"><em>timeout</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open the provided database UTF-8 filename. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>UTF-8 path/uri to the database database file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>amount of milliseconds to wait before returning <a class="el" href="a00003.html" title="Encapsulation of the SQLITE_BUSY error code derived from SQLite::Exception. ">SQLite::BusyException</a> when a table is locked </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00053">53</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a801e3c745e0236c2b55b91c47cc73da8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::DBConnection::DBConnection </td>
+          <td>(</td>
+          <td class="paramtype">const std::u16string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::chrono::milliseconds&#160;</td>
+          <td class="paramname"><em>timeout</em> = <code>DEFAULT_TIMEOUT</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open the provided database UTF-16 filename. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>UTF-16 path/uri to the database database file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">timeout</td><td>Amount of milliseconds to wait before returning <a class="el" href="a00003.html" title="Encapsulation of the SQLITE_BUSY error code derived from SQLite::Exception. ">SQLite::BusyException</a> when a table is locked </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00065">65</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="aafcfe62eae1364129c3346500f6ad5d2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename A &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SQLite::DBConnection::createAggregate </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDeterministic</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TextEncoding&#160;</td>
+          <td class="paramname"><em>textEncoding</em> = <code>SQLite::TextEncoding::UTF8</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to add SQL aggregate functions or redefine the behavior of existing SQL aggregate functions. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">A</td><td>The class to use as the aggregate function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the aggregate function to be used in an SQL query </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isDeterministic</td><td>specifies if the function will always return the same result given the same inputs within a single SQL statement. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">textEncoding</td><td>specifies the test encoding the SQL function prefers for its parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00022_source.html#l00201">201</a> of file <a class="el" href="a00022_source.html">DBConnection.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae8758a2e46148ba81aa18b71e17149b5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SQLite::DBConnection::createFunction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isDeterministic</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TextEncoding&#160;</td>
+          <td class="paramname"><em>textEncoding</em> = <code>SQLite::TextEncoding::UTF8</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to add SQL functions or redefine the behavior of existing SQL functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the function to be used in an SQL query </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">function</td><td>the implementation to the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isDeterministic</td><td>specifies if the function will always return the same result given the same inputs within a single SQL statement. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">textEncoding</td><td>specifies the test encoding the SQL function prefers for its parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00022_source.html#l00166">166</a> of file <a class="el" href="a00022_source.html">DBConnection.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adace26a4acf443ac5c8cea3fe5c913e1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename F &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SQLite::DBConnection::createGeneralFunction </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">F &amp;&amp;&#160;</td>
+          <td class="paramname"><em>function</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>isDeterministic</em> = <code>false</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const TextEncoding&#160;</td>
+          <td class="paramname"><em>textEncoding</em> = <code>SQLite::TextEncoding::UTF8</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nargs</em> = <code>-1</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to add SQL functions or redefine the behavior of existing SQL functions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>The name of the function to be used in an SQL query </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">function</td><td>the implementation to the function </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isDeterministic</td><td>specifies if the function will always return the same result given the same inputs within a single SQL statement. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">textEncoding</td><td>specifies the text encoding the SQL function prefers for its parameters. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">nargs</td><td>the number of arguments that the SQL function takes. -1 means the SQL function can take any number of arguments. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00022_source.html#l00130">130</a> of file <a class="el" href="a00022_source.html">DBConnection.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afd4961c42310aebf750d28d3487a9425"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00009.html">Mutex</a> SQLite::DBConnection::getMutex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns a <a class="el" href="a00009.html" title="Helps with serializing access to a database connection. ">Mutex</a> that serializes access to the database. </p>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="a00009.html" title="Helps with serializing access to a database connection. ">Mutex</a> object for the database connection. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00083">83</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5bd49a76155ffede0dca70f54c794159"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00004.html">DBConnection</a> SQLite::DBConnection::memory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a purely in memory database. </p>
+<dl class="section return"><dt>Returns</dt><dd>a purely in memory <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">SQLite::DBConnection</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00073">73</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aec696fc408d91e582d16727adff82445"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SQLite::DBConnection::open </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfecec">OpenMode</a>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa70a2a84088d405a2e3f1e3accaa16723">OpenMode::ReadWrite</a>&#160;|&#160;<a class="el" href="a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa686e697538050e4664636337cc3b834f">OpenMode::Create</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filename argument. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>path to <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>specifies the privileges to use when opening the database. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00102">102</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab5f3dbc9164bd435f6770f8625c0a79c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SQLite::DBConnection::open </td>
+          <td>(</td>
+          <td class="paramtype">const std::u16string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filname argument. </p>
+<p>The database file will have UTF-16 native byte order. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>path to <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> file </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00114">114</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a794e7d4d92aa19bd67f3cff4aaf50020"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">SQLite::DBConnection::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specifies if the <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> has a open database connection. </p>
+<dl class="section return"><dt>Returns</dt><dd>Returns true if the <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> has a open database connection associated associated with it. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00092">92</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abf18d7c37cf19fe46af7b6c7c0f0e8f2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00004.html">DBConnection</a> &amp; SQLite::DBConnection::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Copy assignment operator. </p>
+<p>Replaces the contents with those of other. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>another <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> object to use as source to initialize object with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>*this </dd></dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00019">19</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2d10766ea45bfb79f4959e62d432feeb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00004.html">DBConnection</a> &amp; SQLite::DBConnection::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00004.html">DBConnection</a> &amp;&amp;&#160;</td>
+          <td class="paramname"><em>other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Move assignment operator. </p>
+<p>Replaces the contents with those of other using move semantics. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">other</td><td>another <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">DBConnection</a> object to use as source to initialize object with. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>*this </dd></dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00028">28</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0959fda218112d849700b7a9b58e0505"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">long long SQLite::DBConnection::rowId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the rowid of the most recent successful "INSERT" into a rowid table or virtual table on database connection. </p>
+<dl class="section return"><dt>Returns</dt><dd>rowid of the most recent successful "INSERT" into the database, or 0 if there was none. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00126">126</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a40beb5c2c30cd861a8b7c743b5e8881e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00004.html">DBConnection</a> SQLite::DBConnection::wideMemory </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Create a purely in memory database with UTF-16 as the native byte order. </p>
+<dl class="section return"><dt>Returns</dt><dd>a purely in memory <a class="el" href="a00004.html" title="Class that represents a connection to a database. ">SQLite::DBConnection</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="a00021_source.html#l00078">78</a> of file <a class="el" href="a00021_source.html">DBConnection.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>src/<a class="el" href="a00022_source.html">DBConnection.h</a></li>
+<li>src/<a class="el" href="a00021_source.html">DBConnection.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 04:26:05 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 22 2017 05:17:25 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

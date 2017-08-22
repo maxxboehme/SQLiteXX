@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::Transaction Class Reference</title>
+<title>SQLiteXX: SQLite::Mutex Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -38,6 +38,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -82,88 +83,80 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>SQLite</b></li><li class="navelem"><a class="el" href="a00009.html">Transaction</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00009.html">Mutex</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00043.html">List of all members</a>  </div>
+<a href="a00045.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::Transaction Class Reference</div>  </div>
+<div class="title">SQLite::Mutex Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>RAII encapsulation of the SQLite Transactions.  
+<p>Helps with serializing access to a database connection.  
  <a href="a00009.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="a00029_source.html">Transaction.h</a>&gt;</code></p>
-
-<p>Inherited by SQLite::DeferredTransaction, SQLite::ExclusiveTransaction, and SQLite::ImmediateTransaction.</p>
+<p><code>#include &lt;<a class="el" href="a00027_source.html">Mutex.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a27add1a1db2dd8cd5935c78a63ad556b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html#a27add1a1db2dd8cd5935c78a63ad556b">Transaction</a> (<a class="el" href="a00002.html">DBConnection</a> &amp;connection, const TransactionType type)</td></tr>
-<tr class="memdesc:a27add1a1db2dd8cd5935c78a63ad556b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begins the SQLite transaction.  <a href="#a27add1a1db2dd8cd5935c78a63ad556b">More...</a><br/></td></tr>
-<tr class="separator:a27add1a1db2dd8cd5935c78a63ad556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43c5e67a10b9698b7f6dad73539feb94"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43c5e67a10b9698b7f6dad73539feb94"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html#a43c5e67a10b9698b7f6dad73539feb94">~Transaction</a> () noexcept</td></tr>
-<tr class="memdesc:a43c5e67a10b9698b7f6dad73539feb94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Safely rollback the transaction if it has not been commited. <br/></td></tr>
-<tr class="separator:a43c5e67a10b9698b7f6dad73539feb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b251d84198cdc2c0208ad566fec0287"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b251d84198cdc2c0208ad566fec0287"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html#a9b251d84198cdc2c0208ad566fec0287">commit</a> ()</td></tr>
-<tr class="memdesc:a9b251d84198cdc2c0208ad566fec0287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commit the transaction. <br/></td></tr>
-<tr class="separator:a9b251d84198cdc2c0208ad566fec0287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56ba1f0c1411940ab52279497d15812a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a56ba1f0c1411940ab52279497d15812a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html#a56ba1f0c1411940ab52279497d15812a">lock</a> () noexcept</td></tr>
+<tr class="memdesc:a56ba1f0c1411940ab52279497d15812a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locks the mutex and blocks if the mutex is not available. <br/></td></tr>
+<tr class="separator:a56ba1f0c1411940ab52279497d15812a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95b5ebd5fef0bd37b30e3867d60389f8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html#a95b5ebd5fef0bd37b30e3867d60389f8">tryLock</a> () noexcept</td></tr>
+<tr class="memdesc:a95b5ebd5fef0bd37b30e3867d60389f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tries to lock the mutex, returns if the mutex is not available.  <a href="#a95b5ebd5fef0bd37b30e3867d60389f8">More...</a><br/></td></tr>
+<tr class="separator:a95b5ebd5fef0bd37b30e3867d60389f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9238aeb94205ac18d67c9652dcc6ef9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad9238aeb94205ac18d67c9652dcc6ef9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html#ad9238aeb94205ac18d67c9652dcc6ef9">unlock</a> () noexcept</td></tr>
+<tr class="memdesc:ad9238aeb94205ac18d67c9652dcc6ef9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unlocks the mutex. <br/></td></tr>
+<tr class="separator:ad9238aeb94205ac18d67c9652dcc6ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>RAII encapsulation of the SQLite Transactions. </p>
+<div class="textblock"><p>Helps with serializing access to a database connection. </p>
+<p>Mutexes are only useful when threading mode is set to "Serialized".</p>
+<p>This mutex class can be used with the std::lock_guard as it meets the BasicLockable requirements. </p>
 
-<p>Definition at line <a class="el" href="a00029_source.html#l00021">21</a> of file <a class="el" href="a00029_source.html">Transaction.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a27add1a1db2dd8cd5935c78a63ad556b"></a>
+<p>Definition at line <a class="el" href="a00027_source.html#l00017">17</a> of file <a class="el" href="a00027_source.html">Mutex.h</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a95b5ebd5fef0bd37b30e3867d60389f8"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Transaction::Transaction </td>
+          <td class="memname">bool SQLite::Mutex::tryLock </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00002.html">DBConnection</a> &amp;&#160;</td>
-          <td class="paramname"><em>connection</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">const TransactionType&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Begins the SQLite transaction. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">connection</td><td>the database connection to begin the transaction on </td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Tries to lock the mutex, returns if the mutex is not available. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if able to obtain lock. False otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="a00028_source.html#l00010">10</a> of file <a class="el" href="a00028_source.html">Transaction.cpp</a>.</p>
+<p>Definition at line <a class="el" href="a00026_source.html#l00017">17</a> of file <a class="el" href="a00026_source.html">Mutex.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>src/<a class="el" href="a00029_source.html">Transaction.h</a></li>
-<li>src/<a class="el" href="a00028_source.html">Transaction.cpp</a></li>
+<li>src/<a class="el" href="a00027_source.html">Mutex.h</a></li>
+<li>src/<a class="el" href="a00026_source.html">Mutex.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Jul 6 2017 04:26:05 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 22 2017 05:17:25 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
