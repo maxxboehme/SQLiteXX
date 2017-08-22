@@ -1,5 +1,7 @@
-#ifndef __SQLITECXX_SQLITE_EXCEPTION_H__
-#define __SQLITECXX_SQLITE_EXCEPTION_H__
+/** @file */
+
+#ifndef __SQLITEXX_SQLITE_EXCEPTION_H__
+#define __SQLITEXX_SQLITE_EXCEPTION_H__
 
 #include <sqlite3.h>
 

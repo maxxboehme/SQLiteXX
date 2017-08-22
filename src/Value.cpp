@@ -3,23 +3,23 @@
 
 namespace SQLite
 {
-    Value::Value(const sqlite3_value * const value) :
+    Value::Value(const sqlite3_value* const value) :
         m_handle(sqlite3_value_dup(value), sqlite3_value_free)
     {}
 
-    Value::Value(const Value &other) :
+    Value::Value(const Value& other) :
         m_handle(sqlite3_value_dup(other.m_handle.get()), sqlite3_value_free)
     {}
 
-    Value::Value(Value &&other) :
+    Value::Value(Value&& other) :
         m_handle(std::move(other.m_handle))
     {}
 
-    inline sqlite3_value * Value::getHandle() const noexcept {
+    sqlite3_value* Value::getHandle() const noexcept {
         return m_handle.get();
     }
 
-    Value& Value::operator=(const Value &other) {
+    Value& Value::operator=(const Value& other) {
         if (this != &other) {
             m_handle.reset(sqlite3_value_dup(other.m_handle.get()));
         }
@@ -27,7 +27,7 @@ namespace SQLite
         return *this;
     }
 
-    Value& Value::operator=(Value && other) {
+    Value& Value::operator=(Value&& other) {
         assert(this != &other);
         m_handle = std::move(other.m_handle);
         return *this;

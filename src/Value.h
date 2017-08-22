@@ -1,5 +1,7 @@
-#ifndef __SQLITECXX_SQLITE_VALUE_H__
-#define __SQLITECXX_SQLITE_VALUE_H__
+/** @file */
+
+#ifndef __SQLITEXX_SQLITE_VALUE_H__
+#define __SQLITEXX_SQLITE_VALUE_H__
 
 #include "SQLiteEnums.h"
 #include "Blob.h"
@@ -26,23 +28,90 @@ namespace SQLite
     {
         public:
 
-        Value(const sqlite3_value * const value);
-        Value(const Value &other);
-        Value(Value &&other);
-        Value& operator=(const Value &other);
-        Value& operator=(Value && other);
+        /** Constructs a Value object from a sqlite3_value object.
+         * @param[in] value a pointer to an sqlite3_value object to initalize object with.
+         */
+        Value(const sqlite3_value* const value);
+
+        /** Copy constructor.
+         * Constructs a Value object with a copy of the contents of other.
+         * @param[in] other another Value object to use as source to initialize object with.
+         */
+        Value(const Value& other);
+
+        /** Move constructor.
+         * Constructs a Value object with a copy of the contents of other using move semantics.
+         * @param[in] other another Value object to use as source to initialize object with.
+         */
+        Value(Value&& other);
+
+        /** Copy assignment operator.
+         * Replaces the contents with those of other.
+         * @param[in] other another Value object to use as source to initialize object with.
+         * @returns *this
+         */
+        Value& operator=(const Value& other);
+
+        /** Move assignment operator.
+         * Replaces the contents with those of other using move semantics.
+         * @param[in] other another Value object to use as source to initialize object with.
+         * @returns *this
+         */
+        Value& operator=(Value&& other);
 
         /** Returns pointer to the underlying "sqlite3_value" object.
-         * */
-        sqlite3_value * getHandle() const noexcept;
+         */
+        sqlite3_value* getHandle() const noexcept;
+
+        /** Represents the value as an integer.
+         * @returns An integer representing the value of the object.
+         */
         int getInt() const noexcept;
+
+        /** Represents the value as a 64-bit integer.
+         * @returns An 64-bit integer representing the value of the object.
+         */
         int64_t getInt64() const noexcept;
+
+        /** Represents the value as an unsigned integer.
+         * @returns An unsigned integer representing the value of the object.
+         */
         unsigned int getUInt() const noexcept;
+
+        /** Represents the value as a double.
+         * @returns A double representing the value of the object.
+         */
         double getDouble() const noexcept;
+
+        /** Represents the value as a blob object.
+         * @returns A Blob object representing the value of the object.
+         */
         const Blob getBlob() const noexcept;
+
+        /** Represents the value as a string.
+         * @returns A string representing the value of the object.
+         */
         const std::string getString() const noexcept;
+
+        /** Represents the value as a UTF-16 string.
+         * @returns A UTF-16 string representing the value of the object.
+         */
         const std::u16string getU16String() const noexcept;
+
+        /** Returns the size in bytes of the value.
+         * @returns The size in bytes of the value.
+         */
         int getBytes() const noexcept;
+
+        /** Returns the Type for the inital datatype of the value.
+         *
+         * Warning: Other interfaces might change the datatype for an Value object.
+         * For example, if the datatype is initially SQLite::Type::Integer and getString() is called
+         * to extract a text value for that integer, then subsequent calls to getType() might return
+         * SQLite::Type::String.  Whether or not a persistent internal datype conversion occurs is undefined
+         * and my change from one release of SQLite to the nexxt.
+         * @returns The type of the value.
+         */
         Type getType() const noexcept;
 
         operator int() const;
@@ -63,6 +132,7 @@ namespace SQLite
         ValueHandle m_handle;
 
         const char* getText() const noexcept;
+
         /** Extracts a UTF-16 string in the native byte-order of the host machine.
          * Please pay attention to the fact that the pointer returned from:
          * getBlob(), getString(), or getWideString() can be invalidated by a subsequent call to

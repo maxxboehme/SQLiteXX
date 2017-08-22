@@ -42,4 +42,19 @@ namespace SQLite
         throwErrorCode(m_destination->getHandle());
         return false;
     }
+
+    int Backup::getTotalPageCount() noexcept
+    {
+        return sqlite3_backup_pagecount(m_handle.get());
+    }
+
+    int Backup::getRemainingPageCount() noexcept
+    {
+        return sqlite3_backup_remaining(m_handle.get());
+    }
+
+    sqlite3_backup* Backup::getHandle() noexcept
+    {
+        return m_handle.get();
+    }
 }

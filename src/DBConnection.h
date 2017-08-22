@@ -1,5 +1,7 @@
-#ifndef __SQLITECXX_SQLITE_DBCONNECTION_H__
-#define __SQLITECXX_SQLITE_DBCONNECTION_H__
+/** @file */
+
+#ifndef __SQLITEXX_SQLITE_DBCONNECTION_H__
+#define __SQLITEXX_SQLITE_DBCONNECTION_H__
 
 #include "Exception.h"
 #include "Functions.h"
@@ -16,22 +18,27 @@
 
 namespace SQLite
 {
-    /** Class that represents a connection to the database.
+    /** Class that represents a connection to a database.
      * DBConnection is a wrapper around the "sqlite3" structure.
      */
     class DBConnection
     {
         public:
 
+        /** Default constructor.
+         */
         DBConnection() noexcept;
 
-        DBConnection(const DBConnection &other) noexcept;
+        /** Copy constructor.
+         * @param[in] other another DBConnection object to use as source to initialize object with.
+         */
+        DBConnection(const DBConnection& other) noexcept;
 
-        DBConnection(DBConnection &&other) noexcept;
-
-        DBConnection& operator=(const DBConnection &other) noexcept;
-
-        DBConnection& operator=(DBConnection &&other) noexcept;
+        /** Copy constructor.
+         * Constructs a DBConnection object with a copy of the contents of other using move semantics.
+         * @param[in] other another DBConnection object to use as source to initialize object with.
+         */
+        DBConnection(DBConnection&& other) noexcept;
 
         /** Open the provided database UTF-8 filename.
          * @param[in] filename UTF-8 path/uri to the database database file
@@ -39,7 +46,7 @@ namespace SQLite
          * @param[in] timeout  amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
          */
         DBConnection(
-            const std::string &filename,
+            const std::string& filename,
             OpenMode mode = OpenMode::ReadWrite | OpenMode::Create,
             const std::chrono::milliseconds timeout = DEFAULT_TIMEOUT);
 
@@ -47,13 +54,27 @@ namespace SQLite
          * @param[in] filename UTF-8 path/uri to the database database file
          * @param[in] timeout  amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
          */
-        DBConnection(const std::string &filename, const std::chrono::milliseconds timeout);
+        DBConnection(const std::string& filename, const std::chrono::milliseconds timeout);
 
         /** Open the provided database UTF-16 filename.
          * @param[in] filename UTF-16 path/uri to the database database file
          * @param[in] timeout  Amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
          */
-        DBConnection(const std::u16string &filename, const std::chrono::milliseconds timeout = DEFAULT_TIMEOUT);
+        DBConnection(const std::u16string& filename, const std::chrono::milliseconds timeout = DEFAULT_TIMEOUT);
+
+        /** Copy assignment operator.
+         * Replaces the contents with those of other.
+         * @param[in] other another DBConnection object to use as source to initialize object with.
+         * @returns *this
+         */
+        DBConnection& operator=(const DBConnection& other) noexcept;
+
+        /** Move assignment operator.
+         * Replaces the contents with those of other using move semantics.
+         * @param[in] other another DBConnection object to use as source to initialize object with.
+         * @returns *this
+         */
+        DBConnection& operator=(DBConnection&& other) noexcept;
 
         /** Create a purely in memory database.
          * @returns a purely in memory SQLite::DBConnection
@@ -66,23 +87,31 @@ namespace SQLite
         static DBConnection wideMemory();
 
         /** Returns a Mutex that serializes access to the database.
+         * @returns A Mutex object for the database connection.
          */
         Mutex getMutex();
 
+        /** Specifies if the DBConnection has a open database connection.
+         * @returns Returns true if the DBConnection has a open database connection associated
+         *          associated with it.
+         */
         explicit operator bool() const noexcept;
 
+        /** Returns pointer to the underlying "sqlite3" object.
+         */
         sqlite3* getHandle() const noexcept;
 
         /** Open an SQLite database file as specified by the filename argument.
-         * @param filename path to SQLite file
+         * @param[in] filename path to SQLite file
+         * @param[in] mode     specifies the privileges to use when opening the database.
          */
-        void open(const std::string &filename, OpenMode mode = OpenMode::ReadWrite | OpenMode::Create);
+        void open(const std::string& filename, OpenMode mode = OpenMode::ReadWrite | OpenMode::Create);
 
         /** Open an SQLite database file as specified by the filname argument.
          * The database file will have UTF-16 native byte order.
-         * @param filename path to SQLite file
+         * @param[in] filename path to SQLite file
          */
-        void open(const std::u16string &filename);
+        void open(const std::u16string& filename);
 
         /** Returns the rowid of the most recent successful "INSERT" into
          * a rowid table or virtual table on database connection.
@@ -90,17 +119,17 @@ namespace SQLite
          */
         long long rowId() const noexcept;
 
-        /*
-         * @param name The name of the function to be used in an SQL query
-         * @param function
-         * @param isDeterministic
-         * @param textEncoding
-         * @param nargs
+        /** Used to add SQL functions or redefine the behavior of existing SQL functions.
+         * @param[in] name            The name of the function to be used in an SQL query
+         * @param[in] function        the implementation to the function
+         * @param[in] isDeterministic specifies if the function will always return the same result given the same inputs within a single SQL statement.
+         * @param[in] textEncoding    specifies the text encoding the SQL function prefers for its parameters.
+         * @param[in] nargs           the number of arguments that the SQL function takes. -1 means the SQL function can take any number of arguments.
          */
         template <typename F>
         void createGeneralFunction(
-            const std::string &name,
-            F &&function,
+            const std::string& name,
+            F&& function,
             int isDeterministic = false,
             const TextEncoding textEncoding = SQLite::TextEncoding::UTF8,
             int nargs = -1)
@@ -113,7 +142,7 @@ namespace SQLite
                 flags |= SQLITE_DETERMINISTIC;
             }
 
-            sqlite3_create_function_v2(
+            int errorcode = sqlite3_create_function_v2(
                 getHandle(),
                 name.c_str(),
                 nargs,
@@ -123,18 +152,20 @@ namespace SQLite
                 nullptr,
                 nullptr,
                 &internal_delete<FunctionType>);
+
+            throwErrorCode(errorcode, "");
         }
 
-        /*
-         * @param name The name of the function to be used in an SQL query
-         * @param function
-         * @param isDeterministic
-         * @param textEncoding
+        /** Used to add SQL functions or redefine the behavior of existing SQL functions.
+         * @param[in] name            The name of the function to be used in an SQL query
+         * @param[in] function        the implementation to the function
+         * @param[in] isDeterministic specifies if the function will always return the same result given the same inputs within a single SQL statement.
+         * @param[in] textEncoding    specifies the test encoding the SQL function prefers for its parameters
          */
         template <typename F>
         void createFunction(
-            const std::string &name,
-            F &&function,
+            const std::string& name,
+            F&& function,
             bool isDeterministic = false,
             const TextEncoding textEncoding = SQLite::TextEncoding::UTF8)
         {
@@ -160,14 +191,15 @@ namespace SQLite
             throwErrorCode(errorcode, "");
         }
 
-        /*
-         * @param name The name of the function to be used in an SQL query
-         * @param isDeterministic
-         * @param textEncoding
+        /** Used to add  SQL aggregate functions or redefine the behavior of existing SQL aggregate functions.
+         * @tparam A The class to use as the aggregate function.
+         * @param[in] name The name of the aggregate function to be used in an SQL query
+         * @param[in] isDeterministic specifies if the function will always return the same result given the same inputs within a single SQL statement.
+         * @param[in] textEncoding    specifies the test encoding the SQL function prefers for its parameters
          */
         template <typename A>
         void createAggregate(
-            const std::string &name,
+            const std::string& name,
             bool isDeterministic = false,
             const TextEncoding textEncoding = SQLite::TextEncoding::UTF8)
         {

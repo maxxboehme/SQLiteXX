@@ -8,15 +8,15 @@ namespace SQLite
         m_handle()
     {}
 
-    DBConnection::DBConnection(const DBConnection &other) noexcept :
+    DBConnection::DBConnection(const DBConnection& other) noexcept :
         m_handle(other.m_handle)
     {}
 
-    DBConnection::DBConnection(DBConnection &&other) noexcept :
+    DBConnection::DBConnection(DBConnection&& other) noexcept :
         m_handle(std::move(other.m_handle))
     {}
 
-    DBConnection& DBConnection::operator=(const DBConnection &other) noexcept
+    DBConnection& DBConnection::operator=(const DBConnection& other) noexcept
     {
         if (this != &other) {
             m_handle = other.m_handle;
@@ -25,7 +25,7 @@ namespace SQLite
         return *this;
     }
 
-    DBConnection& DBConnection::operator=(DBConnection &&other) noexcept
+    DBConnection& DBConnection::operator=(DBConnection&& other) noexcept
     {
         assert(this != &other);
         m_handle = std::move(other.m_handle);
@@ -38,7 +38,7 @@ namespace SQLite
      * @param[in] timeout  amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
      */
     DBConnection::DBConnection(
-        const std::string &filename,
+        const std::string& filename,
         OpenMode mode,
         const std::chrono::milliseconds timeout)
     {
@@ -51,7 +51,7 @@ namespace SQLite
      * @param[in] timeout  amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
      */
     DBConnection::DBConnection(
-        const std::string &filename,
+        const std::string& filename,
         const std::chrono::milliseconds timeout)
     {
         open(filename);
@@ -63,7 +63,7 @@ namespace SQLite
      * @param[in] timeout  Amount of milliseconds to wait before returning SQLite::BusyException when a table is locked
      */
     DBConnection::DBConnection(
-        const std::u16string &filename,
+        const std::u16string& filename,
         const std::chrono::milliseconds timeout)
     {
         open(filename);
@@ -99,7 +99,7 @@ namespace SQLite
         return m_handle.get();
     }
 
-    void DBConnection::open(const std::string &filename, OpenMode mode)
+    void DBConnection::open(const std::string& filename, OpenMode mode)
     {
         sqlite3 *connection;
         if (SQLITE_OK != sqlite3_open_v2(filename.c_str(), &connection, static_cast<int>(mode), nullptr)) {
@@ -111,7 +111,7 @@ namespace SQLite
         m_handle.reset(connection, sqlite3_close);
     }
 
-    void DBConnection::open(const std::u16string &filename)
+    void DBConnection::open(const std::u16string& filename)
     {
         sqlite3 *connection;
         if (SQLITE_OK != sqlite3_open16(filename.c_str(), &connection)) {

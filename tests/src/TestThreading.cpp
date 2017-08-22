@@ -1,16 +1,18 @@
 #include "catch.hpp"
 #include "SQLiteXX.h"
 
-#include <thread>
-#include <string>
-#include <vector>
 #include <cstdio>
 #include <iostream>
+#include <mutex>
+#include <string>
+#include <thread>
+#include <vector>
 
 static const size_t kNumberOfThreads = 2;
 
 static void table_insert_shared_connection(SQLite::DBConnection connection, std::string text, int count) {
-    SQLite::Lock lock(connection.getMutex());
+    SQLite::Mutex m = connection.getMutex();
+    std::lock_guard<SQLite::Mutex> lock(m);
     {
         SQLite::DeferredTransaction transaction(connection);
         for (int i = 0; i < count; ++i) {

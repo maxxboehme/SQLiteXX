@@ -1,5 +1,5 @@
-#ifndef __SQLITECXX_SQLITE_FUNCTIONS_H__
-#define __SQLITECXX_SQLITE_FUNCTIONS_H__
+#ifndef __SQLITEXX_SQLITE_FUNCTIONS_H__
+#define __SQLITEXX_SQLITE_FUNCTIONS_H__
 
 #include "Blob.h"
 #include "Value.h"

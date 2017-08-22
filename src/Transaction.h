@@ -1,5 +1,7 @@
-#ifndef __SQLITECXX_SQLITE_TRANSACTION_H__
-#define __SQLITECXX_SQLITE_TRANSACTION_H__
+/** @file */
+
+#ifndef __SQLITEXX_SQLITE_TRANSACTION_H__
+#define __SQLITEXX_SQLITE_TRANSACTION_H__
 
 #include "DBConnection.h"
 #include "Statement.h"
@@ -9,10 +11,13 @@
 
 namespace SQLite
 {
-    enum class TransactionType : int {
-        Deferred,
-        Immediate,
-        Exclusive
+
+    /** Used to specify the different types of SQLite transactions.
+     */
+    enum class TransactionType: int {
+        Deferred,  ///< means that no locks are acquired on the database until the database is first accessed.
+        Immediate, ///< means that no database connection will be able to write to the database or do a BEGIN IMMEDIATE/EXCLUSIVE.
+        Exclusive  ///< means that no other database connection except for read_uncommitted connection will be able to read/write to the database.
     };
 
 
@@ -23,12 +28,14 @@ namespace SQLite
         public:
         const TransactionType type;
 
-        /** Begins the SQLite transaction.
+        /** Implements a strictly scope-based SQLite transaction.
          * @param[in] connection the database connection to begin the transaction on
+         * @param[in] type the transaction type to be used.
          */
-        Transaction(DBConnection &connection, const TransactionType type);
+        Transaction(DBConnection& connection, const TransactionType type);
 
-        /** Safely rollback the transaction if it has not been commited.
+        /** Destructor.
+         * Safely rollback the transaction if it has not been commited.
         */
         virtual ~Transaction() noexcept;
 
@@ -45,26 +52,41 @@ namespace SQLite
         Transaction& operator=(const Transaction&) = delete;
     };
 
+    /** RAII encapsulation of the SQLite deferred transaction.
+    */
     class DeferredTransaction : public Transaction
     {
         public:
-        DeferredTransaction(DBConnection &connection) :
+        /** Implements a strictly scope-based SQLite deferred transaction.
+         * @param[in] connection the database connection to begin the transaction on
+         */
+        DeferredTransaction(DBConnection& connection) :
             Transaction(connection, TransactionType::Deferred)
         {}
     };
 
+    /** RAII encapsulation of the SQLite immediate transaction.
+    */
     class ImmediateTransaction : public Transaction
     {
         public:
-        ImmediateTransaction(DBConnection &connection) :
+        /** Implements a strictly scope-based SQLite immediate transaction.
+         * @param[in] connection the database connection to begin the transaction on
+         */
+        ImmediateTransaction(DBConnection& connection) :
             Transaction(connection, TransactionType::Immediate)
         {}
     };
 
+    /** RAII encapsulation of the SQLite exclusive transaction.
+    */
     class ExclusiveTransaction : public Transaction
     {
         public:
-        ExclusiveTransaction(DBConnection &connection) :
+        /** Implements a strictly scope-based SQLite exclusive transaction.
+         * @param[in] connection the database connection to begin the transaction on
+         */
+        ExclusiveTransaction(DBConnection& connection) :
             Transaction(connection, TransactionType::Exclusive)
         {}
     };

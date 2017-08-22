@@ -65,10 +65,6 @@ namespace SQLite
         return sqlite3_changes(sqlite3_db_handle(getHandle()));
     }
 
-    /** Binds an integer value to a parameters in an SQL prepared statement.
-     * @param index of the SQL parameter to be set
-     * @param The integer value to bind to the parameter.
-     **/
     void Statement::bind(const int index, const int value) const
     {
         if (SQLITE_OK != sqlite3_bind_int(getHandle(), index, value))
@@ -125,22 +121,6 @@ namespace SQLite
     void Statement::bind(const int index, const std::u16string &value) const
     {
         bind(index, value.c_str(), value.size() * sizeof(char16_t));
-    }
-
-    void Statement::bind(const int index, std::string &&value) const
-    {
-        if (SQLITE_OK != sqlite3_bind_text(getHandle(), index, value.c_str(), value.size(), SQLITE_TRANSIENT))
-        {
-            throwLastError();
-        }
-    }
-
-    void Statement::bind(const int index, std::u16string &&value) const
-    {
-        if (SQLITE_OK != sqlite3_bind_text16(getHandle(), index, value.c_str(), value.size() * sizeof(char16_t), SQLITE_TRANSIENT))
-        {
-            throwLastError();
-        }
     }
 
     void Statement::throwLastError() const

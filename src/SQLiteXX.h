@@ -1,5 +1,6 @@
-#ifndef __SQLITECXX_SQLITE_SQLITEXX_H__
-#define __SQLITECXX_SQLITE_SQLITEXX_H__
+/** @file */
+#ifndef __SQLITEXX_SQLITE_SQLITEXX_H__
+#define __SQLITEXX_SQLITE_SQLITEXX_H__
 
 #include "Backup.h"
 #include "DBConnection.h"
@@ -13,19 +14,21 @@
 #define SQLITEXX_VERSION "0.1.0"
 
 
+/** SQLiteXX classes and functions are defined in this namespace.
+ */
 namespace SQLite
 {
-    inline const char* SQliteLibVersion() noexcept
+    inline const char* sqliteLibVersion() noexcept
     {
         return sqlite3_libversion();
     }
 
-    inline int SQliteLibVersionNumber() noexcept
+    inline int sqliteLibVersionNumber() noexcept
     {
         return sqlite3_libversion_number();
     }
 
-    inline const char* SQLiteXXLibVersion() noexcept
+    inline const char* sqlitexxLibVersion() noexcept
     {
         return SQLITEXX_VERSION;
     }
