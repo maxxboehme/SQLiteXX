@@ -32,7 +32,7 @@ file(GLOB SQLITEXX_HEADERS "src/*.h")
 file(GLOB SQLITEXX_SOURCES "src/*.cpp")
 
 add_library(SQLiteXX ${SQLITEXX_HEADERS} ${SQLITEXX_SOURCES})
-add_dependencies(SQLiteXX sqlite)
+add_dependencies(SQLiteXX sqlite3)
 generate_export_header(SQLiteXX)
 target_include_directories(SQLiteXX PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(SQLiteXX PRIVATE ${SQLITE3_INCLUDE_DIR})
