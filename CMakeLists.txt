@@ -16,27 +16,28 @@ project(SQLiteXX VERSION ${SQLITEXX_VERSION} LANGUAGES C CXX)
 set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake"
    ${CMAKE_MODULE_PATH})
 
-find_package(Threads REQUIRED)
-
-include(ExternalProjectUtils)
-find_package_external(PACKAGE SQLite3 REQUIRE)
-find_package_external(PACKAGE Catch REQUIRE)
 
 # Setting up standard defaults, these will be passed down into external projects
 include(GenerateExportHeader)
 include(BuildType)
 include(download_dir)
+include(ExternalProjectUtils)
+
+# Add the thrid party dependencies
+find_package(Threads REQUIRED)
+find_package_external(PACKAGE SQLite3 REQUIRE)
+find_package_external(PACKAGE Catch REQUIRE)
 
 # Collecting header and source files for SQLiteXX
 file(GLOB SQLITEXX_HEADERS "src/*.h")
 file(GLOB SQLITEXX_SOURCES "src/*.cpp")
 
 add_library(SQLiteXX ${SQLITEXX_HEADERS} ${SQLITEXX_SOURCES})
-add_dependencies(SQLiteXX sqlite3)
+add_dependency_external(TARGET SQLiteXX PACKAGE SQLite3)
 generate_export_header(SQLiteXX)
 target_include_directories(SQLiteXX PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)
 target_include_directories(SQLiteXX PRIVATE ${SQLITE3_INCLUDE_DIR})
-target_link_libraries(SQLiteXX ${SQLITE3_LIBRARIES})
+target_link_libraries(SQLiteXX ${SQLITE3_LIBRARY})
 target_link_libraries(SQLiteXX ${CMAKE_THREAD_LIBS_INIT} ${CMAKE_DL_LIBS})
 target_compile_features(SQLiteXX PRIVATE cxx_nullptr)
 target_compile_features(SQLiteXX PUBLIC cxx_rvalue_references cxx_noexcept cxx_variadic_templates cxx_strong_enums cxx_generic_lambdas)
