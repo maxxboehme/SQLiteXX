@@ -254,7 +254,7 @@ namespace sqlite
     template <typename F>
     int internal_collation_function(void* context, int bytes1, const void* string_bytes1, int bytes2, const void* string_bytes2) {
         F *userCollationFunction = static_cast<F *>(context);
-        assert(userScalarFunction != 0);
+        assert(userCollationFunction != 0);
 
         try {
             const std::string string1(static_cast<const char*>(string_bytes1), bytes1);
