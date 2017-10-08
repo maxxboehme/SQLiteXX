@@ -12,107 +12,107 @@
 #include <cstring>
 #include <string>
 
-namespace SQLite
+namespace sqlite
 {
     /** A SQLite dynamically typed value object, aka "sqlite3_value".
-     * Value objects represent all values that can be stored in a database table.
-     * A Value object may be either "protected" or "unprotected" which refers
+     * value objects represent all values that can be stored in a database table.
+     * A value object may be either "protected" or "unprotected" which refers
      * to whether or not a mutex is held. An internal mutex is held for a protected value object but
      * not for an unprotected one. If SQLite is compiled to be single-threaded or if SQLite is run in one of reduced mutex modes
-     * then there is no distinction between protected and unprotected sqlite3_value objects. A Value objects will always be
+     * then there is no distinction between protected and unprotected sqlite3_value objects. A value objects will always be
      * "protected" as it stores a sqlite3_value objects created from calling the sqlite3_value_dup() interface which produces a "protected"
      * "sqlite3_value" from an "unprotected" one.
-     * Only use a Value object in the same thread as the SQL function that created it.
+     * Only use a value object in the same thread as the SQL function that created it.
      */
-    class Value
+    class value
     {
         public:
 
-        /** Constructs a Value object from a sqlite3_value object.
+        /** Constructs a value object from a sqlite3_value object.
          * @param[in] value a pointer to an sqlite3_value object to initalize object with.
          */
-        Value(const sqlite3_value* const value);
+        explicit value(const sqlite3_value* const value);
 
         /** Copy constructor.
-         * Constructs a Value object with a copy of the contents of other.
-         * @param[in] other another Value object to use as source to initialize object with.
+         * Constructs a value object with a copy of the contents of other.
+         * @param[in] other another value object to use as source to initialize object with.
          */
-        Value(const Value& other);
+        value(const value& other);
 
         /** Move constructor.
-         * Constructs a Value object with a copy of the contents of other using move semantics.
-         * @param[in] other another Value object to use as source to initialize object with.
+         * Constructs a value object with a copy of the contents of other using move semantics.
+         * @param[in] other another value object to use as source to initialize object with.
          */
-        Value(Value&& other);
+        value(value&& other);
 
         /** Copy assignment operator.
          * Replaces the contents with those of other.
-         * @param[in] other another Value object to use as source to initialize object with.
+         * @param[in] other another value object to use as source to initialize object with.
          * @returns *this
          */
-        Value& operator=(const Value& other);
+        value& operator=(const value& other);
 
         /** Move assignment operator.
          * Replaces the contents with those of other using move semantics.
-         * @param[in] other another Value object to use as source to initialize object with.
+         * @param[in] other another value object to use as source to initialize object with.
          * @returns *this
          */
-        Value& operator=(Value&& other);
+        value& operator=(value&& other);
 
         /** Returns pointer to the underlying "sqlite3_value" object.
          */
-        sqlite3_value* getHandle() const noexcept;
+        sqlite3_value* handle() const noexcept;
 
         /** Represents the value as an integer.
          * @returns An integer representing the value of the object.
          */
-        int getInt() const noexcept;
+        int as_int() const noexcept;
 
         /** Represents the value as a 64-bit integer.
          * @returns An 64-bit integer representing the value of the object.
          */
-        int64_t getInt64() const noexcept;
+        int64_t as_int64() const noexcept;
 
         /** Represents the value as an unsigned integer.
          * @returns An unsigned integer representing the value of the object.
          */
-        unsigned int getUInt() const noexcept;
+        unsigned int as_uint() const noexcept;
 
         /** Represents the value as a double.
          * @returns A double representing the value of the object.
          */
-        double getDouble() const noexcept;
+        double as_double() const noexcept;
 
         /** Represents the value as a blob object.
-         * @returns A Blob object representing the value of the object.
+         * @returns A blob object representing the value of the object.
          */
-        const Blob getBlob() const noexcept;
+        const blob as_blob() const noexcept;
 
         /** Represents the value as a string.
          * @returns A string representing the value of the object.
          */
-        const std::string getString() const noexcept;
+        const std::string as_string() const noexcept;
 
         /** Represents the value as a UTF-16 string.
          * @returns A UTF-16 string representing the value of the object.
          */
-        const std::u16string getU16String() const noexcept;
+        const std::u16string as_u16string() const noexcept;
 
         /** Returns the size in bytes of the value.
          * @returns The size in bytes of the value.
          */
-        int getBytes() const noexcept;
+        int bytes() const noexcept;
 
-        /** Returns the Type for the inital datatype of the value.
+        /** Returns the datatype for the initial datatype of the value.
          *
-         * Warning: Other interfaces might change the datatype for an Value object.
-         * For example, if the datatype is initially SQLite::Type::Integer and getString() is called
-         * to extract a text value for that integer, then subsequent calls to getType() might return
-         * SQLite::Type::String.  Whether or not a persistent internal datype conversion occurs is undefined
-         * and my change from one release of SQLite to the nexxt.
+         * Warning: Other interfaces might change the datatype for an value object.
+         * For example, if the datatype is initially sqlite::datatype::integer and as_string() is called
+         * to extract a text value for that integer, then subsequent calls to type() might return
+         * sqlite::datatype::text.  Whether or not a persistent internal datatype conversion occurs is undefined
+         * and my change from one release of sqlite to the next.
          * @returns The type of the value.
          */
-        Type getType() const noexcept;
+        datatype type() const noexcept;
 
         operator int() const;
         operator unsigned int() const;
@@ -122,77 +122,77 @@ namespace SQLite
         operator long() const;
         operator long long() const;
         operator double() const;
-        operator const Blob() const;
+        operator const blob() const;
         operator const std::string() const;
         operator const std::u16string() const;
 
         private:
 
-        using ValueHandle = std::unique_ptr<sqlite3_value, decltype(&sqlite3_value_free)>;
-        ValueHandle m_handle;
+        using value_handle = std::unique_ptr<sqlite3_value, decltype(&sqlite3_value_free)>;
+        value_handle m_handle;
 
-        const char* getText() const noexcept;
+        const char* as_text() const noexcept;
 
         /** Extracts a UTF-16 string in the native byte-order of the host machine.
          * Please pay attention to the fact that the pointer returned from:
          * getBlob(), getString(), or getWideString() can be invalidated by a subsequent call to
          * getBytes(), getBytes16(), getString(), getWideString().
          * */
-        const char16_t* getText16() const noexcept;
-        int getTextLength() const noexcept;
-        int getText16Length() const noexcept;
+        const char16_t* as_text16() const noexcept;
+        int text_length() const noexcept;
+        int text16_length() const noexcept;
     };
 
-    inline Value::operator int() const
+    inline value::operator int() const
     {
-        return getInt();
+        return as_int();
     }
 
-    inline Value::operator unsigned int() const
+    inline value::operator unsigned int() const
     {
-        return getUInt();
+        return as_uint();
     }
 
 #if (LONG_MAX == INT_MAX) // sizeof(long)==4 means long is equivalent to int
-    inline Value::operator long() const
+    inline value::operator long() const
     {
-        return getInt();
+        return as_int();
     }
 
-    inline Value::operator unsigned long() const
+    inline value::operator unsigned long() const
     {
-        return getUInt();
+        return as_uint();
     }
 #else
-    inline Value::operator long() const
+    inline value::operator long() const
     {
-        return getInt64();
+        return as_int64();
     }
 #endif
 
-    inline Value::operator long long() const
+    inline value::operator long long() const
     {
-        return getInt64();
+        return as_int64();
     }
 
-    inline Value::operator double() const
+    inline value::operator double() const
     {
-        return getDouble();
+        return as_double();
     }
 
-    inline Value::operator const Blob() const
+    inline value::operator const blob() const
     {
-        return getBlob();
+        return as_blob();
     }
 
-    inline Value::operator const std::string() const
+    inline value::operator const std::string() const
     {
-        return getString();
+        return as_string();
     }
 
-    inline Value::operator const std::u16string() const
+    inline value::operator const std::u16string() const
     {
-        return getU16String();
+        return as_u16string();
     }
 }
 

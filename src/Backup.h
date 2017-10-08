@@ -9,15 +9,15 @@
 
 #include <memory>
 
-namespace SQLite
+namespace sqlite
 {
     /** Used to aid in the process of backing up a database.
-     * The Backup object records state information about an ongoing
+     * The backup object records state information about an ongoing
      * online backup operation.  It us useful either for creating
      * backups of databases or for copying in-memory databases to or
      * from persistent files.
      */
-    class Backup
+    class backup
     {
         public:
         /** Construct a backup object.
@@ -26,12 +26,12 @@ namespace SQLite
          * @param sourceName the source database name
          * @param destinationName the destination database name
          *
-         * @throws SQLite::Exception If an error occurs when initializing a Backup
-         *                           then an SQLite::Exception will be raised.
+         * @throws sqlite::exception If an error occurs when initializing a backup
+         *                           then an sqlite::exception will be raised.
          */
-        Backup(
-            const DBConnection& source,
-            const DBConnection& destination,
+        backup(
+            const dbconnection& source,
+            const dbconnection& destination,
             const std::string& sourceName = "main",
             const std::string& destinationName = "main");
 
@@ -39,10 +39,10 @@ namespace SQLite
          * If pages is negative, all remaining source pages are copied.
          *
          * @params pages the number of pages to copy from source to destination database.
-         * @returns The returne value will be true if there are more pages to copy. False otherwise.
+         * @returns The returns value will be true if there are more pages to copy. False otherwise.
          *
-         * @throws SQLite::Exception If an error occurs when initializing a Backup
-         *                           then an SQLite::Exception will be raised.
+         * @throws sqlite::exception If an error occurs when initializing a backup
+         *                           then an sqlite::exception will be raised.
          */
         bool step(const int pages = -1);
 
@@ -53,7 +53,7 @@ namespace SQLite
          * are not reflected in the output of this method until after the next step().
          * @returns The total number of pages in the source database.
          */
-        int getTotalPageCount() noexcept;
+        int total_page_count() noexcept;
 
         /** Returns the number of pages still to be backed up.
          * The values returned by this function is only updated by step().
@@ -62,23 +62,23 @@ namespace SQLite
          * are not reflected in the output of this method until after the next step().
          * @returns The number of pages still to be backed up.
          */
-        int getRemainingPageCount() noexcept;
+        int remaining_page_count() noexcept;
 
         /** Returns the pointer to the underlying sqlite3_backup object.
          */
-        sqlite3_backup* getHandle() noexcept;
+        sqlite3_backup* handle() noexcept;
 
         private:
-        using BackupHandle = std::unique_ptr<sqlite3_backup, decltype(&sqlite3_backup_finish)>;
-        BackupHandle m_handle;
+        using backup_handle = std::unique_ptr<sqlite3_backup, decltype(&sqlite3_backup_finish)>;
+        backup_handle m_handle;
 
-        const DBConnection *m_destination = nullptr;
+        const dbconnection *m_destination = nullptr;
 
-        Backup(const Backup& other) = delete;
-        Backup& operator=(Backup& other) = delete;
+        backup(const backup& other) = delete;
+        backup& operator=(backup& other) = delete;
     };
 
-    void SaveToDisk(const DBConnection &source, const std::string &filename);
+    void save(const dbconnection &source, const std::string &filename);
 }
 
 #endif

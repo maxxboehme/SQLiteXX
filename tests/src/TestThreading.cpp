@@ -10,25 +10,25 @@
 
 static const size_t kNumberOfThreads = 2;
 
-static void table_insert_shared_connection(SQLite::DBConnection connection, std::string text, int count) {
-    SQLite::Mutex m = connection.getMutex();
-    std::lock_guard<SQLite::Mutex> lock(m);
+static void table_insert_shared_connection(sqlite::dbconnection connection, std::string text, int count) {
+    sqlite::mutex m = connection.mutex();
+    std::lock_guard<sqlite::mutex> lock(m);
     {
-        SQLite::DeferredTransaction transaction(connection);
+        sqlite::deferred_transaction transaction(connection);
         for (int i = 0; i < count; ++i) {
-            Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+            sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
         }
         REQUIRE_NOTHROW(transaction.commit());
     }
 }
 
-static void table_insert_shared_connection_try_lock(SQLite::DBConnection connection, std::string text, int count) {
-    SQLite::Mutex mutex = connection.getMutex();
+static void table_insert_shared_connection_try_lock(sqlite::dbconnection connection, std::string text, int count) {
+    sqlite::mutex mutex = connection.mutex();
     {
         int i = 0;
         while (i < count) {
-            if (mutex.tryLock()) {
-                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+            if (mutex.try_lock()) {
+                sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
                 ++i;
                 mutex.unlock();
             }
@@ -37,16 +37,16 @@ static void table_insert_shared_connection_try_lock(SQLite::DBConnection connect
 }
 
 TEST_CASE("Sharing a database connection", "[Threading]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    SQLite::Statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
+    sqlite::statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
     REQUIRE_NOTHROW(query.execute());
 
     int count = 1000;
     size_t numThreads = kNumberOfThreads;
     std::vector<std::thread> threadpool;
 
-    SECTION("Using SQLite::Lock") {
+    SECTION("Using sqlite::Lock") {
         for (size_t i = 0; i < numThreads; ++i) {
             threadpool.push_back(std::thread(table_insert_shared_connection, connection, "thread" + std::to_string(i), count));
         }
@@ -54,7 +54,7 @@ TEST_CASE("Sharing a database connection", "[Threading]") {
             threadpool[i].join();
         }
 
-        REQUIRE(connection.rowId() == (count * threadpool.size()));
+        REQUIRE(connection.row_id() == (count * threadpool.size()));
     }
 
     SECTION("Using Mutex tryLock") {
@@ -65,26 +65,26 @@ TEST_CASE("Sharing a database connection", "[Threading]") {
             threadpool[i].join();
         }
 
-        REQUIRE(connection.rowId() == (count * threadpool.size()));
+        REQUIRE(connection.row_id() == (count * threadpool.size()));
     }
 }
 
 
 void table_insert_default_busy_timeout(std::string filename, std::string text, int count) {
-    SQLite::DBConnection connection(filename);
+    sqlite::dbconnection connection(filename);
     {
         for (int i = 0; i < count; ++i) {
-            REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text));
+            REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text));
         }
     }
 }
 
 void table_insert_transaction_default_busy_timeout(std::string filename, std::string text, int count) {
-    SQLite::DBConnection connection(filename);
+    sqlite::dbconnection connection(filename);
     {
-        SQLite::DeferredTransaction t(connection);
+        sqlite::deferred_transaction t(connection);
         for (int i = 0; i < count; ++i) {
-            REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text));
+            REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text));
         }
         t.commit();
     }
@@ -96,28 +96,28 @@ void table_insert_transaction_default_busy_timeout(std::string filename, std::st
     do { \
         retry = false; \
         try { \
-            Execute(connection, statement, __VA_ARGS__); \
-        } catch (SQLite::BusyException &) { \
+            sqlite::execute(connection, statement, __VA_ARGS__); \
+        } catch (sqlite::busy_exception &) { \
             retry = true; \
         } \
     } while (retry)
 
 void table_insert_using_busy_exception2(std::string filename, std::string text, int count) {
-    SQLite::DBConnection connection(filename, std::chrono::milliseconds(0));
+    sqlite::dbconnection connection(filename, std::chrono::milliseconds(0));
     for (int i = 0; i < count; ++i) {
         RETRY_BUSY_BEGIN("INSERT INTO test VALUES (NULL, ?)", text);
     }
 }
 
 void table_insert_using_busy_exception(std::string filename, std::string text, int count) {
-    SQLite::DBConnection connection(filename, std::chrono::milliseconds(0));
+    sqlite::dbconnection connection(filename, std::chrono::milliseconds(0));
     for (int i = 0; i < count; ++i) {
         bool retry = false;
         do {
             retry = false;
             try {
-                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
-            } catch (SQLite::BusyException &e) {
+                sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+            } catch (sqlite::busy_exception &e) {
                 retry = true;
             }
         } while (retry);
@@ -125,16 +125,16 @@ void table_insert_using_busy_exception(std::string filename, std::string text, i
 }
 
 void table_insert_deferredtransaction_busy_exception(std::string filename, std::string text, int count) {
-    SQLite::DBConnection connection(filename, std::chrono::milliseconds(0));
+    sqlite::dbconnection connection(filename, std::chrono::milliseconds(0));
     bool retry = false;
     do {
-        SQLite::DeferredTransaction t(connection);
+        sqlite::deferred_transaction t(connection);
         retry = false;
         try {
             for (int i = 0; i < count; ++i) {
-                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+                sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
             }
-        } catch (SQLite::BusyException &e) {
+        } catch (sqlite::busy_exception &e) {
             retry = true;
         }
         if (!retry) {
@@ -142,7 +142,7 @@ void table_insert_deferredtransaction_busy_exception(std::string filename, std::
                 retry = false;
                 try {
                     t.commit();
-                } catch (SQLite::BusyException &e) {
+                } catch (sqlite::busy_exception &e) {
                     retry = true;
                 }
             } while (retry);
@@ -151,34 +151,34 @@ void table_insert_deferredtransaction_busy_exception(std::string filename, std::
 }
 
 void table_insert_immediatetransaction_busy_exception(std::string filename, std::string text, int count) {
-    SQLite::DBConnection connection(filename, std::chrono::milliseconds(0));
+    sqlite::dbconnection connection(filename, std::chrono::milliseconds(0));
     bool retry = false;
     do {
         retry = false;
         try {
-            SQLite::ImmediateTransaction t(connection);
+            sqlite::immediate_transaction t(connection);
             for (int i = 0; i < count; ++i) {
-                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+                sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
             }
             t.commit();
-        } catch (SQLite::BusyException &e) {
+        } catch (sqlite::busy_exception &e) {
             retry = true;
         }
     } while (retry);
 }
 
 void table_insert_exclusivetransaction_busy_exception(std::string filename, std::string text, int count) {
-    SQLite::DBConnection connection(filename, std::chrono::milliseconds(0));
+    sqlite::dbconnection connection(filename, std::chrono::milliseconds(0));
     bool retry = false;
     do {
         retry = false;
         try {
-            SQLite::ImmediateTransaction t(connection);
+            sqlite::immediate_transaction t(connection);
             for (int i = 0; i < count; ++i) {
-                Execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
+                sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
             }
             t.commit();
-        } catch (SQLite::BusyException &e) {
+        } catch (sqlite::busy_exception &e) {
             retry = true;
         }
     } while (retry);
@@ -188,8 +188,8 @@ TEST_CASE("Thread-local connection", "[Threading]") {
     remove(testFile.c_str());
 
     {
-        SQLite::DBConnection connection(testFile.c_str());
-        SQLite::Statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
+        sqlite::dbconnection connection(testFile.c_str());
+        sqlite::statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
         REQUIRE_NOTHROW(query.execute());
     }
 
@@ -211,11 +211,11 @@ TEST_CASE("Thread-local connection", "[Threading]") {
             threadpool[i].join();
         }
 
-        SQLite::DBConnection connection(testFile.c_str());
+        sqlite::dbconnection connection(testFile.c_str());
         int numRows = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+        for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
-            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+            REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());
         }
 
         REQUIRE(numRows == (count * threadpool.size()));
@@ -230,11 +230,11 @@ TEST_CASE("Thread-local connection", "[Threading]") {
             threadpool[i].join();
         }
 
-        SQLite::DBConnection connection(testFile.c_str());
+        sqlite::dbconnection connection(testFile.c_str());
         int numRows = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+        for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
-            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+            REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());
         }
 
         REQUIRE(numRows == (count * threadpool.size()));
@@ -249,11 +249,11 @@ TEST_CASE("Thread-local connection", "[Threading]") {
             threadpool[i].join();
         }
 
-        SQLite::DBConnection connection(testFile.c_str());
+        sqlite::dbconnection connection(testFile.c_str());
         int numRows = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+        for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
-            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+            REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());
         }
 
         REQUIRE(numRows == (count * threadpool.size()));
@@ -269,11 +269,11 @@ TEST_CASE("Thread-local connection", "[Threading]") {
             threadpool[i].join();
         }
 
-        SQLite::DBConnection connection(testFile.c_str());
+        sqlite::dbconnection connection(testFile.c_str());
         int numRows = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT * FROM test")) {
+        for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
-            REQUIRE(expectedStringValues.find(row.getString(1)) != expectedStringValues.end());
+            REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());
         }
 
         REQUIRE(numRows == (count * threadpool.size()));
@@ -285,8 +285,8 @@ TEST_CASE("Thread-local connection different transactions", "[Threading]") {
     remove(testFile.c_str());
 
     {
-        SQLite::DBConnection connection(testFile.c_str());
-        SQLite::Statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
+        sqlite::dbconnection connection(testFile.c_str());
+        sqlite::statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
         REQUIRE_NOTHROW(query.execute());
     }
 

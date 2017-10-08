@@ -11,7 +11,7 @@
 #include <utility>
 #include <vector>
 
-namespace SQLite {
+namespace sqlite {
     template<std::size_t N>
     struct placeholder_template {
         static placeholder_template pt;
@@ -23,17 +23,17 @@ namespace SQLite {
 
 namespace std {
     template<std::size_t N>
-    struct is_placeholder<SQLite::placeholder_template<N> > : std::integral_constant<std::size_t, N> {
+    struct is_placeholder<sqlite::placeholder_template<N> > : std::integral_constant<std::size_t, N> {
     };
 }
 
-namespace SQLite
+namespace sqlite
 {
-    enum class TextEncoding: int {
-        UTF8 = SQLITE_UTF8,
-        UTF16LE = SQLITE_UTF16LE,
-        UTF16BE = SQLITE_UTF16BE,
-        UTF16 = SQLITE_UTF16,
+    enum class textencoding: int {
+        utf8 = SQLITE_UTF8,
+        utf16le = SQLITE_UTF16LE,
+        utf16be = SQLITE_UTF16BE,
+        utf16 = SQLITE_UTF16,
     };
 
     /**
@@ -59,11 +59,11 @@ namespace SQLite
         sqlite3_result_text16(context, value.c_str(), value.size() * sizeof(char16_t), SQLITE_TRANSIENT);
     }
 
-    inline void return_result(sqlite3_context *context, const Value &value) {
-        sqlite3_result_value(context, value.getHandle());
+    inline void return_result(sqlite3_context *context, const value &value) {
+        sqlite3_result_value(context, value.handle());
     }
 
-    inline void return_result(sqlite3_context *context, const Blob &value) {
+    inline void return_result(sqlite3_context *context, const blob &value) {
         sqlite3_result_blob(context, value.data(), value.size(), SQLITE_TRANSIENT);
     }
 
@@ -132,28 +132,52 @@ namespace SQLite
     {};
 
     template <typename C, typename R>
-    struct SQLiteFunctionTraits<R(C::*)(const std::vector<Value> &)> {
-        typedef std::function<R(const std::vector<Value> &)> f_type;
+    struct SQLiteFunctionTraits<R(C::*)(const std::vector<value> &)> {
+        typedef std::function<R(const std::vector<value> &)> f_type;
     };
 
     template <typename C, typename R>
-    struct SQLiteFunctionTraits<R(C::*)(const std::vector<Value> &) const> {
-        typedef std::function<R(const std::vector<Value> &)> f_type;
+    struct SQLiteFunctionTraits<R(C::*)(const std::vector<value> &) const> {
+        typedef std::function<R(const std::vector<value> &)> f_type;
     };
 
     template <typename R>
-    struct SQLiteFunctionTraits<R(*)(const std::vector<Value> &)> {
-        typedef std::function<R(const std::vector<Value> &)> f_type;
+    struct SQLiteFunctionTraits<R(*)(const std::vector<value> &)> {
+        typedef std::function<R(const std::vector<value> &)> f_type;
     };
 
     template <typename R>
-    struct SQLiteFunctionTraits<R(&)(const std::vector<Value> &)> {
-        typedef std::function<R(const std::vector<Value> &)> f_type;
+    struct SQLiteFunctionTraits<R(&)(const std::vector<value> &)> {
+        typedef std::function<R(const std::vector<value> &)> f_type;
+    };
+
+    template <typename T>
+    struct collation_traits : public collation_traits<decltype(&T::operator())>
+    {};
+
+    template <typename C>
+    struct collation_traits<int(C::*)(const std::string&, const std::string&)> {
+        typedef std::function<int(const std::string&, const std::string&)> f_type;
+    };
+
+    template <typename C>
+    struct collation_traits<int(C::*)(const std::string&, const std::string&) const> {
+        typedef std::function<int(const std::string&, const std::string&)> f_type;
+    };
+
+    template <>
+    struct collation_traits<int(*)(const std::string&, const std::string&)> {
+        typedef std::function<int(const std::string&, const std::string&)> f_type;
+    };
+
+    template <>
+    struct collation_traits<int(&)(const std::string&, const std::string&)> {
+        typedef std::function<int(const std::string&, const std::string&)> f_type;
     };
 
     template<typename T>
     typename std::remove_reference<T>::type get(sqlite3_value **values, const std::size_t index) {
-        return Value(values[index]);
+        return value(values[index]);
     }
 
     template<typename F, typename C, std::size_t... Is>
@@ -194,7 +218,7 @@ namespace SQLite
             return_result(context, result);
         } catch (const std::bad_alloc &e) {
             sqlite3_result_error_nomem(context);
-        } catch (const SQLite::Exception &e) {
+        } catch (const sqlite::exception &e) {
             sqlite3_result_error(context, e.what(), e.errcode);
         } catch (const std::exception &e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);
@@ -209,16 +233,16 @@ namespace SQLite
         assert(userScalarFunction != 0);
 
         try {
-            std::vector<Value> argValues;
+            std::vector<value> argValues;
             for (int i = 0; i < argc; ++i) {
-                argValues.push_back(Value(values[i]));
+                argValues.push_back(value(values[i]));
             }
 
             auto result = (*userScalarFunction)(argValues);
             return_result(context, result);
         } catch (const std::bad_alloc &e) {
             sqlite3_result_error_nomem(context);
-        } catch (const SQLite::Exception &e) {
+        } catch (const sqlite::exception &e) {
             sqlite3_result_error(context, e.what(), e.errcode);
         } catch (const std::exception &e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);
@@ -226,6 +250,23 @@ namespace SQLite
             sqlite3_result_error_code(context, SQLITE_ABORT);
         }
     }
+
+    template <typename F>
+    int internal_collation_function(void* context, int bytes1, const void* string_bytes1, int bytes2, const void* string_bytes2) {
+        F *userCollationFunction = static_cast<F *>(context);
+        assert(userScalarFunction != 0);
+
+        try {
+            const std::string string1(static_cast<const char*>(string_bytes1), bytes1);
+            const std::string string2(static_cast<const char*>(string_bytes2), bytes2);
+
+            int result = (*userCollationFunction)(string1, string2);
+            return result;
+        } catch (...) {
+            return -123456;
+        }
+    }
+
 
     template<typename Call>
     void internal_delete(void *user_data) {
@@ -269,7 +310,7 @@ namespace SQLite
             wrapper->step(context, argc, values);
         } catch (const std::bad_alloc &e) {
             sqlite3_result_error_nomem(context);
-        } catch (const SQLite::Exception &e) {
+        } catch (const sqlite::exception &e) {
             sqlite3_result_error(context, e.what(), e.errcode);
         } catch (const std::exception &e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);
@@ -288,7 +329,7 @@ namespace SQLite
             wrapper->reset();
         } catch (const std::bad_alloc &e) {
             sqlite3_result_error_nomem(context);
-        } catch (const SQLite::Exception &e) {
+        } catch (const sqlite::exception &e) {
             sqlite3_result_error(context, e.what(), e.errcode);
         } catch (const std::exception &e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);

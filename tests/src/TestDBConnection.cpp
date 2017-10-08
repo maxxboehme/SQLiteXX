@@ -5,81 +5,81 @@
 #include <utility>
 #include <vector>
 
-TEST_CASE("Combinations of OpenMode flags with new database", "[DBConnection]") {
+TEST_CASE("Combinations of openmode flags with new database", "[DBConnection]") {
     remove("testDBConnection.db");
 
     SECTION("Open file as read only but file does not exist") {
-        REQUIRE_THROWS_AS(SQLite::DBConnection("testDBConnection.db", SQLite::OpenMode::ReadOnly), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::dbconnection("testDBConnection.db", sqlite::openmode::read_only), sqlite::exception);
     }
 
     SECTION("Open and create file with ReadOnly") {
-        REQUIRE_THROWS_AS(SQLite::DBConnection("testDBConnection.db", SQLite::OpenMode::ReadOnly | SQLite::OpenMode::Create), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::dbconnection("testDBConnection.db", sqlite::openmode::read_only | sqlite::openmode::create), sqlite::exception);
     }
 
     SECTION("Open and create file with ReadWrite") {
-        REQUIRE_NOTHROW(SQLite::DBConnection("testDBConnection.db", SQLite::OpenMode::ReadWrite | SQLite::OpenMode::Create));
+        REQUIRE_NOTHROW(sqlite::dbconnection("testDBConnection.db", sqlite::openmode::read_write | sqlite::openmode::create));
     }
 
     SECTION("Open, create, and write to file") {
-        SQLite::DBConnection connection("testDBConnection.db", SQLite::OpenMode::ReadWrite | SQLite::OpenMode::Create);
+        sqlite::dbconnection connection("testDBConnection.db", sqlite::openmode::read_write | sqlite::openmode::create);
 
-        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
-        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 }
 
-TEST_CASE("Combinations of OpenMode flags with already existing database", "[DBConnection]") {
+TEST_CASE("Combinations of openmode flags with already existing database", "[DBConnection]") {
     remove("testDBConnection.db");
     {
-        SQLite::DBConnection connection("testDBConnection.db");
+        sqlite::dbconnection connection("testDBConnection.db");
 
-        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
-        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 
     SECTION("Open ReadOnly") {
-        SQLite::DBConnection connection("testDBConnection.db", SQLite::OpenMode::ReadOnly);
+        sqlite::dbconnection connection("testDBConnection.db", sqlite::openmode::read_only);
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
 
-        REQUIRE_THROWS_AS(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"), sqlite::exception);
     }
 
     SECTION("Open ReadWrite") {
-        SQLite::DBConnection connection("testDBConnection.db", SQLite::OpenMode::ReadWrite);
+        sqlite::dbconnection connection("testDBConnection.db", sqlite::openmode::read_write);
 
-        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"two\")"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"two\")"));
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 
     SECTION("Open ReadWrite and Create") {
-        SQLite::DBConnection connection("testDBConnection.db", SQLite::OpenMode::ReadWrite | SQLite::OpenMode::Create);
+        sqlite::dbconnection connection("testDBConnection.db", sqlite::openmode::read_write | sqlite::openmode::create);
 
-        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"two\")"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"two\")"));
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 }
 
-TEST_CASE("Combinations of OpenMode mutex flags", "[DBConnection]") {
+TEST_CASE("Combinations of openmode mutex flags", "[DBConnection]") {
     remove("testDBConnection.db");
 
     SECTION("Opening database with no Mutex") {
-        SQLite::DBConnection connection(
+        sqlite::dbconnection connection(
             "testDBConnection.db",
-            SQLite::OpenMode::ReadWrite | SQLite::OpenMode::Create | SQLite::OpenMode::NoMutex);
+            sqlite::openmode::read_write | sqlite::openmode::create | sqlite::openmode::no_mutex);
 
-        REQUIRE_THROWS_AS(connection.getMutex(), SQLite::SQLiteXXException);
+        REQUIRE_THROWS_AS(connection.mutex(), sqlite::SQLiteXXException);
     }
 }
 
@@ -87,63 +87,63 @@ TEST_CASE("DBConnection UTF8 Support", "[DBConnection]") {
     remove("testDBConnection_utf16.db");
 
     SECTION("Memory database") {
-        SQLite::DBConnection connection = SQLite::DBConnection::wideMemory();
+        sqlite::dbconnection connection = sqlite::dbconnection::wide_memory();
 
-        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
-        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 
     SECTION("File database using open") {
-        SQLite::DBConnection connection;
+        sqlite::dbconnection connection;
         connection.open(u"testDBConnection_utf16.db");
 
-        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
-        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 
     SECTION("File database from contructor") {
-        SQLite::DBConnection connection(u"testDBConnection_utf16.db");
+        sqlite::dbconnection connection(u"testDBConnection_utf16.db");
 
-        REQUIRE_NOTHROW(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
-        REQUIRE_NOTHROW(Execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)"));
+        REQUIRE_NOTHROW(sqlite::execute(connection, "INSERT INTO test VALUES (NULL, \"one\")"));
 
-        SQLite::Statement query(connection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(connection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 }
 
 TEST_CASE("DBConnectionTest Assignment Operators", "[DBConnection]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (txt1 TEXT, txt2 TEXT)") == 0);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (\"first\", \"second\")") == 1);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (txt1 TEXT, txt2 TEXT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"first\", \"second\")") == 1);
 
-    SQLite::Statement query(connection, "SELECT * FROM test");
-    REQUIRE(query.getColumnCount() == 2);
+    sqlite::statement query(connection, "SELECT * FROM test");
+    REQUIRE(query.column_count() == 2);
 
     SECTION("L-value assignment operator") {
-        SQLite::DBConnection testConnection;
+        sqlite::dbconnection testConnection;
 
         // Testing assignment
         testConnection = connection;
 
-        SQLite::Statement query(testConnection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(testConnection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 
     SECTION("R-value assignment operator") {
-        SQLite::DBConnection testConnection;
+        sqlite::dbconnection testConnection;
 
         // Testing assignment
-        testConnection = SQLite::DBConnection(connection);
+        testConnection = sqlite::dbconnection(connection);
 
-        SQLite::Statement query(testConnection, "SELECT * FROM test");
-        REQUIRE(query.getColumnCount() == 2);
+        sqlite::statement query(testConnection, "SELECT * FROM test");
+        REQUIRE(query.column_count() == 2);
     }
 }

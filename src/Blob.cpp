@@ -1,9 +1,9 @@
 #include "Blob.h"
 
 
-namespace SQLite
+namespace sqlite
 {
-    Blob::Blob(const void * data, size_t size) :
+    blob::blob(const void* data, const size_t size) :
         m_data(data != nullptr? new char[size]: nullptr),
         m_size(size)
     {
@@ -11,19 +11,19 @@ namespace SQLite
         memcpy(m_data.get(), data, size);
     }
 
-    Blob::Blob(const Blob &other) :
+    blob::blob(const blob& other) :
         m_data(other.m_size == 0? nullptr: new char[other.m_size]),
         m_size(other.m_size)
     {
         memcpy(m_data.get(), other.m_data.get(), other.m_size);
     }
 
-    Blob::Blob(Blob &&other) :
+    blob::blob(blob &&other) :
         m_data(std::move(other.m_data)),
         m_size(other.m_size)
     {}
 
-    Blob& Blob::operator=(const Blob &other) {
+    blob& blob::operator=(const blob &other) {
         if (this != &other) {
             m_data.reset(other.m_size == 0? nullptr: new char[other.m_size]);
             memcpy(m_data.get(), other.m_data.get(), other.m_size);
@@ -34,18 +34,18 @@ namespace SQLite
         return *this;
     }
 
-    Blob& Blob::operator=(Blob &&other) {
+    blob& blob::operator=(blob &&other) {
         assert(this != &other);
         m_data = std::move(other.m_data);
         m_size = other.m_size;
         return *this;
     }
 
-    const void* Blob::data() const {
+    const void* blob::data() const {
         return m_data.get();
     }
 
-    size_t Blob::size() const {
+    size_t blob::size() const {
         return m_size;
     }
 }

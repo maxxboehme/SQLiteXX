@@ -8,23 +8,23 @@
 #include <stdexcept>
 #include <string>
 
-namespace SQLite
+namespace sqlite
 {
     /** Encapsulation of the error code and message from SQLite3, based on std::runtime_error. */
-    class Exception : public std::runtime_error
+    class exception : public std::runtime_error
     {
         public:
 
         const int errcode;
         const std::string message;
 
-        explicit Exception(sqlite3 * const connection) :
+        explicit exception(sqlite3 * const connection) :
             std::runtime_error(sqlite3_errmsg(connection)),
             errcode(sqlite3_extended_errcode(connection)),
             message(sqlite3_errmsg(connection))
         {}
 
-        explicit Exception(const int code, const std::string& message) :
+        explicit exception(const int code, const std::string& message) :
             std::runtime_error(message),
             errcode(code),
             message(message)
@@ -32,15 +32,15 @@ namespace SQLite
     };
 
     /** Encapsulation of the SQLITE_BUSY error code derived from SQLite::Exception. */
-    class BusyException: public Exception
+    class busy_exception: public exception
     {
         public:
-        explicit BusyException(sqlite3 * const connection) :
-            Exception(connection)
+        explicit busy_exception(sqlite3 * const connection) :
+            exception(connection)
         {}
 
-        explicit BusyException(const std::string& message) :
-            Exception(SQLITE_BUSY, message)
+        explicit busy_exception(const std::string& message) :
+            exception(SQLITE_BUSY, message)
         {}
     };
 
@@ -53,8 +53,8 @@ namespace SQLite
     };
 
 
-    void throwErrorCode(sqlite3 *connection);
-    void throwErrorCode(const int errcode, const std::string& message);
+    void throw_error_code(sqlite3 *connection);
+    void throw_error_code(const int errcode, const std::string& message);
 }
 
 #endif

@@ -2,23 +2,23 @@
 #include "catch.hpp"
 
 
-int testGeneralMultiply(const std::vector<SQLite::Value> &values) {
+int testGeneralMultiply(const std::vector<sqlite::value> &values) {
     int product = 1;
     for (size_t i = 0; i < values.size(); ++i) {
-        product *= values[i].getInt();
+        product *= values[i].as_int();
     }
 
     return product;
 }
 
 TEST_CASE("Create General Scalar Functions", "[Functions]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (num INT)") == 0);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (1)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (2)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (3)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (123)") == 1);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (num INT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (1)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (2)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (3)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (123)") == 1);
 
     std::vector<std::pair<int, int>> expectedValues = {
         std::make_pair(1, 1),
@@ -29,66 +29,66 @@ TEST_CASE("Create General Scalar Functions", "[Functions]") {
 
     SECTION("Create function with function reference") {
         REQUIRE_NOTHROW(
-                connection.createGeneralFunction(
+                connection.create_general_function(
                 "multiply",
                 testGeneralMultiply,
                 true));
 
         int i = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
-            REQUIRE(expectedValues[i].first == row.getInt(0));
-            REQUIRE(expectedValues[i].second == row.getInt(1));
+        for (auto row : sqlite::statement(connection, "SELECT num, multiply(num, num) FROM test")) {
+            REQUIRE(expectedValues[i].first == row.get_int(0));
+            REQUIRE(expectedValues[i].second == row.get_int(1));
             ++i;
         }
     }
 
     SECTION("Create function with lambda") {
         REQUIRE_NOTHROW(
-            connection.createGeneralFunction(
+            connection.create_general_function(
                 "multiply",
-                [](const std::vector<SQLite::Value> &values) -> int {
+                [](const std::vector<sqlite::value> &values) -> int {
                     int product = 1;
                     for (size_t i = 0; i < values.size(); ++i) {
-                        product *= values[i].getInt();
+                        product *= values[i].as_int();
                     }
                     return product;
                 },
                 true));
 
         int i = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
-            REQUIRE(expectedValues[i].first == row.getInt(0));
-            REQUIRE(expectedValues[i].second == row.getInt(1));
+        for (auto row : sqlite::statement(connection, "SELECT num, multiply(num, num) FROM test")) {
+            REQUIRE(expectedValues[i].first == row.get_int(0));
+            REQUIRE(expectedValues[i].second == row.get_int(1));
             ++i;
         }
     }
 
     SECTION("Create function specific number of arguments and using more") {
         REQUIRE_NOTHROW(
-            connection.createGeneralFunction(
+            connection.create_general_function(
                 "multiply",
-                [](const std::vector<SQLite::Value> &values) -> int {
-                    return values[0].getInt() * values[1].getInt();
+                [](const std::vector<sqlite::value> &values) -> int {
+                    return values[0].as_int() * values[1].as_int();
                 },
                 true,
-                SQLite::TextEncoding::UTF8,
+                sqlite::textencoding::utf8,
                 2));
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num, num, num) FROM test"), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT num, multiply(num, num, num) FROM test"), sqlite::exception);
     }
 
     SECTION("Create function specific number of arguments and using less") {
         REQUIRE_NOTHROW(
-            connection.createGeneralFunction(
+            connection.create_general_function(
                 "multiply",
-                [](const std::vector<SQLite::Value> &values) -> int {
-                    return values[0].getInt() * values[1].getInt();
+                [](const std::vector<sqlite::value> &values) -> int {
+                    return values[0].as_int() * values[1].as_int();
                 },
                 true,
-                SQLite::TextEncoding::UTF8,
+                sqlite::textencoding::utf8,
                 2));
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num) FROM test"), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT num, multiply(num) FROM test"), sqlite::exception);
     }
 }
 
@@ -97,13 +97,13 @@ int testMultiply(int x, int y) {
 }
 
 TEST_CASE("Create Scalar Function", "[Functions]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (num INT)") == 0);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (1)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (2)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (3)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (123)") == 1);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (num INT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (1)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (2)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (3)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (123)") == 1);
 
     std::vector<std::pair<int, int>> expectedValues = {
         std::make_pair(1, 1),
@@ -114,22 +114,22 @@ TEST_CASE("Create Scalar Function", "[Functions]") {
 
     SECTION("Create function with function reference") {
         REQUIRE_NOTHROW(
-                connection.createFunction(
+                connection.create_function(
                 "multiply",
                 testMultiply,
                 true));
 
         int i = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
-            REQUIRE(expectedValues[i].first == row.getInt(0));
-            REQUIRE(expectedValues[i].second == row.getInt(1));
+        for (auto row : sqlite::statement(connection, "SELECT num, multiply(num, num) FROM test")) {
+            REQUIRE(expectedValues[i].first == row.get_int(0));
+            REQUIRE(expectedValues[i].second == row.get_int(1));
             ++i;
         }
     }
 
     SECTION("Create function with lambda") {
         REQUIRE_NOTHROW(
-            connection.createFunction(
+            connection.create_function(
                 "multiply",
                 [](int x, int y) -> int {
                     return x * y;
@@ -137,35 +137,35 @@ TEST_CASE("Create Scalar Function", "[Functions]") {
                 true));
 
         int i = 0;
-        for (auto row : SQLite::Statement(connection, "SELECT num, multiply(num, num) FROM test")) {
-            REQUIRE(expectedValues[i].first == row.getInt(0));
-            REQUIRE(expectedValues[i].second == row.getInt(1));
+        for (auto row : sqlite::statement(connection, "SELECT num, multiply(num, num) FROM test")) {
+            REQUIRE(expectedValues[i].first == row.get_int(0));
+            REQUIRE(expectedValues[i].second == row.get_int(1));
             ++i;
         }
     }
 
     SECTION("Create function specific number of arguments and using more") {
         REQUIRE_NOTHROW(
-            connection.createFunction(
+            connection.create_function(
                 "multiply",
                 [](int x, int y) -> int {
                     return x * y;
                 },
                 true));
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num, num, num) FROM test"), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT num, multiply(num, num, num) FROM test"), sqlite::exception);
     }
 
     SECTION("Create function specific number of arguments and using less") {
         REQUIRE_NOTHROW(
-            connection.createFunction(
+            connection.create_function(
                 "multiply",
                 [](int x, int y) -> int {
                     return x * y;
                 },
                 true));
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT num, multiply(num) FROM test"), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT num, multiply(num) FROM test"), sqlite::exception);
     }
 }
 
@@ -188,31 +188,31 @@ class MySum {
 };
 
 TEST_CASE("Create Aggregate Function", "[Functions]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (num INT)") == 0);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (1)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (2)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (3)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (123)") == 1);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (num INT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (1)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (2)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (3)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (123)") == 1);
 
     std::vector<int> expectedValues = {
         129
     };
 
-    REQUIRE_NOTHROW(connection.createAggregate<MySum>("MySum"));
+    REQUIRE_NOTHROW(connection.create_aggregate<MySum>("MySum"));
 
     int i = 0;
-    for (auto row : SQLite::Statement(connection, "SELECT MySum(num) FROM test")) {
+    for (auto row : sqlite::statement(connection, "SELECT MySum(num) FROM test")) {
         REQUIRE(i == 0);
-        REQUIRE(expectedValues[i] == row.getInt(0));
+        REQUIRE(expectedValues[i] == row.get_int(0));
         ++i;
     }
 
     int j = 0;
-    for (auto row : SQLite::Statement(connection, "SELECT MySum(num) FROM test")) {
+    for (auto row : sqlite::statement(connection, "SELECT MySum(num) FROM test")) {
         REQUIRE(j == 0);
-        REQUIRE(expectedValues[j] == row.getInt(0));
+        REQUIRE(expectedValues[j] == row.get_int(0));
         ++j;
     }
 }
@@ -244,7 +244,7 @@ class SQLiteExceptionAggregate {
 
     void step(int val) {
         m_sum += val;
-        throw SQLite::Exception(1, "test Exception");
+        throw sqlite::exception(1, "test Exception");
     }
 
     double finalize() {
@@ -323,7 +323,7 @@ class SQLiteExceptionAggregateFinalize {
     }
 
     double finalize() {
-        throw SQLite::Exception(1, "test Exception");
+        throw sqlite::exception(1, "test Exception");
         return m_sum;
     }
 
@@ -370,73 +370,73 @@ class RandomExceptionAggregateFinalize {
 };
 
 TEST_CASE("Throwing Exceptions from functions", "[Functions]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (num INT)") == 0);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (1)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (2)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (3)") == 1);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (123)") == 1);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (num INT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (1)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (2)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (3)") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (123)") == 1);
 
     SECTION("Generic Scalar function Exceptions") {
-        connection.createGeneralFunction(
+        connection.create_general_function(
                 "badAlloc",
-                [](const std::vector<SQLite::Value>&) -> int {
+                [](const std::vector<sqlite::value>&) -> int {
                     throw std::bad_alloc();
                     return 1;
                 });
 
-        connection.createGeneralFunction(
+        connection.create_general_function(
                 "SQLiteException",
-                [](const std::vector<SQLite::Value>&) -> int {
-                    throw SQLite::Exception(1, "test Exception");
+                [](const std::vector<sqlite::value>&) -> int {
+                    throw sqlite::exception(1, "test Exception");
                     return 1;
                 });
 
-        connection.createGeneralFunction(
+        connection.create_general_function(
                 "stdException",
-                [](const std::vector<SQLite::Value>&) -> int {
+                [](const std::vector<sqlite::value>&) -> int {
                     throw std::exception();
                     return 1;
                 });
 
-        connection.createGeneralFunction(
+        connection.create_general_function(
                 "randomException",
-                [](const std::vector<SQLite::Value>&) -> int {
+                [](const std::vector<sqlite::value>&) -> int {
                     throw "test Exception";
                     return 1;
                 });
 
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT badAlloc(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT SQLiteException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT stdException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT randomException(num) FROM test").step(), sqlite::exception);
     }
 
     SECTION("Scalar function Exceptions") {
-        connection.createFunction(
+        connection.create_function(
                 "badAlloc",
                 [](int) -> int {
                     throw std::bad_alloc();
                     return 1;
                 });
 
-        connection.createFunction(
+        connection.create_function(
                 "SQLiteException",
                 [](int) -> int {
-                    throw SQLite::Exception(1, "test Exception");
+                    throw sqlite::exception(1, "test Exception");
                     return 1;
                 });
 
-        connection.createFunction(
+        connection.create_function(
                 "stdException",
                 [](int) -> int {
                     throw std::exception();
                     return 1;
                 });
 
-        connection.createFunction(
+        connection.create_function(
                 "randomException",
                 [](int) -> int {
                     throw "test Exception";
@@ -444,33 +444,77 @@ TEST_CASE("Throwing Exceptions from functions", "[Functions]") {
                 });
 
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT badAlloc(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT SQLiteException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT stdException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT randomException(num) FROM test").step(), sqlite::exception);
     }
 
     SECTION("Aggregate function exceptions in step") {
-        REQUIRE_NOTHROW(connection.createAggregate<BadAllocAggregate>("badAlloc"));
-        REQUIRE_NOTHROW(connection.createAggregate<SQLiteExceptionAggregate>("SQLiteException"));
-        REQUIRE_NOTHROW(connection.createAggregate<StdExceptionAggregate>("stdException"));
-        REQUIRE_NOTHROW(connection.createAggregate<RandomExceptionAggregate>("randomException"));
+        REQUIRE_NOTHROW(connection.create_aggregate<BadAllocAggregate>("badAlloc"));
+        REQUIRE_NOTHROW(connection.create_aggregate<SQLiteExceptionAggregate>("SQLiteException"));
+        REQUIRE_NOTHROW(connection.create_aggregate<StdExceptionAggregate>("stdException"));
+        REQUIRE_NOTHROW(connection.create_aggregate<RandomExceptionAggregate>("randomException"));
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT badAlloc(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT SQLiteException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT stdException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT randomException(num) FROM test").step(), sqlite::exception);
     }
 
     SECTION("Aggregate function exceptions in finalize") {
-        REQUIRE_NOTHROW(connection.createAggregate<BadAllocAggregateFinalize>("badAlloc"));
-        REQUIRE_NOTHROW(connection.createAggregate<SQLiteExceptionAggregateFinalize>("SQLiteException"));
-        REQUIRE_NOTHROW(connection.createAggregate<StdExceptionAggregateFinalize>("stdException"));
-        REQUIRE_NOTHROW(connection.createAggregate<RandomExceptionAggregateFinalize>("randomException"));
+        REQUIRE_NOTHROW(connection.create_aggregate<BadAllocAggregateFinalize>("badAlloc"));
+        REQUIRE_NOTHROW(connection.create_aggregate<SQLiteExceptionAggregateFinalize>("SQLiteException"));
+        REQUIRE_NOTHROW(connection.create_aggregate<StdExceptionAggregateFinalize>("stdException"));
+        REQUIRE_NOTHROW(connection.create_aggregate<RandomExceptionAggregateFinalize>("randomException"));
 
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT badAlloc(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT SQLiteException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT stdException(num) FROM test").step(), SQLite::Exception);
-        REQUIRE_THROWS_AS(SQLite::Statement(connection, "SELECT randomException(num) FROM test").step(), SQLite::Exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT badAlloc(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT SQLiteException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT stdException(num) FROM test").step(), sqlite::exception);
+        REQUIRE_THROWS_AS(sqlite::statement(connection, "SELECT randomException(num) FROM test").step(), sqlite::exception);
+    }
+}
+
+static int test_collation(const std::string& s1, const std::string& s2) {
+    return -1 * s1.compare(s2);
+}
+
+TEST_CASE("Create Collation Function", "[Functions]") {
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
+
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (string TEXT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"a\")") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"b\")") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"c\")") == 1);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"d\")") == 1);
+
+    std::vector<std::string> expectedValues = {"d", "c", "b", "a"};
+
+    SECTION("Create collation with function reference") {
+        REQUIRE_NOTHROW(
+                connection.create_collation(
+                "reverse",
+                test_collation));
+
+        int i = 0;
+        for (auto row : sqlite::statement(connection, "SELECT string FROM test ORDER BY string COLLATE reverse")) {
+            REQUIRE(expectedValues[i] == row.get_string(0));
+            ++i;
+        }
+    }
+
+    SECTION("Create collation with lambda") {
+        REQUIRE_NOTHROW(
+            connection.create_collation(
+                "reverse",
+                [](const std::string& s1, const std::string& s2) -> int {
+                    return -1 * s1.compare(s2);
+                }));
+
+        int i = 0;
+        for (auto row : sqlite::statement(connection, "SELECT string FROM test ORDER BY string COLLATE reverse")) {
+            REQUIRE(expectedValues[i] == row.get_string(0));
+            ++i;
+        }
     }
 }

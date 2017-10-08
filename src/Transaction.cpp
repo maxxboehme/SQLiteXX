@@ -1,37 +1,37 @@
 #include "Transaction.h"
 
 
-namespace SQLite
+namespace sqlite
 {
     static const char* kCommit = "COMMIT";
     static const char* kRollback = "ROLLBACK";
     static const char* kBegginings[3] = {"BEGIN DEFERRED", "BEGIN IMMEDIATE", "BEGIN EXCLUSIVE"};
 
-    Transaction::Transaction(DBConnection &connection, const TransactionType type) :
+    transaction::transaction(dbconnection &connection, const TransactionType type) :
         type(type),
         m_connection(connection),
         m_commited(false)
     {
         const char* begin = kBegginings[static_cast<int>(type)];
-        Execute(m_connection, begin);
+        sqlite::execute(m_connection, begin);
     }
 
-    Transaction::~Transaction() noexcept
+    transaction::~transaction() noexcept
     {
         if (!m_commited)
         {
             try {
-                Execute(m_connection, kRollback);
-            } catch (SQLite::Exception&) {
+                sqlite::execute(m_connection, kRollback);
+            } catch (sqlite::exception&) {
                 // Don't throw exception in destructor. Already rolling back if
                 // issue occurred
             }
         }
     }
 
-    void Transaction::commit()
+    void transaction::commit()
     {
-        Execute(m_connection, kCommit);
+        sqlite::execute(m_connection, kCommit);
         m_commited = true;
     }
 }

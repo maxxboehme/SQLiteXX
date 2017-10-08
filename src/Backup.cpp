@@ -2,36 +2,36 @@
 #include "Exception.h"
 
 
-namespace SQLite
+namespace sqlite
 {
-    void SaveToDisk(const DBConnection &source, const std::string &filename)
+    void save(const dbconnection &source, const std::string &filename)
     {
-        DBConnection destination(filename);
-        Backup backup(source, destination);
+        dbconnection destination(filename);
+        backup backup(source, destination);
         backup.step();
     }
 
-    Backup::Backup(
-        DBConnection const & source,
-        DBConnection const & destination,
+    backup::backup(
+        dbconnection const & source,
+        dbconnection const & destination,
         const std::string &sourceName,
         const std::string &destinationName) :
         m_handle(
             sqlite3_backup_init(
-                destination.getHandle(),
+                destination.handle(),
                 destinationName.c_str(),
-                source.getHandle(),
+                source.handle(),
                 sourceName.c_str()),
             sqlite3_backup_finish),
         m_destination(&destination)
     {
         if (!m_handle)
         {
-            throwErrorCode(destination.getHandle());
+            throw_error_code(destination.handle());
         }
     }
 
-    bool Backup::step(const int pages)
+    bool backup::step(const int pages)
     {
         int const result = sqlite3_backup_step(m_handle.get(), pages);
 
@@ -39,21 +39,21 @@ namespace SQLite
         if (result == SQLITE_DONE) return false;
 
         m_handle.reset();
-        throwErrorCode(m_destination->getHandle());
+        throw_error_code(m_destination->handle());
         return false;
     }
 
-    int Backup::getTotalPageCount() noexcept
+    int backup::total_page_count() noexcept
     {
         return sqlite3_backup_pagecount(m_handle.get());
     }
 
-    int Backup::getRemainingPageCount() noexcept
+    int backup::remaining_page_count() noexcept
     {
         return sqlite3_backup_remaining(m_handle.get());
     }
 
-    sqlite3_backup* Backup::getHandle() noexcept
+    sqlite3_backup* backup::handle() noexcept
     {
         return m_handle.get();
     }

@@ -4,229 +4,225 @@
 #include <cstring>
 
 TEST_CASE("Implicit conversion", "[Value]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, msg TEXT, int INTEGER, double REAL, binary BLOB, empty TEXT)") == 0);
-    REQUIRE(connection.rowId() == 0);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, msg TEXT, int INTEGER, double REAL, binary BLOB, empty TEXT)") == 0);
+    REQUIRE(connection.row_id() == 0);
 
     // Create a first row (autoid: 1) with all kind of data and a null value
-    SQLite::Statement insert(connection, "INSERT INTO test VALUES (NULL, \"first\", -123, 0.123, ?, NULL)");
+    sqlite::statement insert(connection, "INSERT INTO test VALUES (NULL, \"first\", -123, 0.123, ?, NULL)");
     // Bind the blob value to the first parameter of the SQL query
     const char  buffer[] = {'b', 'l', '\0', 'b'}; // "bl\0b" : 4 char, with a null byte inside
     const int size = sizeof(buffer);
-    const SQLite::Blob blob(&buffer, size);
+    const sqlite::blob blob(&buffer, size);
     insert.bind(1, blob);
     REQUIRE(insert.execute() == 1);
 
-    SQLite::Statement query(connection, "SELECT * FROM test");
-    REQUIRE(query.getColumnCount() == 6);
+    sqlite::statement query(connection, "SELECT * FROM test");
+    REQUIRE(query.column_count() == 6);
     query.step();
 
     {
-        const int rowIDInteger = query.getValue(0);
+        const int rowIDInteger = query.get_value(0);
         REQUIRE(rowIDInteger == 1);
 
-        const sqlite3_int64 rowIDSQLiteInt64 = query.getValue(0);
+        const sqlite3_int64 rowIDSQLiteInt64 = query.get_value(0);
         REQUIRE(rowIDSQLiteInt64 == 1);
 
-        const int64_t rowIDInt64 = query.getValue(0);
+        const int64_t rowIDInt64 = query.get_value(0);
         REQUIRE(rowIDInt64 == 1);
 
-        const long long rowIDLongLong = query.getValue(0);
+        const long long rowIDLongLong = query.get_value(0);
         REQUIRE(rowIDLongLong == 1);
 
-        const unsigned int rowIDUnsignedInteger = query.getValue(0);
+        const unsigned int rowIDUnsignedInteger = query.get_value(0);
         REQUIRE(rowIDUnsignedInteger == 1);
 
-        const std::string string = query.getValue(1);
+        const std::string string = query.get_value(1);
         REQUIRE(string == "first");
 
-        const std::u16string wideString = query.getValue(1);
+        const std::u16string wideString = query.get_value(1);
         REQUIRE(wideString == u"first");
 
-        const int integer = query.getValue(2);
+        const int integer = query.get_value(2);
         REQUIRE(integer == -123);
 
-        const double real = query.getValue(3);
+        const double real = query.get_value(3);
         REQUIRE(real == 0.123);
 
-        const SQLite::Blob sqlBlob = query.getValue(4);
+        const sqlite::blob sqlBlob = query.get_value(4);
         REQUIRE(sqlBlob.size() == 4);
         REQUIRE(memcmp("bl\0b", sqlBlob.data(), sqlBlob.size()) == 0);
 
-        const SQLite::Blob empty = query.getValue(5);
-        // Note: For some reason in release mode this does not work
-        // with Catch.
-        // REQUIRE(empty.data() == nullptr);
+        const sqlite::blob empty = query.get_value(5);
+        REQUIRE(empty.data() == nullptr);
         REQUIRE(empty.size() == 0);
     }
 
     {
-        REQUIRE(query.getValue(0).getType() == SQLite::Type::Integer);
-        REQUIRE(query.getValue(1).getType() == SQLite::Type::Text);
-        REQUIRE(query.getValue(2).getType() == SQLite::Type::Integer);
-        REQUIRE(query.getValue(3).getType() == SQLite::Type::Float);
-        REQUIRE(query.getValue(4).getType() == SQLite::Type::Blob);
-        REQUIRE(query.getValue(5).getType() == SQLite::Type::Null);
+        REQUIRE(query.get_value(0).type() == sqlite::datatype::integer);
+        REQUIRE(query.get_value(1).type() == sqlite::datatype::text);
+        REQUIRE(query.get_value(2).type() == sqlite::datatype::integer);
+        REQUIRE(query.get_value(3).type() == sqlite::datatype::floating);
+        REQUIRE(query.get_value(4).type() == sqlite::datatype::blob);
+        REQUIRE(query.get_value(5).type() == sqlite::datatype::null);
     }
 }
 
 TEST_CASE("Explicit conversion", "[Value]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, msg TEXT, int INTEGER, double REAL, binary BLOB, empty TEXT)") == 0);
-    REQUIRE(connection.rowId() == 0);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, msg TEXT, int INTEGER, double REAL, binary BLOB, empty TEXT)") == 0);
+    REQUIRE(connection.row_id() == 0);
 
     // Create a first row (autoid: 1) with all kind of data and a null value
-    SQLite::Statement insert(connection, "INSERT INTO test VALUES (NULL, \"first\", -123, 0.123, ?, NULL)");
+    sqlite::statement insert(connection, "INSERT INTO test VALUES (NULL, \"first\", -123, 0.123, ?, NULL)");
     // Bind the blob value to the first parameter of the SQL query
     const char  buffer[] = {'b', 'l', '\0', 'b'}; // "bl\0b" : 4 char, with a null byte inside
     const int size = sizeof(buffer);
-    const SQLite::Blob blob(&buffer, size);
+    const sqlite::blob blob(&buffer, size);
     insert.bind(1, blob);
     REQUIRE(insert.execute() == 1);
 
-    SQLite::Statement query(connection, "SELECT * FROM test");
-    REQUIRE(query.getColumnCount() == 6);
+    sqlite::statement query(connection, "SELECT * FROM test");
+    REQUIRE(query.column_count() == 6);
     query.step();
 
     {
-        const SQLite::Value firstColumnValue = query.getValue(0);
-        REQUIRE(firstColumnValue.getInt() == 1);
-        REQUIRE(firstColumnValue.getInt64() == 1);
-        REQUIRE(firstColumnValue.getUInt() == 1u);
-        REQUIRE(firstColumnValue.getDouble() == 1.0);
-        REQUIRE(firstColumnValue.getString() == "1");
-        REQUIRE(firstColumnValue.getU16String() == u"1");
+        const sqlite::value firstColumnValue = query.get_value(0);
+        REQUIRE(firstColumnValue.as_int() == 1);
+        REQUIRE(firstColumnValue.as_int64() == 1);
+        REQUIRE(firstColumnValue.as_uint() == 1u);
+        REQUIRE(firstColumnValue.as_double() == 1.0);
+        REQUIRE(firstColumnValue.as_string() == "1");
+        REQUIRE(firstColumnValue.as_u16string() == u"1");
 
-        const SQLite::Value secondColumnValue = query.getValue(1);
-        REQUIRE(secondColumnValue.getInt() == 0);
-        REQUIRE(secondColumnValue.getInt64() == 0);
-        REQUIRE(secondColumnValue.getUInt() == 0u);
-        REQUIRE(secondColumnValue.getDouble() == 0.0);
-        REQUIRE(secondColumnValue.getString() == "first");
-        REQUIRE(secondColumnValue.getU16String() == u"first");
+        const sqlite::value secondColumnValue = query.get_value(1);
+        REQUIRE(secondColumnValue.as_int() == 0);
+        REQUIRE(secondColumnValue.as_int64() == 0);
+        REQUIRE(secondColumnValue.as_uint() == 0u);
+        REQUIRE(secondColumnValue.as_double() == 0.0);
+        REQUIRE(secondColumnValue.as_string() == "first");
+        REQUIRE(secondColumnValue.as_u16string() == u"first");
 
-        const SQLite::Value thirdColumnValue = query.getValue(2);
-        REQUIRE(thirdColumnValue.getInt() == -123);
-        REQUIRE(thirdColumnValue.getInt64() == -123);
+        const sqlite::value thirdColumnValue = query.get_value(2);
+        REQUIRE(thirdColumnValue.as_int() == -123);
+        REQUIRE(thirdColumnValue.as_int64() == -123);
         // Will returned overflown representation
-        REQUIRE(thirdColumnValue.getUInt() == (std::numeric_limits<unsigned int>::max() - 122));
-        REQUIRE(thirdColumnValue.getDouble() == -123.0);
-        REQUIRE(thirdColumnValue.getString() == "-123");
-        REQUIRE(thirdColumnValue.getU16String() == u"-123");
+        REQUIRE(thirdColumnValue.as_uint() == (std::numeric_limits<unsigned int>::max() - 122));
+        REQUIRE(thirdColumnValue.as_double() == -123.0);
+        REQUIRE(thirdColumnValue.as_string() == "-123");
+        REQUIRE(thirdColumnValue.as_u16string() == u"-123");
 
-        const SQLite::Value fourthColumnValue = query.getValue(3);
-        REQUIRE(fourthColumnValue.getInt() == 0);
-        REQUIRE(fourthColumnValue.getInt64() == 0);
-        REQUIRE(fourthColumnValue.getUInt() == 0u);
-        REQUIRE(fourthColumnValue.getDouble() == 0.123);
-        REQUIRE(fourthColumnValue.getString() == "0.123");
-        REQUIRE(fourthColumnValue.getU16String() == u"0.123");
-        REQUIRE(fourthColumnValue.getU16String().size() == 5);
+        const sqlite::value fourthColumnValue = query.get_value(3);
+        REQUIRE(fourthColumnValue.as_int() == 0);
+        REQUIRE(fourthColumnValue.as_int64() == 0);
+        REQUIRE(fourthColumnValue.as_uint() == 0u);
+        REQUIRE(fourthColumnValue.as_double() == 0.123);
+        REQUIRE(fourthColumnValue.as_string() == "0.123");
+        REQUIRE(fourthColumnValue.as_u16string() == u"0.123");
+        REQUIRE(fourthColumnValue.as_u16string().size() == 5);
 
-        const SQLite::Value fifthColumnValue = query.getValue(4);
-        REQUIRE(fifthColumnValue.getInt() == 0);
-        REQUIRE(fifthColumnValue.getInt64() == 0);
-        REQUIRE(fifthColumnValue.getUInt() == 0u);
-        REQUIRE(fifthColumnValue.getDouble() == 0.0);
-        REQUIRE(fifthColumnValue.getString() == std::string("bl\0b", 4));
-        // What the Blob object that getBlob returns will depend on
+        const sqlite::value fifthColumnValue = query.get_value(4);
+        REQUIRE(fifthColumnValue.as_int() == 0);
+        REQUIRE(fifthColumnValue.as_int64() == 0);
+        REQUIRE(fifthColumnValue.as_uint() == 0u);
+        REQUIRE(fifthColumnValue.as_double() == 0.0);
+        REQUIRE(fifthColumnValue.as_string() == std::string("bl\0b", 4));
+        // What the blob object that as_blob returns will depend on
         // if you called getString or getU16String as sqlite will
         // convert the data in the back and when calling blob will return
         // that representation of it.
-        SQLite::Blob sqlBlob = fifthColumnValue.getBlob();
+        sqlite::blob sqlBlob = fifthColumnValue.as_blob();
         REQUIRE(sqlBlob.size() == 4);
         REQUIRE(memcmp("bl\0b", sqlBlob.data(), sqlBlob.size()) == 0);
 
-        REQUIRE(fifthColumnValue.getU16String() == std::u16string(u"bl\0b", 4));
-        sqlBlob = fifthColumnValue.getBlob();
+        REQUIRE(fifthColumnValue.as_u16string() == std::u16string(u"bl\0b", 4));
+        sqlBlob = fifthColumnValue.as_blob();
         REQUIRE(sqlBlob.size() == 8);
         REQUIRE(memcmp(u"bl\0b", sqlBlob.data(), sqlBlob.size()) == 0);
 
-        const SQLite::Value sixthColumnValue = query.getValue(5);
-        REQUIRE(sixthColumnValue.getInt() == 0);
-        REQUIRE(sixthColumnValue.getInt64() == 0);
-        REQUIRE(sixthColumnValue.getUInt() == 0u);
-        REQUIRE(sixthColumnValue.getDouble() == 0.0);
-        REQUIRE(sixthColumnValue.getString() == "");
-        REQUIRE(sixthColumnValue.getU16String() == u"");
-        const SQLite::Blob empty = sixthColumnValue.getBlob();
-        // Note: For some reason in release mode this does not work
-        // with catch.
-        // REQUIRE(empty.data() == nullptr);
+        const sqlite::value sixthColumnValue = query.get_value(5);
+        REQUIRE(sixthColumnValue.as_int() == 0);
+        REQUIRE(sixthColumnValue.as_int64() == 0);
+        REQUIRE(sixthColumnValue.as_uint() == 0u);
+        REQUIRE(sixthColumnValue.as_double() == 0.0);
+        REQUIRE(sixthColumnValue.as_string() == "");
+        REQUIRE(sixthColumnValue.as_u16string() == u"");
+        const sqlite::blob empty = sixthColumnValue.as_blob();
+        REQUIRE(empty.data() == nullptr);
         REQUIRE(empty.size() == 0);
     }
 
     {
-        REQUIRE(query.getValue(0).getType() == SQLite::Type::Integer);
-        REQUIRE(query.getValue(1).getType() == SQLite::Type::Text);
-        REQUIRE(query.getValue(2).getType() == SQLite::Type::Integer);
-        REQUIRE(query.getValue(3).getType() == SQLite::Type::Float);
-        REQUIRE(query.getValue(4).getType() == SQLite::Type::Blob);
-        REQUIRE(query.getValue(5).getType() == SQLite::Type::Null);
+        REQUIRE(query.get_value(0).type() == sqlite::datatype::integer);
+        REQUIRE(query.get_value(1).type() == sqlite::datatype::text);
+        REQUIRE(query.get_value(2).type() == sqlite::datatype::integer);
+        REQUIRE(query.get_value(3).type() == sqlite::datatype::floating);
+        REQUIRE(query.get_value(4).type() == sqlite::datatype::blob);
+        REQUIRE(query.get_value(5).type() == sqlite::datatype::null);
     }
 }
 
 TEST_CASE("Converting between string types", "[Value]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (msg TEXT)") == 0);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (\"first\")") == 1);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (msg TEXT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"first\")") == 1);
 
-    SQLite::Statement query(connection, "SELECT * FROM test");
-    REQUIRE(query.getColumnCount() == 1);
+    sqlite::statement query(connection, "SELECT * FROM test");
+    REQUIRE(query.column_count() == 1);
     query.step();
 
-    const SQLite::Value value = query.getValue(0);
+    const sqlite::value value = query.get_value(0);
     {
-        std::string string = value.getString();
+        std::string string = value.as_string();
         REQUIRE(string.size() == 5);
         REQUIRE(string == "first");
 
-        std::u16string string16 = value.getU16String();
+        std::u16string string16 = value.as_u16string();
         REQUIRE(string16.size() == 5);
         REQUIRE(string16 == u"first");
 
-        string = value.getString();
+        string = value.as_string();
         REQUIRE(string.size() == 5);
         REQUIRE(string == "first");
 
-        string16 = value.getU16String();
+        string16 = value.as_u16string();
         REQUIRE(string16.size() == 5);
         REQUIRE(string16 == u"first");
     }
 }
 
 TEST_CASE("Value Test Assignment Operators", "[Value]") {
-    SQLite::DBConnection connection = SQLite::DBConnection::memory();
+    sqlite::dbconnection connection = sqlite::dbconnection::memory();
 
-    REQUIRE(Execute(connection, "CREATE TABLE test (txt1 TEXT, txt2 TEXT)") == 0);
-    REQUIRE(Execute(connection, "INSERT INTO test VALUES (\"first\", \"second\")") == 1);
+    REQUIRE(sqlite::execute(connection, "CREATE TABLE test (txt1 TEXT, txt2 TEXT)") == 0);
+    REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"first\", \"second\")") == 1);
 
-    SQLite::Statement query(connection, "SELECT * FROM test");
-    REQUIRE(query.getColumnCount() == 2);
+    sqlite::statement query(connection, "SELECT * FROM test");
+    REQUIRE(query.column_count() == 2);
     query.step();
 
     SECTION("L-value assignment operator") {
-        SQLite::Value value = query.getValue(0);
-        REQUIRE(value.getString() == std::string("first"));
+        sqlite::value value = query.get_value(0);
+        REQUIRE(value.as_string() == std::string("first"));
 
-        SQLite::Value value2 = query.getValue(1);
-        REQUIRE(value2.getString() == std::string("second"));
+        sqlite::value value2 = query.get_value(1);
+        REQUIRE(value2.as_string() == std::string("second"));
 
         // Testing assignment
         value = value2;
-        REQUIRE(value.getString() == std::string("second"));
+        REQUIRE(value.as_string() == std::string("second"));
     }
 
     SECTION("R-value assignment operator") {
-        SQLite::Value value = query.getValue(0);
-        REQUIRE(value.getString() == std::string("first"));
+        sqlite::value value = query.get_value(0);
+        REQUIRE(value.as_string() == std::string("first"));
 
         // Testing assignment
-        value = query.getValue(1);
-        REQUIRE(value.getString() == std::string("second"));
+        value = query.get_value(1);
+        REQUIRE(value.as_string() == std::string("second"));
     }
 }
 

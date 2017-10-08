@@ -21,171 +21,171 @@
 #include <vector>
 #include <limits.h>
 
-namespace SQLite
+namespace sqlite
 {
     /** Base class used to help with reading "sqlite3_stmt" information.
      * This class is meant to be inherited from.
      */
     template <typename T>
-    class Reader
+    class reader
     {
         public:
 
-        virtual ~Reader() = default;
+        virtual ~reader() = default;
 
         /** Returns the specified column value as an integer.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        int getInt(const int column) const noexcept
+        int get_int(const int column) const noexcept
         {
-            return sqlite3_column_int(static_cast<T const *>(this)->getHandle(), column);
+            return sqlite3_column_int(static_cast<T const *>(this)->handle(), column);
         }
 
         /** Returns the specified column value as an integer.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        int getInt(const std::string& name) const noexcept
+        int get_int(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getInt(column);
+            const int column = get_column_index(name);
+            return get_int(column);
         }
 
         /** Returns the specified column value as a 64-bit integer.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        int64_t getInt64(const int column) const noexcept
+        int64_t get_int64(const int column) const noexcept
         {
-            return sqlite3_column_int64(static_cast<T const *>(this)->getHandle(), column);
+            return sqlite3_column_int64(static_cast<T const *>(this)->handle(), column);
         }
 
         /** Returns the specified column value as a 64-bit integer.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        int64_t getInt64(const std::string& name) const noexcept
+        int64_t get_int64(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getInt64(column);
+            const int column = get_column_index(name);
+            return get_int64(column);
         }
 
         /** Returns the specified column value as an unsigned integer.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        unsigned int getUInt(const int column) const noexcept
+        unsigned int get_uint(const int column) const noexcept
         {
-            return static_cast<unsigned int>(getInt64(column));
+            return static_cast<unsigned int>(get_int64(column));
         }
 
         /** Returns the specified column value as an unsigned integer.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        unsigned int getUInt(const std::string& name) const noexcept
+        unsigned int get_uint(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return static_cast<unsigned int>(getInt64(column));
+            const int column = get_column_index(name);
+            return get_uint(column);
         }
 
         /** Returns the specified column value as a double.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        double getDouble(const int column) const noexcept
+        double get_double(const int column) const noexcept
         {
-            return sqlite3_column_double(static_cast<T const *>(this)->getHandle(), column);
+            return sqlite3_column_double(static_cast<T const *>(this)->handle(), column);
         }
 
         /** Returns the specified column value as a double.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        double getDouble(const std::string& name) const noexcept
+        double get_double(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getDouble(column);
+            const int column = get_column_index(name);
+            return get_double(column);
         }
 
-        /** Returns the specified column value as a Blob object.
+        /** Returns the specified column value as a blob object.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        const Blob getBlob(const int column) const noexcept
+        const blob get_blob(const int column) const noexcept
         {
-            const void *blob = sqlite3_column_blob(static_cast<T const *>(this)->getHandle(), column);
-            return Blob(blob, getBytes(column));
+            const void *blob = sqlite3_column_blob(static_cast<T const *>(this)->handle(), column);
+            return sqlite::blob(blob, get_bytes(column));
         }
 
         /** Returns the specified column value as a Blob object.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        const Blob getBlob(const std::string& name) const noexcept
+        const blob get_blob(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getBlob(column);
+            const int column = get_column_index(name);
+            return get_blob(column);
         }
 
         /** Returns the specified column value as a string.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        const std::string getString(const int column) const noexcept
+        const std::string get_string(const int column) const noexcept
         {
-            const char *txt = getText(column);
-            return std::string(txt, getTextLength(column));
+            const char *txt = get_text(column);
+            return std::string(txt, get_text_length(column));
         }
 
         /** Returns the specified column value as a string.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        const std::string getString(const std::string& name) const noexcept
+        const std::string get_string(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getString(column);
+            const int column = get_column_index(name);
+            return get_string(column);
         }
 
         /** Returns the specified column value as a UTF-16 string.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        const std::u16string getU16String(const int column) const noexcept
+        const std::u16string get_u16string(const int column) const noexcept
         {
-            const char16_t *txt = getText16(column);
-            return std::u16string(txt, getText16Length(column));
+            const char16_t *txt = get_text16(column);
+            return std::u16string(txt, get_text16_length(column));
         }
 
         /** Returns the specified column value as a UTF-16 string.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        const std::u16string getU16String(const std::string& name) const noexcept
+        const std::u16string get_u16string(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getU16String(column);
+            const int column = get_column_index(name);
+            return get_u16string(column);
         }
 
-        /** Returns the specified column value as a Value object.
+        /** Returns the specified column value as a value object.
          * @param[in] column position of the column to return
          * @returns value of column as integer
          */
-        Value getValue(const int column) const noexcept
+        value get_value(const int column) const noexcept
         {
-            return Value(sqlite3_column_value(static_cast<T const *>(this)->getHandle(), column));
+            return value(sqlite3_column_value(static_cast<T const *>(this)->handle(), column));
         }
 
-        /** Returns the specified column value as a Value object.
+        /** Returns the specified column value as a value object.
          * @param[in] name name of the column to return
          * @returns value of column as integer
          */
-        Value getValue(const std::string& name) const
+        value get_value(const std::string& name) const
         {
-            const int column = getColumnIndex(name);
-            return getValue(column);
+            const int column = get_column_index(name);
+            return get_value(column);
         }
 
 
@@ -193,78 +193,78 @@ namespace SQLite
          * @param[in] column position of the column to return
          * @returns the size in bytes of the column value
          */
-        int getBytes(const int column) const noexcept
+        int get_bytes(const int column) const noexcept
         {
-            return sqlite3_column_bytes(static_cast<T const *>(this)->getHandle(), column);
+            return sqlite3_column_bytes(static_cast<T const *>(this)->handle(), column);
         }
 
         /** Returns the size in bytes of the column value.
          * @param[in] name name of the column to return
          * @returns the size in bytes of the column value
          */
-        int getBytes(const std::string& name) const noexcept
+        int get_bytes(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getBytes(column);
+            const int column = get_column_index(name);
+            return get_bytes(column);
         }
 
         /** Returns the type of the specified column.
          * @param[in] column position of the column to return
-         * @returns The SQLiteXX::Type value for a column
+         * @returns The sqlite::datatype value for a column
          */
-        Type getType(const int column) const noexcept
+        datatype get_type(const int column) const noexcept
         {
-            return static_cast<Type>(sqlite3_column_type(static_cast<T const *>(this)->getHandle(), column));
+            return static_cast<datatype>(sqlite3_column_type(static_cast<T const *>(this)->handle(), column));
         }
 
         /** Returns the type of the specified column.
          * @param[in] name name of the column to return
-         * @returns The SQLiteXX::Type value for a column
+         * @returns The sqlite::datatype value for a column
          */
-        Type getType(const std::string& name) const noexcept
+        datatype get_type(const std::string& name) const noexcept
         {
-            const int column = getColumnIndex(name);
-            return getType(column);
+            const int column = get_column_index(name);
+            return get_type(column);
         }
 
         /** Returns the number of columns in the result set returned by the prepared statement.
          * If this method returns 0, that means the prepared statment returns no data (for example an UPDATE).
          * @returns The number of columns in the result set.
          */
-        int getColumnCount() const noexcept
+        int column_count() const noexcept
         {
-            return sqlite3_column_count(static_cast<T const *>(this)->getHandle());
+            return sqlite3_column_count(static_cast<T const *>(this)->handle());
         }
 
         /** Returns the name assigned to a particular column.
          * @param[in] index the position of the column
          * @returns The name of the specified column.
          */
-        const char* getColumnName(const int index) const noexcept
+        const char* get_column_name(const int index) const noexcept
         {
-            return sqlite3_column_name(static_cast<T const *>(this)->getHandle(), index);
+            return sqlite3_column_name(static_cast<T const *>(this)->handle(), index);
         }
 
         /** Returns the name assigned to a particular column.
          * @param[in] index the position of the column
          * @returns The name of the specified column.
          */
-        const char16_t* getColumnWideName(const int index) const noexcept
+        const char16_t* get_column_wide_name(const int index) const noexcept
         {
-            return sqlite3_column_name16(static_cast<T const *>(this)->getHandle(), index);
+            return sqlite3_column_name16(static_cast<T const *>(this)->handle(), index);
         }
 
         /** Returns the position of a column with the specified name.
          * @returns The position of the column
          * @throws SQLiteXXException if no column with specified name was found
          */
-        int getColumnIndex(const std::string& name) const
+        int get_column_index(const std::string& name) const
         {
             std::map<std::string, int> columnNamesToIndex;
 
-            const int columnCount = getColumnCount();
+            const int columnCount = column_count();
             for (int i = 0; i < columnCount; ++i) {
-                const char * name = sqlite3_column_name(static_cast<T const *>(this)->getHandle(), i);
+                const char * name = sqlite3_column_name(static_cast<T const *>(this)->handle(), i);
                 columnNamesToIndex[name] = i;
             }
 
@@ -278,56 +278,65 @@ namespace SQLite
 
         private:
 
-        const char* getText(const int column) const noexcept
+        const char* get_text(const int column) const noexcept
         {
             return reinterpret_cast<char const *>(sqlite3_column_text(
-                    static_cast<T const *>(this)->getHandle(), column));
+                    static_cast<T const *>(this)->handle(), column));
         }
 
-        const char16_t* getText16(const int column) const noexcept
+        const char16_t* get_text16(const int column) const noexcept
         {
             return reinterpret_cast<char16_t const *>(sqlite3_column_text16(
-                    static_cast<T const *>(this)->getHandle(), column));
+                    static_cast<T const *>(this)->handle(), column));
         }
 
-        int getTextLength(const int column) const noexcept
+        int get_text_length(const int column) const noexcept
         {
-            return sqlite3_column_bytes(static_cast<T const *>(this)->getHandle(), column);
+            return sqlite3_column_bytes(static_cast<T const *>(this)->handle(), column);
         }
 
-        int getText16Length(const int column) const noexcept
+        int get_text16_length(const int column) const noexcept
         {
-            return sqlite3_column_bytes16(static_cast<T const *>(this)->getHandle(), column) / sizeof(char16_t);
+            return sqlite3_column_bytes16(static_cast<T const *>(this)->handle(), column) / sizeof(char16_t);
         }
     };
 
 
     /** Represents a returned row when stepping through a "SELECT" statement.
      */
-    class Row : public Reader<Row>
+    class row : public reader<row>
     {
         public:
 
-        /** Constructs a Row object from a sqlite3_stmt.
+        /** Constructs a row object from a sqlite3_stmt.
          */
-        Row(sqlite3_stmt* const statement) noexcept :
+        row(sqlite3_stmt* const statement) noexcept :
             m_statement(statement)
          {}
 
         /** Returns pointer to the underlying "sqlite3_stmt" object.
          */
-        sqlite3_stmt* getHandle() const noexcept
+        sqlite3_stmt* handle() const noexcept
         {
             return m_statement;
         }
 
         /** Access specified element of a row.
          * @param[in] column position of the column to return
-         * @returns Value object representing requested element
+         * @returns value object representing requested element
          */
-        Value operator[](int column) const
+        value operator[](int column) const
         {
-            return getValue(column);
+            return get_value(column);
+        }
+
+        /** Access specified element of a row.
+         * @param[in] name column name of the column to return
+         * @returns value object representing requested element
+         */
+        value operator[](const std::string& name) const
+        {
+            return get_value(name);
         }
 
         private:
@@ -338,13 +347,13 @@ namespace SQLite
     /** Represents a single SQL statement that has been compiled into binary
      * form and is ready to be evaluated, aka "sqlite3_stmt".
      */
-    class Statement : public Reader<Statement>
+    class statement : public reader<statement>
     {
         public:
         /** Default constructor.
-         * Constructs an un-prepared Statment object.
+         * Constructs an un-prepared statement object.
          */
-        Statement() noexcept;
+        statement() noexcept;
 
         /** Creates, prepares, and binds values into an SQL statement.
          * @param[in] connection a database connection to execute the statement on
@@ -352,8 +361,8 @@ namespace SQLite
          * @param[in] values     possible values to bind to SQL query if containing bind parameters
          */
         template <typename ... Values>
-        Statement(
-            const DBConnection& connection,
+        statement(
+            const dbconnection& connection,
             const std::string& text,
             Values&& ... values) :
         m_handle(nullptr, sqlite3_finalize),
@@ -369,8 +378,8 @@ namespace SQLite
          * @param[in] values     possible values to bind to SQL query if containing bind parameters
          */
         template <typename ... Values>
-        Statement(
-            const DBConnection& connection,
+        statement(
+            const dbconnection& connection,
             const std::u16string& text,
             Values&& ... values) :
         m_handle(nullptr, sqlite3_finalize),
@@ -379,16 +388,16 @@ namespace SQLite
             prepare(connection, text, std::forward<Values>(values) ...);
         }
 
-        /** Used to specify if the Statement object has a prepared SQLite statement.
-         * @returns The returns true if the Statement object has been assigned a SQLite prepared statement.
+        /** Used to specify if the statement object has a prepared SQLite statement.
+         * @returns The returns true if the statement object has been assigned a SQLite prepared statement.
          */
         operator bool() const noexcept;
 
         /** Returns pointer to the underlying "sqlite3_stmt" object.
          * The returned sqlite3_stmt object pointer will be automatically deleted on
-         * the destruction of the parent Statement object.
+         * the destruction of the parent statement object.
          **/
-        sqlite3_stmt* getHandle() const noexcept;
+        sqlite3_stmt* handle() const noexcept;
 
         /** Turn an SQL query into byte code.
          * @param[in] connection a successfully opened database connection
@@ -397,11 +406,11 @@ namespace SQLite
          */
         template <typename ... Values>
         void prepare(
-            DBConnection const& connection,
+            dbconnection const& connection,
             const std::string& text,
             Values&& ... values)
         {
-            internalPrepare(connection, sqlite3_prepare_v2, text.c_str(), std::forward<Values>(values) ...);
+            internal_prepare(connection, sqlite3_prepare_v2, text.c_str(), std::forward<Values>(values) ...);
         }
 
         /** Turn an SQL query into byte code.
@@ -411,17 +420,17 @@ namespace SQLite
          */
         template <typename ... Values>
         void prepare(
-            const DBConnection& connection,
+            const dbconnection& connection,
             const std::u16string& text,
             Values&& ... values)
         {
-            internalPrepare(connection, sqlite3_prepare16_v2, text.c_str(), std::forward<Values>(values) ...);
+            internal_prepare(connection, sqlite3_prepare16_v2, text.c_str(), std::forward<Values>(values) ...);
         }
 
         /** Evaluates a prepared statement.
          * This method can be called one or more times to evaluate the statement.
          * @returns true when there are more rows to iterate through and false when there are no more
-         * @throws SQLite::Exception or a derived class
+         * @throws sqlite::exception or a derived class
          */
         bool step() const;
 
@@ -448,13 +457,13 @@ namespace SQLite
          * @param[in] size  in bytes the size of the blob object
          * @param[in] type  the way to bind this parameter.
          **/
-        void bind(const int index, const void* const value, const int size, BindType type = BindType::Transient) const;
+        void bind(const int index, const void* const value, const int size, bindtype type = bindtype::transient) const;
 
-        /** Binds an Blob value to a parameter in an SQL prepared statement.
+        /** Binds an blob value to a parameter in an SQL prepared statement.
          * @param[in] index specifies the index of the SQL parameter to be set
          * @param[in] value the value to bind to the parameter.
          **/
-        void bind(const int index, const Blob& value) const;
+        void bind(const int index, const blob& value) const;
 
         /** Binds an string value to a parameter in an SQL prepared statement.
          * @param[in] index specifies the index of the SQL parameter to be set
@@ -462,7 +471,7 @@ namespace SQLite
          * @param[in] size  the number of bytes of the value.
          * @param[in] type  the way to bind this parameter.
          **/
-        void bind(const int index, const char* const value, const int size = -1, BindType type = BindType::Transient) const;
+        void bind(const int index, const char* const value, const int size = -1, bindtype type = bindtype::transient) const;
 
         /** Binds an UTF-16 string value to a parameter in an SQL prepared statement.
          * @param[in] index specifies the index of the SQL parameter to be set
@@ -470,7 +479,7 @@ namespace SQLite
          * @param[in] size  the number of bytes of the value.
          * @param[in] type  the way to bind this parameter.
          **/
-        void bind(const int index, const char16_t* const value, const int size = -1, BindType type = BindType::Transient) const;
+        void bind(const int index, const char16_t* const value, const int size = -1, bindtype type = bindtype::transient) const;
 
         /** Binds an string value to a parameter in an SQL prepared statement.
          * @param[in] index specifies the index of the SQL parameter to be set
@@ -489,9 +498,9 @@ namespace SQLite
          * @param[in] value the value to bind to the parameter.
          **/
         template <typename T>
-        void bindByName(const std::string& name, T&& value)
+        void bind_name(const std::string& name, T&& value)
         {
-            const int index = sqlite3_bind_parameter_index(getHandle(), name.c_str());
+            const int index = sqlite3_bind_parameter_index(handle(), name.c_str());
             bind(index, value);
         }
 
@@ -499,23 +508,23 @@ namespace SQLite
          * @param[in] values the values to bind to SQL parameters
          **/
         template <typename ... Values>
-        void bindAll(Values&& ... values) const
+        void bind_all(Values&& ... values) const
         {
-            internalBind(1, std::forward<Values>(values) ...);
+            internal_bind(1, std::forward<Values>(values) ...);
         }
 
         /** Resets all SQL parameters to NULL.
          * @param[in] values Possible values to to bind to SQL parameters.
          */
         template <typename ... Values>
-        void clearBindings(Values&& ... values) const
+        void clear_bindings(Values&& ... values) const
         {
-            if (SQLITE_OK != sqlite3_clear_bindings(getHandle()))
+            if (SQLITE_OK != sqlite3_clear_bindings(handle()))
             {
-                throwLastError();
+                throw_last_error();
             }
 
-            bindAll(values ...);
+            bind_all(values ...);
         }
 
 
@@ -525,22 +534,22 @@ namespace SQLite
          */
         void reset() const
         {
-            if (SQLITE_OK != sqlite3_reset(getHandle()))
+            if (SQLITE_OK != sqlite3_reset(handle()))
             {
-                throwLastError();
+                throw_last_error();
             }
             m_done = false;
         }
 
         private:
-        using StatementHandle = std::unique_ptr<sqlite3_stmt, decltype(&sqlite3_finalize)>;
-        StatementHandle m_handle;
+        using statement_handle = std::unique_ptr<sqlite3_stmt, decltype(&sqlite3_finalize)>;
+        statement_handle m_handle;
 
         mutable bool m_done;
 
         template <typename F, typename C, typename ... Values>
-        void internalPrepare(
-            const DBConnection& connection,
+        void internal_prepare(
+            const dbconnection& connection,
             F prepare,
             const C * const text,
             Values&& ... values)
@@ -548,80 +557,80 @@ namespace SQLite
             assert(connection);
 
             sqlite3_stmt *statement;
-            if (SQLITE_OK != prepare(connection.getHandle(), text, -1, &statement, nullptr))
+            if (SQLITE_OK != prepare(connection.handle(), text, -1, &statement, nullptr))
             {
-                const int errcode = sqlite3_extended_errcode(connection.getHandle());
-                const std::string message = sqlite3_errmsg(connection.getHandle());
+                const int errcode = sqlite3_extended_errcode(connection.handle());
+                const std::string message = sqlite3_errmsg(connection.handle());
                 sqlite3_finalize(statement);
-                throwErrorCode(errcode, message);
+                throw_error_code(errcode, message);
             }
 
             m_handle.reset(statement);
-            bindAll(std::forward<Values>(values) ...);
+            bind_all(std::forward<Values>(values) ...);
         }
 
-        void internalBind(int) const noexcept
+        void internal_bind(int) const noexcept
         {}
 
         template <typename First, typename ... Rest>
-        void internalBind(const int index, First&& first, Rest&& ... rest) const
+        void internal_bind(const int index, First&& first, Rest&& ... rest) const
         {
             bind(index, std::forward<First>(first));
-            internalBind(index + 1, std::forward<Rest>(rest) ...);
+            internal_bind(index + 1, std::forward<Rest>(rest) ...);
         }
 
-        void throwLastError() const;
+        void throw_last_error() const;
 
-        Statement(const Statement& other) = delete;
-        Statement& operator=(Statement& other) = delete;
+        statement(const statement& other) = delete;
+        statement& operator=(statement& other) = delete;
 
     };
 
     /** Helps when iterating over rows in a "SELECT" statement.
-     * RowIterator is a [InputIterator](http://en.cppreference.com/w/cpp/concept/InputIterator) and can read data from the pointed to SQLite row.
+     * row_iterator is a [InputIterator](http://en.cppreference.com/w/cpp/concept/InputIterator) and can read data from the pointed to SQLite row.
      */
-    class RowIterator
+    class row_iterator
     {
         public:
         /** Default constructor.
          */
-        RowIterator() noexcept = default;
+        row_iterator() noexcept = default;
 
-        /** Construct a RowIterator object from a Statment object.
-         * A RowIterator should only be constructect on an Statment object that is doing a SQL "SELECT" query.
+        /** Construct a row_iterator object from a statement object.
+         * A row_iterator should only be constructect on an statement object that is doing a SQL "SELECT" query.
          * @param statement the statement object to construct the iterator from.
          */
-        RowIterator(const Statement& statement) noexcept;
+        row_iterator(const statement& statement) noexcept;
 
-        /** Increment iterator to the next Row object of the Statement.
+        /** Increment iterator to the next row object of the statement.
          */
-        RowIterator& operator++() noexcept;
+        row_iterator& operator++() noexcept;
 
         /** Comparison operation.
          */
-        bool operator!=(const RowIterator& other) const noexcept;
+        bool operator!=(const row_iterator& other) const noexcept;
 
         /** Dereference operation.
-         * Dereferencing a RowIterator object will return a Row object.
+         * Dereferencing a row_iterator object will return a row object.
          */
-        Row operator*() const noexcept;
+        row operator*() const noexcept;
 
         private:
-        const Statement* m_statement = nullptr;
+        const statement* m_statement = nullptr;
 
     };
 
-    /** Returns an iterator to the first row of a Statement.
+    /** Returns an iterator to the first row of a statement.
      * @param[in] statement the statement to get the first row of
      * @returns The first row of an executed SQL statement.
      */
-    RowIterator begin(const Statement& statement) noexcept;
+    row_iterator begin(const statement& statement) noexcept;
 
     /** Returns an iterator to the end.
      * @param[in] statement the statement to get the end of
      * @returns The value that signifies that there are no more rows to iterate over.
      */
-    RowIterator end(const Statement& statement) noexcept;
+    row_iterator end(const statement& statement) noexcept;
 
     /** Executes an SQL query on a database connection.
      *
@@ -630,12 +639,12 @@ namespace SQLite
      * @param[in] values     possible values to bind to SQL query if containing bind parameters
      */
     template <typename ... Values>
-    inline int Execute(
-        const DBConnection& connection,
+    inline int execute(
+        const dbconnection& connection,
         const std::string& text,
         Values&& ... values)
     {
-        return Statement(connection, text.c_str(), std::forward<Values>(values) ...).execute();
+        return statement(connection, text.c_str(), std::forward<Values>(values) ...).execute();
     }
 
     /** Executes an SQL query on a database connection.
@@ -645,12 +654,12 @@ namespace SQLite
      * @param[in] values     possible values to bind to SQL query if containing bind parameters
      */
     template <typename ... Values>
-    inline int Execute(
-        const DBConnection& connection,
+    inline int execute(
+        const dbconnection& connection,
         const std::u16string& text,
         Values&& ... values)
     {
-        return Statement(connection, text.c_str(), std::forward<Values>(values) ...).execute();
+        return statement(connection, text.c_str(), std::forward<Values>(values) ...).execute();
     }
 
     template <typename Call>
@@ -674,8 +683,8 @@ namespace SQLite
     }
 
     template <typename F, typename ... Args>
-    inline void ExecuteCallback(
-        const DBConnection& connection,
+    inline void execute_callback(
+        const dbconnection& connection,
         const std::string& sql,
         F&& callback,
         Args&& ... args)
@@ -696,10 +705,10 @@ namespace SQLite
         typedef decltype(userCallback) Call;
 
         char *errmsgPtr = nullptr;
-        sqlite3_exec(connection.getHandle(), sql.c_str(), internal_execute_callback<Call>, (void *)&userCallback, nullptr);
+        sqlite3_exec(connection.handle(), sql.c_str(), internal_execute_callback<Call>, (void *)&userCallback, nullptr);
         delete errmsgPtr;
 
-        throwErrorCode(connection.getHandle());
+        throw_error_code(connection.handle());
     }
 }
 

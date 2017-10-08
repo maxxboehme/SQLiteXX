@@ -1,8 +1,8 @@
 #include "Exception.h"
 
-namespace SQLite
+namespace sqlite
 {
-    void throwErrorCode(sqlite3 *connection)
+    void throw_error_code(sqlite3 *connection)
     {
         const int errcode = sqlite3_extended_errcode(connection);
         if (errcode == SQLITE_OK) return;
@@ -11,15 +11,15 @@ namespace SQLite
         switch(errcode)
         {
             case SQLITE_BUSY:
-                throw BusyException(connection);
+                throw busy_exception(connection);
                 break;
             default:
-                throw Exception(connection);
+                throw exception(connection);
                 break;
         }
     }
 
-    void throwErrorCode(const int errcode, const std::string& message)
+    void throw_error_code(const int errcode, const std::string& message)
     {
         if (errcode == SQLITE_OK) return;
         if (errcode == SQLITE_DONE) return;
@@ -27,10 +27,10 @@ namespace SQLite
         switch(errcode)
         {
             case SQLITE_BUSY:
-                throw BusyException(message);
+                throw busy_exception(message);
                 break;
             default:
-                throw Exception(errcode, message);
+                throw exception(errcode, message);
                 break;
         }
     }
