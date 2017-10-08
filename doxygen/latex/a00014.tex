@@ -1,5 +1,5 @@
-\hypertarget{a00014}{\section{S\-Q\-Lite\-:\-:Transaction Class Reference}
-\label{a00014}\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}}
+\hypertarget{a00014}{\section{sqlite\-:\-:transaction Class Reference}
+\label{a00014}\index{sqlite\-::transaction@{sqlite\-::transaction}}
 }
 
 
@@ -10,7 +10,7 @@ R\-A\-I\-I encapsulation of the \hyperlink{a00038}{S\-Q\-Lite} Transactions.
 
 {\ttfamily \#include $<$Transaction.\-h$>$}
 
-Inheritance diagram for S\-Q\-Lite\-:\-:Transaction\-:\begin{figure}[H]
+Inheritance diagram for sqlite\-:\-:transaction\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[height=2.000000cm]{a00014}
@@ -19,11 +19,11 @@ Inheritance diagram for S\-Q\-Lite\-:\-:Transaction\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00014_a27add1a1db2dd8cd5935c78a63ad556b}{Transaction} (\hyperlink{a00004}{D\-B\-Connection} \&connection, const \hyperlink{a00038_af94f2dd6dcae8699eada7a0382e48e66}{Transaction\-Type} type)
+\hyperlink{a00014_ac5e2efbcd15f1531c00cbcacfa74c3f0}{transaction} (\hyperlink{a00004}{dbconnection} \&connection, const Transaction\-Type type)
 \begin{DoxyCompactList}\small\item\em Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} transaction. \end{DoxyCompactList}\item 
-virtual \hyperlink{a00014_a43c5e67a10b9698b7f6dad73539feb94}{$\sim$\-Transaction} () noexcept
+virtual \hyperlink{a00014_a798101cf276674d19708c1958e5b03fb}{$\sim$transaction} () noexcept
 \begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
-\hypertarget{a00014_a9b251d84198cdc2c0208ad566fec0287}{virtual void \hyperlink{a00014_a9b251d84198cdc2c0208ad566fec0287}{commit} ()}\label{a00014_a9b251d84198cdc2c0208ad566fec0287}
+\hypertarget{a00014_abe219dd0bf949d569381f9830c7b2d1a}{virtual void \hyperlink{a00014_abe219dd0bf949d569381f9830c7b2d1a}{commit} ()}\label{a00014_abe219dd0bf949d569381f9830c7b2d1a}
 
 \begin{DoxyCompactList}\small\item\em Commit the transaction. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -36,14 +36,14 @@ Definition at line 26 of file Transaction.\-h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{a00014_a27add1a1db2dd8cd5935c78a63ad556b}{\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}!Transaction@{Transaction}}
-\index{Transaction@{Transaction}!SQLite::Transaction@{S\-Q\-Lite\-::\-Transaction}}
-\subsubsection[{Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Transaction\-::\-Transaction (
+\hypertarget{a00014_ac5e2efbcd15f1531c00cbcacfa74c3f0}{\index{sqlite\-::transaction@{sqlite\-::transaction}!transaction@{transaction}}
+\index{transaction@{transaction}!sqlite::transaction@{sqlite\-::transaction}}
+\subsubsection[{transaction}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::transaction\-::transaction (
 \begin{DoxyParamCaption}
-\item[{{\bf D\-B\-Connection} \&}]{connection, }
-\item[{const {\bf Transaction\-Type}}]{type}
+\item[{{\bf dbconnection} \&}]{connection, }
+\item[{const Transaction\-Type}]{type}
 \end{DoxyParamCaption}
-)}}\label{a00014_a27add1a1db2dd8cd5935c78a63ad556b}
+)}}\label{a00014_ac5e2efbcd15f1531c00cbcacfa74c3f0}
 
 
 Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} transaction. 
@@ -59,13 +59,13 @@ Implements a strictly scope-\/based \hyperlink{a00038}{S\-Q\-Lite} transaction.
 
 Definition at line 10 of file Transaction.\-cpp.
 
-\hypertarget{a00014_a43c5e67a10b9698b7f6dad73539feb94}{\index{S\-Q\-Lite\-::\-Transaction@{S\-Q\-Lite\-::\-Transaction}!$\sim$\-Transaction@{$\sim$\-Transaction}}
-\index{$\sim$\-Transaction@{$\sim$\-Transaction}!SQLite::Transaction@{S\-Q\-Lite\-::\-Transaction}}
-\subsubsection[{$\sim$\-Transaction}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Transaction\-::$\sim$\-Transaction (
+\hypertarget{a00014_a798101cf276674d19708c1958e5b03fb}{\index{sqlite\-::transaction@{sqlite\-::transaction}!$\sim$transaction@{$\sim$transaction}}
+\index{$\sim$transaction@{$\sim$transaction}!sqlite::transaction@{sqlite\-::transaction}}
+\subsubsection[{$\sim$transaction}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::transaction\-::$\sim$transaction (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}}\label{a00014_a43c5e67a10b9698b7f6dad73539feb94}
+)\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [noexcept]}}}\label{a00014_a798101cf276674d19708c1958e5b03fb}
 
 
 Destructor. 

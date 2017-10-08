@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::Statement Class Reference</title>
+<title>SQLiteXX: sqlite::statement Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,15 +83,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00013.html">Statement</a></li>  </ul>
+<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00013.html">statement</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00048.html">List of all members</a>  </div>
+<a href="a00049.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::Statement Class Reference</div>  </div>
+<div class="title">sqlite::statement Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -100,166 +100,166 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="a00032_source.html">Statement.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for SQLite::Statement:</div>
+Inheritance diagram for sqlite::statement:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00013.png" usemap="#SQLite::Statement_map" alt=""/>
-  <map id="SQLite::Statement_map" name="SQLite::Statement_map">
-<area href="a00010.html" alt="SQLite::Reader&lt; Statement &gt;" shape="rect" coords="0,0,175,24"/>
+  <img src="a00013.png" usemap="#sqlite::statement_map" alt=""/>
+  <map id="sqlite::statement_map" name="sqlite::statement_map">
+<area href="a00010.html" alt="sqlite::reader&lt; statement &gt;" shape="rect" coords="0,0,160,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1c724c3934925a5988aa83909857589c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a1c724c3934925a5988aa83909857589c">Statement</a> () noexcept</td></tr>
-<tr class="memdesc:a1c724c3934925a5988aa83909857589c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a1c724c3934925a5988aa83909857589c">More...</a><br/></td></tr>
-<tr class="separator:a1c724c3934925a5988aa83909857589c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4f1af971f094f30c445bcc18ffc4e27"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
-<tr class="memitem:ac4f1af971f094f30c445bcc18ffc4e27"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#ac4f1af971f094f30c445bcc18ffc4e27">Statement</a> (const <a class="el" href="a00004.html">DBConnection</a> &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)</td></tr>
-<tr class="memdesc:ac4f1af971f094f30c445bcc18ffc4e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates, prepares, and binds values into an SQL statement.  <a href="#ac4f1af971f094f30c445bcc18ffc4e27">More...</a><br/></td></tr>
-<tr class="separator:ac4f1af971f094f30c445bcc18ffc4e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3857ee340dd2769fafe10259cf4858a3"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
-<tr class="memitem:a3857ee340dd2769fafe10259cf4858a3"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a3857ee340dd2769fafe10259cf4858a3">Statement</a> (const <a class="el" href="a00004.html">DBConnection</a> &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)</td></tr>
-<tr class="memdesc:a3857ee340dd2769fafe10259cf4858a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates, prepares, and binds values into an SQL statement.  <a href="#a3857ee340dd2769fafe10259cf4858a3">More...</a><br/></td></tr>
-<tr class="separator:a3857ee340dd2769fafe10259cf4858a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b7793f1490a321159690cf096ec74d6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a3b7793f1490a321159690cf096ec74d6">operator bool</a> () const noexcept</td></tr>
-<tr class="memdesc:a3b7793f1490a321159690cf096ec74d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify if the <a class="el" href="a00013.html" title="Represents a single SQL statement that has been compiled into binary form and is ready to be evaluate...">Statement</a> object has a prepared <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> statement.  <a href="#a3b7793f1490a321159690cf096ec74d6">More...</a><br/></td></tr>
-<tr class="separator:a3b7793f1490a321159690cf096ec74d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9052c143879aca6cf253925336464a8b"><td class="memItemLeft" align="right" valign="top">sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a9052c143879aca6cf253925336464a8b">getHandle</a> () const noexcept</td></tr>
-<tr class="memdesc:a9052c143879aca6cf253925336464a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying "sqlite3_stmt" object.  <a href="#a9052c143879aca6cf253925336464a8b">More...</a><br/></td></tr>
-<tr class="separator:a9052c143879aca6cf253925336464a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1ecd8e2636b542314521eb68fbf1000e"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
-<tr class="memitem:a1ecd8e2636b542314521eb68fbf1000e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a1ecd8e2636b542314521eb68fbf1000e">prepare</a> (<a class="el" href="a00004.html">DBConnection</a> const &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)</td></tr>
-<tr class="memdesc:a1ecd8e2636b542314521eb68fbf1000e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn an SQL query into byte code.  <a href="#a1ecd8e2636b542314521eb68fbf1000e">More...</a><br/></td></tr>
-<tr class="separator:a1ecd8e2636b542314521eb68fbf1000e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d422eadca4b2e3f2e1b6e13af69f3cc"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
-<tr class="memitem:a0d422eadca4b2e3f2e1b6e13af69f3cc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a0d422eadca4b2e3f2e1b6e13af69f3cc">prepare</a> (const <a class="el" href="a00004.html">DBConnection</a> &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)</td></tr>
-<tr class="memdesc:a0d422eadca4b2e3f2e1b6e13af69f3cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn an SQL query into byte code.  <a href="#a0d422eadca4b2e3f2e1b6e13af69f3cc">More...</a><br/></td></tr>
-<tr class="separator:a0d422eadca4b2e3f2e1b6e13af69f3cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6251d1119e978d1366113b4aa30899ef"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a6251d1119e978d1366113b4aa30899ef">step</a> () const </td></tr>
-<tr class="memdesc:a6251d1119e978d1366113b4aa30899ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a prepared statement.  <a href="#a6251d1119e978d1366113b4aa30899ef">More...</a><br/></td></tr>
-<tr class="separator:a6251d1119e978d1366113b4aa30899ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b489a2dc2707543eba55ce1e5d3682c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a9b489a2dc2707543eba55ce1e5d3682c">execute</a> () const </td></tr>
-<tr class="memdesc:a9b489a2dc2707543eba55ce1e5d3682c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a prepared statement and will return the number of changes to the database.  <a href="#a9b489a2dc2707543eba55ce1e5d3682c">More...</a><br/></td></tr>
-<tr class="separator:a9b489a2dc2707543eba55ce1e5d3682c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d4999fce90145852287c18c0d218ac6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a0d4999fce90145852287c18c0d218ac6">bind</a> (const int index, const int value) const </td></tr>
-<tr class="memdesc:a0d4999fce90145852287c18c0d218ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an integer value to a parameter in an SQL prepared statement.  <a href="#a0d4999fce90145852287c18c0d218ac6">More...</a><br/></td></tr>
-<tr class="separator:a0d4999fce90145852287c18c0d218ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ace8156c735b1e630e82a3840910e02cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#ace8156c735b1e630e82a3840910e02cf">bind</a> (const int index, const double value) const </td></tr>
-<tr class="memdesc:ace8156c735b1e630e82a3840910e02cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an double value to a parameter in an SQL prepared statement.  <a href="#ace8156c735b1e630e82a3840910e02cf">More...</a><br/></td></tr>
-<tr class="separator:ace8156c735b1e630e82a3840910e02cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab00e4b2d9a0d85ccaf2b058d0cc9523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#aab00e4b2d9a0d85ccaf2b058d0cc9523">bind</a> (const int index, const void *const value, const int size, <a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">BindType</a> type=<a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475">BindType::Transient</a>) const </td></tr>
-<tr class="memdesc:aab00e4b2d9a0d85ccaf2b058d0cc9523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an blob value to a parameter in an SQL prepared statement.  <a href="#aab00e4b2d9a0d85ccaf2b058d0cc9523">More...</a><br/></td></tr>
-<tr class="separator:aab00e4b2d9a0d85ccaf2b058d0cc9523"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc5e0d9485bfedc71e9863cdb3c3d11a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#afc5e0d9485bfedc71e9863cdb3c3d11a">bind</a> (const int index, const <a class="el" href="a00002.html">Blob</a> &amp;value) const </td></tr>
-<tr class="memdesc:afc5e0d9485bfedc71e9863cdb3c3d11a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an <a class="el" href="a00002.html" title="A &quot;Binary Large OBject&quot;. ">Blob</a> value to a parameter in an SQL prepared statement.  <a href="#afc5e0d9485bfedc71e9863cdb3c3d11a">More...</a><br/></td></tr>
-<tr class="separator:afc5e0d9485bfedc71e9863cdb3c3d11a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed628586d99205a1443790e7dc1e36f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a3ed628586d99205a1443790e7dc1e36f">bind</a> (const int index, const char *const value, const int size=-1, <a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">BindType</a> type=<a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475">BindType::Transient</a>) const </td></tr>
-<tr class="memdesc:a3ed628586d99205a1443790e7dc1e36f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an string value to a parameter in an SQL prepared statement.  <a href="#a3ed628586d99205a1443790e7dc1e36f">More...</a><br/></td></tr>
-<tr class="separator:a3ed628586d99205a1443790e7dc1e36f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b983503e072b56f2255b140dd271381"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a6b983503e072b56f2255b140dd271381">bind</a> (const int index, const char16_t *const value, const int size=-1, <a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">BindType</a> type=<a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475">BindType::Transient</a>) const </td></tr>
-<tr class="memdesc:a6b983503e072b56f2255b140dd271381"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an UTF-16 string value to a parameter in an SQL prepared statement.  <a href="#a6b983503e072b56f2255b140dd271381">More...</a><br/></td></tr>
-<tr class="separator:a6b983503e072b56f2255b140dd271381"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e33406ed4170291b9e3da490383a224"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a2e33406ed4170291b9e3da490383a224">bind</a> (const int index, const std::string &amp;value) const </td></tr>
-<tr class="memdesc:a2e33406ed4170291b9e3da490383a224"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an string value to a parameter in an SQL prepared statement.  <a href="#a2e33406ed4170291b9e3da490383a224">More...</a><br/></td></tr>
-<tr class="separator:a2e33406ed4170291b9e3da490383a224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a2d97dc865a1ebefb58f982fe5689a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a0a2d97dc865a1ebefb58f982fe5689a0">bind</a> (const int index, const std::u16string &amp;value) const </td></tr>
-<tr class="memdesc:a0a2d97dc865a1ebefb58f982fe5689a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an UTF-16 string value to a parameter in an SQL prepared statement.  <a href="#a0a2d97dc865a1ebefb58f982fe5689a0">More...</a><br/></td></tr>
-<tr class="separator:a0a2d97dc865a1ebefb58f982fe5689a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30d8dec0baa340a358ce65a49ace23d8"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a30d8dec0baa340a358ce65a49ace23d8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a30d8dec0baa340a358ce65a49ace23d8">bindByName</a> (const std::string &amp;name, T &amp;&amp;value)</td></tr>
-<tr class="memdesc:a30d8dec0baa340a358ce65a49ace23d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an value to a parameter in an SQL prepared statement.  <a href="#a30d8dec0baa340a358ce65a49ace23d8">More...</a><br/></td></tr>
-<tr class="separator:a30d8dec0baa340a358ce65a49ace23d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b04cc93fd0242ea34d3e9e3a9cd88d3"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
-<tr class="memitem:a9b04cc93fd0242ea34d3e9e3a9cd88d3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a9b04cc93fd0242ea34d3e9e3a9cd88d3">bindAll</a> (Values &amp;&amp;...values) const </td></tr>
-<tr class="memdesc:a9b04cc93fd0242ea34d3e9e3a9cd88d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds values to parameters in an SQL prepared statement.  <a href="#a9b04cc93fd0242ea34d3e9e3a9cd88d3">More...</a><br/></td></tr>
-<tr class="separator:a9b04cc93fd0242ea34d3e9e3a9cd88d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7139b0e838a43de61f03367a8631ee76"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
-<tr class="memitem:a7139b0e838a43de61f03367a8631ee76"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a7139b0e838a43de61f03367a8631ee76">clearBindings</a> (Values &amp;&amp;...values) const </td></tr>
-<tr class="memdesc:a7139b0e838a43de61f03367a8631ee76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all SQL parameters to NULL.  <a href="#a7139b0e838a43de61f03367a8631ee76">More...</a><br/></td></tr>
-<tr class="separator:a7139b0e838a43de61f03367a8631ee76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13a776f0e97da001cdcac81c13bff4c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a13a776f0e97da001cdcac81c13bff4c1">reset</a> () const </td></tr>
-<tr class="memdesc:a13a776f0e97da001cdcac81c13bff4c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets a prepared statement object back to its initial state.  <a href="#a13a776f0e97da001cdcac81c13bff4c1">More...</a><br/></td></tr>
-<tr class="separator:a13a776f0e97da001cdcac81c13bff4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82c5bc45048b8328a2fcc9bb4ff975f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a82c5bc45048b8328a2fcc9bb4ff975f2">getInt</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a82c5bc45048b8328a2fcc9bb4ff975f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a82c5bc45048b8328a2fcc9bb4ff975f2">More...</a><br/></td></tr>
-<tr class="separator:a82c5bc45048b8328a2fcc9bb4ff975f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87dd8234c2bd5f19466813f8a68ab80a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a87dd8234c2bd5f19466813f8a68ab80a">getInt</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a87dd8234c2bd5f19466813f8a68ab80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a87dd8234c2bd5f19466813f8a68ab80a">More...</a><br/></td></tr>
-<tr class="separator:a87dd8234c2bd5f19466813f8a68ab80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb7b9705a4638d6d5af5ca26dfa474ff"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#adb7b9705a4638d6d5af5ca26dfa474ff">getInt64</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:adb7b9705a4638d6d5af5ca26dfa474ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#adb7b9705a4638d6d5af5ca26dfa474ff">More...</a><br/></td></tr>
-<tr class="separator:adb7b9705a4638d6d5af5ca26dfa474ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea6d24bb9247bfc52fe77d62be961dd2"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aea6d24bb9247bfc52fe77d62be961dd2">getInt64</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:aea6d24bb9247bfc52fe77d62be961dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#aea6d24bb9247bfc52fe77d62be961dd2">More...</a><br/></td></tr>
-<tr class="separator:aea6d24bb9247bfc52fe77d62be961dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971fb706b9215a89532ac48640f94832"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a971fb706b9215a89532ac48640f94832">getUInt</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a971fb706b9215a89532ac48640f94832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a971fb706b9215a89532ac48640f94832">More...</a><br/></td></tr>
-<tr class="separator:a971fb706b9215a89532ac48640f94832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18315a8379249158c3f827441e8f6de0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a18315a8379249158c3f827441e8f6de0">getUInt</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a18315a8379249158c3f827441e8f6de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a18315a8379249158c3f827441e8f6de0">More...</a><br/></td></tr>
-<tr class="separator:a18315a8379249158c3f827441e8f6de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a679e56078c78e01c99fa08ad0b7ee782"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a679e56078c78e01c99fa08ad0b7ee782">getDouble</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a679e56078c78e01c99fa08ad0b7ee782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#a679e56078c78e01c99fa08ad0b7ee782">More...</a><br/></td></tr>
-<tr class="separator:a679e56078c78e01c99fa08ad0b7ee782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e9dd813439e8cda7608e18c1ccce5f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a45e9dd813439e8cda7608e18c1ccce5f">getDouble</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a45e9dd813439e8cda7608e18c1ccce5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#a45e9dd813439e8cda7608e18c1ccce5f">More...</a><br/></td></tr>
-<tr class="separator:a45e9dd813439e8cda7608e18c1ccce5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80028dc9f221648fe2398b40bd380c31"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">Blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a80028dc9f221648fe2398b40bd380c31">getBlob</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a80028dc9f221648fe2398b40bd380c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Blob object.  <a href="#a80028dc9f221648fe2398b40bd380c31">More...</a><br/></td></tr>
-<tr class="separator:a80028dc9f221648fe2398b40bd380c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e50d9ec365c547b5edb7d062aeba72b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">Blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a4e50d9ec365c547b5edb7d062aeba72b">getBlob</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a4e50d9ec365c547b5edb7d062aeba72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Blob object.  <a href="#a4e50d9ec365c547b5edb7d062aeba72b">More...</a><br/></td></tr>
-<tr class="separator:a4e50d9ec365c547b5edb7d062aeba72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0920d021f6962f75e7b555e3f20fc0fc"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a0920d021f6962f75e7b555e3f20fc0fc">getString</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a0920d021f6962f75e7b555e3f20fc0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#a0920d021f6962f75e7b555e3f20fc0fc">More...</a><br/></td></tr>
-<tr class="separator:a0920d021f6962f75e7b555e3f20fc0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44f9f5da46aa91b869fe26a188e803fa"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a44f9f5da46aa91b869fe26a188e803fa">getString</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a44f9f5da46aa91b869fe26a188e803fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#a44f9f5da46aa91b869fe26a188e803fa">More...</a><br/></td></tr>
-<tr class="separator:a44f9f5da46aa91b869fe26a188e803fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b48f9e2ffbcfe787d85b4372a7ee29d"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a2b48f9e2ffbcfe787d85b4372a7ee29d">getU16String</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a2b48f9e2ffbcfe787d85b4372a7ee29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#a2b48f9e2ffbcfe787d85b4372a7ee29d">More...</a><br/></td></tr>
-<tr class="separator:a2b48f9e2ffbcfe787d85b4372a7ee29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6024ad6e74ee1ac47ad0ce79f905026"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad6024ad6e74ee1ac47ad0ce79f905026">getU16String</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:ad6024ad6e74ee1ac47ad0ce79f905026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#ad6024ad6e74ee1ac47ad0ce79f905026">More...</a><br/></td></tr>
-<tr class="separator:ad6024ad6e74ee1ac47ad0ce79f905026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41fcbc5da6eb3fe6fc75e4faed208fc6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a41fcbc5da6eb3fe6fc75e4faed208fc6">getValue</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a41fcbc5da6eb3fe6fc75e4faed208fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Value object.  <a href="#a41fcbc5da6eb3fe6fc75e4faed208fc6">More...</a><br/></td></tr>
-<tr class="separator:a41fcbc5da6eb3fe6fc75e4faed208fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad352a7124ee46d756462c8a1b014599a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad352a7124ee46d756462c8a1b014599a">getValue</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:ad352a7124ee46d756462c8a1b014599a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Value object.  <a href="#ad352a7124ee46d756462c8a1b014599a">More...</a><br/></td></tr>
-<tr class="separator:ad352a7124ee46d756462c8a1b014599a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb571e9157ef46c42ed48fc229b7842d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aeb571e9157ef46c42ed48fc229b7842d">getBytes</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:aeb571e9157ef46c42ed48fc229b7842d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#aeb571e9157ef46c42ed48fc229b7842d">More...</a><br/></td></tr>
-<tr class="separator:aeb571e9157ef46c42ed48fc229b7842d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad183a562774f9590273bf35c6e232a1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad183a562774f9590273bf35c6e232a1a">getBytes</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:ad183a562774f9590273bf35c6e232a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#ad183a562774f9590273bf35c6e232a1a">More...</a><br/></td></tr>
-<tr class="separator:ad183a562774f9590273bf35c6e232a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0450ea397b1a9d8dd636b82c8757d33e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a0450ea397b1a9d8dd636b82c8757d33e">getType</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a0450ea397b1a9d8dd636b82c8757d33e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#a0450ea397b1a9d8dd636b82c8757d33e">More...</a><br/></td></tr>
-<tr class="separator:a0450ea397b1a9d8dd636b82c8757d33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4f049a45c69b9e1bf6db4cf63699f64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ae4f049a45c69b9e1bf6db4cf63699f64">getType</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:ae4f049a45c69b9e1bf6db4cf63699f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#ae4f049a45c69b9e1bf6db4cf63699f64">More...</a><br/></td></tr>
-<tr class="separator:ae4f049a45c69b9e1bf6db4cf63699f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e6b9d0d99dea8964a34a3c2f08e99bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a9e6b9d0d99dea8964a34a3c2f08e99bc">getColumnCount</a> () const noexcept</td></tr>
-<tr class="memdesc:a9e6b9d0d99dea8964a34a3c2f08e99bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of columns in the result set returned by the prepared statement.  <a href="#a9e6b9d0d99dea8964a34a3c2f08e99bc">More...</a><br/></td></tr>
-<tr class="separator:a9e6b9d0d99dea8964a34a3c2f08e99bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5004961d65336631d45de411ffb87cd5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a5004961d65336631d45de411ffb87cd5">getColumnName</a> (const int index) const noexcept</td></tr>
-<tr class="memdesc:a5004961d65336631d45de411ffb87cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#a5004961d65336631d45de411ffb87cd5">More...</a><br/></td></tr>
-<tr class="separator:a5004961d65336631d45de411ffb87cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af46d30137ad020b1e22ad703810ea002"><td class="memItemLeft" align="right" valign="top">const char16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#af46d30137ad020b1e22ad703810ea002">getColumnWideName</a> (const int index) const noexcept</td></tr>
-<tr class="memdesc:af46d30137ad020b1e22ad703810ea002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#af46d30137ad020b1e22ad703810ea002">More...</a><br/></td></tr>
-<tr class="separator:af46d30137ad020b1e22ad703810ea002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7eaa050a97cda893e9737bca416f0cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ae7eaa050a97cda893e9737bca416f0cb">getColumnIndex</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:ae7eaa050a97cda893e9737bca416f0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the position of a column with the specified name.  <a href="#ae7eaa050a97cda893e9737bca416f0cb">More...</a><br/></td></tr>
-<tr class="separator:ae7eaa050a97cda893e9737bca416f0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1355244b2e1153eb26daea61e52e153a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a1355244b2e1153eb26daea61e52e153a">statement</a> () noexcept</td></tr>
+<tr class="memdesc:a1355244b2e1153eb26daea61e52e153a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="#a1355244b2e1153eb26daea61e52e153a">More...</a><br/></td></tr>
+<tr class="separator:a1355244b2e1153eb26daea61e52e153a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92826d1d30ee7ea86a5e8ac6aad8aac"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:ae92826d1d30ee7ea86a5e8ac6aad8aac"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#ae92826d1d30ee7ea86a5e8ac6aad8aac">statement</a> (const <a class="el" href="a00004.html">dbconnection</a> &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)</td></tr>
+<tr class="memdesc:ae92826d1d30ee7ea86a5e8ac6aad8aac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates, prepares, and binds values into an SQL statement.  <a href="#ae92826d1d30ee7ea86a5e8ac6aad8aac">More...</a><br/></td></tr>
+<tr class="separator:ae92826d1d30ee7ea86a5e8ac6aad8aac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b4dd3c704336b6373880dce27fe5b71"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:a5b4dd3c704336b6373880dce27fe5b71"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a5b4dd3c704336b6373880dce27fe5b71">statement</a> (const <a class="el" href="a00004.html">dbconnection</a> &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)</td></tr>
+<tr class="memdesc:a5b4dd3c704336b6373880dce27fe5b71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates, prepares, and binds values into an SQL statement.  <a href="#a5b4dd3c704336b6373880dce27fe5b71">More...</a><br/></td></tr>
+<tr class="separator:a5b4dd3c704336b6373880dce27fe5b71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a558b055f3210c6ab7575dc2c23cb7be2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a558b055f3210c6ab7575dc2c23cb7be2">operator bool</a> () const noexcept</td></tr>
+<tr class="memdesc:a558b055f3210c6ab7575dc2c23cb7be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify if the statement object has a prepared <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> statement.  <a href="#a558b055f3210c6ab7575dc2c23cb7be2">More...</a><br/></td></tr>
+<tr class="separator:a558b055f3210c6ab7575dc2c23cb7be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef59d3eb044ce240bd9ca3c8958d4abe"><td class="memItemLeft" align="right" valign="top">sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#aef59d3eb044ce240bd9ca3c8958d4abe">handle</a> () const noexcept</td></tr>
+<tr class="memdesc:aef59d3eb044ce240bd9ca3c8958d4abe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying "sqlite3_stmt" object.  <a href="#aef59d3eb044ce240bd9ca3c8958d4abe">More...</a><br/></td></tr>
+<tr class="separator:aef59d3eb044ce240bd9ca3c8958d4abe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6825366938fd914456b63c7e63ddc6f0"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:a6825366938fd914456b63c7e63ddc6f0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a6825366938fd914456b63c7e63ddc6f0">prepare</a> (<a class="el" href="a00004.html">dbconnection</a> const &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)</td></tr>
+<tr class="memdesc:a6825366938fd914456b63c7e63ddc6f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn an SQL query into byte code.  <a href="#a6825366938fd914456b63c7e63ddc6f0">More...</a><br/></td></tr>
+<tr class="separator:a6825366938fd914456b63c7e63ddc6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb6b5ec78b6ed682f11667f5a611818c"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:abb6b5ec78b6ed682f11667f5a611818c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#abb6b5ec78b6ed682f11667f5a611818c">prepare</a> (const <a class="el" href="a00004.html">dbconnection</a> &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)</td></tr>
+<tr class="memdesc:abb6b5ec78b6ed682f11667f5a611818c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Turn an SQL query into byte code.  <a href="#abb6b5ec78b6ed682f11667f5a611818c">More...</a><br/></td></tr>
+<tr class="separator:abb6b5ec78b6ed682f11667f5a611818c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1039653cca9f00708ce570011791b9d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#ad1039653cca9f00708ce570011791b9d">step</a> () const </td></tr>
+<tr class="memdesc:ad1039653cca9f00708ce570011791b9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates a prepared statement.  <a href="#ad1039653cca9f00708ce570011791b9d">More...</a><br/></td></tr>
+<tr class="separator:ad1039653cca9f00708ce570011791b9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a01f06c30b4f751d65f0f14fae3277a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a7a01f06c30b4f751d65f0f14fae3277a">execute</a> () const </td></tr>
+<tr class="memdesc:a7a01f06c30b4f751d65f0f14fae3277a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a prepared statement and will return the number of changes to the database.  <a href="#a7a01f06c30b4f751d65f0f14fae3277a">More...</a><br/></td></tr>
+<tr class="separator:a7a01f06c30b4f751d65f0f14fae3277a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91d16077f086fe6becb4c7bae576b0e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a91d16077f086fe6becb4c7bae576b0e7">bind</a> (const int index, const int <a class="el" href="a00015.html">value</a>) const </td></tr>
+<tr class="memdesc:a91d16077f086fe6becb4c7bae576b0e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an integer value to a parameter in an SQL prepared statement.  <a href="#a91d16077f086fe6becb4c7bae576b0e7">More...</a><br/></td></tr>
+<tr class="separator:a91d16077f086fe6becb4c7bae576b0e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80f067e9b5bc981210593d3aac067cc5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a80f067e9b5bc981210593d3aac067cc5">bind</a> (const int index, const double <a class="el" href="a00015.html">value</a>) const </td></tr>
+<tr class="memdesc:a80f067e9b5bc981210593d3aac067cc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an double value to a parameter in an SQL prepared statement.  <a href="#a80f067e9b5bc981210593d3aac067cc5">More...</a><br/></td></tr>
+<tr class="separator:a80f067e9b5bc981210593d3aac067cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6eda84becdf90c4e0a0bb25601dc54d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#ae6eda84becdf90c4e0a0bb25601dc54d">bind</a> (const int index, const void *const <a class="el" href="a00015.html">value</a>, const int size, bindtype type=bindtype::transient) const </td></tr>
+<tr class="memdesc:ae6eda84becdf90c4e0a0bb25601dc54d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an blob value to a parameter in an SQL prepared statement.  <a href="#ae6eda84becdf90c4e0a0bb25601dc54d">More...</a><br/></td></tr>
+<tr class="separator:ae6eda84becdf90c4e0a0bb25601dc54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaa1ec53616b974e0dce72f3ba88b20f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#aaaa1ec53616b974e0dce72f3ba88b20f">bind</a> (const int index, const <a class="el" href="a00002.html">blob</a> &amp;<a class="el" href="a00015.html">value</a>) const </td></tr>
+<tr class="memdesc:aaaa1ec53616b974e0dce72f3ba88b20f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an blob value to a parameter in an SQL prepared statement.  <a href="#aaaa1ec53616b974e0dce72f3ba88b20f">More...</a><br/></td></tr>
+<tr class="separator:aaaa1ec53616b974e0dce72f3ba88b20f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a778fde6911aba25ea0ca3c6d7a8be870"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a778fde6911aba25ea0ca3c6d7a8be870">bind</a> (const int index, const char *const <a class="el" href="a00015.html">value</a>, const int size=-1, bindtype type=bindtype::transient) const </td></tr>
+<tr class="memdesc:a778fde6911aba25ea0ca3c6d7a8be870"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an string value to a parameter in an SQL prepared statement.  <a href="#a778fde6911aba25ea0ca3c6d7a8be870">More...</a><br/></td></tr>
+<tr class="separator:a778fde6911aba25ea0ca3c6d7a8be870"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81eabe0c43e779bfaf82e465d76d8a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#aa81eabe0c43e779bfaf82e465d76d8a7">bind</a> (const int index, const char16_t *const <a class="el" href="a00015.html">value</a>, const int size=-1, bindtype type=bindtype::transient) const </td></tr>
+<tr class="memdesc:aa81eabe0c43e779bfaf82e465d76d8a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an UTF-16 string value to a parameter in an SQL prepared statement.  <a href="#aa81eabe0c43e779bfaf82e465d76d8a7">More...</a><br/></td></tr>
+<tr class="separator:aa81eabe0c43e779bfaf82e465d76d8a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8aa321913ed5bf9398d0694f4a222c15"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a8aa321913ed5bf9398d0694f4a222c15">bind</a> (const int index, const std::string &amp;<a class="el" href="a00015.html">value</a>) const </td></tr>
+<tr class="memdesc:a8aa321913ed5bf9398d0694f4a222c15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an string value to a parameter in an SQL prepared statement.  <a href="#a8aa321913ed5bf9398d0694f4a222c15">More...</a><br/></td></tr>
+<tr class="separator:a8aa321913ed5bf9398d0694f4a222c15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2812922c3fc691f556ed230768b5ca43"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a2812922c3fc691f556ed230768b5ca43">bind</a> (const int index, const std::u16string &amp;<a class="el" href="a00015.html">value</a>) const </td></tr>
+<tr class="memdesc:a2812922c3fc691f556ed230768b5ca43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an UTF-16 string value to a parameter in an SQL prepared statement.  <a href="#a2812922c3fc691f556ed230768b5ca43">More...</a><br/></td></tr>
+<tr class="separator:a2812922c3fc691f556ed230768b5ca43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8375bd6c666e395325227048ec0d6065"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a8375bd6c666e395325227048ec0d6065"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a8375bd6c666e395325227048ec0d6065">bind_name</a> (const std::string &amp;name, T &amp;&amp;<a class="el" href="a00015.html">value</a>)</td></tr>
+<tr class="memdesc:a8375bd6c666e395325227048ec0d6065"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds an value to a parameter in an SQL prepared statement.  <a href="#a8375bd6c666e395325227048ec0d6065">More...</a><br/></td></tr>
+<tr class="separator:a8375bd6c666e395325227048ec0d6065"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15ecbabf7d3a6c8b7005e2a799374785"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:a15ecbabf7d3a6c8b7005e2a799374785"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#a15ecbabf7d3a6c8b7005e2a799374785">bind_all</a> (Values &amp;&amp;...values) const </td></tr>
+<tr class="memdesc:a15ecbabf7d3a6c8b7005e2a799374785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds values to parameters in an SQL prepared statement.  <a href="#a15ecbabf7d3a6c8b7005e2a799374785">More...</a><br/></td></tr>
+<tr class="separator:a15ecbabf7d3a6c8b7005e2a799374785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf51f6d9cf5354200151d81959893a77"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:aaf51f6d9cf5354200151d81959893a77"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00013.html#aaf51f6d9cf5354200151d81959893a77">clear_bindings</a> (Values &amp;&amp;...values) const </td></tr>
+<tr class="memdesc:aaf51f6d9cf5354200151d81959893a77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets all SQL parameters to NULL.  <a href="#aaf51f6d9cf5354200151d81959893a77">More...</a><br/></td></tr>
+<tr class="separator:aaf51f6d9cf5354200151d81959893a77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26af62003da471859ccaf29e45606301"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html#a26af62003da471859ccaf29e45606301">reset</a> () const </td></tr>
+<tr class="memdesc:a26af62003da471859ccaf29e45606301"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets a prepared statement object back to its initial state.  <a href="#a26af62003da471859ccaf29e45606301">More...</a><br/></td></tr>
+<tr class="separator:a26af62003da471859ccaf29e45606301"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c720c80fd5c1f0f618c24a3d09e2ef5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a1c720c80fd5c1f0f618c24a3d09e2ef5">get_int</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a1c720c80fd5c1f0f618c24a3d09e2ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a1c720c80fd5c1f0f618c24a3d09e2ef5">More...</a><br/></td></tr>
+<tr class="separator:a1c720c80fd5c1f0f618c24a3d09e2ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1f86fdffd271cb92deb0b21d22fd05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a7e1f86fdffd271cb92deb0b21d22fd05">get_int</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a7e1f86fdffd271cb92deb0b21d22fd05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a7e1f86fdffd271cb92deb0b21d22fd05">More...</a><br/></td></tr>
+<tr class="separator:a7e1f86fdffd271cb92deb0b21d22fd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf16f586744a6bc0ecfb74ab791306c"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#afaf16f586744a6bc0ecfb74ab791306c">get_int64</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:afaf16f586744a6bc0ecfb74ab791306c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#afaf16f586744a6bc0ecfb74ab791306c">More...</a><br/></td></tr>
+<tr class="separator:afaf16f586744a6bc0ecfb74ab791306c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87383f607d2ffc2875eac57ecf8e3989"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a87383f607d2ffc2875eac57ecf8e3989">get_int64</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a87383f607d2ffc2875eac57ecf8e3989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#a87383f607d2ffc2875eac57ecf8e3989">More...</a><br/></td></tr>
+<tr class="separator:a87383f607d2ffc2875eac57ecf8e3989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e09a2778e2f4d146ef02cd6c9e86df"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a02e09a2778e2f4d146ef02cd6c9e86df">get_uint</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a02e09a2778e2f4d146ef02cd6c9e86df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a02e09a2778e2f4d146ef02cd6c9e86df">More...</a><br/></td></tr>
+<tr class="separator:a02e09a2778e2f4d146ef02cd6c9e86df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a662bad64308f5995cb03a0ccb772acdc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a662bad64308f5995cb03a0ccb772acdc">get_uint</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a662bad64308f5995cb03a0ccb772acdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a662bad64308f5995cb03a0ccb772acdc">More...</a><br/></td></tr>
+<tr class="separator:a662bad64308f5995cb03a0ccb772acdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4052f3e593580c81ba2b8622e2652eb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aa4052f3e593580c81ba2b8622e2652eb">get_double</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:aa4052f3e593580c81ba2b8622e2652eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#aa4052f3e593580c81ba2b8622e2652eb">More...</a><br/></td></tr>
+<tr class="separator:aa4052f3e593580c81ba2b8622e2652eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0613aae6ee73cd54d7f7d0d711494737"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a0613aae6ee73cd54d7f7d0d711494737">get_double</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a0613aae6ee73cd54d7f7d0d711494737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#a0613aae6ee73cd54d7f7d0d711494737">More...</a><br/></td></tr>
+<tr class="separator:a0613aae6ee73cd54d7f7d0d711494737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1b75c884158222778d2d6ec8b9ec18"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#abd1b75c884158222778d2d6ec8b9ec18">get_blob</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:abd1b75c884158222778d2d6ec8b9ec18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a blob object.  <a href="#abd1b75c884158222778d2d6ec8b9ec18">More...</a><br/></td></tr>
+<tr class="separator:abd1b75c884158222778d2d6ec8b9ec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a94b5c5a0d153ca7e2f0ef6719dfc9a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a3a94b5c5a0d153ca7e2f0ef6719dfc9a">get_blob</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a3a94b5c5a0d153ca7e2f0ef6719dfc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Blob object.  <a href="#a3a94b5c5a0d153ca7e2f0ef6719dfc9a">More...</a><br/></td></tr>
+<tr class="separator:a3a94b5c5a0d153ca7e2f0ef6719dfc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8716fe92a821ebc0799097bd6cc6d53c"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a8716fe92a821ebc0799097bd6cc6d53c">get_string</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a8716fe92a821ebc0799097bd6cc6d53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#a8716fe92a821ebc0799097bd6cc6d53c">More...</a><br/></td></tr>
+<tr class="separator:a8716fe92a821ebc0799097bd6cc6d53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c842deb81d9eb20388746672a96d29"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ab9c842deb81d9eb20388746672a96d29">get_string</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:ab9c842deb81d9eb20388746672a96d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#ab9c842deb81d9eb20388746672a96d29">More...</a><br/></td></tr>
+<tr class="separator:ab9c842deb81d9eb20388746672a96d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfef02b657c992a2d07e28a07e41e533"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#abfef02b657c992a2d07e28a07e41e533">get_u16string</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:abfef02b657c992a2d07e28a07e41e533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#abfef02b657c992a2d07e28a07e41e533">More...</a><br/></td></tr>
+<tr class="separator:abfef02b657c992a2d07e28a07e41e533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10d3ff33e5f4ee471bc14cc41ec86c1"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#af10d3ff33e5f4ee471bc14cc41ec86c1">get_u16string</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:af10d3ff33e5f4ee471bc14cc41ec86c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#af10d3ff33e5f4ee471bc14cc41ec86c1">More...</a><br/></td></tr>
+<tr class="separator:af10d3ff33e5f4ee471bc14cc41ec86c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af776fbdf8dc1150b628b04eca10841f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#af776fbdf8dc1150b628b04eca10841f4">get_value</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:af776fbdf8dc1150b628b04eca10841f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a value object.  <a href="#af776fbdf8dc1150b628b04eca10841f4">More...</a><br/></td></tr>
+<tr class="separator:af776fbdf8dc1150b628b04eca10841f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7835e8a981450975fee7771fa863ffe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad7835e8a981450975fee7771fa863ffe">get_value</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:ad7835e8a981450975fee7771fa863ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a value object.  <a href="#ad7835e8a981450975fee7771fa863ffe">More...</a><br/></td></tr>
+<tr class="separator:ad7835e8a981450975fee7771fa863ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4404227950aca8d5f01255a5541dbb4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ac4404227950aca8d5f01255a5541dbb4">get_bytes</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:ac4404227950aca8d5f01255a5541dbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#ac4404227950aca8d5f01255a5541dbb4">More...</a><br/></td></tr>
+<tr class="separator:ac4404227950aca8d5f01255a5541dbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a315b97406b5ba48bcd14857192d88d5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a315b97406b5ba48bcd14857192d88d5e">get_bytes</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a315b97406b5ba48bcd14857192d88d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#a315b97406b5ba48bcd14857192d88d5e">More...</a><br/></td></tr>
+<tr class="separator:a315b97406b5ba48bcd14857192d88d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8269e0f9387afa36ab90eb55899dc4"><td class="memItemLeft" align="right" valign="top">datatype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a2b8269e0f9387afa36ab90eb55899dc4">get_type</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a2b8269e0f9387afa36ab90eb55899dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#a2b8269e0f9387afa36ab90eb55899dc4">More...</a><br/></td></tr>
+<tr class="separator:a2b8269e0f9387afa36ab90eb55899dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ab606cf12aa4d2c9a183998420df44"><td class="memItemLeft" align="right" valign="top">datatype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ac5ab606cf12aa4d2c9a183998420df44">get_type</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:ac5ab606cf12aa4d2c9a183998420df44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#ac5ab606cf12aa4d2c9a183998420df44">More...</a><br/></td></tr>
+<tr class="separator:ac5ab606cf12aa4d2c9a183998420df44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7390afddbb1edc788f0afc6ce41f4562"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a7390afddbb1edc788f0afc6ce41f4562">column_count</a> () const noexcept</td></tr>
+<tr class="memdesc:a7390afddbb1edc788f0afc6ce41f4562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of columns in the result set returned by the prepared statement.  <a href="#a7390afddbb1edc788f0afc6ce41f4562">More...</a><br/></td></tr>
+<tr class="separator:a7390afddbb1edc788f0afc6ce41f4562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c33f9b700a47c08f54e7b65afd34f2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad4c33f9b700a47c08f54e7b65afd34f2">get_column_name</a> (const int index) const noexcept</td></tr>
+<tr class="memdesc:ad4c33f9b700a47c08f54e7b65afd34f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#ad4c33f9b700a47c08f54e7b65afd34f2">More...</a><br/></td></tr>
+<tr class="separator:ad4c33f9b700a47c08f54e7b65afd34f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f2f528b10da75672e55fbc36566f9c"><td class="memItemLeft" align="right" valign="top">const char16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aa7f2f528b10da75672e55fbc36566f9c">get_column_wide_name</a> (const int index) const noexcept</td></tr>
+<tr class="memdesc:aa7f2f528b10da75672e55fbc36566f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#aa7f2f528b10da75672e55fbc36566f9c">More...</a><br/></td></tr>
+<tr class="separator:aa7f2f528b10da75672e55fbc36566f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca43590a209c2c7a0f7420c8a6c47b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aaca43590a209c2c7a0f7420c8a6c47b3">get_column_index</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:aaca43590a209c2c7a0f7420c8a6c47b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the position of a column with the specified name.  <a href="#aaca43590a209c2c7a0f7420c8a6c47b3">More...</a><br/></td></tr>
+<tr class="separator:aaca43590a209c2c7a0f7420c8a6c47b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a single SQL statement that has been compiled into binary form and is ready to be evaluated, aka "sqlite3_stmt". </p>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00341">341</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00350">350</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a1c724c3934925a5988aa83909857589c"></a>
+<a class="anchor" id="a1355244b2e1153eb26daea61e52e153a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -267,7 +267,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Statement::Statement </td>
+          <td class="memname">sqlite::statement::statement </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -281,13 +281,13 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Default constructor. </p>
-<p>Constructs an un-prepared Statment object. </p>
+<p>Constructs an un-prepared statement object. </p>
 
 <p>Definition at line <a class="el" href="a00031_source.html#l00020">20</a> of file <a class="el" href="a00031_source.html">Statement.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ac4f1af971f094f30c445bcc18ffc4e27"></a>
+<a class="anchor" id="ae92826d1d30ee7ea86a5e8ac6aad8aac"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -297,9 +297,9 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Statement::Statement </td>
+          <td class="memname">sqlite::statement::statement </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">dbconnection</a> &amp;&#160;</td>
           <td class="paramname"><em>connection</em>, </td>
         </tr>
         <tr>
@@ -337,11 +337,11 @@ template&lt;typename... Values&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00355">355</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00364">364</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a3857ee340dd2769fafe10259cf4858a3"></a>
+<a class="anchor" id="a5b4dd3c704336b6373880dce27fe5b71"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -351,9 +351,9 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Statement::Statement </td>
+          <td class="memname">sqlite::statement::statement </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">dbconnection</a> &amp;&#160;</td>
           <td class="paramname"><em>connection</em>, </td>
         </tr>
         <tr>
@@ -391,17 +391,17 @@ template&lt;typename... Values&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00372">372</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00381">381</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a0d4999fce90145852287c18c0d218ac6"></a>
+<a class="anchor" id="a91d16077f086fe6becb4c7bae576b0e7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -433,12 +433,12 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ace8156c735b1e630e82a3840910e02cf"></a>
+<a class="anchor" id="a80f067e9b5bc981210593d3aac067cc5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -470,12 +470,12 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aab00e4b2d9a0d85ccaf2b058d0cc9523"></a>
+<a class="anchor" id="ae6eda84becdf90c4e0a0bb25601dc54d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -495,8 +495,8 @@ template&lt;typename... Values&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">BindType</a>&#160;</td>
-          <td class="paramname"><em>type</em> = <code><a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475">BindType::Transient</a></code>&#160;</td>
+          <td class="paramtype">bindtype&#160;</td>
+          <td class="paramname"><em>type</em> = <code>bindtype::transient</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -521,12 +521,12 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="afc5e0d9485bfedc71e9863cdb3c3d11a"></a>
+<a class="anchor" id="aaaa1ec53616b974e0dce72f3ba88b20f"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -534,7 +534,7 @@ template&lt;typename... Values&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00002.html">Blob</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00002.html">blob</a> &amp;&#160;</td>
           <td class="paramname"><em>value</em>&#160;</td>
         </tr>
         <tr>
@@ -545,7 +545,7 @@ template&lt;typename... Values&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Binds an <a class="el" href="a00002.html" title="A &quot;Binary Large OBject&quot;. ">Blob</a> value to a parameter in an SQL prepared statement. </p>
+<p>Binds an blob value to a parameter in an SQL prepared statement. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>specifies the index of the SQL parameter to be set </td></tr>
@@ -558,12 +558,12 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3ed628586d99205a1443790e7dc1e36f"></a>
+<a class="anchor" id="a778fde6911aba25ea0ca3c6d7a8be870"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -583,8 +583,8 @@ template&lt;typename... Values&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">BindType</a>&#160;</td>
-          <td class="paramname"><em>type</em> = <code><a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475">BindType::Transient</a></code>&#160;</td>
+          <td class="paramtype">bindtype&#160;</td>
+          <td class="paramname"><em>type</em> = <code>bindtype::transient</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -609,12 +609,12 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a6b983503e072b56f2255b140dd271381"></a>
+<a class="anchor" id="aa81eabe0c43e779bfaf82e465d76d8a7"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -634,8 +634,8 @@ template&lt;typename... Values&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">BindType</a>&#160;</td>
-          <td class="paramname"><em>type</em> = <code><a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475">BindType::Transient</a></code>&#160;</td>
+          <td class="paramtype">bindtype&#160;</td>
+          <td class="paramname"><em>type</em> = <code>bindtype::transient</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -660,12 +660,12 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a2e33406ed4170291b9e3da490383a224"></a>
+<a class="anchor" id="a8aa321913ed5bf9398d0694f4a222c15"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -697,12 +697,12 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0a2d97dc865a1ebefb58f982fe5689a0"></a>
+<a class="anchor" id="a2812922c3fc691f556ed230768b5ca43"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bind </td>
+          <td class="memname">void sqlite::statement::bind </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em>, </td>
@@ -734,7 +734,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9b04cc93fd0242ea34d3e9e3a9cd88d3"></a>
+<a class="anchor" id="a15ecbabf7d3a6c8b7005e2a799374785"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -744,7 +744,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bindAll </td>
+          <td class="memname">void sqlite::statement::bind_all </td>
           <td>(</td>
           <td class="paramtype">Values &amp;&amp;...&#160;</td>
           <td class="paramname"><em>values</em></td><td>)</td>
@@ -766,11 +766,11 @@ template&lt;typename... Values&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00502">502</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00511">511</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a30d8dec0baa340a358ce65a49ace23d8"></a>
+<a class="anchor" id="a8375bd6c666e395325227048ec0d6065"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -780,7 +780,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::bindByName </td>
+          <td class="memname">void sqlite::statement::bind_name </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -813,11 +813,11 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00492">492</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00501">501</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a7139b0e838a43de61f03367a8631ee76"></a>
+<a class="anchor" id="aaf51f6d9cf5354200151d81959893a77"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -827,7 +827,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::clearBindings </td>
+          <td class="memname">void sqlite::statement::clear_bindings </td>
           <td>(</td>
           <td class="paramtype">Values &amp;&amp;...&#160;</td>
           <td class="paramname"><em>values</em></td><td>)</td>
@@ -849,16 +849,45 @@ template&lt;typename... Values&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00511">511</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00520">520</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a9b489a2dc2707543eba55ce1e5d3682c"></a>
+<a class="anchor" id="a7390afddbb1edc788f0afc6ce41f4562"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::column_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of columns in the result set returned by the prepared statement. </p>
+<p>If this method returns 0, that means the prepared statment returns no data (for example an UPDATE). </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of columns in the result set. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00032_source.html#l00234">234</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a01f06c30b4f751d65f0f14fae3277a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int SQLite::Statement::execute </td>
+          <td class="memname">int sqlite::statement::execute </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -873,7 +902,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a80028dc9f221648fe2398b40bd380c31"></a>
+<a class="anchor" id="abd1b75c884158222778d2d6ec8b9ec18"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -881,7 +910,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="a00002.html">Blob</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getBlob </td>
+          <td class="memname">const <a class="el" href="a00002.html">blob</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_blob </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -895,7 +924,7 @@ template&lt;typename... Values&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified column value as a Blob object. </p>
+<p>Returns the specified column value as a blob object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>position of the column to return </td></tr>
@@ -908,7 +937,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a4e50d9ec365c547b5edb7d062aeba72b"></a>
+<a class="anchor" id="a3a94b5c5a0d153ca7e2f0ef6719dfc9a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -916,7 +945,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="a00002.html">Blob</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getBlob </td>
+          <td class="memname">const <a class="el" href="a00002.html">blob</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_blob </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -943,7 +972,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aeb571e9157ef46c42ed48fc229b7842d"></a>
+<a class="anchor" id="ac4404227950aca8d5f01255a5541dbb4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -951,7 +980,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getBytes </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_bytes </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -978,7 +1007,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad183a562774f9590273bf35c6e232a1a"></a>
+<a class="anchor" id="a315b97406b5ba48bcd14857192d88d5e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -986,7 +1015,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getBytes </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_bytes </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1013,7 +1042,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9e6b9d0d99dea8964a34a3c2f08e99bc"></a>
+<a class="anchor" id="aaca43590a209c2c7a0f7420c8a6c47b3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1021,36 +1050,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getColumnCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the number of columns in the result set returned by the prepared statement. </p>
-<p>If this method returns 0, that means the prepared statment returns no data (for example an UPDATE). </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of columns in the result set. </dd></dl>
-
-<p>Definition at line <a class="el" href="a00032_source.html#l00234">234</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae7eaa050a97cda893e9737bca416f0cb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getColumnIndex </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_column_index </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1077,7 +1077,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a5004961d65336631d45de411ffb87cd5"></a>
+<a class="anchor" id="ad4c33f9b700a47c08f54e7b65afd34f2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1085,7 +1085,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getColumnName </td>
+          <td class="memname">const char* <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_column_name </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -1112,7 +1112,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="af46d30137ad020b1e22ad703810ea002"></a>
+<a class="anchor" id="aa7f2f528b10da75672e55fbc36566f9c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1120,7 +1120,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char16_t* <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getColumnWideName </td>
+          <td class="memname">const char16_t* <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_column_wide_name </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -1147,7 +1147,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a679e56078c78e01c99fa08ad0b7ee782"></a>
+<a class="anchor" id="aa4052f3e593580c81ba2b8622e2652eb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1155,7 +1155,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getDouble </td>
+          <td class="memname">double <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_double </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1182,7 +1182,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a45e9dd813439e8cda7608e18c1ccce5f"></a>
+<a class="anchor" id="a0613aae6ee73cd54d7f7d0d711494737"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1190,7 +1190,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getDouble </td>
+          <td class="memname">double <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_double </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1217,7 +1217,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a9052c143879aca6cf253925336464a8b"></a>
+<a class="anchor" id="a1c720c80fd5c1f0f618c24a3d09e2ef5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1225,35 +1225,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">sqlite3_stmt * SQLite::Statement::getHandle </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns pointer to the underlying "sqlite3_stmt" object. </p>
-<p>The returned sqlite3_stmt object pointer will be automatically deleted on the destruction of the parent <a class="el" href="a00013.html" title="Represents a single SQL statement that has been compiled into binary form and is ready to be evaluate...">Statement</a> object. </p>
-
-<p>Definition at line <a class="el" href="a00031_source.html#l00032">32</a> of file <a class="el" href="a00031_source.html">Statement.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a82c5bc45048b8328a2fcc9bb4ff975f2"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getInt </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_int </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1280,7 +1252,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a87dd8234c2bd5f19466813f8a68ab80a"></a>
+<a class="anchor" id="a7e1f86fdffd271cb92deb0b21d22fd05"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1288,7 +1260,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getInt </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_int </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1315,7 +1287,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="adb7b9705a4638d6d5af5ca26dfa474ff"></a>
+<a class="anchor" id="afaf16f586744a6bc0ecfb74ab791306c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1323,7 +1295,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int64_t <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getInt64 </td>
+          <td class="memname">int64_t <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_int64 </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1350,7 +1322,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="aea6d24bb9247bfc52fe77d62be961dd2"></a>
+<a class="anchor" id="a87383f607d2ffc2875eac57ecf8e3989"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1358,7 +1330,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int64_t <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getInt64 </td>
+          <td class="memname">int64_t <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_int64 </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1385,7 +1357,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0920d021f6962f75e7b555e3f20fc0fc"></a>
+<a class="anchor" id="a8716fe92a821ebc0799097bd6cc6d53c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1393,7 +1365,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getString </td>
+          <td class="memname">const std::string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_string </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1420,7 +1392,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a44f9f5da46aa91b869fe26a188e803fa"></a>
+<a class="anchor" id="ab9c842deb81d9eb20388746672a96d29"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1428,7 +1400,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getString </td>
+          <td class="memname">const std::string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_string </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1455,7 +1427,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a0450ea397b1a9d8dd636b82c8757d33e"></a>
+<a class="anchor" id="a2b8269e0f9387afa36ab90eb55899dc4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1463,7 +1435,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getType </td>
+          <td class="memname">datatype <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_type </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1484,13 +1456,13 @@ template&lt;typename... Values&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The SQLiteXX::Type value for a column </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The sqlite::datatype value for a column </dd></dl>
 
 <p>Definition at line <a class="el" href="a00032_source.html#l00215">215</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae4f049a45c69b9e1bf6db4cf63699f64"></a>
+<a class="anchor" id="ac5ab606cf12aa4d2c9a183998420df44"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1498,7 +1470,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getType </td>
+          <td class="memname">datatype <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_type </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1519,13 +1491,13 @@ template&lt;typename... Values&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The SQLiteXX::Type value for a column </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The sqlite::datatype value for a column </dd></dl>
 
 <p>Definition at line <a class="el" href="a00032_source.html#l00224">224</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2b48f9e2ffbcfe787d85b4372a7ee29d"></a>
+<a class="anchor" id="abfef02b657c992a2d07e28a07e41e533"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1533,7 +1505,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::u16string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getU16String </td>
+          <td class="memname">const std::u16string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_u16string </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1560,7 +1532,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad6024ad6e74ee1ac47ad0ce79f905026"></a>
+<a class="anchor" id="af10d3ff33e5f4ee471bc14cc41ec86c1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1568,7 +1540,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::u16string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getU16String </td>
+          <td class="memname">const std::u16string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_u16string </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1595,7 +1567,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a971fb706b9215a89532ac48640f94832"></a>
+<a class="anchor" id="a02e09a2778e2f4d146ef02cd6c9e86df"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1603,7 +1575,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getUInt </td>
+          <td class="memname">unsigned int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_uint </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1630,7 +1602,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a18315a8379249158c3f827441e8f6de0"></a>
+<a class="anchor" id="a662bad64308f5995cb03a0ccb772acdc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1638,7 +1610,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getUInt </td>
+          <td class="memname">unsigned int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_uint </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1665,7 +1637,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a41fcbc5da6eb3fe6fc75e4faed208fc6"></a>
+<a class="anchor" id="af776fbdf8dc1150b628b04eca10841f4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1673,7 +1645,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00015.html">Value</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getValue </td>
+          <td class="memname"><a class="el" href="a00015.html">value</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_value </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1687,7 +1659,7 @@ template&lt;typename... Values&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified column value as a Value object. </p>
+<p>Returns the specified column value as a value object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>position of the column to return </td></tr>
@@ -1700,7 +1672,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="ad352a7124ee46d756462c8a1b014599a"></a>
+<a class="anchor" id="ad7835e8a981450975fee7771fa863ffe"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1708,7 +1680,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00015.html">Value</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00013.html">Statement</a>  &gt;::getValue </td>
+          <td class="memname"><a class="el" href="a00015.html">value</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00013.html">statement</a>  &gt;::get_value </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1722,7 +1694,7 @@ template&lt;typename... Values&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified column value as a Value object. </p>
+<p>Returns the specified column value as a value object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>name of the column to return </td></tr>
@@ -1735,7 +1707,7 @@ template&lt;typename... Values&gt; </div>
 
 </div>
 </div>
-<a class="anchor" id="a3b7793f1490a321159690cf096ec74d6"></a>
+<a class="anchor" id="aef59d3eb044ce240bd9ca3c8958d4abe"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1743,7 +1715,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Statement::operator bool </td>
+          <td class="memname">sqlite3_stmt * sqlite::statement::handle </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1756,14 +1728,42 @@ template&lt;typename... Values&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Used to specify if the <a class="el" href="a00013.html" title="Represents a single SQL statement that has been compiled into binary form and is ready to be evaluate...">Statement</a> object has a prepared <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> statement. </p>
-<dl class="section return"><dt>Returns</dt><dd>The returns true if the <a class="el" href="a00013.html" title="Represents a single SQL statement that has been compiled into binary form and is ready to be evaluate...">Statement</a> object has been assigned a <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> prepared statement. </dd></dl>
+<p>Returns pointer to the underlying "sqlite3_stmt" object. </p>
+<p>The returned sqlite3_stmt object pointer will be automatically deleted on the destruction of the parent statement object. </p>
+
+<p>Definition at line <a class="el" href="a00031_source.html#l00032">32</a> of file <a class="el" href="a00031_source.html">Statement.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a558b055f3210c6ab7575dc2c23cb7be2"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">sqlite::statement::operator bool </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to specify if the statement object has a prepared <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> statement. </p>
+<dl class="section return"><dt>Returns</dt><dd>The returns true if the statement object has been assigned a <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> prepared statement. </dd></dl>
 
 <p>Definition at line <a class="el" href="a00031_source.html#l00025">25</a> of file <a class="el" href="a00031_source.html">Statement.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a1ecd8e2636b542314521eb68fbf1000e"></a>
+<a class="anchor" id="a6825366938fd914456b63c7e63ddc6f0"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1773,9 +1773,9 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::prepare </td>
+          <td class="memname">void sqlite::statement::prepare </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00004.html">DBConnection</a> const &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="a00004.html">dbconnection</a> const &amp;&#160;</td>
           <td class="paramname"><em>connection</em>, </td>
         </tr>
         <tr>
@@ -1813,11 +1813,11 @@ template&lt;typename... Values&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00399">399</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00408">408</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a0d422eadca4b2e3f2e1b6e13af69f3cc"></a>
+<a class="anchor" id="abb6b5ec78b6ed682f11667f5a611818c"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -1827,9 +1827,9 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::prepare </td>
+          <td class="memname">void sqlite::statement::prepare </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">dbconnection</a> &amp;&#160;</td>
           <td class="paramname"><em>connection</em>, </td>
         </tr>
         <tr>
@@ -1867,11 +1867,11 @@ template&lt;typename... Values&gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00413">413</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00422">422</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a13a776f0e97da001cdcac81c13bff4c1"></a>
+<a class="anchor" id="a26af62003da471859ccaf29e45606301"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1879,7 +1879,7 @@ template&lt;typename... Values&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void SQLite::Statement::reset </td>
+          <td class="memname">void sqlite::statement::reset </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1895,16 +1895,16 @@ template&lt;typename... Values&gt; </div>
 <p>Resets a prepared statement object back to its initial state. </p>
 <p>Any SQL statment parameters that had values bound to them using the bind method return their values. Use clearBindings to reset the bindings. </p>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00526">526</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00535">535</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a6251d1119e978d1366113b4aa30899ef"></a>
+<a class="anchor" id="ad1039653cca9f00708ce570011791b9d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool SQLite::Statement::step </td>
+          <td class="memname">bool sqlite::statement::step </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1917,7 +1917,7 @@ template&lt;typename... Values&gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>true when there are more rows to iterate through and false when there are no more </dd></dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a></td><td>or a derived class </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">sqlite::exception</a></td><td>or a derived class </td></tr>
   </table>
   </dd>
 </dl>
@@ -1933,7 +1933,7 @@ template&lt;typename... Values&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:34 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:03 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

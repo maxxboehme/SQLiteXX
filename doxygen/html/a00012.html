@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::RowIterator Class Reference</title>
+<title>SQLiteXX: sqlite::row_iterator Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,15 +83,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00012.html">RowIterator</a></li>  </ul>
+<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00012.html">row_iterator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00049.html">List of all members</a>  </div>
+<a href="a00050.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::RowIterator Class Reference</div>  </div>
+<div class="title">sqlite::row_iterator Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,32 +102,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa04c70861d8dbca32b8073ddd36a0ef5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa04c70861d8dbca32b8073ddd36a0ef5"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#aa04c70861d8dbca32b8073ddd36a0ef5">RowIterator</a> () noexcept=default</td></tr>
-<tr class="memdesc:aa04c70861d8dbca32b8073ddd36a0ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br/></td></tr>
-<tr class="separator:aa04c70861d8dbca32b8073ddd36a0ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3927378b109ab3dfd6f86d8326f609c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#ad3927378b109ab3dfd6f86d8326f609c">RowIterator</a> (const <a class="el" href="a00013.html">Statement</a> &amp;statement) noexcept</td></tr>
-<tr class="memdesc:ad3927378b109ab3dfd6f86d8326f609c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">RowIterator</a> object from a Statment object.  <a href="#ad3927378b109ab3dfd6f86d8326f609c">More...</a><br/></td></tr>
-<tr class="separator:ad3927378b109ab3dfd6f86d8326f609c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55c22680d983bd87d068bb304dbb1508"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a55c22680d983bd87d068bb304dbb1508"></a>
-<a class="el" href="a00012.html">RowIterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#a55c22680d983bd87d068bb304dbb1508">operator++</a> () noexcept</td></tr>
-<tr class="memdesc:a55c22680d983bd87d068bb304dbb1508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment iterator to the next <a class="el" href="a00011.html" title="Represents a returned row when stepping through a &quot;SELECT&quot; statement. ">Row</a> object of the <a class="el" href="a00013.html" title="Represents a single SQL statement that has been compiled into binary form and is ready to be evaluate...">Statement</a>. <br/></td></tr>
-<tr class="separator:a55c22680d983bd87d068bb304dbb1508"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5a2045335ee19bb897381b51b013a48"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab5a2045335ee19bb897381b51b013a48"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#ab5a2045335ee19bb897381b51b013a48">operator!=</a> (const <a class="el" href="a00012.html">RowIterator</a> &amp;other) const noexcept</td></tr>
-<tr class="memdesc:ab5a2045335ee19bb897381b51b013a48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison operation. <br/></td></tr>
-<tr class="separator:ab5a2045335ee19bb897381b51b013a48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e27980d666a42f9835c919f8b9c93b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00011.html">Row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#a1e27980d666a42f9835c919f8b9c93b1">operator*</a> () const noexcept</td></tr>
-<tr class="memdesc:a1e27980d666a42f9835c919f8b9c93b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dereference operation.  <a href="#a1e27980d666a42f9835c919f8b9c93b1">More...</a><br/></td></tr>
-<tr class="separator:a1e27980d666a42f9835c919f8b9c93b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02cfc59ac9cfeb41adbd7c28be6a6200"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02cfc59ac9cfeb41adbd7c28be6a6200"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#a02cfc59ac9cfeb41adbd7c28be6a6200">row_iterator</a> () noexcept=default</td></tr>
+<tr class="memdesc:a02cfc59ac9cfeb41adbd7c28be6a6200"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br/></td></tr>
+<tr class="separator:a02cfc59ac9cfeb41adbd7c28be6a6200"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4ac6c92c4db3e59cea7984d8db3d587"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#aa4ac6c92c4db3e59cea7984d8db3d587">row_iterator</a> (const <a class="el" href="a00013.html">statement</a> &amp;<a class="el" href="a00013.html">statement</a>) noexcept</td></tr>
+<tr class="memdesc:aa4ac6c92c4db3e59cea7984d8db3d587"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">row_iterator</a> object from a statement object.  <a href="#aa4ac6c92c4db3e59cea7984d8db3d587">More...</a><br/></td></tr>
+<tr class="separator:aa4ac6c92c4db3e59cea7984d8db3d587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5485c5c0f9f04cbff43dfb285dc6e776"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5485c5c0f9f04cbff43dfb285dc6e776"></a>
+<a class="el" href="a00012.html">row_iterator</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#a5485c5c0f9f04cbff43dfb285dc6e776">operator++</a> () noexcept</td></tr>
+<tr class="memdesc:a5485c5c0f9f04cbff43dfb285dc6e776"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increment iterator to the next row object of the statement. <br/></td></tr>
+<tr class="separator:a5485c5c0f9f04cbff43dfb285dc6e776"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a618bc4f69040dcc2658719ab1a721be1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a618bc4f69040dcc2658719ab1a721be1"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#a618bc4f69040dcc2658719ab1a721be1">operator!=</a> (const <a class="el" href="a00012.html">row_iterator</a> &amp;other) const noexcept</td></tr>
+<tr class="memdesc:a618bc4f69040dcc2658719ab1a721be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison operation. <br/></td></tr>
+<tr class="separator:a618bc4f69040dcc2658719ab1a721be1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2c042f06e9e03db0c24e9f1eee3e13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00011.html">row</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html#a5f2c042f06e9e03db0c24e9f1eee3e13">operator*</a> () const noexcept</td></tr>
+<tr class="memdesc:a5f2c042f06e9e03db0c24e9f1eee3e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dereference operation.  <a href="#a5f2c042f06e9e03db0c24e9f1eee3e13">More...</a><br/></td></tr>
+<tr class="separator:a5f2c042f06e9e03db0c24e9f1eee3e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helps when iterating over rows in a "SELECT" statement. </p>
-<p><a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">RowIterator</a> is a <a href="http://en.cppreference.com/w/cpp/concept/InputIterator">InputIterator</a> and can read data from the pointed to <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> row. </p>
+<p><a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">row_iterator</a> is a <a href="http://en.cppreference.com/w/cpp/concept/InputIterator">InputIterator</a> and can read data from the pointed to <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> row. </p>
 
-<p>Definition at line <a class="el" href="a00032_source.html#l00583">583</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+<p>Definition at line <a class="el" href="a00032_source.html#l00592">592</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="ad3927378b109ab3dfd6f86d8326f609c"></a>
+<a class="anchor" id="aa4ac6c92c4db3e59cea7984d8db3d587"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -135,9 +135,9 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::RowIterator::RowIterator </td>
+          <td class="memname">sqlite::row_iterator::row_iterator </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00013.html">Statement</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00013.html">statement</a> &amp;&#160;</td>
           <td class="paramname"><em>statement</em></td><td>)</td>
           <td></td>
         </tr>
@@ -149,8 +149,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
 </table>
 </div><div class="memdoc">
 
-<p>Construct a <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">RowIterator</a> object from a Statment object. </p>
-<p>A <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">RowIterator</a> should only be constructect on an Statment object that is doing a SQL "SELECT" query. </p>
+<p>Construct a <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">row_iterator</a> object from a statement object. </p>
+<p>A <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">row_iterator</a> should only be constructect on an statement object that is doing a SQL "SELECT" query. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">statement</td><td>the statement object to construct the iterator from. </td></tr>
@@ -163,7 +163,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a1e27980d666a42f9835c919f8b9c93b1"></a>
+<a class="anchor" id="a5f2c042f06e9e03db0c24e9f1eee3e13"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -171,7 +171,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00011.html">Row</a> SQLite::RowIterator::operator* </td>
+          <td class="memname"><a class="el" href="a00011.html">row</a> sqlite::row_iterator::operator* </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -185,7 +185,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
 </div><div class="memdoc">
 
 <p>Dereference operation. </p>
-<p>Dereferencing a <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">RowIterator</a> object will return a <a class="el" href="a00011.html" title="Represents a returned row when stepping through a &quot;SELECT&quot; statement. ">Row</a> object. </p>
+<p>Dereferencing a <a class="el" href="a00012.html" title="Helps when iterating over rows in a &quot;SELECT&quot; statement. ">row_iterator</a> object will return a row object. </p>
 
 <p>Definition at line <a class="el" href="a00031_source.html#l00154">154</a> of file <a class="el" href="a00031_source.html">Statement.cpp</a>.</p>
 
@@ -198,7 +198,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:34 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:03 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

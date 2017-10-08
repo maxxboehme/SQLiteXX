@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['mutex',['Mutex',['../a00009.html',1,'SQLite']]]
+  ['mutex',['mutex',['../a00009.html',1,'sqlite']]]
 ];

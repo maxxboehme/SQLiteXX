@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::Transaction Class Reference</title>
+<title>SQLiteXX: sqlite::transaction Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,15 +83,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00014.html">Transaction</a></li>  </ul>
+<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00014.html">transaction</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00050.html">List of all members</a>  </div>
+<a href="a00051.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::Transaction Class Reference</div>  </div>
+<div class="title">sqlite::transaction Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -100,49 +100,49 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="a00034_source.html">Transaction.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for SQLite::Transaction:</div>
+Inheritance diagram for sqlite::transaction:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00014.png" usemap="#SQLite::Transaction_map" alt=""/>
-  <map id="SQLite::Transaction_map" name="SQLite::Transaction_map">
-<area href="a00005.html" title="RAII encapsulation of the SQLite deferred transaction. " alt="SQLite::DeferredTransaction" shape="rect" coords="0,56,177,80"/>
-<area href="a00007.html" title="RAII encapsulation of the SQLite exclusive transaction. " alt="SQLite::ExclusiveTransaction" shape="rect" coords="187,56,364,80"/>
-<area href="a00008.html" title="RAII encapsulation of the SQLite immediate transaction. " alt="SQLite::ImmediateTransaction" shape="rect" coords="374,56,551,80"/>
+  <img src="a00014.png" usemap="#sqlite::transaction_map" alt=""/>
+  <map id="sqlite::transaction_map" name="sqlite::transaction_map">
+<area href="a00005.html" title="RAII encapsulation of the SQLite deferred transaction. " alt="sqlite::deferred_transaction" shape="rect" coords="0,56,170,80"/>
+<area href="a00007.html" title="RAII encapsulation of the SQLite exclusive transaction. " alt="sqlite::exclusive_transaction" shape="rect" coords="180,56,350,80"/>
+<area href="a00008.html" title="RAII encapsulation of the SQLite immediate transaction. " alt="sqlite::immediate_transaction" shape="rect" coords="360,56,530,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a27add1a1db2dd8cd5935c78a63ad556b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a27add1a1db2dd8cd5935c78a63ad556b">Transaction</a> (<a class="el" href="a00004.html">DBConnection</a> &amp;connection, const <a class="el" href="a00038.html#af94f2dd6dcae8699eada7a0382e48e66">TransactionType</a> type)</td></tr>
-<tr class="memdesc:a27add1a1db2dd8cd5935c78a63ad556b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a strictly scope-based <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> transaction.  <a href="#a27add1a1db2dd8cd5935c78a63ad556b">More...</a><br/></td></tr>
-<tr class="separator:a27add1a1db2dd8cd5935c78a63ad556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43c5e67a10b9698b7f6dad73539feb94"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a43c5e67a10b9698b7f6dad73539feb94">~Transaction</a> () noexcept</td></tr>
-<tr class="memdesc:a43c5e67a10b9698b7f6dad73539feb94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a43c5e67a10b9698b7f6dad73539feb94">More...</a><br/></td></tr>
-<tr class="separator:a43c5e67a10b9698b7f6dad73539feb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b251d84198cdc2c0208ad566fec0287"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9b251d84198cdc2c0208ad566fec0287"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a9b251d84198cdc2c0208ad566fec0287">commit</a> ()</td></tr>
-<tr class="memdesc:a9b251d84198cdc2c0208ad566fec0287"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commit the transaction. <br/></td></tr>
-<tr class="separator:a9b251d84198cdc2c0208ad566fec0287"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5e2efbcd15f1531c00cbcacfa74c3f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#ac5e2efbcd15f1531c00cbcacfa74c3f0">transaction</a> (<a class="el" href="a00004.html">dbconnection</a> &amp;connection, const TransactionType type)</td></tr>
+<tr class="memdesc:ac5e2efbcd15f1531c00cbcacfa74c3f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a strictly scope-based <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> transaction.  <a href="#ac5e2efbcd15f1531c00cbcacfa74c3f0">More...</a><br/></td></tr>
+<tr class="separator:ac5e2efbcd15f1531c00cbcacfa74c3f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798101cf276674d19708c1958e5b03fb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#a798101cf276674d19708c1958e5b03fb">~transaction</a> () noexcept</td></tr>
+<tr class="memdesc:a798101cf276674d19708c1958e5b03fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor.  <a href="#a798101cf276674d19708c1958e5b03fb">More...</a><br/></td></tr>
+<tr class="separator:a798101cf276674d19708c1958e5b03fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe219dd0bf949d569381f9830c7b2d1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe219dd0bf949d569381f9830c7b2d1a"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#abe219dd0bf949d569381f9830c7b2d1a">commit</a> ()</td></tr>
+<tr class="memdesc:abe219dd0bf949d569381f9830c7b2d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Commit the transaction. <br/></td></tr>
+<tr class="separator:abe219dd0bf949d569381f9830c7b2d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>RAII encapsulation of the <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> Transactions. </p>
 
 <p>Definition at line <a class="el" href="a00034_source.html#l00026">26</a> of file <a class="el" href="a00034_source.html">Transaction.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a27add1a1db2dd8cd5935c78a63ad556b"></a>
+<a class="anchor" id="ac5e2efbcd15f1531c00cbcacfa74c3f0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Transaction::Transaction </td>
+          <td class="memname">sqlite::transaction::transaction </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="a00004.html">dbconnection</a> &amp;&#160;</td>
           <td class="paramname"><em>connection</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00038.html#af94f2dd6dcae8699eada7a0382e48e66">TransactionType</a>&#160;</td>
+          <td class="paramtype">const TransactionType&#160;</td>
           <td class="paramname"><em>type</em>&#160;</td>
         </tr>
         <tr>
@@ -166,7 +166,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 
 </div>
 </div>
-<a class="anchor" id="a43c5e67a10b9698b7f6dad73539feb94"></a>
+<a class="anchor" id="a798101cf276674d19708c1958e5b03fb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -174,7 +174,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Transaction::~Transaction </td>
+          <td class="memname">sqlite::transaction::~transaction </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -201,7 +201,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:34 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:03 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

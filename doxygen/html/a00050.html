@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,24 +83,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00014.html">Transaction</a></li>  </ul>
+<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00012.html">row_iterator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">SQLite::Transaction Member List</div>  </div>
+<div class="title">sqlite::row_iterator Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00014.html">SQLite::Transaction</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00012.html">sqlite::row_iterator</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#a9b251d84198cdc2c0208ad566fec0287">commit</a>()</td><td class="entry"><a class="el" href="a00014.html">SQLite::Transaction</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00014.html#a27add1a1db2dd8cd5935c78a63ad556b">Transaction</a>(DBConnection &amp;connection, const TransactionType type)</td><td class="entry"><a class="el" href="a00014.html">SQLite::Transaction</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#a43c5e67a10b9698b7f6dad73539feb94">~Transaction</a>() noexcept</td><td class="entry"><a class="el" href="a00014.html">SQLite::Transaction</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00012.html#a618bc4f69040dcc2658719ab1a721be1">operator!=</a>(const row_iterator &amp;other) const noexcept</td><td class="entry"><a class="el" href="a00012.html">sqlite::row_iterator</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00012.html#a5f2c042f06e9e03db0c24e9f1eee3e13">operator*</a>() const noexcept</td><td class="entry"><a class="el" href="a00012.html">sqlite::row_iterator</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00012.html#a5485c5c0f9f04cbff43dfb285dc6e776">operator++</a>() noexcept</td><td class="entry"><a class="el" href="a00012.html">sqlite::row_iterator</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00012.html#a02cfc59ac9cfeb41adbd7c28be6a6200">row_iterator</a>() noexcept=default</td><td class="entry"><a class="el" href="a00012.html">sqlite::row_iterator</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00012.html#aa4ac6c92c4db3e59cea7984d8db3d587">row_iterator</a>(const statement &amp;statement) noexcept</td><td class="entry"><a class="el" href="a00012.html">sqlite::row_iterator</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:34 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:03 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

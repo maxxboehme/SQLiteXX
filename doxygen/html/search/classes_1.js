@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dbconnection',['DBConnection',['../a00004.html',1,'SQLite']]],
-  ['deferredtransaction',['DeferredTransaction',['../a00005.html',1,'SQLite']]]
+  ['dbconnection',['dbconnection',['../a00004.html',1,'sqlite']]],
+  ['deferred_5ftransaction',['deferred_transaction',['../a00005.html',1,'sqlite']]]
 ];

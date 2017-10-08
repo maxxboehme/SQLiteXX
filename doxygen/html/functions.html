@@ -75,11 +75,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
+      <li><a href="#index_a"><span>a</span></a></li>
       <li><a href="#index_b"><span>b</span></a></li>
       <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
@@ -100,7 +102,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -112,264 +114,293 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock">Here is a list of all documented class members with links to the class documentation for each member:</div>
 
+<h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
+<li>as_blob()
+: <a class="el" href="a00015.html#a623f5aeec955a49d4ca453658d4c45c5">sqlite::value</a>
+</li>
+<li>as_double()
+: <a class="el" href="a00015.html#aa86e87cfd02eec52a5f85b6787a5fd66">sqlite::value</a>
+</li>
+<li>as_int()
+: <a class="el" href="a00015.html#a29efc5beb5d3a1fcf2f7baa59e810bf6">sqlite::value</a>
+</li>
+<li>as_int64()
+: <a class="el" href="a00015.html#afb843fda2733a3a107b86557d74ca60e">sqlite::value</a>
+</li>
+<li>as_string()
+: <a class="el" href="a00015.html#a6ce81cd7d007013cdc4ac5103ffa76f1">sqlite::value</a>
+</li>
+<li>as_u16string()
+: <a class="el" href="a00015.html#a6edf39b8900fa6b490161994da913236">sqlite::value</a>
+</li>
+<li>as_uint()
+: <a class="el" href="a00015.html#ace86134f202dd8998645dd1f86dcf046">sqlite::value</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_b"></a>- b -</h3><ul>
-<li>Backup()
-: <a class="el" href="a00001.html#a363301d27d042970ce86c2487d33351c">SQLite::Backup</a>
+<li>backup()
+: <a class="el" href="a00001.html#a62932f9aa6d1a5e313615cc5ca4f67fe">sqlite::backup</a>
 </li>
 <li>bind()
-: <a class="el" href="a00013.html#a0d4999fce90145852287c18c0d218ac6">SQLite::Statement</a>
+: <a class="el" href="a00013.html#a91d16077f086fe6becb4c7bae576b0e7">sqlite::statement</a>
 </li>
-<li>bindAll()
-: <a class="el" href="a00013.html#a9b04cc93fd0242ea34d3e9e3a9cd88d3">SQLite::Statement</a>
+<li>bind_all()
+: <a class="el" href="a00013.html#a15ecbabf7d3a6c8b7005e2a799374785">sqlite::statement</a>
 </li>
-<li>bindByName()
-: <a class="el" href="a00013.html#a30d8dec0baa340a358ce65a49ace23d8">SQLite::Statement</a>
+<li>bind_name()
+: <a class="el" href="a00013.html#a8375bd6c666e395325227048ec0d6065">sqlite::statement</a>
 </li>
-<li>Blob()
-: <a class="el" href="a00002.html#a74ff754db13f481b91edcd7b5bcd9d32">SQLite::Blob</a>
+<li>blob()
+: <a class="el" href="a00002.html#a78501ec4704d95d590457eacc63f39b6">sqlite::blob</a>
+</li>
+<li>bytes()
+: <a class="el" href="a00015.html#a089b0cb550fd7ca7830ebf1cb43850d1">sqlite::value</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
-<li>clearBindings()
-: <a class="el" href="a00013.html#a7139b0e838a43de61f03367a8631ee76">SQLite::Statement</a>
+<li>clear_bindings()
+: <a class="el" href="a00013.html#aaf51f6d9cf5354200151d81959893a77">sqlite::statement</a>
+</li>
+<li>column_count()
+: <a class="el" href="a00010.html#a7390afddbb1edc788f0afc6ce41f4562">sqlite::reader&lt; T &gt;</a>
 </li>
 <li>commit()
-: <a class="el" href="a00014.html#a9b251d84198cdc2c0208ad566fec0287">SQLite::Transaction</a>
+: <a class="el" href="a00014.html#abe219dd0bf949d569381f9830c7b2d1a">sqlite::transaction</a>
 </li>
-<li>createAggregate()
-: <a class="el" href="a00004.html#aafcfe62eae1364129c3346500f6ad5d2">SQLite::DBConnection</a>
+<li>create_aggregate()
+: <a class="el" href="a00004.html#ab3e54d1eef4c27734e45a61d27be386b">sqlite::dbconnection</a>
 </li>
-<li>createFunction()
-: <a class="el" href="a00004.html#ae8758a2e46148ba81aa18b71e17149b5">SQLite::DBConnection</a>
+<li>create_collation()
+: <a class="el" href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">sqlite::dbconnection</a>
 </li>
-<li>createGeneralFunction()
-: <a class="el" href="a00004.html#adace26a4acf443ac5c8cea3fe5c913e1">SQLite::DBConnection</a>
+<li>create_function()
+: <a class="el" href="a00004.html#ad42c081096ec64f35710aa021f2f4b56">sqlite::dbconnection</a>
+</li>
+<li>create_general_function()
+: <a class="el" href="a00004.html#a3cc15c8f2784e6b706a5992c8014c2dd">sqlite::dbconnection</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>data()
-: <a class="el" href="a00002.html#a112b54351792991f10563295e33600e2">SQLite::Blob</a>
+: <a class="el" href="a00002.html#ad9fc3eb820ef6fa64a4a03224b9dc3de">sqlite::blob</a>
 </li>
-<li>DBConnection()
-: <a class="el" href="a00004.html#a17fcc9926aa16b05b61bbce2613fe57a">SQLite::DBConnection</a>
+<li>dbconnection()
+: <a class="el" href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">sqlite::dbconnection</a>
 </li>
-<li>DeferredTransaction()
-: <a class="el" href="a00005.html#ae1b880ce4c3796565b6ea4d492f61202">SQLite::DeferredTransaction</a>
+<li>deferred_transaction()
+: <a class="el" href="a00005.html#a18666e756f66c6978bf435cf6b072be7">sqlite::deferred_transaction</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_e"></a>- e -</h3><ul>
-<li>ExclusiveTransaction()
-: <a class="el" href="a00007.html#a70f16f1e9764fd35b0c7e9fbf7314a1f">SQLite::ExclusiveTransaction</a>
+<li>exclusive_transaction()
+: <a class="el" href="a00007.html#a9380f63712877dd18432ca82476dd096">sqlite::exclusive_transaction</a>
 </li>
 <li>execute()
-: <a class="el" href="a00013.html#a9b489a2dc2707543eba55ce1e5d3682c">SQLite::Statement</a>
+: <a class="el" href="a00013.html#a7a01f06c30b4f751d65f0f14fae3277a">sqlite::statement</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
-<li>getBlob()
-: <a class="el" href="a00010.html#a80028dc9f221648fe2398b40bd380c31">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#a271c3d7f1de010f03197f5c72fd60d61">SQLite::Value</a>
+<li>get_blob()
+: <a class="el" href="a00010.html#abd1b75c884158222778d2d6ec8b9ec18">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getBytes()
-: <a class="el" href="a00010.html#aeb571e9157ef46c42ed48fc229b7842d">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#a03a193504f0c5fd751302a6ec8d01845">SQLite::Value</a>
+<li>get_bytes()
+: <a class="el" href="a00010.html#a315b97406b5ba48bcd14857192d88d5e">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getColumnCount()
-: <a class="el" href="a00010.html#a9e6b9d0d99dea8964a34a3c2f08e99bc">SQLite::Reader&lt; T &gt;</a>
+<li>get_column_index()
+: <a class="el" href="a00010.html#aaca43590a209c2c7a0f7420c8a6c47b3">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getColumnIndex()
-: <a class="el" href="a00010.html#ae7eaa050a97cda893e9737bca416f0cb">SQLite::Reader&lt; T &gt;</a>
+<li>get_column_name()
+: <a class="el" href="a00010.html#ad4c33f9b700a47c08f54e7b65afd34f2">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getColumnName()
-: <a class="el" href="a00010.html#a5004961d65336631d45de411ffb87cd5">SQLite::Reader&lt; T &gt;</a>
+<li>get_column_wide_name()
+: <a class="el" href="a00010.html#aa7f2f528b10da75672e55fbc36566f9c">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getColumnWideName()
-: <a class="el" href="a00010.html#af46d30137ad020b1e22ad703810ea002">SQLite::Reader&lt; T &gt;</a>
+<li>get_double()
+: <a class="el" href="a00010.html#aa4052f3e593580c81ba2b8622e2652eb">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getDouble()
-: <a class="el" href="a00010.html#a679e56078c78e01c99fa08ad0b7ee782">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#a7976bd8973e60229f32d57d80b309eef">SQLite::Value</a>
+<li>get_int()
+: <a class="el" href="a00010.html#a1c720c80fd5c1f0f618c24a3d09e2ef5">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getHandle()
-: <a class="el" href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">SQLite::Backup</a>
-, <a class="el" href="a00004.html#a33f0b378dc147a3b2ff947e23994f71c">SQLite::DBConnection</a>
-, <a class="el" href="a00011.html#a0cdd34663266ff8c19ee1313a87d51f0">SQLite::Row</a>
-, <a class="el" href="a00013.html#a9052c143879aca6cf253925336464a8b">SQLite::Statement</a>
-, <a class="el" href="a00015.html#adc0c8d347cbd6dbbd38c85ff755c9100">SQLite::Value</a>
+<li>get_int64()
+: <a class="el" href="a00010.html#afaf16f586744a6bc0ecfb74ab791306c">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getInt()
-: <a class="el" href="a00010.html#a82c5bc45048b8328a2fcc9bb4ff975f2">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#a7dc198b9bcd56e1a00b4277d67e2fe94">SQLite::Value</a>
+<li>get_string()
+: <a class="el" href="a00010.html#ab9c842deb81d9eb20388746672a96d29">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getInt64()
-: <a class="el" href="a00010.html#aea6d24bb9247bfc52fe77d62be961dd2">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#afea7de5c78253675c70f1d4c49740e37">SQLite::Value</a>
+<li>get_type()
+: <a class="el" href="a00010.html#ac5ab606cf12aa4d2c9a183998420df44">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getMutex()
-: <a class="el" href="a00004.html#afd4961c42310aebf750d28d3487a9425">SQLite::DBConnection</a>
+<li>get_u16string()
+: <a class="el" href="a00010.html#abfef02b657c992a2d07e28a07e41e533">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getRemainingPageCount()
-: <a class="el" href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">SQLite::Backup</a>
+<li>get_uint()
+: <a class="el" href="a00010.html#a662bad64308f5995cb03a0ccb772acdc">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getString()
-: <a class="el" href="a00010.html#a0920d021f6962f75e7b555e3f20fc0fc">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#ae31b8ba26dec2668d11a49ad895e2267">SQLite::Value</a>
+<li>get_value()
+: <a class="el" href="a00010.html#ad7835e8a981450975fee7771fa863ffe">sqlite::reader&lt; T &gt;</a>
 </li>
-<li>getTotalPageCount()
-: <a class="el" href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">SQLite::Backup</a>
-</li>
-<li>getType()
-: <a class="el" href="a00010.html#ae4f049a45c69b9e1bf6db4cf63699f64">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#ac43f7a22f87464aceaef9855e9700ff7">SQLite::Value</a>
-</li>
-<li>getU16String()
-: <a class="el" href="a00010.html#ad6024ad6e74ee1ac47ad0ce79f905026">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#a693c71ee6c918f92e4378e91318a7694">SQLite::Value</a>
-</li>
-<li>getUInt()
-: <a class="el" href="a00010.html#a18315a8379249158c3f827441e8f6de0">SQLite::Reader&lt; T &gt;</a>
-, <a class="el" href="a00015.html#a196e4e06082b963730d766f99ccb3917">SQLite::Value</a>
-</li>
-<li>getValue()
-: <a class="el" href="a00010.html#a41fcbc5da6eb3fe6fc75e4faed208fc6">SQLite::Reader&lt; T &gt;</a>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>handle()
+: <a class="el" href="a00001.html#a556162efdf4055ab73275fcaa345c981">sqlite::backup</a>
+, <a class="el" href="a00004.html#a1a9b022293133991f265c10c1f50800b">sqlite::dbconnection</a>
+, <a class="el" href="a00011.html#a6ee9eb13492a23d440abe1fe903bafc8">sqlite::row</a>
+, <a class="el" href="a00013.html#aef59d3eb044ce240bd9ca3c8958d4abe">sqlite::statement</a>
+, <a class="el" href="a00015.html#a668839eab925862f57489429305be72d">sqlite::value</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>ImmediateTransaction()
-: <a class="el" href="a00008.html#a3c6f88a4f4f6b299461c4a30a79b17e1">SQLite::ImmediateTransaction</a>
+<li>immediate_transaction()
+: <a class="el" href="a00008.html#a17924d6e15666b8340ee8aab9a88e0d1">sqlite::immediate_transaction</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
 <li>lock()
-: <a class="el" href="a00009.html#a56ba1f0c1411940ab52279497d15812a">SQLite::Mutex</a>
+: <a class="el" href="a00009.html#a6a793427100e67bfac37ea0286c5d2bb">sqlite::mutex</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
 <li>memory()
-: <a class="el" href="a00004.html#a5bd49a76155ffede0dca70f54c794159">SQLite::DBConnection</a>
+: <a class="el" href="a00004.html#adc0120a0d5d39eabcffb7d641b0c40dd">sqlite::dbconnection</a>
+</li>
+<li>mutex()
+: <a class="el" href="a00004.html#afa13431e657c74ba7beee63fa70eeb93">sqlite::dbconnection</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
 <li>open()
-: <a class="el" href="a00004.html#aec696fc408d91e582d16727adff82445">SQLite::DBConnection</a>
+: <a class="el" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">sqlite::dbconnection</a>
 </li>
 <li>operator bool()
-: <a class="el" href="a00004.html#a794e7d4d92aa19bd67f3cff4aaf50020">SQLite::DBConnection</a>
-, <a class="el" href="a00013.html#a3b7793f1490a321159690cf096ec74d6">SQLite::Statement</a>
+: <a class="el" href="a00004.html#a8c0e145b3687659ec0f76949174651e0">sqlite::dbconnection</a>
+, <a class="el" href="a00013.html#a558b055f3210c6ab7575dc2c23cb7be2">sqlite::statement</a>
 </li>
 <li>operator!=()
-: <a class="el" href="a00012.html#ab5a2045335ee19bb897381b51b013a48">SQLite::RowIterator</a>
+: <a class="el" href="a00012.html#a618bc4f69040dcc2658719ab1a721be1">sqlite::row_iterator</a>
 </li>
 <li>operator*()
-: <a class="el" href="a00012.html#a1e27980d666a42f9835c919f8b9c93b1">SQLite::RowIterator</a>
+: <a class="el" href="a00012.html#a5f2c042f06e9e03db0c24e9f1eee3e13">sqlite::row_iterator</a>
 </li>
 <li>operator++()
-: <a class="el" href="a00012.html#a55c22680d983bd87d068bb304dbb1508">SQLite::RowIterator</a>
+: <a class="el" href="a00012.html#a5485c5c0f9f04cbff43dfb285dc6e776">sqlite::row_iterator</a>
 </li>
 <li>operator=()
-: <a class="el" href="a00002.html#af34146d8ac8d1414c5ad1673ca05669e">SQLite::Blob</a>
-, <a class="el" href="a00004.html#abf18d7c37cf19fe46af7b6c7c0f0e8f2">SQLite::DBConnection</a>
-, <a class="el" href="a00015.html#ab80d7cf9eb8a462b23459d0fbba80277">SQLite::Value</a>
+: <a class="el" href="a00002.html#a1962255cded865181174a67351d58fb8">sqlite::blob</a>
+, <a class="el" href="a00004.html#ae7c52ec41d3dfb7f4c8a521af7673bde">sqlite::dbconnection</a>
+, <a class="el" href="a00015.html#aa3d30541555ecc3f54216ce80f2e482f">sqlite::value</a>
 </li>
 <li>operator[]()
-: <a class="el" href="a00011.html#a82ca0ee6352667cc9f6d41972dedd5a6">SQLite::Row</a>
+: <a class="el" href="a00011.html#a0c8e886d5beb078d5111bdf812232c60">sqlite::row</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
 <li>prepare()
-: <a class="el" href="a00013.html#a1ecd8e2636b542314521eb68fbf1000e">SQLite::Statement</a>
+: <a class="el" href="a00013.html#a6825366938fd914456b63c7e63ddc6f0">sqlite::statement</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>remaining_page_count()
+: <a class="el" href="a00001.html#a9da6a7da53bdd43839024ab13ae72258">sqlite::backup</a>
+</li>
 <li>reset()
-: <a class="el" href="a00013.html#a13a776f0e97da001cdcac81c13bff4c1">SQLite::Statement</a>
+: <a class="el" href="a00013.html#a26af62003da471859ccaf29e45606301">sqlite::statement</a>
 </li>
-<li>Row()
-: <a class="el" href="a00011.html#ac93d6eec191f8f92ce72f481935d1832">SQLite::Row</a>
+<li>row()
+: <a class="el" href="a00011.html#ade44769ac78d6eff1aa20c20a09e4a79">sqlite::row</a>
 </li>
-<li>rowId()
-: <a class="el" href="a00004.html#a0959fda218112d849700b7a9b58e0505">SQLite::DBConnection</a>
+<li>row_id()
+: <a class="el" href="a00004.html#add860c9b2c630bcfc178e3a7e878ea1b">sqlite::dbconnection</a>
 </li>
-<li>RowIterator()
-: <a class="el" href="a00012.html#aa04c70861d8dbca32b8073ddd36a0ef5">SQLite::RowIterator</a>
+<li>row_iterator()
+: <a class="el" href="a00012.html#a02cfc59ac9cfeb41adbd7c28be6a6200">sqlite::row_iterator</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>size()
-: <a class="el" href="a00002.html#a689d499b628faaa148424af8d545c29e">SQLite::Blob</a>
+: <a class="el" href="a00002.html#a28b69b40596ded278607604396b86c97">sqlite::blob</a>
 </li>
-<li>Statement()
-: <a class="el" href="a00013.html#a1c724c3934925a5988aa83909857589c">SQLite::Statement</a>
+<li>statement()
+: <a class="el" href="a00013.html#a1355244b2e1153eb26daea61e52e153a">sqlite::statement</a>
 </li>
 <li>step()
-: <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">SQLite::Backup</a>
-, <a class="el" href="a00013.html#a6251d1119e978d1366113b4aa30899ef">SQLite::Statement</a>
+: <a class="el" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676">sqlite::backup</a>
+, <a class="el" href="a00013.html#ad1039653cca9f00708ce570011791b9d">sqlite::statement</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
-<li>Transaction()
-: <a class="el" href="a00014.html#a27add1a1db2dd8cd5935c78a63ad556b">SQLite::Transaction</a>
+<li>total_page_count()
+: <a class="el" href="a00001.html#ab6d84e51fef3125dd3829d35e24b02a7">sqlite::backup</a>
 </li>
-<li>tryLock()
-: <a class="el" href="a00009.html#a95b5ebd5fef0bd37b30e3867d60389f8">SQLite::Mutex</a>
+<li>transaction()
+: <a class="el" href="a00014.html#ac5e2efbcd15f1531c00cbcacfa74c3f0">sqlite::transaction</a>
+</li>
+<li>try_lock()
+: <a class="el" href="a00009.html#a8b02e4596fcbd79e2be5f0c1de9516c3">sqlite::mutex</a>
+</li>
+<li>type()
+: <a class="el" href="a00015.html#a1dbe99607518010c9fd134b0816bb451">sqlite::value</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_u"></a>- u -</h3><ul>
 <li>unlock()
-: <a class="el" href="a00009.html#ad9238aeb94205ac18d67c9652dcc6ef9">SQLite::Mutex</a>
+: <a class="el" href="a00009.html#a67937d9bd0193934404693dbef0b21f6">sqlite::mutex</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_v"></a>- v -</h3><ul>
-<li>Value()
-: <a class="el" href="a00015.html#ace0be7092c23d5e3f4312db057d86997">SQLite::Value</a>
+<li>value()
+: <a class="el" href="a00015.html#ad297a88d479f1818a65dadd726161785">sqlite::value</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_w"></a>- w -</h3><ul>
-<li>wideMemory()
-: <a class="el" href="a00004.html#a40beb5c2c30cd861a8b7c743b5e8881e">SQLite::DBConnection</a>
+<li>wide_memory()
+: <a class="el" href="a00004.html#abe5e2bf211f18f2f358f4293d3064679">sqlite::dbconnection</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_~"></a>- ~ -</h3><ul>
-<li>~Transaction()
-: <a class="el" href="a00014.html#a43c5e67a10b9698b7f6dad73539feb94">SQLite::Transaction</a>
+<li>~transaction()
+: <a class="el" href="a00014.html#a798101cf276674d19708c1958e5b03fb">sqlite::transaction</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:34 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:04 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

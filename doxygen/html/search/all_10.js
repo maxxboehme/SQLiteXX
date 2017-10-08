@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['value',['Value',['../a00015.html',1,'SQLite']]],
-  ['value',['Value',['../a00015.html#ace0be7092c23d5e3f4312db057d86997',1,'SQLite::Value::Value(const sqlite3_value *const value)'],['../a00015.html#acd6e10f2a509c8a0be20237d4b3a0fc7',1,'SQLite::Value::Value(const Value &amp;other)'],['../a00015.html#a531d4f514b9abe1eb1f47a277737b953',1,'SQLite::Value::Value(Value &amp;&amp;other)']]],
+  ['value',['value',['../a00015.html',1,'sqlite']]],
+  ['value',['value',['../a00015.html#ad297a88d479f1818a65dadd726161785',1,'sqlite::value::value(const sqlite3_value *const value)'],['../a00015.html#aa8e08aeebbd2a89075647a8418a7eae7',1,'sqlite::value::value(const value &amp;other)'],['../a00015.html#a0ee5bf64b3377bd2ec6da01b066f62cb',1,'sqlite::value::value(value &amp;&amp;other)']]],
   ['value_2eh',['Value.h',['../a00037.html',1,'']]]
 ];

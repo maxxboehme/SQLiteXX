@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['lock',['lock',['../a00009.html#a56ba1f0c1411940ab52279497d15812a',1,'SQLite::Mutex']]]
+  ['immediate_5ftransaction',['immediate_transaction',['../a00008.html',1,'sqlite']]],
+  ['immediate_5ftransaction',['immediate_transaction',['../a00008.html#a17924d6e15666b8340ee8aab9a88e0d1',1,'sqlite::immediate_transaction']]]
 ];

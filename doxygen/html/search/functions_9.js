@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['prepare',['prepare',['../a00013.html#a1ecd8e2636b542314521eb68fbf1000e',1,'SQLite::Statement::prepare(DBConnection const &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)'],['../a00013.html#a0d422eadca4b2e3f2e1b6e13af69f3cc',1,'SQLite::Statement::prepare(const DBConnection &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)']]]
+  ['memory',['memory',['../a00004.html#adc0120a0d5d39eabcffb7d641b0c40dd',1,'sqlite::dbconnection']]],
+  ['mutex',['mutex',['../a00004.html#afa13431e657c74ba7beee63fa70eeb93',1,'sqlite::dbconnection']]]
 ];

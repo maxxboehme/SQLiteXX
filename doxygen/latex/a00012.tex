@@ -1,5 +1,5 @@
-\hypertarget{a00012}{\section{S\-Q\-Lite\-:\-:Row\-Iterator Class Reference}
-\label{a00012}\index{S\-Q\-Lite\-::\-Row\-Iterator@{S\-Q\-Lite\-::\-Row\-Iterator}}
+\hypertarget{a00012}{\section{sqlite\-:\-:row\-\_\-iterator Class Reference}
+\label{a00012}\index{sqlite\-::row\-\_\-iterator@{sqlite\-::row\-\_\-iterator}}
 }
 
 
@@ -13,43 +13,43 @@ Helps when iterating over rows in a \char`\"{}\-S\-E\-L\-E\-C\-T\char`\"{} state
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{a00012_aa04c70861d8dbca32b8073ddd36a0ef5}{\hyperlink{a00012_aa04c70861d8dbca32b8073ddd36a0ef5}{Row\-Iterator} () noexcept=default}\label{a00012_aa04c70861d8dbca32b8073ddd36a0ef5}
+\hypertarget{a00012_a02cfc59ac9cfeb41adbd7c28be6a6200}{\hyperlink{a00012_a02cfc59ac9cfeb41adbd7c28be6a6200}{row\-\_\-iterator} () noexcept=default}\label{a00012_a02cfc59ac9cfeb41adbd7c28be6a6200}
 
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00012_ad3927378b109ab3dfd6f86d8326f609c}{Row\-Iterator} (const \hyperlink{a00013}{Statement} \&statement) noexcept
-\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{a00012}{Row\-Iterator} object from a Statment object. \end{DoxyCompactList}\item 
-\hypertarget{a00012_a55c22680d983bd87d068bb304dbb1508}{\hyperlink{a00012}{Row\-Iterator} \& \hyperlink{a00012_a55c22680d983bd87d068bb304dbb1508}{operator++} () noexcept}\label{a00012_a55c22680d983bd87d068bb304dbb1508}
+\hyperlink{a00012_aa4ac6c92c4db3e59cea7984d8db3d587}{row\-\_\-iterator} (const \hyperlink{a00013}{statement} \&\hyperlink{a00013}{statement}) noexcept
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{a00012}{row\-\_\-iterator} object from a statement object. \end{DoxyCompactList}\item 
+\hypertarget{a00012_a5485c5c0f9f04cbff43dfb285dc6e776}{\hyperlink{a00012}{row\-\_\-iterator} \& \hyperlink{a00012_a5485c5c0f9f04cbff43dfb285dc6e776}{operator++} () noexcept}\label{a00012_a5485c5c0f9f04cbff43dfb285dc6e776}
 
-\begin{DoxyCompactList}\small\item\em Increment iterator to the next \hyperlink{a00011}{Row} object of the \hyperlink{a00013}{Statement}. \end{DoxyCompactList}\item 
-\hypertarget{a00012_ab5a2045335ee19bb897381b51b013a48}{bool \hyperlink{a00012_ab5a2045335ee19bb897381b51b013a48}{operator!=} (const \hyperlink{a00012}{Row\-Iterator} \&other) const noexcept}\label{a00012_ab5a2045335ee19bb897381b51b013a48}
+\begin{DoxyCompactList}\small\item\em Increment iterator to the next row object of the statement. \end{DoxyCompactList}\item 
+\hypertarget{a00012_a618bc4f69040dcc2658719ab1a721be1}{bool \hyperlink{a00012_a618bc4f69040dcc2658719ab1a721be1}{operator!=} (const \hyperlink{a00012}{row\-\_\-iterator} \&other) const noexcept}\label{a00012_a618bc4f69040dcc2658719ab1a721be1}
 
 \begin{DoxyCompactList}\small\item\em Comparison operation. \end{DoxyCompactList}\item 
-\hyperlink{a00011}{Row} \hyperlink{a00012_a1e27980d666a42f9835c919f8b9c93b1}{operator$\ast$} () const noexcept
+\hyperlink{a00011}{row} \hyperlink{a00012_a5f2c042f06e9e03db0c24e9f1eee3e13}{operator$\ast$} () const noexcept
 \begin{DoxyCompactList}\small\item\em Dereference operation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 Helps when iterating over rows in a \char`\"{}\-S\-E\-L\-E\-C\-T\char`\"{} statement. 
 
-\hyperlink{a00012}{Row\-Iterator} is a \href{http://en.cppreference.com/w/cpp/concept/InputIterator}{\tt Input\-Iterator} and can read data from the pointed to \hyperlink{a00038}{S\-Q\-Lite} row. 
+\hyperlink{a00012}{row\-\_\-iterator} is a \href{http://en.cppreference.com/w/cpp/concept/InputIterator}{\tt Input\-Iterator} and can read data from the pointed to \hyperlink{a00038}{S\-Q\-Lite} row. 
 
-Definition at line 583 of file Statement.\-h.
+Definition at line 592 of file Statement.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{a00012_ad3927378b109ab3dfd6f86d8326f609c}{\index{S\-Q\-Lite\-::\-Row\-Iterator@{S\-Q\-Lite\-::\-Row\-Iterator}!Row\-Iterator@{Row\-Iterator}}
-\index{Row\-Iterator@{Row\-Iterator}!SQLite::RowIterator@{S\-Q\-Lite\-::\-Row\-Iterator}}
-\subsubsection[{Row\-Iterator}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Row\-Iterator\-::\-Row\-Iterator (
+\hypertarget{a00012_aa4ac6c92c4db3e59cea7984d8db3d587}{\index{sqlite\-::row\-\_\-iterator@{sqlite\-::row\-\_\-iterator}!row\-\_\-iterator@{row\-\_\-iterator}}
+\index{row\-\_\-iterator@{row\-\_\-iterator}!sqlite::row_iterator@{sqlite\-::row\-\_\-iterator}}
+\subsubsection[{row\-\_\-iterator}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::row\-\_\-iterator\-::row\-\_\-iterator (
 \begin{DoxyParamCaption}
-\item[{const {\bf Statement} \&}]{statement}
+\item[{const {\bf statement} \&}]{statement}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00012_ad3927378b109ab3dfd6f86d8326f609c}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00012_aa4ac6c92c4db3e59cea7984d8db3d587}
 
 
-Construct a \hyperlink{a00012}{Row\-Iterator} object from a Statment object. 
+Construct a \hyperlink{a00012}{row\-\_\-iterator} object from a statement object. 
 
-A \hyperlink{a00012}{Row\-Iterator} should only be constructect on an Statment object that is doing a S\-Q\-L \char`\"{}\-S\-E\-L\-E\-C\-T\char`\"{} query. 
+A \hyperlink{a00012}{row\-\_\-iterator} should only be constructect on an statement object that is doing a S\-Q\-L \char`\"{}\-S\-E\-L\-E\-C\-T\char`\"{} query. 
 \begin{DoxyParams}{Parameters}
 {\em statement} & the statement object to construct the iterator from. \\
 \hline
@@ -61,18 +61,18 @@ Definition at line 131 of file Statement.\-cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{a00012_a1e27980d666a42f9835c919f8b9c93b1}{\index{S\-Q\-Lite\-::\-Row\-Iterator@{S\-Q\-Lite\-::\-Row\-Iterator}!operator$\ast$@{operator$\ast$}}
-\index{operator$\ast$@{operator$\ast$}!SQLite::RowIterator@{S\-Q\-Lite\-::\-Row\-Iterator}}
-\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Row} S\-Q\-Lite\-::\-Row\-Iterator\-::operator$\ast$ (
+\hypertarget{a00012_a5f2c042f06e9e03db0c24e9f1eee3e13}{\index{sqlite\-::row\-\_\-iterator@{sqlite\-::row\-\_\-iterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!sqlite::row_iterator@{sqlite\-::row\-\_\-iterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf row} sqlite\-::row\-\_\-iterator\-::operator$\ast$ (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00012_a1e27980d666a42f9835c919f8b9c93b1}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00012_a5f2c042f06e9e03db0c24e9f1eee3e13}
 
 
 Dereference operation. 
 
-Dereferencing a \hyperlink{a00012}{Row\-Iterator} object will return a \hyperlink{a00011}{Row} object. 
+Dereferencing a \hyperlink{a00012}{row\-\_\-iterator} object will return a row object. 
 
 Definition at line 154 of file Statement.\-cpp.
 

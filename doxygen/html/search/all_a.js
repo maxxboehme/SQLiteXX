@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['open',['open',['../a00004.html#aec696fc408d91e582d16727adff82445',1,'SQLite::DBConnection::open(const std::string &amp;filename, OpenMode mode=OpenMode::ReadWrite|OpenMode::Create)'],['../a00004.html#ab5f3dbc9164bd435f6770f8625c0a79c',1,'SQLite::DBConnection::open(const std::u16string &amp;filename)']]],
+  ['open',['open',['../a00004.html#a84da73c4ff1b162624da3e252c2a86c8',1,'sqlite::dbconnection::open(const std::string &amp;filename, openmode mode=openmode::read_write|openmode::create)'],['../a00004.html#ac31065d17d9cbe1e1b3021bf11ff0229',1,'sqlite::dbconnection::open(const std::u16string &amp;filename)']]],
   ['open_2eh',['Open.h',['../a00028.html',1,'']]],
-  ['openmode',['OpenMode',['../a00038.html#a0d8721ab00cfcf85ba4eed715ccfecec',1,'SQLite']]],
-  ['operator_20bool',['operator bool',['../a00004.html#a794e7d4d92aa19bd67f3cff4aaf50020',1,'SQLite::DBConnection::operator bool()'],['../a00013.html#a3b7793f1490a321159690cf096ec74d6',1,'SQLite::Statement::operator bool()']]],
-  ['operator_21_3d',['operator!=',['../a00012.html#ab5a2045335ee19bb897381b51b013a48',1,'SQLite::RowIterator']]],
-  ['operator_2a',['operator*',['../a00012.html#a1e27980d666a42f9835c919f8b9c93b1',1,'SQLite::RowIterator']]],
-  ['operator_2b_2b',['operator++',['../a00012.html#a55c22680d983bd87d068bb304dbb1508',1,'SQLite::RowIterator']]],
-  ['operator_3d',['operator=',['../a00002.html#af34146d8ac8d1414c5ad1673ca05669e',1,'SQLite::Blob::operator=(const Blob &amp;other)'],['../a00002.html#ae6409ebce61480b97f01c072f9e49276',1,'SQLite::Blob::operator=(Blob &amp;&amp;other)'],['../a00004.html#abf18d7c37cf19fe46af7b6c7c0f0e8f2',1,'SQLite::DBConnection::operator=(const DBConnection &amp;other) noexcept'],['../a00004.html#a2d10766ea45bfb79f4959e62d432feeb',1,'SQLite::DBConnection::operator=(DBConnection &amp;&amp;other) noexcept'],['../a00015.html#a879c07032f32606d277a8f6581a13abf',1,'SQLite::Value::operator=(const Value &amp;other)'],['../a00015.html#ab80d7cf9eb8a462b23459d0fbba80277',1,'SQLite::Value::operator=(Value &amp;&amp;other)']]],
-  ['operator_5b_5d',['operator[]',['../a00011.html#a82ca0ee6352667cc9f6d41972dedd5a6',1,'SQLite::Row']]]
+  ['operator_20bool',['operator bool',['../a00004.html#a8c0e145b3687659ec0f76949174651e0',1,'sqlite::dbconnection::operator bool()'],['../a00013.html#a558b055f3210c6ab7575dc2c23cb7be2',1,'sqlite::statement::operator bool()']]],
+  ['operator_21_3d',['operator!=',['../a00012.html#a618bc4f69040dcc2658719ab1a721be1',1,'sqlite::row_iterator']]],
+  ['operator_2a',['operator*',['../a00012.html#a5f2c042f06e9e03db0c24e9f1eee3e13',1,'sqlite::row_iterator']]],
+  ['operator_2b_2b',['operator++',['../a00012.html#a5485c5c0f9f04cbff43dfb285dc6e776',1,'sqlite::row_iterator']]],
+  ['operator_3d',['operator=',['../a00002.html#a1962255cded865181174a67351d58fb8',1,'sqlite::blob::operator=(const blob &amp;other)'],['../a00002.html#a93a890b30c970d76fc51ad7ed4bb36c1',1,'sqlite::blob::operator=(blob &amp;&amp;other)'],['../a00004.html#ae7c52ec41d3dfb7f4c8a521af7673bde',1,'sqlite::dbconnection::operator=(const dbconnection &amp;other) noexcept'],['../a00004.html#abd91c727842023d54fdb64e6e2e9ac3c',1,'sqlite::dbconnection::operator=(dbconnection &amp;&amp;other) noexcept'],['../a00015.html#ab67e08529ef687899b08ad6fa50d4301',1,'sqlite::value::operator=(const value &amp;other)'],['../a00015.html#aa3d30541555ecc3f54216ce80f2e482f',1,'sqlite::value::operator=(value &amp;&amp;other)']]],
+  ['operator_5b_5d',['operator[]',['../a00011.html#a0c8e886d5beb078d5111bdf812232c60',1,'sqlite::row::operator[](int column) const '],['../a00011.html#adcc08612b2968a75124edc91c0d6c72f',1,'sqlite::row::operator[](const std::string &amp;name) const ']]]
 ];

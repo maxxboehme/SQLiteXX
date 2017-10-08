@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['float',['Float',['../a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04ca22ae0e2b89e5e3d477f988cc36d3272b',1,'SQLite']]],
-  ['fullmutex',['FullMutex',['../a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa3322fce9aa781563c086ffd3c13da8b4',1,'SQLite']]]
+  ['exception',['exception',['../a00006.html',1,'sqlite']]],
+  ['exception_2eh',['Exception.h',['../a00024.html',1,'']]],
+  ['exclusive_5ftransaction',['exclusive_transaction',['../a00007.html#a9380f63712877dd18432ca82476dd096',1,'sqlite::exclusive_transaction']]],
+  ['exclusive_5ftransaction',['exclusive_transaction',['../a00007.html',1,'sqlite']]],
+  ['execute',['execute',['../a00013.html#a7a01f06c30b4f751d65f0f14fae3277a',1,'sqlite::statement']]]
 ];

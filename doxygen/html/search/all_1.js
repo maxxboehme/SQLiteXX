@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['clearbindings',['clearBindings',['../a00013.html#a7139b0e838a43de61f03367a8631ee76',1,'SQLite::Statement']]],
-  ['commit',['commit',['../a00014.html#a9b251d84198cdc2c0208ad566fec0287',1,'SQLite::Transaction']]],
-  ['create',['Create',['../a00038.html#a0d8721ab00cfcf85ba4eed715ccfececa686e697538050e4664636337cc3b834f',1,'SQLite']]],
-  ['createaggregate',['createAggregate',['../a00004.html#aafcfe62eae1364129c3346500f6ad5d2',1,'SQLite::DBConnection']]],
-  ['createfunction',['createFunction',['../a00004.html#ae8758a2e46148ba81aa18b71e17149b5',1,'SQLite::DBConnection']]],
-  ['creategeneralfunction',['createGeneralFunction',['../a00004.html#adace26a4acf443ac5c8cea3fe5c913e1',1,'SQLite::DBConnection']]]
+  ['backup',['backup',['../a00001.html',1,'sqlite']]],
+  ['backup',['backup',['../a00001.html#a62932f9aa6d1a5e313615cc5ca4f67fe',1,'sqlite::backup']]],
+  ['backup_2eh',['Backup.h',['../a00018.html',1,'']]],
+  ['bind',['bind',['../a00013.html#a91d16077f086fe6becb4c7bae576b0e7',1,'sqlite::statement::bind(const int index, const int value) const '],['../a00013.html#a80f067e9b5bc981210593d3aac067cc5',1,'sqlite::statement::bind(const int index, const double value) const '],['../a00013.html#ae6eda84becdf90c4e0a0bb25601dc54d',1,'sqlite::statement::bind(const int index, const void *const value, const int size, bindtype type=bindtype::transient) const '],['../a00013.html#aaaa1ec53616b974e0dce72f3ba88b20f',1,'sqlite::statement::bind(const int index, const blob &amp;value) const '],['../a00013.html#a778fde6911aba25ea0ca3c6d7a8be870',1,'sqlite::statement::bind(const int index, const char *const value, const int size=-1, bindtype type=bindtype::transient) const '],['../a00013.html#aa81eabe0c43e779bfaf82e465d76d8a7',1,'sqlite::statement::bind(const int index, const char16_t *const value, const int size=-1, bindtype type=bindtype::transient) const '],['../a00013.html#a8aa321913ed5bf9398d0694f4a222c15',1,'sqlite::statement::bind(const int index, const std::string &amp;value) const '],['../a00013.html#a2812922c3fc691f556ed230768b5ca43',1,'sqlite::statement::bind(const int index, const std::u16string &amp;value) const ']]],
+  ['bind_5fall',['bind_all',['../a00013.html#a15ecbabf7d3a6c8b7005e2a799374785',1,'sqlite::statement']]],
+  ['bind_5fname',['bind_name',['../a00013.html#a8375bd6c666e395325227048ec0d6065',1,'sqlite::statement']]],
+  ['blob',['blob',['../a00002.html',1,'sqlite']]],
+  ['blob',['blob',['../a00002.html#ad3d7146a3081de7c96a37b9641f83dd6',1,'sqlite::blob::blob(const void *data, const size_t size)'],['../a00002.html#a1f1bca1ecf4615c4948f3af74814abde',1,'sqlite::blob::blob(const blob &amp;other)'],['../a00002.html#a78501ec4704d95d590457eacc63f39b6',1,'sqlite::blob::blob(blob &amp;&amp;other)']]],
+  ['blob_2eh',['Blob.h',['../a00020.html',1,'']]],
+  ['busy_5fexception',['busy_exception',['../a00003.html',1,'sqlite']]],
+  ['bytes',['bytes',['../a00015.html#a089b0cb550fd7ca7830ebf1cb43850d1',1,'sqlite::value']]]
 ];

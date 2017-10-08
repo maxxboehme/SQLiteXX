@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7etransaction',['~Transaction',['../a00014.html#a43c5e67a10b9698b7f6dad73539feb94',1,'SQLite::Transaction']]]
+  ['value',['value',['../a00015.html#ad297a88d479f1818a65dadd726161785',1,'sqlite::value::value(const sqlite3_value *const value)'],['../a00015.html#aa8e08aeebbd2a89075647a8418a7eae7',1,'sqlite::value::value(const value &amp;other)'],['../a00015.html#a0ee5bf64b3377bd2ec6da01b066f62cb',1,'sqlite::value::value(value &amp;&amp;other)']]]
 ];

@@ -1,5 +1,5 @@
-\hypertarget{a00002}{\section{S\-Q\-Lite\-:\-:Blob Class Reference}
-\label{a00002}\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}}
+\hypertarget{a00002}{\section{sqlite\-:\-:blob Class Reference}
+\label{a00002}\index{sqlite\-::blob@{sqlite\-::blob}}
 }
 
 
@@ -13,47 +13,47 @@ A \char`\"{}\-Binary Large O\-Bject\char`\"{}.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00002_a74ff754db13f481b91edcd7b5bcd9d32}{Blob} (const void $\ast$\hyperlink{a00002_a112b54351792991f10563295e33600e2}{data}, size\-\_\-t \hyperlink{a00002_a689d499b628faaa148424af8d545c29e}{size})
-\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{a00002}{Blob} object with contents of data. \end{DoxyCompactList}\item 
-\hyperlink{a00002_a4f525d8e11e4361b808692eccb4e12a5}{Blob} (const \hyperlink{a00002}{Blob} \&other)
+\hyperlink{a00002_ad3d7146a3081de7c96a37b9641f83dd6}{blob} (const void $\ast$\hyperlink{a00002_ad9fc3eb820ef6fa64a4a03224b9dc3de}{data}, const size\-\_\-t \hyperlink{a00002_a28b69b40596ded278607604396b86c97}{size})
+\begin{DoxyCompactList}\small\item\em Constructs a blob object with contents of data. \end{DoxyCompactList}\item 
+\hyperlink{a00002_a1f1bca1ecf4615c4948f3af74814abde}{blob} (const \hyperlink{a00002}{blob} \&other)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00002_ae458297c2b9be504111c7b23636942e0}{Blob} (\hyperlink{a00002}{Blob} \&\&other)
+\hyperlink{a00002_a78501ec4704d95d590457eacc63f39b6}{blob} (\hyperlink{a00002}{blob} \&\&other)
 \begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00002}{Blob} \& \hyperlink{a00002_af34146d8ac8d1414c5ad1673ca05669e}{operator=} (const \hyperlink{a00002}{Blob} \&other)
+\hyperlink{a00002}{blob} \& \hyperlink{a00002_a1962255cded865181174a67351d58fb8}{operator=} (const \hyperlink{a00002}{blob} \&other)
 \begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
-\hyperlink{a00002}{Blob} \& \hyperlink{a00002_ae6409ebce61480b97f01c072f9e49276}{operator=} (\hyperlink{a00002}{Blob} \&\&other)
+\hyperlink{a00002}{blob} \& \hyperlink{a00002_a93a890b30c970d76fc51ad7ed4bb36c1}{operator=} (\hyperlink{a00002}{blob} \&\&other)
 \begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
-const void $\ast$ \hyperlink{a00002_a112b54351792991f10563295e33600e2}{data} () const 
-\begin{DoxyCompactList}\small\item\em The raw data of the \hyperlink{a00002}{Blob}'s contents. \end{DoxyCompactList}\item 
-size\-\_\-t \hyperlink{a00002_a689d499b628faaa148424af8d545c29e}{size} () const 
+const void $\ast$ \hyperlink{a00002_ad9fc3eb820ef6fa64a4a03224b9dc3de}{data} () const 
+\begin{DoxyCompactList}\small\item\em The raw data of the blob's contents. \end{DoxyCompactList}\item 
+size\-\_\-t \hyperlink{a00002_a28b69b40596ded278607604396b86c97}{size} () const 
 \begin{DoxyCompactList}\small\item\em Used to get the size of the contained 'blob'. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 A \char`\"{}\-Binary Large O\-Bject\char`\"{}. 
 
-A collection of binary data stored as a single entity in a database management system. Blobs are typically images, audo or other multimedia object though they can be any form of data. 
+A collection of binary data stored as a single entity in a database management system. blobs are typically images, audo or other multimedia object though they can be any form of data. 
 
 Definition at line 20 of file Blob.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{a00002_a74ff754db13f481b91edcd7b5bcd9d32}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!Blob@{Blob}}
-\index{Blob@{Blob}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
-\subsubsection[{Blob}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Blob\-::\-Blob (
+\hypertarget{a00002_ad3d7146a3081de7c96a37b9641f83dd6}{\index{sqlite\-::blob@{sqlite\-::blob}!blob@{blob}}
+\index{blob@{blob}!sqlite::blob@{sqlite\-::blob}}
+\subsubsection[{blob}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::blob\-::blob (
 \begin{DoxyParamCaption}
 \item[{const void $\ast$}]{data, }
-\item[{size\-\_\-t}]{size}
+\item[{const size\-\_\-t}]{size}
 \end{DoxyParamCaption}
-)}}\label{a00002_a74ff754db13f481b91edcd7b5bcd9d32}
+)}}\label{a00002_ad3d7146a3081de7c96a37b9641f83dd6}
 
 
-Constructs a \hyperlink{a00002}{Blob} object with contents of data. 
+Constructs a blob object with contents of data. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em data} & the information you want the \hyperlink{a00002}{Blob} to contain \\
+\mbox{\tt in}  & {\em data} & the information you want the blob to contain \\
 \hline
 \mbox{\tt in}  & {\em size} & the size in bytes of the data \\
 \hline
@@ -62,40 +62,40 @@ Constructs a \hyperlink{a00002}{Blob} object with contents of data.
 
 Definition at line 6 of file Blob.\-cpp.
 
-\hypertarget{a00002_a4f525d8e11e4361b808692eccb4e12a5}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!Blob@{Blob}}
-\index{Blob@{Blob}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
-\subsubsection[{Blob}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Blob\-::\-Blob (
+\hypertarget{a00002_a1f1bca1ecf4615c4948f3af74814abde}{\index{sqlite\-::blob@{sqlite\-::blob}!blob@{blob}}
+\index{blob@{blob}!sqlite::blob@{sqlite\-::blob}}
+\subsubsection[{blob}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::blob\-::blob (
 \begin{DoxyParamCaption}
-\item[{const {\bf Blob} \&}]{other}
+\item[{const {\bf blob} \&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_a4f525d8e11e4361b808692eccb4e12a5}
+)}}\label{a00002_a1f1bca1ecf4615c4948f3af74814abde}
 
 
 Copy constructor. 
 
-Constructs a \hyperlink{a00002}{Blob} object with a copy of the contents of other 
+Constructs a blob object with a copy of the contents of other 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
+\mbox{\tt in}  & {\em other} & another blob object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 14 of file Blob.\-cpp.
 
-\hypertarget{a00002_ae458297c2b9be504111c7b23636942e0}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!Blob@{Blob}}
-\index{Blob@{Blob}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
-\subsubsection[{Blob}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Blob\-::\-Blob (
+\hypertarget{a00002_a78501ec4704d95d590457eacc63f39b6}{\index{sqlite\-::blob@{sqlite\-::blob}!blob@{blob}}
+\index{blob@{blob}!sqlite::blob@{sqlite\-::blob}}
+\subsubsection[{blob}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::blob\-::blob (
 \begin{DoxyParamCaption}
-\item[{{\bf Blob} \&\&}]{other}
+\item[{{\bf blob} \&\&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_ae458297c2b9be504111c7b23636942e0}
+)}}\label{a00002_a78501ec4704d95d590457eacc63f39b6}
 
 
 Move constructor. 
 
-Constructs a \hyperlink{a00002}{Blob} object with a copy of the contents of other using move semantics 
+Constructs a blob object with a copy of the contents of other using move semantics 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
+\mbox{\tt in}  & {\em other} & another blob object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
 
@@ -105,38 +105,38 @@ Definition at line 21 of file Blob.\-cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{a00002_a112b54351792991f10563295e33600e2}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!data@{data}}
-\index{data@{data}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
-\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}const void $\ast$ S\-Q\-Lite\-::\-Blob\-::data (
+\hypertarget{a00002_ad9fc3eb820ef6fa64a4a03224b9dc3de}{\index{sqlite\-::blob@{sqlite\-::blob}!data@{data}}
+\index{data@{data}!sqlite::blob@{sqlite\-::blob}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}const void $\ast$ sqlite\-::blob\-::data (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{a00002_a112b54351792991f10563295e33600e2}
+) const}}\label{a00002_ad9fc3eb820ef6fa64a4a03224b9dc3de}
 
 
-The raw data of the \hyperlink{a00002}{Blob}'s contents. 
+The raw data of the blob's contents. 
 
 \begin{DoxyReturn}{Returns}
-The raw data that the \hyperlink{a00002}{Blob} object is storing. 
+The raw data that the blob object is storing. 
 \end{DoxyReturn}
 
 
 Definition at line 44 of file Blob.\-cpp.
 
-\hypertarget{a00002_af34146d8ac8d1414c5ad1673ca05669e}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!operator=@{operator=}}
-\index{operator=@{operator=}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Blob} \& S\-Q\-Lite\-::\-Blob\-::operator= (
+\hypertarget{a00002_a1962255cded865181174a67351d58fb8}{\index{sqlite\-::blob@{sqlite\-::blob}!operator=@{operator=}}
+\index{operator=@{operator=}!sqlite::blob@{sqlite\-::blob}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf blob} \& sqlite\-::blob\-::operator= (
 \begin{DoxyParamCaption}
-\item[{const {\bf Blob} \&}]{other}
+\item[{const {\bf blob} \&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_af34146d8ac8d1414c5ad1673ca05669e}
+)}}\label{a00002_a1962255cded865181174a67351d58fb8}
 
 
 Copy assignment operator. 
 
 Replaces the contents with those of other 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
+\mbox{\tt in}  & {\em other} & another blob object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -146,20 +146,20 @@ $\ast$this
 
 Definition at line 26 of file Blob.\-cpp.
 
-\hypertarget{a00002_ae6409ebce61480b97f01c072f9e49276}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!operator=@{operator=}}
-\index{operator=@{operator=}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Blob} \& S\-Q\-Lite\-::\-Blob\-::operator= (
+\hypertarget{a00002_a93a890b30c970d76fc51ad7ed4bb36c1}{\index{sqlite\-::blob@{sqlite\-::blob}!operator=@{operator=}}
+\index{operator=@{operator=}!sqlite::blob@{sqlite\-::blob}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf blob} \& sqlite\-::blob\-::operator= (
 \begin{DoxyParamCaption}
-\item[{{\bf Blob} \&\&}]{other}
+\item[{{\bf blob} \&\&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00002_ae6409ebce61480b97f01c072f9e49276}
+)}}\label{a00002_a93a890b30c970d76fc51ad7ed4bb36c1}
 
 
 Move assignment operator. 
 
 Replaces the contents with those of other using move semantics 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00002}{Blob} object to use as source to initialize object with \\
+\mbox{\tt in}  & {\em other} & another blob object to use as source to initialize object with \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -169,13 +169,13 @@ $\ast$this
 
 Definition at line 37 of file Blob.\-cpp.
 
-\hypertarget{a00002_a689d499b628faaa148424af8d545c29e}{\index{S\-Q\-Lite\-::\-Blob@{S\-Q\-Lite\-::\-Blob}!size@{size}}
-\index{size@{size}!SQLite::Blob@{S\-Q\-Lite\-::\-Blob}}
-\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t S\-Q\-Lite\-::\-Blob\-::size (
+\hypertarget{a00002_a28b69b40596ded278607604396b86c97}{\index{sqlite\-::blob@{sqlite\-::blob}!size@{size}}
+\index{size@{size}!sqlite::blob@{sqlite\-::blob}}
+\subsubsection[{size}]{\setlength{\rightskip}{0pt plus 5cm}size\-\_\-t sqlite\-::blob\-::size (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const}}\label{a00002_a689d499b628faaa148424af8d545c29e}
+) const}}\label{a00002_a28b69b40596ded278607604396b86c97}
 
 
 Used to get the size of the contained 'blob'. 

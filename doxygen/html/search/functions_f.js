@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['widememory',['wideMemory',['../a00004.html#a40beb5c2c30cd861a8b7c743b5e8881e',1,'SQLite::DBConnection']]]
+  ['unlock',['unlock',['../a00009.html#a67937d9bd0193934404693dbef0b21f6',1,'sqlite::mutex']]]
 ];

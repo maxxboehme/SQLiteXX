@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['backup',['Backup',['../a00001.html',1,'SQLite']]],
-  ['blob',['Blob',['../a00002.html',1,'SQLite']]],
-  ['busyexception',['BusyException',['../a00003.html',1,'SQLite']]]
+  ['backup',['backup',['../a00001.html',1,'sqlite']]],
+  ['blob',['blob',['../a00002.html',1,'sqlite']]],
+  ['busy_5fexception',['busy_exception',['../a00003.html',1,'sqlite']]]
 ];

@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,29 +91,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00020.html">Blob.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>SQLite</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">namespace </span>sqlite</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00002.html#a74ff754db13f481b91edcd7b5bcd9d32">    6</a></span>&#160;    <a class="code" href="a00002.html#a74ff754db13f481b91edcd7b5bcd9d32">Blob::Blob</a>(<span class="keyword">const</span> <span class="keywordtype">void</span> * data, <span class="keywordtype">size_t</span> size) :</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="a00002.html#ad3d7146a3081de7c96a37b9641f83dd6">    6</a></span>&#160;    <a class="code" href="a00002.html#ad3d7146a3081de7c96a37b9641f83dd6">blob::blob</a>(<span class="keyword">const</span> <span class="keywordtype">void</span>* data, <span class="keyword">const</span> <span class="keywordtype">size_t</span> size) :</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        m_data(data != nullptr? new char[size]: nullptr),</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        m_size(size)</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    {</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        assert(data == <span class="keyword">nullptr</span>? size == 0: size &gt; 0);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        memcpy(m_data.get(), <a class="code" href="a00002.html#a112b54351792991f10563295e33600e2">data</a>, <a class="code" href="a00002.html#a689d499b628faaa148424af8d545c29e">size</a>);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        memcpy(m_data.get(), <a class="code" href="a00002.html#ad9fc3eb820ef6fa64a4a03224b9dc3de">data</a>, <a class="code" href="a00002.html#a28b69b40596ded278607604396b86c97">size</a>);</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00002.html#a4f525d8e11e4361b808692eccb4e12a5">   14</a></span>&#160;    <a class="code" href="a00002.html#a74ff754db13f481b91edcd7b5bcd9d32">Blob::Blob</a>(<span class="keyword">const</span> <a class="code" href="a00002.html">Blob</a> &amp;other) :</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00002.html#a1f1bca1ecf4615c4948f3af74814abde">   14</a></span>&#160;    <a class="code" href="a00002.html#ad3d7146a3081de7c96a37b9641f83dd6">blob::blob</a>(<span class="keyword">const</span> <a class="code" href="a00002.html">blob</a>&amp; other) :</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        m_data(other.m_size == 0? nullptr: new char[other.m_size]),</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        m_size(other.m_size)</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        memcpy(m_data.get(), other.m_data.get(), other.m_size);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a00002.html#ae458297c2b9be504111c7b23636942e0">   21</a></span>&#160;    <a class="code" href="a00002.html#a74ff754db13f481b91edcd7b5bcd9d32">Blob::Blob</a>(<a class="code" href="a00002.html">Blob</a> &amp;&amp;other) :</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="a00002.html#a78501ec4704d95d590457eacc63f39b6">   21</a></span>&#160;    <a class="code" href="a00002.html#ad3d7146a3081de7c96a37b9641f83dd6">blob::blob</a>(<a class="code" href="a00002.html">blob</a> &amp;&amp;other) :</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        m_data(std::move(other.m_data)),</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        m_size(other.m_size)</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {}</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00002.html#af34146d8ac8d1414c5ad1673ca05669e">   26</a></span>&#160;    <a class="code" href="a00002.html">Blob</a>&amp; <a class="code" href="a00002.html#af34146d8ac8d1414c5ad1673ca05669e">Blob::operator=</a>(<span class="keyword">const</span> <a class="code" href="a00002.html">Blob</a> &amp;other) {</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00002.html#a1962255cded865181174a67351d58fb8">   26</a></span>&#160;    <a class="code" href="a00002.html">blob</a>&amp; <a class="code" href="a00002.html#a1962255cded865181174a67351d58fb8">blob::operator=</a>(<span class="keyword">const</span> <a class="code" href="a00002.html">blob</a> &amp;other) {</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">if</span> (<span class="keyword">this</span> != &amp;other) {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            m_data.reset(other.m_size == 0? <span class="keyword">nullptr</span>: <span class="keyword">new</span> <span class="keywordtype">char</span>[other.m_size]);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            memcpy(m_data.get(), other.m_data.get(), other.m_size);</div>
@@ -124,32 +124,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00002.html#ae6409ebce61480b97f01c072f9e49276">   37</a></span>&#160;    <a class="code" href="a00002.html">Blob</a>&amp; <a class="code" href="a00002.html#af34146d8ac8d1414c5ad1673ca05669e">Blob::operator=</a>(<a class="code" href="a00002.html">Blob</a> &amp;&amp;other) {</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="a00002.html#a93a890b30c970d76fc51ad7ed4bb36c1">   37</a></span>&#160;    <a class="code" href="a00002.html">blob</a>&amp; <a class="code" href="a00002.html#a1962255cded865181174a67351d58fb8">blob::operator=</a>(<a class="code" href="a00002.html">blob</a> &amp;&amp;other) {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        assert(<span class="keyword">this</span> != &amp;other);</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        m_data = std::move(other.m_data);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        m_size = other.m_size;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00002.html#a112b54351792991f10563295e33600e2">   44</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span>* <a class="code" href="a00002.html#a112b54351792991f10563295e33600e2">Blob::data</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00002.html#ad9fc3eb820ef6fa64a4a03224b9dc3de">   44</a></span>&#160;    <span class="keyword">const</span> <span class="keywordtype">void</span>* <a class="code" href="a00002.html#ad9fc3eb820ef6fa64a4a03224b9dc3de">blob::data</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> m_data.get();</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00002.html#a689d499b628faaa148424af8d545c29e">   48</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="a00002.html#a689d499b628faaa148424af8d545c29e">Blob::size</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="a00002.html#a28b69b40596ded278607604396b86c97">   48</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="a00002.html#a28b69b40596ded278607604396b86c97">blob::size</a>()<span class="keyword"> const </span>{</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> m_size;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="ttc" id="a00002_html_af34146d8ac8d1414c5ad1673ca05669e"><div class="ttname"><a href="a00002.html#af34146d8ac8d1414c5ad1673ca05669e">SQLite::Blob::operator=</a></div><div class="ttdeci">Blob &amp; operator=(const Blob &amp;other)</div><div class="ttdoc">Copy assignment operator. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00026">Blob.cpp:26</a></div></div>
-<div class="ttc" id="a00002_html_a112b54351792991f10563295e33600e2"><div class="ttname"><a href="a00002.html#a112b54351792991f10563295e33600e2">SQLite::Blob::data</a></div><div class="ttdeci">const void * data() const </div><div class="ttdoc">The raw data of the Blob&#39;s contents. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00044">Blob.cpp:44</a></div></div>
-<div class="ttc" id="a00002_html_a689d499b628faaa148424af8d545c29e"><div class="ttname"><a href="a00002.html#a689d499b628faaa148424af8d545c29e">SQLite::Blob::size</a></div><div class="ttdeci">size_t size() const </div><div class="ttdoc">Used to get the size of the contained &#39;blob&#39;. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00048">Blob.cpp:48</a></div></div>
-<div class="ttc" id="a00002_html_a74ff754db13f481b91edcd7b5bcd9d32"><div class="ttname"><a href="a00002.html#a74ff754db13f481b91edcd7b5bcd9d32">SQLite::Blob::Blob</a></div><div class="ttdeci">Blob(const void *data, size_t size)</div><div class="ttdoc">Constructs a Blob object with contents of data. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00006">Blob.cpp:6</a></div></div>
+<div class="ttc" id="a00002_html_a28b69b40596ded278607604396b86c97"><div class="ttname"><a href="a00002.html#a28b69b40596ded278607604396b86c97">sqlite::blob::size</a></div><div class="ttdeci">size_t size() const </div><div class="ttdoc">Used to get the size of the contained &#39;blob&#39;. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00048">Blob.cpp:48</a></div></div>
+<div class="ttc" id="a00002_html_ad9fc3eb820ef6fa64a4a03224b9dc3de"><div class="ttname"><a href="a00002.html#ad9fc3eb820ef6fa64a4a03224b9dc3de">sqlite::blob::data</a></div><div class="ttdeci">const void * data() const </div><div class="ttdoc">The raw data of the blob&#39;s contents. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00044">Blob.cpp:44</a></div></div>
+<div class="ttc" id="a00002_html_ad3d7146a3081de7c96a37b9641f83dd6"><div class="ttname"><a href="a00002.html#ad3d7146a3081de7c96a37b9641f83dd6">sqlite::blob::blob</a></div><div class="ttdeci">blob(const void *data, const size_t size)</div><div class="ttdoc">Constructs a blob object with contents of data. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00006">Blob.cpp:6</a></div></div>
+<div class="ttc" id="a00002_html_a1962255cded865181174a67351d58fb8"><div class="ttname"><a href="a00002.html#a1962255cded865181174a67351d58fb8">sqlite::blob::operator=</a></div><div class="ttdeci">blob &amp; operator=(const blob &amp;other)</div><div class="ttdoc">Copy assignment operator. </div><div class="ttdef"><b>Definition:</b> <a href="a00019_source.html#l00026">Blob.cpp:26</a></div></div>
 <div class="ttc" id="a00020_html"><div class="ttname"><a href="a00020.html">Blob.h</a></div></div>
-<div class="ttc" id="a00002_html"><div class="ttname"><a href="a00002.html">SQLite::Blob</a></div><div class="ttdoc">A &quot;Binary Large OBject&quot;. </div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00020">Blob.h:20</a></div></div>
+<div class="ttc" id="a00002_html"><div class="ttname"><a href="a00002.html">sqlite::blob</a></div><div class="ttdoc">A &quot;Binary Large OBject&quot;. </div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00020">Blob.h:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:33 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

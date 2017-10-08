@@ -1,5 +1,5 @@
-\hypertarget{a00009}{\section{S\-Q\-Lite\-:\-:Mutex Class Reference}
-\label{a00009}\index{S\-Q\-Lite\-::\-Mutex@{S\-Q\-Lite\-::\-Mutex}}
+\hypertarget{a00009}{\section{sqlite\-:\-:mutex Class Reference}
+\label{a00009}\index{sqlite\-::mutex@{sqlite\-::mutex}}
 }
 
 
@@ -13,12 +13,12 @@ Helps with serializing access to a database connection.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{a00009_a56ba1f0c1411940ab52279497d15812a}{void \hyperlink{a00009_a56ba1f0c1411940ab52279497d15812a}{lock} () noexcept}\label{a00009_a56ba1f0c1411940ab52279497d15812a}
+\hypertarget{a00009_a6a793427100e67bfac37ea0286c5d2bb}{void \hyperlink{a00009_a6a793427100e67bfac37ea0286c5d2bb}{lock} () noexcept}\label{a00009_a6a793427100e67bfac37ea0286c5d2bb}
 
 \begin{DoxyCompactList}\small\item\em Locks the mutex and blocks if the mutex is not available. \end{DoxyCompactList}\item 
-bool \hyperlink{a00009_a95b5ebd5fef0bd37b30e3867d60389f8}{try\-Lock} () noexcept
+bool \hyperlink{a00009_a8b02e4596fcbd79e2be5f0c1de9516c3}{try\-\_\-lock} () noexcept
 \begin{DoxyCompactList}\small\item\em Tries to lock the mutex, returns if the mutex is not available. \end{DoxyCompactList}\item 
-\hypertarget{a00009_ad9238aeb94205ac18d67c9652dcc6ef9}{void \hyperlink{a00009_ad9238aeb94205ac18d67c9652dcc6ef9}{unlock} () noexcept}\label{a00009_ad9238aeb94205ac18d67c9652dcc6ef9}
+\hypertarget{a00009_a67937d9bd0193934404693dbef0b21f6}{void \hyperlink{a00009_a67937d9bd0193934404693dbef0b21f6}{unlock} () noexcept}\label{a00009_a67937d9bd0193934404693dbef0b21f6}
 
 \begin{DoxyCompactList}\small\item\em Unlocks the mutex. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -26,22 +26,22 @@ bool \hyperlink{a00009_a95b5ebd5fef0bd37b30e3867d60389f8}{try\-Lock} () noexcept
 \subsection{Detailed Description}
 Helps with serializing access to a database connection. 
 
-Mutexes are only useful when threading mode is set to \char`\"{}\-Serialized\char`\"{}.
+mutexes are only useful when threading mode is set to \char`\"{}\-Serialized\char`\"{}.
 
-This mutex class can be used with the std\-::lock\-\_\-guard as it meets the Basic\-Lockable requirements. 
+This mutex class can be used with \href{http://en.cppreference.com/w/cpp/thread/lock_guard}{\tt std\-::lock\-\_\-guard} as it meets the \href{http://en.cppreference.com/w/cpp/concept/BasicLockable}{\tt Basic\-Lockable} requirements. 
 
-Definition at line 17 of file Mutex.\-h.
+Definition at line 19 of file Mutex.\-h.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{a00009_a95b5ebd5fef0bd37b30e3867d60389f8}{\index{S\-Q\-Lite\-::\-Mutex@{S\-Q\-Lite\-::\-Mutex}!try\-Lock@{try\-Lock}}
-\index{try\-Lock@{try\-Lock}!SQLite::Mutex@{S\-Q\-Lite\-::\-Mutex}}
-\subsubsection[{try\-Lock}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-Q\-Lite\-::\-Mutex\-::try\-Lock (
+\hypertarget{a00009_a8b02e4596fcbd79e2be5f0c1de9516c3}{\index{sqlite\-::mutex@{sqlite\-::mutex}!try\-\_\-lock@{try\-\_\-lock}}
+\index{try\-\_\-lock@{try\-\_\-lock}!sqlite::mutex@{sqlite\-::mutex}}
+\subsubsection[{try\-\_\-lock}]{\setlength{\rightskip}{0pt plus 5cm}bool sqlite\-::mutex\-::try\-\_\-lock (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00009_a95b5ebd5fef0bd37b30e3867d60389f8}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00009_a8b02e4596fcbd79e2be5f0c1de9516c3}
 
 
 Tries to lock the mutex, returns if the mutex is not available. 
@@ -51,7 +51,7 @@ True if able to obtain lock. False otherwise.
 \end{DoxyReturn}
 
 
-Definition at line 17 of file Mutex.\-cpp.
+Definition at line 14 of file Mutex.\-cpp.
 
 
 

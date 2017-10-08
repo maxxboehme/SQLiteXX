@@ -1,5 +1,5 @@
-\hypertarget{a00001}{\section{S\-Q\-Lite\-:\-:Backup Class Reference}
-\label{a00001}\index{S\-Q\-Lite\-::\-Backup@{S\-Q\-Lite\-::\-Backup}}
+\hypertarget{a00001}{\section{sqlite\-:\-:backup Class Reference}
+\label{a00001}\index{sqlite\-::backup@{sqlite\-::backup}}
 }
 
 
@@ -13,15 +13,15 @@ Used to aid in the process of backing up a database.
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00001_a363301d27d042970ce86c2487d33351c}{Backup} (const \hyperlink{a00004}{D\-B\-Connection} \&source, const \hyperlink{a00004}{D\-B\-Connection} \&destination, const std\-::string \&source\-Name=\char`\"{}main\char`\"{}, const std\-::string \&destination\-Name=\char`\"{}main\char`\"{})
+\hyperlink{a00001_a62932f9aa6d1a5e313615cc5ca4f67fe}{backup} (const \hyperlink{a00004}{dbconnection} \&source, const \hyperlink{a00004}{dbconnection} \&destination, const std\-::string \&source\-Name=\char`\"{}main\char`\"{}, const std\-::string \&destination\-Name=\char`\"{}main\char`\"{})
 \begin{DoxyCompactList}\small\item\em Construct a backup object. \end{DoxyCompactList}\item 
-bool \hyperlink{a00001_a6ec2f5a0d8db598c15311437c4b9aa43}{step} (const int pages=-\/1)
+bool \hyperlink{a00001_aba1c8a938a261ced48d3c01cf8da7676}{step} (const int pages=-\/1)
 \begin{DoxyCompactList}\small\item\em Will copy a specified number of pages to the destination database. \end{DoxyCompactList}\item 
-int \hyperlink{a00001_a83fc69146f90276d5ccfe308e054c25b}{get\-Total\-Page\-Count} () noexcept
+int \hyperlink{a00001_ab6d84e51fef3125dd3829d35e24b02a7}{total\-\_\-page\-\_\-count} () noexcept
 \begin{DoxyCompactList}\small\item\em Returns the total number of pages in the source database. \end{DoxyCompactList}\item 
-int \hyperlink{a00001_a5cb7d3bfbe87c8fe07b4eca01f6b04aa}{get\-Remaining\-Page\-Count} () noexcept
+int \hyperlink{a00001_a9da6a7da53bdd43839024ab13ae72258}{remaining\-\_\-page\-\_\-count} () noexcept
 \begin{DoxyCompactList}\small\item\em Returns the number of pages still to be backed up. \end{DoxyCompactList}\item 
-\hypertarget{a00001_a65c099db1b55215c85f962fdc33d2f21}{sqlite3\-\_\-backup $\ast$ \hyperlink{a00001_a65c099db1b55215c85f962fdc33d2f21}{get\-Handle} () noexcept}\label{a00001_a65c099db1b55215c85f962fdc33d2f21}
+\hypertarget{a00001_a556162efdf4055ab73275fcaa345c981}{sqlite3\-\_\-backup $\ast$ \hyperlink{a00001_a556162efdf4055ab73275fcaa345c981}{handle} () noexcept}\label{a00001_a556162efdf4055ab73275fcaa345c981}
 
 \begin{DoxyCompactList}\small\item\em Returns the pointer to the underlying sqlite3\-\_\-backup object. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -29,23 +29,23 @@ int \hyperlink{a00001_a5cb7d3bfbe87c8fe07b4eca01f6b04aa}{get\-Remaining\-Page\-C
 \subsection{Detailed Description}
 Used to aid in the process of backing up a database. 
 
-The \hyperlink{a00001}{Backup} object records state information about an ongoing online backup operation. It us useful either for creating backups of databases or for copying in-\/memory databases to or from persistent files. 
+The backup object records state information about an ongoing online backup operation. It us useful either for creating backups of databases or for copying in-\/memory databases to or from persistent files. 
 
 Definition at line 20 of file Backup.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{a00001_a363301d27d042970ce86c2487d33351c}{\index{S\-Q\-Lite\-::\-Backup@{S\-Q\-Lite\-::\-Backup}!Backup@{Backup}}
-\index{Backup@{Backup}!SQLite::Backup@{S\-Q\-Lite\-::\-Backup}}
-\subsubsection[{Backup}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Backup\-::\-Backup (
+\hypertarget{a00001_a62932f9aa6d1a5e313615cc5ca4f67fe}{\index{sqlite\-::backup@{sqlite\-::backup}!backup@{backup}}
+\index{backup@{backup}!sqlite::backup@{sqlite\-::backup}}
+\subsubsection[{backup}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::backup\-::backup (
 \begin{DoxyParamCaption}
-\item[{const {\bf D\-B\-Connection} \&}]{source, }
-\item[{const {\bf D\-B\-Connection} \&}]{destination, }
+\item[{const {\bf dbconnection} \&}]{source, }
+\item[{const {\bf dbconnection} \&}]{destination, }
 \item[{const std\-::string \&}]{source\-Name = {\ttfamily \char`\"{}main\char`\"{}}, }
 \item[{const std\-::string \&}]{destination\-Name = {\ttfamily \char`\"{}main\char`\"{}}}
 \end{DoxyParamCaption}
-)}}\label{a00001_a363301d27d042970ce86c2487d33351c}
+)}}\label{a00001_a62932f9aa6d1a5e313615cc5ca4f67fe}
 
 
 Construct a backup object. 
@@ -63,7 +63,7 @@ Construct a backup object.
 \end{DoxyParams}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em \hyperlink{a00006}{S\-Q\-Lite\-::\-Exception}} & If an error occurs when initializing a \hyperlink{a00001}{Backup} then an \hyperlink{a00006}{S\-Q\-Lite\-::\-Exception} will be raised. \\
+{\em \hyperlink{a00006}{sqlite\-::exception}} & If an error occurs when initializing a backup then an \hyperlink{a00006}{sqlite\-::exception} will be raised. \\
 \hline
 \end{DoxyExceptions}
 
@@ -73,49 +73,31 @@ Definition at line 14 of file Backup.\-cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{a00001_a5cb7d3bfbe87c8fe07b4eca01f6b04aa}{\index{S\-Q\-Lite\-::\-Backup@{S\-Q\-Lite\-::\-Backup}!get\-Remaining\-Page\-Count@{get\-Remaining\-Page\-Count}}
-\index{get\-Remaining\-Page\-Count@{get\-Remaining\-Page\-Count}!SQLite::Backup@{S\-Q\-Lite\-::\-Backup}}
-\subsubsection[{get\-Remaining\-Page\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int S\-Q\-Lite\-::\-Backup\-::get\-Remaining\-Page\-Count (
+\hypertarget{a00001_a9da6a7da53bdd43839024ab13ae72258}{\index{sqlite\-::backup@{sqlite\-::backup}!remaining\-\_\-page\-\_\-count@{remaining\-\_\-page\-\_\-count}}
+\index{remaining\-\_\-page\-\_\-count@{remaining\-\_\-page\-\_\-count}!sqlite::backup@{sqlite\-::backup}}
+\subsubsection[{remaining\-\_\-page\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int sqlite\-::backup\-::remaining\-\_\-page\-\_\-count (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00001_a5cb7d3bfbe87c8fe07b4eca01f6b04aa}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00001_a9da6a7da53bdd43839024ab13ae72258}
 
 
 Returns the number of pages still to be backed up. 
 
-The values returned by this function is only updated by \hyperlink{a00001_a6ec2f5a0d8db598c15311437c4b9aa43}{step()}. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next \hyperlink{a00001_a6ec2f5a0d8db598c15311437c4b9aa43}{step()}. \begin{DoxyReturn}{Returns}
+The values returned by this function is only updated by \hyperlink{a00001_aba1c8a938a261ced48d3c01cf8da7676}{step()}. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next \hyperlink{a00001_aba1c8a938a261ced48d3c01cf8da7676}{step()}. \begin{DoxyReturn}{Returns}
 The number of pages still to be backed up. 
 \end{DoxyReturn}
 
 
 Definition at line 51 of file Backup.\-cpp.
 
-\hypertarget{a00001_a83fc69146f90276d5ccfe308e054c25b}{\index{S\-Q\-Lite\-::\-Backup@{S\-Q\-Lite\-::\-Backup}!get\-Total\-Page\-Count@{get\-Total\-Page\-Count}}
-\index{get\-Total\-Page\-Count@{get\-Total\-Page\-Count}!SQLite::Backup@{S\-Q\-Lite\-::\-Backup}}
-\subsubsection[{get\-Total\-Page\-Count}]{\setlength{\rightskip}{0pt plus 5cm}int S\-Q\-Lite\-::\-Backup\-::get\-Total\-Page\-Count (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00001_a83fc69146f90276d5ccfe308e054c25b}
-
-
-Returns the total number of pages in the source database. 
-
-The values returned by this function is only updated by \hyperlink{a00001_a6ec2f5a0d8db598c15311437c4b9aa43}{step()}. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next \hyperlink{a00001_a6ec2f5a0d8db598c15311437c4b9aa43}{step()}. \begin{DoxyReturn}{Returns}
-The total number of pages in the source database. 
-\end{DoxyReturn}
-
-
-Definition at line 46 of file Backup.\-cpp.
-
-\hypertarget{a00001_a6ec2f5a0d8db598c15311437c4b9aa43}{\index{S\-Q\-Lite\-::\-Backup@{S\-Q\-Lite\-::\-Backup}!step@{step}}
-\index{step@{step}!SQLite::Backup@{S\-Q\-Lite\-::\-Backup}}
-\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}bool S\-Q\-Lite\-::\-Backup\-::step (
+\hypertarget{a00001_aba1c8a938a261ced48d3c01cf8da7676}{\index{sqlite\-::backup@{sqlite\-::backup}!step@{step}}
+\index{step@{step}!sqlite::backup@{sqlite\-::backup}}
+\subsubsection[{step}]{\setlength{\rightskip}{0pt plus 5cm}bool sqlite\-::backup\-::step (
 \begin{DoxyParamCaption}
 \item[{const int}]{pages = {\ttfamily -\/1}}
 \end{DoxyParamCaption}
-)}}\label{a00001_a6ec2f5a0d8db598c15311437c4b9aa43}
+)}}\label{a00001_aba1c8a938a261ced48d3c01cf8da7676}
 
 
 Will copy a specified number of pages to the destination database. 
@@ -123,16 +105,34 @@ Will copy a specified number of pages to the destination database.
 If pages is negative, all remaining source pages are copied.
 
 pages the number of pages to copy from source to destination database. \begin{DoxyReturn}{Returns}
-The returne value will be true if there are more pages to copy. False otherwise.
+The returns value will be true if there are more pages to copy. False otherwise.
 \end{DoxyReturn}
 
 \begin{DoxyExceptions}{Exceptions}
-{\em \hyperlink{a00006}{S\-Q\-Lite\-::\-Exception}} & If an error occurs when initializing a \hyperlink{a00001}{Backup} then an \hyperlink{a00006}{S\-Q\-Lite\-::\-Exception} will be raised. \\
+{\em \hyperlink{a00006}{sqlite\-::exception}} & If an error occurs when initializing a backup then an \hyperlink{a00006}{sqlite\-::exception} will be raised. \\
 \hline
 \end{DoxyExceptions}
 
 
 Definition at line 34 of file Backup.\-cpp.
+
+\hypertarget{a00001_ab6d84e51fef3125dd3829d35e24b02a7}{\index{sqlite\-::backup@{sqlite\-::backup}!total\-\_\-page\-\_\-count@{total\-\_\-page\-\_\-count}}
+\index{total\-\_\-page\-\_\-count@{total\-\_\-page\-\_\-count}!sqlite::backup@{sqlite\-::backup}}
+\subsubsection[{total\-\_\-page\-\_\-count}]{\setlength{\rightskip}{0pt plus 5cm}int sqlite\-::backup\-::total\-\_\-page\-\_\-count (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00001_ab6d84e51fef3125dd3829d35e24b02a7}
+
+
+Returns the total number of pages in the source database. 
+
+The values returned by this function is only updated by \hyperlink{a00001_aba1c8a938a261ced48d3c01cf8da7676}{step()}. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next \hyperlink{a00001_aba1c8a938a261ced48d3c01cf8da7676}{step()}. \begin{DoxyReturn}{Returns}
+The total number of pages in the source database. 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file Backup.\-cpp.
 
 
 

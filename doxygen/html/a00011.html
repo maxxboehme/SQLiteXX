@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::Row Class Reference</title>
+<title>SQLiteXX: sqlite::row Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,15 +83,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00011.html">Row</a></li>  </ul>
+<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00011.html">row</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00047.html">List of all members</a>  </div>
+<a href="a00048.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::Row Class Reference</div>  </div>
+<div class="title">sqlite::row Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -100,107 +100,110 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="a00032_source.html">Statement.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for SQLite::Row:</div>
+Inheritance diagram for sqlite::row:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="a00011.png" usemap="#SQLite::Row_map" alt=""/>
-  <map id="SQLite::Row_map" name="SQLite::Row_map">
-<area href="a00010.html" alt="SQLite::Reader&lt; Row &gt;" shape="rect" coords="0,0,145,24"/>
+  <img src="a00011.png" usemap="#sqlite::row_map" alt=""/>
+  <map id="sqlite::row_map" name="sqlite::row_map">
+<area href="a00010.html" alt="sqlite::reader&lt; row &gt;" shape="rect" coords="0,0,129,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac93d6eec191f8f92ce72f481935d1832"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac93d6eec191f8f92ce72f481935d1832"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html#ac93d6eec191f8f92ce72f481935d1832">Row</a> (sqlite3_stmt *const statement) noexcept</td></tr>
-<tr class="memdesc:ac93d6eec191f8f92ce72f481935d1832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="a00011.html" title="Represents a returned row when stepping through a &quot;SELECT&quot; statement. ">Row</a> object from a sqlite3_stmt. <br/></td></tr>
-<tr class="separator:ac93d6eec191f8f92ce72f481935d1832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0cdd34663266ff8c19ee1313a87d51f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cdd34663266ff8c19ee1313a87d51f0"></a>
-sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html#a0cdd34663266ff8c19ee1313a87d51f0">getHandle</a> () const noexcept</td></tr>
-<tr class="memdesc:a0cdd34663266ff8c19ee1313a87d51f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying "sqlite3_stmt" object. <br/></td></tr>
-<tr class="separator:a0cdd34663266ff8c19ee1313a87d51f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82ca0ee6352667cc9f6d41972dedd5a6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html#a82ca0ee6352667cc9f6d41972dedd5a6">operator[]</a> (int column) const </td></tr>
-<tr class="memdesc:a82ca0ee6352667cc9f6d41972dedd5a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access specified element of a row.  <a href="#a82ca0ee6352667cc9f6d41972dedd5a6">More...</a><br/></td></tr>
-<tr class="separator:a82ca0ee6352667cc9f6d41972dedd5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82c5bc45048b8328a2fcc9bb4ff975f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a82c5bc45048b8328a2fcc9bb4ff975f2">getInt</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a82c5bc45048b8328a2fcc9bb4ff975f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a82c5bc45048b8328a2fcc9bb4ff975f2">More...</a><br/></td></tr>
-<tr class="separator:a82c5bc45048b8328a2fcc9bb4ff975f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87dd8234c2bd5f19466813f8a68ab80a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a87dd8234c2bd5f19466813f8a68ab80a">getInt</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a87dd8234c2bd5f19466813f8a68ab80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a87dd8234c2bd5f19466813f8a68ab80a">More...</a><br/></td></tr>
-<tr class="separator:a87dd8234c2bd5f19466813f8a68ab80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb7b9705a4638d6d5af5ca26dfa474ff"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#adb7b9705a4638d6d5af5ca26dfa474ff">getInt64</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:adb7b9705a4638d6d5af5ca26dfa474ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#adb7b9705a4638d6d5af5ca26dfa474ff">More...</a><br/></td></tr>
-<tr class="separator:adb7b9705a4638d6d5af5ca26dfa474ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea6d24bb9247bfc52fe77d62be961dd2"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aea6d24bb9247bfc52fe77d62be961dd2">getInt64</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:aea6d24bb9247bfc52fe77d62be961dd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#aea6d24bb9247bfc52fe77d62be961dd2">More...</a><br/></td></tr>
-<tr class="separator:aea6d24bb9247bfc52fe77d62be961dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a971fb706b9215a89532ac48640f94832"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a971fb706b9215a89532ac48640f94832">getUInt</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a971fb706b9215a89532ac48640f94832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a971fb706b9215a89532ac48640f94832">More...</a><br/></td></tr>
-<tr class="separator:a971fb706b9215a89532ac48640f94832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a18315a8379249158c3f827441e8f6de0"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a18315a8379249158c3f827441e8f6de0">getUInt</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a18315a8379249158c3f827441e8f6de0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a18315a8379249158c3f827441e8f6de0">More...</a><br/></td></tr>
-<tr class="separator:a18315a8379249158c3f827441e8f6de0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a679e56078c78e01c99fa08ad0b7ee782"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a679e56078c78e01c99fa08ad0b7ee782">getDouble</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a679e56078c78e01c99fa08ad0b7ee782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#a679e56078c78e01c99fa08ad0b7ee782">More...</a><br/></td></tr>
-<tr class="separator:a679e56078c78e01c99fa08ad0b7ee782"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e9dd813439e8cda7608e18c1ccce5f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a45e9dd813439e8cda7608e18c1ccce5f">getDouble</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a45e9dd813439e8cda7608e18c1ccce5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#a45e9dd813439e8cda7608e18c1ccce5f">More...</a><br/></td></tr>
-<tr class="separator:a45e9dd813439e8cda7608e18c1ccce5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a80028dc9f221648fe2398b40bd380c31"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">Blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a80028dc9f221648fe2398b40bd380c31">getBlob</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a80028dc9f221648fe2398b40bd380c31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Blob object.  <a href="#a80028dc9f221648fe2398b40bd380c31">More...</a><br/></td></tr>
-<tr class="separator:a80028dc9f221648fe2398b40bd380c31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e50d9ec365c547b5edb7d062aeba72b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">Blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a4e50d9ec365c547b5edb7d062aeba72b">getBlob</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a4e50d9ec365c547b5edb7d062aeba72b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Blob object.  <a href="#a4e50d9ec365c547b5edb7d062aeba72b">More...</a><br/></td></tr>
-<tr class="separator:a4e50d9ec365c547b5edb7d062aeba72b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0920d021f6962f75e7b555e3f20fc0fc"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a0920d021f6962f75e7b555e3f20fc0fc">getString</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a0920d021f6962f75e7b555e3f20fc0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#a0920d021f6962f75e7b555e3f20fc0fc">More...</a><br/></td></tr>
-<tr class="separator:a0920d021f6962f75e7b555e3f20fc0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44f9f5da46aa91b869fe26a188e803fa"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a44f9f5da46aa91b869fe26a188e803fa">getString</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:a44f9f5da46aa91b869fe26a188e803fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#a44f9f5da46aa91b869fe26a188e803fa">More...</a><br/></td></tr>
-<tr class="separator:a44f9f5da46aa91b869fe26a188e803fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b48f9e2ffbcfe787d85b4372a7ee29d"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a2b48f9e2ffbcfe787d85b4372a7ee29d">getU16String</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a2b48f9e2ffbcfe787d85b4372a7ee29d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#a2b48f9e2ffbcfe787d85b4372a7ee29d">More...</a><br/></td></tr>
-<tr class="separator:a2b48f9e2ffbcfe787d85b4372a7ee29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6024ad6e74ee1ac47ad0ce79f905026"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad6024ad6e74ee1ac47ad0ce79f905026">getU16String</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:ad6024ad6e74ee1ac47ad0ce79f905026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#ad6024ad6e74ee1ac47ad0ce79f905026">More...</a><br/></td></tr>
-<tr class="separator:ad6024ad6e74ee1ac47ad0ce79f905026"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41fcbc5da6eb3fe6fc75e4faed208fc6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a41fcbc5da6eb3fe6fc75e4faed208fc6">getValue</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a41fcbc5da6eb3fe6fc75e4faed208fc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Value object.  <a href="#a41fcbc5da6eb3fe6fc75e4faed208fc6">More...</a><br/></td></tr>
-<tr class="separator:a41fcbc5da6eb3fe6fc75e4faed208fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad352a7124ee46d756462c8a1b014599a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad352a7124ee46d756462c8a1b014599a">getValue</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:ad352a7124ee46d756462c8a1b014599a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Value object.  <a href="#ad352a7124ee46d756462c8a1b014599a">More...</a><br/></td></tr>
-<tr class="separator:ad352a7124ee46d756462c8a1b014599a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb571e9157ef46c42ed48fc229b7842d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aeb571e9157ef46c42ed48fc229b7842d">getBytes</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:aeb571e9157ef46c42ed48fc229b7842d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#aeb571e9157ef46c42ed48fc229b7842d">More...</a><br/></td></tr>
-<tr class="separator:aeb571e9157ef46c42ed48fc229b7842d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad183a562774f9590273bf35c6e232a1a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad183a562774f9590273bf35c6e232a1a">getBytes</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:ad183a562774f9590273bf35c6e232a1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#ad183a562774f9590273bf35c6e232a1a">More...</a><br/></td></tr>
-<tr class="separator:ad183a562774f9590273bf35c6e232a1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0450ea397b1a9d8dd636b82c8757d33e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a0450ea397b1a9d8dd636b82c8757d33e">getType</a> (const int column) const noexcept</td></tr>
-<tr class="memdesc:a0450ea397b1a9d8dd636b82c8757d33e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#a0450ea397b1a9d8dd636b82c8757d33e">More...</a><br/></td></tr>
-<tr class="separator:a0450ea397b1a9d8dd636b82c8757d33e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4f049a45c69b9e1bf6db4cf63699f64"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ae4f049a45c69b9e1bf6db4cf63699f64">getType</a> (const std::string &amp;name) const noexcept</td></tr>
-<tr class="memdesc:ae4f049a45c69b9e1bf6db4cf63699f64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#ae4f049a45c69b9e1bf6db4cf63699f64">More...</a><br/></td></tr>
-<tr class="separator:ae4f049a45c69b9e1bf6db4cf63699f64"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e6b9d0d99dea8964a34a3c2f08e99bc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a9e6b9d0d99dea8964a34a3c2f08e99bc">getColumnCount</a> () const noexcept</td></tr>
-<tr class="memdesc:a9e6b9d0d99dea8964a34a3c2f08e99bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of columns in the result set returned by the prepared statement.  <a href="#a9e6b9d0d99dea8964a34a3c2f08e99bc">More...</a><br/></td></tr>
-<tr class="separator:a9e6b9d0d99dea8964a34a3c2f08e99bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5004961d65336631d45de411ffb87cd5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a5004961d65336631d45de411ffb87cd5">getColumnName</a> (const int index) const noexcept</td></tr>
-<tr class="memdesc:a5004961d65336631d45de411ffb87cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#a5004961d65336631d45de411ffb87cd5">More...</a><br/></td></tr>
-<tr class="separator:a5004961d65336631d45de411ffb87cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af46d30137ad020b1e22ad703810ea002"><td class="memItemLeft" align="right" valign="top">const char16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#af46d30137ad020b1e22ad703810ea002">getColumnWideName</a> (const int index) const noexcept</td></tr>
-<tr class="memdesc:af46d30137ad020b1e22ad703810ea002"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#af46d30137ad020b1e22ad703810ea002">More...</a><br/></td></tr>
-<tr class="separator:af46d30137ad020b1e22ad703810ea002"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7eaa050a97cda893e9737bca416f0cb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ae7eaa050a97cda893e9737bca416f0cb">getColumnIndex</a> (const std::string &amp;name) const</td></tr>
-<tr class="memdesc:ae7eaa050a97cda893e9737bca416f0cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the position of a column with the specified name.  <a href="#ae7eaa050a97cda893e9737bca416f0cb">More...</a><br/></td></tr>
-<tr class="separator:ae7eaa050a97cda893e9737bca416f0cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade44769ac78d6eff1aa20c20a09e4a79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ade44769ac78d6eff1aa20c20a09e4a79"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html#ade44769ac78d6eff1aa20c20a09e4a79">row</a> (sqlite3_stmt *const <a class="el" href="a00013.html">statement</a>) noexcept</td></tr>
+<tr class="memdesc:ade44769ac78d6eff1aa20c20a09e4a79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a row object from a sqlite3_stmt. <br/></td></tr>
+<tr class="separator:ade44769ac78d6eff1aa20c20a09e4a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ee9eb13492a23d440abe1fe903bafc8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ee9eb13492a23d440abe1fe903bafc8"></a>
+sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html#a6ee9eb13492a23d440abe1fe903bafc8">handle</a> () const noexcept</td></tr>
+<tr class="memdesc:a6ee9eb13492a23d440abe1fe903bafc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying "sqlite3_stmt" object. <br/></td></tr>
+<tr class="separator:a6ee9eb13492a23d440abe1fe903bafc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c8e886d5beb078d5111bdf812232c60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html#a0c8e886d5beb078d5111bdf812232c60">operator[]</a> (int column) const </td></tr>
+<tr class="memdesc:a0c8e886d5beb078d5111bdf812232c60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access specified element of a row.  <a href="#a0c8e886d5beb078d5111bdf812232c60">More...</a><br/></td></tr>
+<tr class="separator:a0c8e886d5beb078d5111bdf812232c60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc08612b2968a75124edc91c0d6c72f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html#adcc08612b2968a75124edc91c0d6c72f">operator[]</a> (const std::string &amp;name) const </td></tr>
+<tr class="memdesc:adcc08612b2968a75124edc91c0d6c72f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Access specified element of a row.  <a href="#adcc08612b2968a75124edc91c0d6c72f">More...</a><br/></td></tr>
+<tr class="separator:adcc08612b2968a75124edc91c0d6c72f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c720c80fd5c1f0f618c24a3d09e2ef5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a1c720c80fd5c1f0f618c24a3d09e2ef5">get_int</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a1c720c80fd5c1f0f618c24a3d09e2ef5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a1c720c80fd5c1f0f618c24a3d09e2ef5">More...</a><br/></td></tr>
+<tr class="separator:a1c720c80fd5c1f0f618c24a3d09e2ef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e1f86fdffd271cb92deb0b21d22fd05"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a7e1f86fdffd271cb92deb0b21d22fd05">get_int</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a7e1f86fdffd271cb92deb0b21d22fd05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an integer.  <a href="#a7e1f86fdffd271cb92deb0b21d22fd05">More...</a><br/></td></tr>
+<tr class="separator:a7e1f86fdffd271cb92deb0b21d22fd05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaf16f586744a6bc0ecfb74ab791306c"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#afaf16f586744a6bc0ecfb74ab791306c">get_int64</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:afaf16f586744a6bc0ecfb74ab791306c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#afaf16f586744a6bc0ecfb74ab791306c">More...</a><br/></td></tr>
+<tr class="separator:afaf16f586744a6bc0ecfb74ab791306c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87383f607d2ffc2875eac57ecf8e3989"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a87383f607d2ffc2875eac57ecf8e3989">get_int64</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a87383f607d2ffc2875eac57ecf8e3989"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a 64-bit integer.  <a href="#a87383f607d2ffc2875eac57ecf8e3989">More...</a><br/></td></tr>
+<tr class="separator:a87383f607d2ffc2875eac57ecf8e3989"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02e09a2778e2f4d146ef02cd6c9e86df"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a02e09a2778e2f4d146ef02cd6c9e86df">get_uint</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a02e09a2778e2f4d146ef02cd6c9e86df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a02e09a2778e2f4d146ef02cd6c9e86df">More...</a><br/></td></tr>
+<tr class="separator:a02e09a2778e2f4d146ef02cd6c9e86df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a662bad64308f5995cb03a0ccb772acdc"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a662bad64308f5995cb03a0ccb772acdc">get_uint</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a662bad64308f5995cb03a0ccb772acdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as an unsigned integer.  <a href="#a662bad64308f5995cb03a0ccb772acdc">More...</a><br/></td></tr>
+<tr class="separator:a662bad64308f5995cb03a0ccb772acdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4052f3e593580c81ba2b8622e2652eb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aa4052f3e593580c81ba2b8622e2652eb">get_double</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:aa4052f3e593580c81ba2b8622e2652eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#aa4052f3e593580c81ba2b8622e2652eb">More...</a><br/></td></tr>
+<tr class="separator:aa4052f3e593580c81ba2b8622e2652eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0613aae6ee73cd54d7f7d0d711494737"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a0613aae6ee73cd54d7f7d0d711494737">get_double</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a0613aae6ee73cd54d7f7d0d711494737"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a double.  <a href="#a0613aae6ee73cd54d7f7d0d711494737">More...</a><br/></td></tr>
+<tr class="separator:a0613aae6ee73cd54d7f7d0d711494737"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1b75c884158222778d2d6ec8b9ec18"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#abd1b75c884158222778d2d6ec8b9ec18">get_blob</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:abd1b75c884158222778d2d6ec8b9ec18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a blob object.  <a href="#abd1b75c884158222778d2d6ec8b9ec18">More...</a><br/></td></tr>
+<tr class="separator:abd1b75c884158222778d2d6ec8b9ec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a94b5c5a0d153ca7e2f0ef6719dfc9a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="a00002.html">blob</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a3a94b5c5a0d153ca7e2f0ef6719dfc9a">get_blob</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a3a94b5c5a0d153ca7e2f0ef6719dfc9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a Blob object.  <a href="#a3a94b5c5a0d153ca7e2f0ef6719dfc9a">More...</a><br/></td></tr>
+<tr class="separator:a3a94b5c5a0d153ca7e2f0ef6719dfc9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8716fe92a821ebc0799097bd6cc6d53c"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a8716fe92a821ebc0799097bd6cc6d53c">get_string</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a8716fe92a821ebc0799097bd6cc6d53c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#a8716fe92a821ebc0799097bd6cc6d53c">More...</a><br/></td></tr>
+<tr class="separator:a8716fe92a821ebc0799097bd6cc6d53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c842deb81d9eb20388746672a96d29"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ab9c842deb81d9eb20388746672a96d29">get_string</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:ab9c842deb81d9eb20388746672a96d29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a string.  <a href="#ab9c842deb81d9eb20388746672a96d29">More...</a><br/></td></tr>
+<tr class="separator:ab9c842deb81d9eb20388746672a96d29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abfef02b657c992a2d07e28a07e41e533"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#abfef02b657c992a2d07e28a07e41e533">get_u16string</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:abfef02b657c992a2d07e28a07e41e533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#abfef02b657c992a2d07e28a07e41e533">More...</a><br/></td></tr>
+<tr class="separator:abfef02b657c992a2d07e28a07e41e533"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10d3ff33e5f4ee471bc14cc41ec86c1"><td class="memItemLeft" align="right" valign="top">const std::u16string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#af10d3ff33e5f4ee471bc14cc41ec86c1">get_u16string</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:af10d3ff33e5f4ee471bc14cc41ec86c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a UTF-16 string.  <a href="#af10d3ff33e5f4ee471bc14cc41ec86c1">More...</a><br/></td></tr>
+<tr class="separator:af10d3ff33e5f4ee471bc14cc41ec86c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af776fbdf8dc1150b628b04eca10841f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#af776fbdf8dc1150b628b04eca10841f4">get_value</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:af776fbdf8dc1150b628b04eca10841f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a value object.  <a href="#af776fbdf8dc1150b628b04eca10841f4">More...</a><br/></td></tr>
+<tr class="separator:af776fbdf8dc1150b628b04eca10841f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7835e8a981450975fee7771fa863ffe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00015.html">value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad7835e8a981450975fee7771fa863ffe">get_value</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:ad7835e8a981450975fee7771fa863ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the specified column value as a value object.  <a href="#ad7835e8a981450975fee7771fa863ffe">More...</a><br/></td></tr>
+<tr class="separator:ad7835e8a981450975fee7771fa863ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4404227950aca8d5f01255a5541dbb4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ac4404227950aca8d5f01255a5541dbb4">get_bytes</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:ac4404227950aca8d5f01255a5541dbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#ac4404227950aca8d5f01255a5541dbb4">More...</a><br/></td></tr>
+<tr class="separator:ac4404227950aca8d5f01255a5541dbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a315b97406b5ba48bcd14857192d88d5e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a315b97406b5ba48bcd14857192d88d5e">get_bytes</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:a315b97406b5ba48bcd14857192d88d5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the column value.  <a href="#a315b97406b5ba48bcd14857192d88d5e">More...</a><br/></td></tr>
+<tr class="separator:a315b97406b5ba48bcd14857192d88d5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b8269e0f9387afa36ab90eb55899dc4"><td class="memItemLeft" align="right" valign="top">datatype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a2b8269e0f9387afa36ab90eb55899dc4">get_type</a> (const int column) const noexcept</td></tr>
+<tr class="memdesc:a2b8269e0f9387afa36ab90eb55899dc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#a2b8269e0f9387afa36ab90eb55899dc4">More...</a><br/></td></tr>
+<tr class="separator:a2b8269e0f9387afa36ab90eb55899dc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5ab606cf12aa4d2c9a183998420df44"><td class="memItemLeft" align="right" valign="top">datatype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ac5ab606cf12aa4d2c9a183998420df44">get_type</a> (const std::string &amp;name) const noexcept</td></tr>
+<tr class="memdesc:ac5ab606cf12aa4d2c9a183998420df44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the type of the specified column.  <a href="#ac5ab606cf12aa4d2c9a183998420df44">More...</a><br/></td></tr>
+<tr class="separator:ac5ab606cf12aa4d2c9a183998420df44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7390afddbb1edc788f0afc6ce41f4562"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#a7390afddbb1edc788f0afc6ce41f4562">column_count</a> () const noexcept</td></tr>
+<tr class="memdesc:a7390afddbb1edc788f0afc6ce41f4562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of columns in the result set returned by the prepared statement.  <a href="#a7390afddbb1edc788f0afc6ce41f4562">More...</a><br/></td></tr>
+<tr class="separator:a7390afddbb1edc788f0afc6ce41f4562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4c33f9b700a47c08f54e7b65afd34f2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#ad4c33f9b700a47c08f54e7b65afd34f2">get_column_name</a> (const int index) const noexcept</td></tr>
+<tr class="memdesc:ad4c33f9b700a47c08f54e7b65afd34f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#ad4c33f9b700a47c08f54e7b65afd34f2">More...</a><br/></td></tr>
+<tr class="separator:ad4c33f9b700a47c08f54e7b65afd34f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7f2f528b10da75672e55fbc36566f9c"><td class="memItemLeft" align="right" valign="top">const char16_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aa7f2f528b10da75672e55fbc36566f9c">get_column_wide_name</a> (const int index) const noexcept</td></tr>
+<tr class="memdesc:aa7f2f528b10da75672e55fbc36566f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the name assigned to a particular column.  <a href="#aa7f2f528b10da75672e55fbc36566f9c">More...</a><br/></td></tr>
+<tr class="separator:aa7f2f528b10da75672e55fbc36566f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaca43590a209c2c7a0f7420c8a6c47b3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html#aaca43590a209c2c7a0f7420c8a6c47b3">get_column_index</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:aaca43590a209c2c7a0f7420c8a6c47b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the position of a column with the specified name.  <a href="#aaca43590a209c2c7a0f7420c8a6c47b3">More...</a><br/></td></tr>
+<tr class="separator:aaca43590a209c2c7a0f7420c8a6c47b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Represents a returned row when stepping through a "SELECT" statement. </p>
 
 <p>Definition at line <a class="el" href="a00032_source.html#l00307">307</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a80028dc9f221648fe2398b40bd380c31"></a>
+<a class="anchor" id="a7390afddbb1edc788f0afc6ce41f4562"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -208,7 +211,36 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="a00002.html">Blob</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getBlob </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::column_count </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of columns in the result set returned by the prepared statement. </p>
+<p>If this method returns 0, that means the prepared statment returns no data (for example an UPDATE). </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of columns in the result set. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00032_source.html#l00234">234</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="abd1b75c884158222778d2d6ec8b9ec18"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="a00002.html">blob</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_blob </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -222,7 +254,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified column value as a Blob object. </p>
+<p>Returns the specified column value as a blob object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>position of the column to return </td></tr>
@@ -235,7 +267,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a4e50d9ec365c547b5edb7d062aeba72b"></a>
+<a class="anchor" id="a3a94b5c5a0d153ca7e2f0ef6719dfc9a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -243,7 +275,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="a00002.html">Blob</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getBlob </td>
+          <td class="memname">const <a class="el" href="a00002.html">blob</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_blob </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -270,7 +302,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="aeb571e9157ef46c42ed48fc229b7842d"></a>
+<a class="anchor" id="ac4404227950aca8d5f01255a5541dbb4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -278,7 +310,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getBytes </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_bytes </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -305,7 +337,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="ad183a562774f9590273bf35c6e232a1a"></a>
+<a class="anchor" id="a315b97406b5ba48bcd14857192d88d5e"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -313,7 +345,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getBytes </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_bytes </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -340,7 +372,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a9e6b9d0d99dea8964a34a3c2f08e99bc"></a>
+<a class="anchor" id="aaca43590a209c2c7a0f7420c8a6c47b3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -348,36 +380,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getColumnCount </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the number of columns in the result set returned by the prepared statement. </p>
-<p>If this method returns 0, that means the prepared statment returns no data (for example an UPDATE). </p>
-<dl class="section return"><dt>Returns</dt><dd>The number of columns in the result set. </dd></dl>
-
-<p>Definition at line <a class="el" href="a00032_source.html#l00234">234</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae7eaa050a97cda893e9737bca416f0cb"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getColumnIndex </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_column_index </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -404,7 +407,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a5004961d65336631d45de411ffb87cd5"></a>
+<a class="anchor" id="ad4c33f9b700a47c08f54e7b65afd34f2"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -412,7 +415,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getColumnName </td>
+          <td class="memname">const char* <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_column_name </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -439,7 +442,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="af46d30137ad020b1e22ad703810ea002"></a>
+<a class="anchor" id="aa7f2f528b10da75672e55fbc36566f9c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -447,7 +450,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char16_t* <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getColumnWideName </td>
+          <td class="memname">const char16_t* <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_column_wide_name </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -474,7 +477,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a679e56078c78e01c99fa08ad0b7ee782"></a>
+<a class="anchor" id="aa4052f3e593580c81ba2b8622e2652eb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -482,7 +485,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getDouble </td>
+          <td class="memname">double <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_double </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -509,7 +512,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a45e9dd813439e8cda7608e18c1ccce5f"></a>
+<a class="anchor" id="a0613aae6ee73cd54d7f7d0d711494737"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -517,7 +520,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getDouble </td>
+          <td class="memname">double <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_double </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -544,7 +547,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a82c5bc45048b8328a2fcc9bb4ff975f2"></a>
+<a class="anchor" id="a1c720c80fd5c1f0f618c24a3d09e2ef5"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -552,7 +555,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getInt </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_int </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -579,7 +582,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a87dd8234c2bd5f19466813f8a68ab80a"></a>
+<a class="anchor" id="a7e1f86fdffd271cb92deb0b21d22fd05"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -587,7 +590,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getInt </td>
+          <td class="memname">int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_int </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -614,7 +617,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="adb7b9705a4638d6d5af5ca26dfa474ff"></a>
+<a class="anchor" id="afaf16f586744a6bc0ecfb74ab791306c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -622,7 +625,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int64_t <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getInt64 </td>
+          <td class="memname">int64_t <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_int64 </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -649,7 +652,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="aea6d24bb9247bfc52fe77d62be961dd2"></a>
+<a class="anchor" id="a87383f607d2ffc2875eac57ecf8e3989"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -657,7 +660,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int64_t <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getInt64 </td>
+          <td class="memname">int64_t <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_int64 </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -684,7 +687,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a0920d021f6962f75e7b555e3f20fc0fc"></a>
+<a class="anchor" id="a8716fe92a821ebc0799097bd6cc6d53c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -692,7 +695,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getString </td>
+          <td class="memname">const std::string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_string </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -719,7 +722,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a44f9f5da46aa91b869fe26a188e803fa"></a>
+<a class="anchor" id="ab9c842deb81d9eb20388746672a96d29"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -727,7 +730,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getString </td>
+          <td class="memname">const std::string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_string </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -754,7 +757,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a0450ea397b1a9d8dd636b82c8757d33e"></a>
+<a class="anchor" id="a2b8269e0f9387afa36ab90eb55899dc4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -762,7 +765,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getType </td>
+          <td class="memname">datatype <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_type </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -783,13 +786,13 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The SQLiteXX::Type value for a column </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The sqlite::datatype value for a column </dd></dl>
 
 <p>Definition at line <a class="el" href="a00032_source.html#l00215">215</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ae4f049a45c69b9e1bf6db4cf63699f64"></a>
+<a class="anchor" id="ac5ab606cf12aa4d2c9a183998420df44"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -797,7 +800,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">Type</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getType </td>
+          <td class="memname">datatype <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_type </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -818,13 +821,13 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The SQLiteXX::Type value for a column </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The sqlite::datatype value for a column </dd></dl>
 
 <p>Definition at line <a class="el" href="a00032_source.html#l00224">224</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a2b48f9e2ffbcfe787d85b4372a7ee29d"></a>
+<a class="anchor" id="abfef02b657c992a2d07e28a07e41e533"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -832,7 +835,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::u16string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getU16String </td>
+          <td class="memname">const std::u16string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_u16string </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -859,7 +862,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="ad6024ad6e74ee1ac47ad0ce79f905026"></a>
+<a class="anchor" id="af10d3ff33e5f4ee471bc14cc41ec86c1"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -867,7 +870,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::u16string <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getU16String </td>
+          <td class="memname">const std::u16string <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_u16string </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -894,7 +897,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a971fb706b9215a89532ac48640f94832"></a>
+<a class="anchor" id="a02e09a2778e2f4d146ef02cd6c9e86df"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -902,7 +905,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getUInt </td>
+          <td class="memname">unsigned int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_uint </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -929,7 +932,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a18315a8379249158c3f827441e8f6de0"></a>
+<a class="anchor" id="a662bad64308f5995cb03a0ccb772acdc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -937,7 +940,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned int <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getUInt </td>
+          <td class="memname">unsigned int <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_uint </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -964,7 +967,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a41fcbc5da6eb3fe6fc75e4faed208fc6"></a>
+<a class="anchor" id="af776fbdf8dc1150b628b04eca10841f4"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -972,7 +975,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00015.html">Value</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getValue </td>
+          <td class="memname"><a class="el" href="a00015.html">value</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_value </td>
           <td>(</td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -986,7 +989,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified column value as a Value object. </p>
+<p>Returns the specified column value as a value object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">column</td><td>position of the column to return </td></tr>
@@ -999,7 +1002,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="ad352a7124ee46d756462c8a1b014599a"></a>
+<a class="anchor" id="ad7835e8a981450975fee7771fa863ffe"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1007,7 +1010,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00015.html">Value</a> <a class="el" href="a00010.html">SQLite::Reader</a>&lt; <a class="el" href="a00011.html">Row</a>  &gt;::getValue </td>
+          <td class="memname"><a class="el" href="a00015.html">value</a> <a class="el" href="a00010.html">sqlite::reader</a>&lt; <a class="el" href="a00011.html">row</a>  &gt;::get_value </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em></td><td>)</td>
@@ -1021,7 +1024,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </table>
 </div><div class="memdoc">
 
-<p>Returns the specified column value as a Value object. </p>
+<p>Returns the specified column value as a value object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>name of the column to return </td></tr>
@@ -1034,7 +1037,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 
 </div>
 </div>
-<a class="anchor" id="a82ca0ee6352667cc9f6d41972dedd5a6"></a>
+<a class="anchor" id="a0c8e886d5beb078d5111bdf812232c60"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1042,7 +1045,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00015.html">Value</a> SQLite::Row::operator[] </td>
+          <td class="memname"><a class="el" href="a00015.html">value</a> sqlite::row::operator[] </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>column</em></td><td>)</td>
@@ -1063,9 +1066,44 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="a00015.html" title="A SQLite dynamically typed value object, aka &quot;sqlite3_value&quot;. ">Value</a> object representing requested element </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>value object representing requested element </dd></dl>
 
 <p>Definition at line <a class="el" href="a00032_source.html#l00328">328</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="adcc08612b2968a75124edc91c0d6c72f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00015.html">value</a> sqlite::row::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Access specified element of a row. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>column name of the column to return </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>value object representing requested element </dd></dl>
+
+<p>Definition at line <a class="el" href="a00032_source.html#l00337">337</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
 
 </div>
 </div>
@@ -1075,7 +1113,7 @@ sqlite3_stmt *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:34 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:03 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

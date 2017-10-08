@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,36 +94,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;sqlite3.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>SQLite</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00009.html">   17</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00009.html">Mutex</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00009.html">Mutex</a>(sqlite3_mutex *mutex);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="a00009.html">Mutex</a>(<span class="keyword">const</span> <a class="code" href="a00009.html">Mutex</a>&amp; other) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>sqlite {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="a00009.html">   19</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00009.html">mutex</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00009.html">mutex</a>(sqlite3_mutex *<a class="code" href="a00009.html">mutex</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        mutex(<span class="keyword">const</span> mutex &amp;other) = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00009.html#a56ba1f0c1411940ab52279497d15812a">lock</a>() noexcept;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00009.html#a6a793427100e67bfac37ea0286c5d2bb">lock</a>() noexcept;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="a00009.html#a95b5ebd5fef0bd37b30e3867d60389f8">tryLock</a>() noexcept;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="a00009.html#a8b02e4596fcbd79e2be5f0c1de9516c3">try_lock</a>() noexcept;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00009.html#ad9238aeb94205ac18d67c9652dcc6ef9">unlock</a>() noexcept;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00009.html#a67937d9bd0193934404693dbef0b21f6">unlock</a>() noexcept;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        sqlite3_mutex* native_handle;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        sqlite3_mutex *native_handle;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    };</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="a00009_html_ad9238aeb94205ac18d67c9652dcc6ef9"><div class="ttname"><a href="a00009.html#ad9238aeb94205ac18d67c9652dcc6ef9">SQLite::Mutex::unlock</a></div><div class="ttdeci">void unlock() noexcept</div><div class="ttdoc">Unlocks the mutex. </div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00022">Mutex.cpp:22</a></div></div>
-<div class="ttc" id="a00009_html"><div class="ttname"><a href="a00009.html">SQLite::Mutex</a></div><div class="ttdoc">Helps with serializing access to a database connection. </div><div class="ttdef"><b>Definition:</b> <a href="a00027_source.html#l00017">Mutex.h:17</a></div></div>
-<div class="ttc" id="a00009_html_a95b5ebd5fef0bd37b30e3867d60389f8"><div class="ttname"><a href="a00009.html#a95b5ebd5fef0bd37b30e3867d60389f8">SQLite::Mutex::tryLock</a></div><div class="ttdeci">bool tryLock() noexcept</div><div class="ttdoc">Tries to lock the mutex, returns if the mutex is not available. </div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00017">Mutex.cpp:17</a></div></div>
-<div class="ttc" id="a00009_html_a56ba1f0c1411940ab52279497d15812a"><div class="ttname"><a href="a00009.html#a56ba1f0c1411940ab52279497d15812a">SQLite::Mutex::lock</a></div><div class="ttdeci">void lock() noexcept</div><div class="ttdoc">Locks the mutex and blocks if the mutex is not available. </div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00012">Mutex.cpp:12</a></div></div>
+<div class="ttc" id="a00009_html_a8b02e4596fcbd79e2be5f0c1de9516c3"><div class="ttname"><a href="a00009.html#a8b02e4596fcbd79e2be5f0c1de9516c3">sqlite::mutex::try_lock</a></div><div class="ttdeci">bool try_lock() noexcept</div><div class="ttdoc">Tries to lock the mutex, returns if the mutex is not available. </div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00014">Mutex.cpp:14</a></div></div>
+<div class="ttc" id="a00009_html"><div class="ttname"><a href="a00009.html">sqlite::mutex</a></div><div class="ttdoc">Helps with serializing access to a database connection. </div><div class="ttdef"><b>Definition:</b> <a href="a00027_source.html#l00019">Mutex.h:19</a></div></div>
+<div class="ttc" id="a00009_html_a67937d9bd0193934404693dbef0b21f6"><div class="ttname"><a href="a00009.html#a67937d9bd0193934404693dbef0b21f6">sqlite::mutex::unlock</a></div><div class="ttdeci">void unlock() noexcept</div><div class="ttdoc">Unlocks the mutex. </div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00018">Mutex.cpp:18</a></div></div>
+<div class="ttc" id="a00009_html_a6a793427100e67bfac37ea0286c5d2bb"><div class="ttname"><a href="a00009.html#a6a793427100e67bfac37ea0286c5d2bb">sqlite::mutex::lock</a></div><div class="ttdeci">void lock() noexcept</div><div class="ttdoc">Locks the mutex and blocks if the mutex is not available. </div><div class="ttdef"><b>Definition:</b> <a href="a00026_source.html#l00010">Mutex.cpp:10</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:33 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['statement',['Statement',['../a00013.html',1,'SQLite']]]
+  ['statement',['statement',['../a00013.html',1,'sqlite']]]
 ];

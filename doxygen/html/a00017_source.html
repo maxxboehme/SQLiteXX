@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,36 +92,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00024.html">Exception.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="a00038.html">    5</a></span>&#160;<span class="keyword">namespace </span>SQLite</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">namespace </span>sqlite</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">void</span> SaveToDisk(<span class="keyword">const</span> <a class="code" href="a00004.html">DBConnection</a> &amp;source, <span class="keyword">const</span> std::string &amp;filename)</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordtype">void</span> save(<span class="keyword">const</span> dbconnection &amp;source, <span class="keyword">const</span> std::string &amp;filename)</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="a00004.html">DBConnection</a> destination(filename);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="a00001.html">Backup</a> backup(source, destination);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        backup.<a class="code" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">step</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        dbconnection destination(filename);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        backup backup(source, destination);</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        backup.step();</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    }</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00001.html#a363301d27d042970ce86c2487d33351c">   14</a></span>&#160;    <a class="code" href="a00001.html#a363301d27d042970ce86c2487d33351c">Backup::Backup</a>(</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="a00004.html">DBConnection</a> <span class="keyword">const</span> &amp; source,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="a00004.html">DBConnection</a> <span class="keyword">const</span> &amp; destination,</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00001.html#a62932f9aa6d1a5e313615cc5ca4f67fe">   14</a></span>&#160;    <a class="code" href="a00001.html#a62932f9aa6d1a5e313615cc5ca4f67fe">backup::backup</a>(</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="a00004.html">dbconnection</a> <span class="keyword">const</span> &amp; source,</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="a00004.html">dbconnection</a> <span class="keyword">const</span> &amp; destination,</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="keyword">const</span> std::string &amp;sourceName,</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">const</span> std::string &amp;destinationName) :</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        m_handle(</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            sqlite3_backup_init(</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                destination.getHandle(),</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                destination.handle(),</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                destinationName.c_str(),</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                source.getHandle(),</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                source.handle(),</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                sourceName.c_str()),</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            sqlite3_backup_finish),</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        m_destination(&amp;destination)</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> (!m_handle)</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            throwErrorCode(destination.<a class="code" href="a00004.html#a33f0b378dc147a3b2ff947e23994f71c">getHandle</a>());</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            throw_error_code(destination.<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>());</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    }</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">   34</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">Backup::step</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> pages)</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676">   34</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676">backup::step</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> pages)</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">int</span> <span class="keyword">const</span> result = sqlite3_backup_step(m_handle.get(), pages);</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
@@ -129,39 +129,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">if</span> (result == SQLITE_DONE) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        m_handle.reset();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        throwErrorCode(m_destination-&gt;<a class="code" href="a00004.html#a33f0b378dc147a3b2ff947e23994f71c">getHandle</a>());</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        throw_error_code(m_destination-&gt;<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>());</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">   46</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">Backup::getTotalPageCount</a>() noexcept</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="a00001.html#ab6d84e51fef3125dd3829d35e24b02a7">   46</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00001.html#ab6d84e51fef3125dd3829d35e24b02a7">backup::total_page_count</a>() noexcept</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">return</span> sqlite3_backup_pagecount(m_handle.get());</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">   51</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">Backup::getRemainingPageCount</a>() noexcept</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="a00001.html#a9da6a7da53bdd43839024ab13ae72258">   51</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="a00001.html#a9da6a7da53bdd43839024ab13ae72258">backup::remaining_page_count</a>() noexcept</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> sqlite3_backup_remaining(m_handle.get());</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">   56</a></span>&#160;    sqlite3_backup* <a class="code" href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">Backup::getHandle</a>() noexcept</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="a00001.html#a556162efdf4055ab73275fcaa345c981">   56</a></span>&#160;    sqlite3_backup* <a class="code" href="a00001.html#a556162efdf4055ab73275fcaa345c981">backup::handle</a>() noexcept</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> m_handle.get();</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="ttc" id="a00024_html"><div class="ttname"><a href="a00024.html">Exception.h</a></div></div>
-<div class="ttc" id="a00001_html_a65c099db1b55215c85f962fdc33d2f21"><div class="ttname"><a href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">SQLite::Backup::getHandle</a></div><div class="ttdeci">sqlite3_backup * getHandle() noexcept</div><div class="ttdoc">Returns the pointer to the underlying sqlite3_backup object. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00056">Backup.cpp:56</a></div></div>
-<div class="ttc" id="a00001_html"><div class="ttname"><a href="a00001.html">SQLite::Backup</a></div><div class="ttdoc">Used to aid in the process of backing up a database. </div><div class="ttdef"><b>Definition:</b> <a href="a00018_source.html#l00020">Backup.h:20</a></div></div>
+<div class="ttc" id="a00004_html_a1a9b022293133991f265c10c1f50800b"><div class="ttname"><a href="a00004.html#a1a9b022293133991f265c10c1f50800b">sqlite::dbconnection::handle</a></div><div class="ttdeci">sqlite3 * handle() const noexcept</div><div class="ttdoc">Returns pointer to the underlying &quot;sqlite3&quot; object. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00084">DBConnection.cpp:84</a></div></div>
+<div class="ttc" id="a00001_html_a62932f9aa6d1a5e313615cc5ca4f67fe"><div class="ttname"><a href="a00001.html#a62932f9aa6d1a5e313615cc5ca4f67fe">sqlite::backup::backup</a></div><div class="ttdeci">backup(const dbconnection &amp;source, const dbconnection &amp;destination, const std::string &amp;sourceName=&quot;main&quot;, const std::string &amp;destinationName=&quot;main&quot;)</div><div class="ttdoc">Construct a backup object. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00014">Backup.cpp:14</a></div></div>
 <div class="ttc" id="a00018_html"><div class="ttname"><a href="a00018.html">Backup.h</a></div></div>
-<div class="ttc" id="a00001_html_a6ec2f5a0d8db598c15311437c4b9aa43"><div class="ttname"><a href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">SQLite::Backup::step</a></div><div class="ttdeci">bool step(const int pages=-1)</div><div class="ttdoc">Will copy a specified number of pages to the destination database. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00034">Backup.cpp:34</a></div></div>
-<div class="ttc" id="a00004_html_a33f0b378dc147a3b2ff947e23994f71c"><div class="ttname"><a href="a00004.html#a33f0b378dc147a3b2ff947e23994f71c">SQLite::DBConnection::getHandle</a></div><div class="ttdeci">sqlite3 * getHandle() const noexcept</div><div class="ttdoc">Returns pointer to the underlying &quot;sqlite3&quot; object. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00097">DBConnection.cpp:97</a></div></div>
-<div class="ttc" id="a00001_html_a363301d27d042970ce86c2487d33351c"><div class="ttname"><a href="a00001.html#a363301d27d042970ce86c2487d33351c">SQLite::Backup::Backup</a></div><div class="ttdeci">Backup(const DBConnection &amp;source, const DBConnection &amp;destination, const std::string &amp;sourceName=&quot;main&quot;, const std::string &amp;destinationName=&quot;main&quot;)</div><div class="ttdoc">Construct a backup object. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00014">Backup.cpp:14</a></div></div>
-<div class="ttc" id="a00001_html_a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><div class="ttname"><a href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">SQLite::Backup::getRemainingPageCount</a></div><div class="ttdeci">int getRemainingPageCount() noexcept</div><div class="ttdoc">Returns the number of pages still to be backed up. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00051">Backup.cpp:51</a></div></div>
-<div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">SQLite::DBConnection</a></div><div class="ttdoc">Class that represents a connection to a database. </div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00024">DBConnection.h:24</a></div></div>
-<div class="ttc" id="a00001_html_a83fc69146f90276d5ccfe308e054c25b"><div class="ttname"><a href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">SQLite::Backup::getTotalPageCount</a></div><div class="ttdeci">int getTotalPageCount() noexcept</div><div class="ttdoc">Returns the total number of pages in the source database. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00046">Backup.cpp:46</a></div></div>
+<div class="ttc" id="a00001_html_a9da6a7da53bdd43839024ab13ae72258"><div class="ttname"><a href="a00001.html#a9da6a7da53bdd43839024ab13ae72258">sqlite::backup::remaining_page_count</a></div><div class="ttdeci">int remaining_page_count() noexcept</div><div class="ttdoc">Returns the number of pages still to be backed up. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00051">Backup.cpp:51</a></div></div>
+<div class="ttc" id="a00001_html_ab6d84e51fef3125dd3829d35e24b02a7"><div class="ttname"><a href="a00001.html#ab6d84e51fef3125dd3829d35e24b02a7">sqlite::backup::total_page_count</a></div><div class="ttdeci">int total_page_count() noexcept</div><div class="ttdoc">Returns the total number of pages in the source database. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00046">Backup.cpp:46</a></div></div>
+<div class="ttc" id="a00001_html_aba1c8a938a261ced48d3c01cf8da7676"><div class="ttname"><a href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676">sqlite::backup::step</a></div><div class="ttdeci">bool step(const int pages=-1)</div><div class="ttdoc">Will copy a specified number of pages to the destination database. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00034">Backup.cpp:34</a></div></div>
+<div class="ttc" id="a00001_html_a556162efdf4055ab73275fcaa345c981"><div class="ttname"><a href="a00001.html#a556162efdf4055ab73275fcaa345c981">sqlite::backup::handle</a></div><div class="ttdeci">sqlite3_backup * handle() noexcept</div><div class="ttdoc">Returns the pointer to the underlying sqlite3_backup object. </div><div class="ttdef"><b>Definition:</b> <a href="a00017_source.html#l00056">Backup.cpp:56</a></div></div>
+<div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">sqlite::dbconnection</a></div><div class="ttdoc">Class that represents a connection to a database. </div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00024">DBConnection.h:24</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:33 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

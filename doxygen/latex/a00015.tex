@@ -1,5 +1,5 @@
-\hypertarget{a00015}{\section{S\-Q\-Lite\-:\-:Value Class Reference}
-\label{a00015}\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}}
+\hypertarget{a00015}{\section{sqlite\-:\-:value Class Reference}
+\label{a00015}\index{sqlite\-::value@{sqlite\-::value}}
 }
 
 
@@ -13,59 +13,59 @@ A \hyperlink{a00038}{S\-Q\-Lite} dynamically typed value object, aka \char`\"{}s
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00015_ace0be7092c23d5e3f4312db057d86997}{Value} (const sqlite3\-\_\-value $\ast$const value)
-\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{a00015}{Value} object from a sqlite3\-\_\-value object. \end{DoxyCompactList}\item 
-\hyperlink{a00015_acd6e10f2a509c8a0be20237d4b3a0fc7}{Value} (const \hyperlink{a00015}{Value} \&other)
+\hyperlink{a00015_ad297a88d479f1818a65dadd726161785}{value} (const sqlite3\-\_\-value $\ast$const \hyperlink{a00015}{value})
+\begin{DoxyCompactList}\small\item\em Constructs a value object from a sqlite3\-\_\-value object. \end{DoxyCompactList}\item 
+\hyperlink{a00015_aa8e08aeebbd2a89075647a8418a7eae7}{value} (const \hyperlink{a00015}{value} \&other)
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00015_a531d4f514b9abe1eb1f47a277737b953}{Value} (\hyperlink{a00015}{Value} \&\&other)
+\hyperlink{a00015_a0ee5bf64b3377bd2ec6da01b066f62cb}{value} (\hyperlink{a00015}{value} \&\&other)
 \begin{DoxyCompactList}\small\item\em Move constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00015}{Value} \& \hyperlink{a00015_a879c07032f32606d277a8f6581a13abf}{operator=} (const \hyperlink{a00015}{Value} \&other)
+\hyperlink{a00015}{value} \& \hyperlink{a00015_ab67e08529ef687899b08ad6fa50d4301}{operator=} (const \hyperlink{a00015}{value} \&other)
 \begin{DoxyCompactList}\small\item\em Copy assignment operator. \end{DoxyCompactList}\item 
-\hyperlink{a00015}{Value} \& \hyperlink{a00015_ab80d7cf9eb8a462b23459d0fbba80277}{operator=} (\hyperlink{a00015}{Value} \&\&other)
+\hyperlink{a00015}{value} \& \hyperlink{a00015_aa3d30541555ecc3f54216ce80f2e482f}{operator=} (\hyperlink{a00015}{value} \&\&other)
 \begin{DoxyCompactList}\small\item\em Move assignment operator. \end{DoxyCompactList}\item 
-\hypertarget{a00015_adc0c8d347cbd6dbbd38c85ff755c9100}{sqlite3\-\_\-value $\ast$ \hyperlink{a00015_adc0c8d347cbd6dbbd38c85ff755c9100}{get\-Handle} () const noexcept}\label{a00015_adc0c8d347cbd6dbbd38c85ff755c9100}
+\hypertarget{a00015_a668839eab925862f57489429305be72d}{sqlite3\-\_\-value $\ast$ \hyperlink{a00015_a668839eab925862f57489429305be72d}{handle} () const noexcept}\label{a00015_a668839eab925862f57489429305be72d}
 
 \begin{DoxyCompactList}\small\item\em Returns pointer to the underlying \char`\"{}sqlite3\-\_\-value\char`\"{} object. \end{DoxyCompactList}\item 
-int \hyperlink{a00015_a7dc198b9bcd56e1a00b4277d67e2fe94}{get\-Int} () const noexcept
+int \hyperlink{a00015_a29efc5beb5d3a1fcf2f7baa59e810bf6}{as\-\_\-int} () const noexcept
 \begin{DoxyCompactList}\small\item\em Represents the value as an integer. \end{DoxyCompactList}\item 
-int64\-\_\-t \hyperlink{a00015_afea7de5c78253675c70f1d4c49740e37}{get\-Int64} () const noexcept
+int64\-\_\-t \hyperlink{a00015_afb843fda2733a3a107b86557d74ca60e}{as\-\_\-int64} () const noexcept
 \begin{DoxyCompactList}\small\item\em Represents the value as a 64-\/bit integer. \end{DoxyCompactList}\item 
-unsigned int \hyperlink{a00015_a196e4e06082b963730d766f99ccb3917}{get\-U\-Int} () const noexcept
+unsigned int \hyperlink{a00015_ace86134f202dd8998645dd1f86dcf046}{as\-\_\-uint} () const noexcept
 \begin{DoxyCompactList}\small\item\em Represents the value as an unsigned integer. \end{DoxyCompactList}\item 
-double \hyperlink{a00015_a7976bd8973e60229f32d57d80b309eef}{get\-Double} () const noexcept
+double \hyperlink{a00015_aa86e87cfd02eec52a5f85b6787a5fd66}{as\-\_\-double} () const noexcept
 \begin{DoxyCompactList}\small\item\em Represents the value as a double. \end{DoxyCompactList}\item 
-const \hyperlink{a00002}{Blob} \hyperlink{a00015_a271c3d7f1de010f03197f5c72fd60d61}{get\-Blob} () const noexcept
+const \hyperlink{a00002}{blob} \hyperlink{a00015_a623f5aeec955a49d4ca453658d4c45c5}{as\-\_\-blob} () const noexcept
 \begin{DoxyCompactList}\small\item\em Represents the value as a blob object. \end{DoxyCompactList}\item 
-const std\-::string \hyperlink{a00015_ae31b8ba26dec2668d11a49ad895e2267}{get\-String} () const noexcept
+const std\-::string \hyperlink{a00015_a6ce81cd7d007013cdc4ac5103ffa76f1}{as\-\_\-string} () const noexcept
 \begin{DoxyCompactList}\small\item\em Represents the value as a string. \end{DoxyCompactList}\item 
-const std\-::u16string \hyperlink{a00015_a693c71ee6c918f92e4378e91318a7694}{get\-U16\-String} () const noexcept
+const std\-::u16string \hyperlink{a00015_a6edf39b8900fa6b490161994da913236}{as\-\_\-u16string} () const noexcept
 \begin{DoxyCompactList}\small\item\em Represents the value as a U\-T\-F-\/16 string. \end{DoxyCompactList}\item 
-int \hyperlink{a00015_a03a193504f0c5fd751302a6ec8d01845}{get\-Bytes} () const noexcept
+int \hyperlink{a00015_a089b0cb550fd7ca7830ebf1cb43850d1}{bytes} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the size in bytes of the value. \end{DoxyCompactList}\item 
-\hyperlink{a00038_ad7a8ff5f375eca25eb6e3a51d746a04c}{Type} \hyperlink{a00015_ac43f7a22f87464aceaef9855e9700ff7}{get\-Type} () const noexcept
-\begin{DoxyCompactList}\small\item\em Returns the Type for the inital datatype of the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+datatype \hyperlink{a00015_a1dbe99607518010c9fd134b0816bb451}{type} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns the datatype for the initial datatype of the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 A \hyperlink{a00038}{S\-Q\-Lite} dynamically typed value object, aka \char`\"{}sqlite3\-\_\-value\char`\"{}. 
 
-\hyperlink{a00015}{Value} objects represent all values that can be stored in a database table. A \hyperlink{a00015}{Value} object may be either \char`\"{}protected\char`\"{} or \char`\"{}unprotected\char`\"{} which refers to whether or not a mutex is held. An internal mutex is held for a protected value object but not for an unprotected one. If \hyperlink{a00038}{S\-Q\-Lite} is compiled to be single-\/threaded or if \hyperlink{a00038}{S\-Q\-Lite} is run in one of reduced mutex modes then there is no distinction between protected and unprotected sqlite3\-\_\-value objects. A \hyperlink{a00015}{Value} objects will always be \char`\"{}protected\char`\"{} as it stores a sqlite3\-\_\-value objects created from calling the sqlite3\-\_\-value\-\_\-dup() interface which produces a \char`\"{}protected\char`\"{} \char`\"{}sqlite3\-\_\-value\char`\"{} from an \char`\"{}unprotected\char`\"{} one. Only use a \hyperlink{a00015}{Value} object in the same thread as the S\-Q\-L function that created it. 
+value objects represent all values that can be stored in a database table. A value object may be either \char`\"{}protected\char`\"{} or \char`\"{}unprotected\char`\"{} which refers to whether or not a mutex is held. An internal mutex is held for a protected value object but not for an unprotected one. If \hyperlink{a00038}{S\-Q\-Lite} is compiled to be single-\/threaded or if \hyperlink{a00038}{S\-Q\-Lite} is run in one of reduced mutex modes then there is no distinction between protected and unprotected sqlite3\-\_\-value objects. A value objects will always be \char`\"{}protected\char`\"{} as it stores a sqlite3\-\_\-value objects created from calling the sqlite3\-\_\-value\-\_\-dup() interface which produces a \char`\"{}protected\char`\"{} \char`\"{}sqlite3\-\_\-value\char`\"{} from an \char`\"{}unprotected\char`\"{} one. Only use a value object in the same thread as the S\-Q\-L function that created it. 
 
 Definition at line 27 of file Value.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{a00015_ace0be7092c23d5e3f4312db057d86997}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!Value@{Value}}
-\index{Value@{Value}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Value\-::\-Value (
+\hypertarget{a00015_ad297a88d479f1818a65dadd726161785}{\index{sqlite\-::value@{sqlite\-::value}!value@{value}}
+\index{value@{value}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::value\-::value (
 \begin{DoxyParamCaption}
 \item[{const sqlite3\-\_\-value $\ast$const}]{value}
 \end{DoxyParamCaption}
-)}}\label{a00015_ace0be7092c23d5e3f4312db057d86997}
+)\hspace{0.3cm}{\ttfamily [explicit]}}}\label{a00015_ad297a88d479f1818a65dadd726161785}
 
 
-Constructs a \hyperlink{a00015}{Value} object from a sqlite3\-\_\-value object. 
+Constructs a value object from a sqlite3\-\_\-value object. 
 
 
 \begin{DoxyParams}[1]{Parameters}
@@ -76,40 +76,40 @@ Constructs a \hyperlink{a00015}{Value} object from a sqlite3\-\_\-value object.
 
 Definition at line 6 of file Value.\-cpp.
 
-\hypertarget{a00015_acd6e10f2a509c8a0be20237d4b3a0fc7}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!Value@{Value}}
-\index{Value@{Value}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Value\-::\-Value (
+\hypertarget{a00015_aa8e08aeebbd2a89075647a8418a7eae7}{\index{sqlite\-::value@{sqlite\-::value}!value@{value}}
+\index{value@{value}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::value\-::value (
 \begin{DoxyParamCaption}
-\item[{const {\bf Value} \&}]{other}
+\item[{const {\bf value} \&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00015_acd6e10f2a509c8a0be20237d4b3a0fc7}
+)}}\label{a00015_aa8e08aeebbd2a89075647a8418a7eae7}
 
 
 Copy constructor. 
 
-Constructs a \hyperlink{a00015}{Value} object with a copy of the contents of other. 
+Constructs a value object with a copy of the contents of other. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00015}{Value} object to use as source to initialize object with. \\
+\mbox{\tt in}  & {\em other} & another value object to use as source to initialize object with. \\
 \hline
 \end{DoxyParams}
 
 
 Definition at line 10 of file Value.\-cpp.
 
-\hypertarget{a00015_a531d4f514b9abe1eb1f47a277737b953}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!Value@{Value}}
-\index{Value@{Value}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{Value}]{\setlength{\rightskip}{0pt plus 5cm}S\-Q\-Lite\-::\-Value\-::\-Value (
+\hypertarget{a00015_a0ee5bf64b3377bd2ec6da01b066f62cb}{\index{sqlite\-::value@{sqlite\-::value}!value@{value}}
+\index{value@{value}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{value}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::value\-::value (
 \begin{DoxyParamCaption}
-\item[{{\bf Value} \&\&}]{other}
+\item[{{\bf value} \&\&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00015_a531d4f514b9abe1eb1f47a277737b953}
+)}}\label{a00015_a0ee5bf64b3377bd2ec6da01b066f62cb}
 
 
 Move constructor. 
 
-Constructs a \hyperlink{a00015}{Value} object with a copy of the contents of other using move semantics. 
+Constructs a value object with a copy of the contents of other using move semantics. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00015}{Value} object to use as source to initialize object with. \\
+\mbox{\tt in}  & {\em other} & another value object to use as source to initialize object with. \\
 \hline
 \end{DoxyParams}
 
@@ -119,49 +119,31 @@ Definition at line 14 of file Value.\-cpp.
 
 
 \subsection{Member Function Documentation}
-\hypertarget{a00015_a271c3d7f1de010f03197f5c72fd60d61}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-Blob@{get\-Blob}}
-\index{get\-Blob@{get\-Blob}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-Blob}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Blob} S\-Q\-Lite\-::\-Value\-::get\-Blob (
+\hypertarget{a00015_a623f5aeec955a49d4ca453658d4c45c5}{\index{sqlite\-::value@{sqlite\-::value}!as\-\_\-blob@{as\-\_\-blob}}
+\index{as\-\_\-blob@{as\-\_\-blob}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{as\-\_\-blob}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf blob} sqlite\-::value\-::as\-\_\-blob (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a271c3d7f1de010f03197f5c72fd60d61}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a623f5aeec955a49d4ca453658d4c45c5}
 
 
 Represents the value as a blob object. 
 
 \begin{DoxyReturn}{Returns}
-A \hyperlink{a00002}{Blob} object representing the value of the object. 
+A blob object representing the value of the object. 
 \end{DoxyReturn}
 
 
 Definition at line 56 of file Value.\-cpp.
 
-\hypertarget{a00015_a03a193504f0c5fd751302a6ec8d01845}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-Bytes@{get\-Bytes}}
-\index{get\-Bytes@{get\-Bytes}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-Bytes}]{\setlength{\rightskip}{0pt plus 5cm}int S\-Q\-Lite\-::\-Value\-::get\-Bytes (
+\hypertarget{a00015_aa86e87cfd02eec52a5f85b6787a5fd66}{\index{sqlite\-::value@{sqlite\-::value}!as\-\_\-double@{as\-\_\-double}}
+\index{as\-\_\-double@{as\-\_\-double}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{as\-\_\-double}]{\setlength{\rightskip}{0pt plus 5cm}double sqlite\-::value\-::as\-\_\-double (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a03a193504f0c5fd751302a6ec8d01845}
-
-
-Returns the size in bytes of the value. 
-
-\begin{DoxyReturn}{Returns}
-The size in bytes of the value. 
-\end{DoxyReturn}
-
-
-Definition at line 74 of file Value.\-cpp.
-
-\hypertarget{a00015_a7976bd8973e60229f32d57d80b309eef}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-Double@{get\-Double}}
-\index{get\-Double@{get\-Double}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-Double}]{\setlength{\rightskip}{0pt plus 5cm}double S\-Q\-Lite\-::\-Value\-::get\-Double (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a7976bd8973e60229f32d57d80b309eef}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_aa86e87cfd02eec52a5f85b6787a5fd66}
 
 
 Represents the value as a double. 
@@ -173,13 +155,13 @@ A double representing the value of the object.
 
 Definition at line 51 of file Value.\-cpp.
 
-\hypertarget{a00015_a7dc198b9bcd56e1a00b4277d67e2fe94}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-Int@{get\-Int}}
-\index{get\-Int@{get\-Int}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-Int}]{\setlength{\rightskip}{0pt plus 5cm}int S\-Q\-Lite\-::\-Value\-::get\-Int (
+\hypertarget{a00015_a29efc5beb5d3a1fcf2f7baa59e810bf6}{\index{sqlite\-::value@{sqlite\-::value}!as\-\_\-int@{as\-\_\-int}}
+\index{as\-\_\-int@{as\-\_\-int}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{as\-\_\-int}]{\setlength{\rightskip}{0pt plus 5cm}int sqlite\-::value\-::as\-\_\-int (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a7dc198b9bcd56e1a00b4277d67e2fe94}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a29efc5beb5d3a1fcf2f7baa59e810bf6}
 
 
 Represents the value as an integer. 
@@ -191,13 +173,13 @@ An integer representing the value of the object.
 
 Definition at line 36 of file Value.\-cpp.
 
-\hypertarget{a00015_afea7de5c78253675c70f1d4c49740e37}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-Int64@{get\-Int64}}
-\index{get\-Int64@{get\-Int64}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-Int64}]{\setlength{\rightskip}{0pt plus 5cm}int64\-\_\-t S\-Q\-Lite\-::\-Value\-::get\-Int64 (
+\hypertarget{a00015_afb843fda2733a3a107b86557d74ca60e}{\index{sqlite\-::value@{sqlite\-::value}!as\-\_\-int64@{as\-\_\-int64}}
+\index{as\-\_\-int64@{as\-\_\-int64}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{as\-\_\-int64}]{\setlength{\rightskip}{0pt plus 5cm}int64\-\_\-t sqlite\-::value\-::as\-\_\-int64 (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_afea7de5c78253675c70f1d4c49740e37}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_afb843fda2733a3a107b86557d74ca60e}
 
 
 Represents the value as a 64-\/bit integer. 
@@ -209,13 +191,13 @@ An 64-\/bit integer representing the value of the object.
 
 Definition at line 41 of file Value.\-cpp.
 
-\hypertarget{a00015_ae31b8ba26dec2668d11a49ad895e2267}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-String@{get\-String}}
-\index{get\-String@{get\-String}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-String}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string S\-Q\-Lite\-::\-Value\-::get\-String (
+\hypertarget{a00015_a6ce81cd7d007013cdc4ac5103ffa76f1}{\index{sqlite\-::value@{sqlite\-::value}!as\-\_\-string@{as\-\_\-string}}
+\index{as\-\_\-string@{as\-\_\-string}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{as\-\_\-string}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string sqlite\-::value\-::as\-\_\-string (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_ae31b8ba26dec2668d11a49ad895e2267}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a6ce81cd7d007013cdc4ac5103ffa76f1}
 
 
 Represents the value as a string. 
@@ -223,31 +205,17 @@ Represents the value as a string.
 \begin{DoxyReturn}{Returns}
 A string representing the value of the object. 
 \end{DoxyReturn}
-\hypertarget{a00015_ac43f7a22f87464aceaef9855e9700ff7}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-Type@{get\-Type}}
-\index{get\-Type@{get\-Type}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} S\-Q\-Lite\-::\-Value\-::get\-Type (
+
+
+Definition at line 62 of file Value.\-cpp.
+
+\hypertarget{a00015_a6edf39b8900fa6b490161994da913236}{\index{sqlite\-::value@{sqlite\-::value}!as\-\_\-u16string@{as\-\_\-u16string}}
+\index{as\-\_\-u16string@{as\-\_\-u16string}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{as\-\_\-u16string}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::u16string sqlite\-::value\-::as\-\_\-u16string (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_ac43f7a22f87464aceaef9855e9700ff7}
-
-
-Returns the Type for the inital datatype of the value. 
-
-Warning\-: Other interfaces might change the datatype for an \hyperlink{a00015}{Value} object. For example, if the datatype is initially \hyperlink{a00038_ad7a8ff5f375eca25eb6e3a51d746a04caa0faef0851b4294c06f2b94bb1cb2044}{S\-Q\-Lite\-::\-Type\-::\-Integer} and \hyperlink{a00015_ae31b8ba26dec2668d11a49ad895e2267}{get\-String()} is called to extract a text value for that integer, then subsequent calls to \hyperlink{a00015_ac43f7a22f87464aceaef9855e9700ff7}{get\-Type()} might return S\-Q\-Lite\-::\-Type\-::\-String. Whether or not a persistent internal datype conversion occurs is undefined and my change from one release of \hyperlink{a00038}{S\-Q\-Lite} to the nexxt. \begin{DoxyReturn}{Returns}
-The type of the value. 
-\end{DoxyReturn}
-
-
-Definition at line 79 of file Value.\-cpp.
-
-\hypertarget{a00015_a693c71ee6c918f92e4378e91318a7694}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-U16\-String@{get\-U16\-String}}
-\index{get\-U16\-String@{get\-U16\-String}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-U16\-String}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::u16string S\-Q\-Lite\-::\-Value\-::get\-U16\-String (
-\begin{DoxyParamCaption}
-{}
-\end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a693c71ee6c918f92e4378e91318a7694}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a6edf39b8900fa6b490161994da913236}
 
 
 Represents the value as a U\-T\-F-\/16 string. 
@@ -255,13 +223,17 @@ Represents the value as a U\-T\-F-\/16 string.
 \begin{DoxyReturn}{Returns}
 A U\-T\-F-\/16 string representing the value of the object. 
 \end{DoxyReturn}
-\hypertarget{a00015_a196e4e06082b963730d766f99ccb3917}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!get\-U\-Int@{get\-U\-Int}}
-\index{get\-U\-Int@{get\-U\-Int}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{get\-U\-Int}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int S\-Q\-Lite\-::\-Value\-::get\-U\-Int (
+
+
+Definition at line 68 of file Value.\-cpp.
+
+\hypertarget{a00015_ace86134f202dd8998645dd1f86dcf046}{\index{sqlite\-::value@{sqlite\-::value}!as\-\_\-uint@{as\-\_\-uint}}
+\index{as\-\_\-uint@{as\-\_\-uint}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{as\-\_\-uint}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int sqlite\-::value\-::as\-\_\-uint (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a196e4e06082b963730d766f99ccb3917}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_ace86134f202dd8998645dd1f86dcf046}
 
 
 Represents the value as an unsigned integer. 
@@ -273,20 +245,38 @@ An unsigned integer representing the value of the object.
 
 Definition at line 46 of file Value.\-cpp.
 
-\hypertarget{a00015_a879c07032f32606d277a8f6581a13abf}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!operator=@{operator=}}
-\index{operator=@{operator=}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} \& S\-Q\-Lite\-::\-Value\-::operator= (
+\hypertarget{a00015_a089b0cb550fd7ca7830ebf1cb43850d1}{\index{sqlite\-::value@{sqlite\-::value}!bytes@{bytes}}
+\index{bytes@{bytes}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{bytes}]{\setlength{\rightskip}{0pt plus 5cm}int sqlite\-::value\-::bytes (
 \begin{DoxyParamCaption}
-\item[{const {\bf Value} \&}]{other}
+{}
 \end{DoxyParamCaption}
-)}}\label{a00015_a879c07032f32606d277a8f6581a13abf}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a089b0cb550fd7ca7830ebf1cb43850d1}
+
+
+Returns the size in bytes of the value. 
+
+\begin{DoxyReturn}{Returns}
+The size in bytes of the value. 
+\end{DoxyReturn}
+
+
+Definition at line 74 of file Value.\-cpp.
+
+\hypertarget{a00015_ab67e08529ef687899b08ad6fa50d4301}{\index{sqlite\-::value@{sqlite\-::value}!operator=@{operator=}}
+\index{operator=@{operator=}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} \& sqlite\-::value\-::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf value} \&}]{other}
+\end{DoxyParamCaption}
+)}}\label{a00015_ab67e08529ef687899b08ad6fa50d4301}
 
 
 Copy assignment operator. 
 
 Replaces the contents with those of other. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00015}{Value} object to use as source to initialize object with. \\
+\mbox{\tt in}  & {\em other} & another value object to use as source to initialize object with. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -296,20 +286,20 @@ $\ast$this
 
 Definition at line 22 of file Value.\-cpp.
 
-\hypertarget{a00015_ab80d7cf9eb8a462b23459d0fbba80277}{\index{S\-Q\-Lite\-::\-Value@{S\-Q\-Lite\-::\-Value}!operator=@{operator=}}
-\index{operator=@{operator=}!SQLite::Value@{S\-Q\-Lite\-::\-Value}}
-\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Value} \& S\-Q\-Lite\-::\-Value\-::operator= (
+\hypertarget{a00015_aa3d30541555ecc3f54216ce80f2e482f}{\index{sqlite\-::value@{sqlite\-::value}!operator=@{operator=}}
+\index{operator=@{operator=}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf value} \& sqlite\-::value\-::operator= (
 \begin{DoxyParamCaption}
-\item[{{\bf Value} \&\&}]{other}
+\item[{{\bf value} \&\&}]{other}
 \end{DoxyParamCaption}
-)}}\label{a00015_ab80d7cf9eb8a462b23459d0fbba80277}
+)}}\label{a00015_aa3d30541555ecc3f54216ce80f2e482f}
 
 
 Move assignment operator. 
 
 Replaces the contents with those of other using move semantics. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em other} & another \hyperlink{a00015}{Value} object to use as source to initialize object with. \\
+\mbox{\tt in}  & {\em other} & another value object to use as source to initialize object with. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -318,6 +308,24 @@ $\ast$this
 
 
 Definition at line 30 of file Value.\-cpp.
+
+\hypertarget{a00015_a1dbe99607518010c9fd134b0816bb451}{\index{sqlite\-::value@{sqlite\-::value}!type@{type}}
+\index{type@{type}!sqlite::value@{sqlite\-::value}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}datatype sqlite\-::value\-::type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00015_a1dbe99607518010c9fd134b0816bb451}
+
+
+Returns the datatype for the initial datatype of the value. 
+
+Warning\-: Other interfaces might change the datatype for an value object. For example, if the datatype is initially sqlite\-::datatype\-::integer and \hyperlink{a00015_a6ce81cd7d007013cdc4ac5103ffa76f1}{as\-\_\-string()} is called to extract a text value for that integer, then subsequent calls to \hyperlink{a00015_a1dbe99607518010c9fd134b0816bb451}{type()} might return sqlite\-::datatype\-::text. Whether or not a persistent internal datatype conversion occurs is undefined and my change from one release of sqlite to the next. \begin{DoxyReturn}{Returns}
+The type of the value. 
+\end{DoxyReturn}
+
+
+Definition at line 79 of file Value.\-cpp.
 
 
 

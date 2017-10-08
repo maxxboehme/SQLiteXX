@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['immediatetransaction',['ImmediateTransaction',['../a00008.html',1,'SQLite']]]
+  ['immediate_5ftransaction',['immediate_transaction',['../a00008.html',1,'sqlite']]]
 ];

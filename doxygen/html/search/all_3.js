@@ -1,10 +1,9 @@
 var searchData=
 [
-  ['end',['end',['../a00038.html#a81414d1114232fd69009360999cb7d49',1,'SQLite']]],
-  ['exception',['Exception',['../a00006.html',1,'SQLite']]],
-  ['exception_2eh',['Exception.h',['../a00024.html',1,'']]],
-  ['exclusive',['Exclusive',['../a00038.html#af94f2dd6dcae8699eada7a0382e48e66a2ef50b4c466304dc6ac77bac8a779971',1,'SQLite']]],
-  ['exclusivetransaction',['ExclusiveTransaction',['../a00007.html#a70f16f1e9764fd35b0c7e9fbf7314a1f',1,'SQLite::ExclusiveTransaction']]],
-  ['exclusivetransaction',['ExclusiveTransaction',['../a00007.html',1,'SQLite']]],
-  ['execute',['execute',['../a00013.html#a9b489a2dc2707543eba55ce1e5d3682c',1,'SQLite::Statement::execute()'],['../a00038.html#a2e59fc3438649aa88998d2c18c574b17',1,'SQLite::Execute(const DBConnection &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)'],['../a00038.html#a422d5b6ac99e4ed57f69fdc8a4cb904d',1,'SQLite::Execute(const DBConnection &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)']]]
+  ['data',['data',['../a00002.html#ad9fc3eb820ef6fa64a4a03224b9dc3de',1,'sqlite::blob']]],
+  ['dbconnection',['dbconnection',['../a00004.html',1,'sqlite']]],
+  ['dbconnection',['dbconnection',['../a00004.html#a1cfe02390c4b08e78787120edaed6ab7',1,'sqlite::dbconnection::dbconnection() noexcept'],['../a00004.html#a6c17517eb1631c15b64a0c54dd5355ca',1,'sqlite::dbconnection::dbconnection(const dbconnection &amp;other) noexcept'],['../a00004.html#a31b78d1afbfc6147319eabb9f0e23bc5',1,'sqlite::dbconnection::dbconnection(dbconnection &amp;&amp;other) noexcept'],['../a00004.html#a65e20f08669b49b018614cddd47efa77',1,'sqlite::dbconnection::dbconnection(const std::string &amp;filename, openmode mode=openmode::read_write|openmode::create, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)'],['../a00004.html#a4de544133c1a430855624c94986ed16c',1,'sqlite::dbconnection::dbconnection(const std::string &amp;filename, const std::chrono::milliseconds timeout)'],['../a00004.html#a1ac3a4126d0c5da0773f14e9ac443678',1,'sqlite::dbconnection::dbconnection(const std::u16string &amp;filename, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)']]],
+  ['dbconnection_2eh',['DBConnection.h',['../a00022.html',1,'']]],
+  ['deferred_5ftransaction',['deferred_transaction',['../a00005.html',1,'sqlite']]],
+  ['deferred_5ftransaction',['deferred_transaction',['../a00005.html#a18666e756f66c6978bf435cf6b072be7',1,'sqlite::deferred_transaction']]]
 ];

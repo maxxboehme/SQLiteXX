@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite::Backup Class Reference</title>
+<title>SQLiteXX: sqlite::backup Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,15 +83,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00001.html">Backup</a></li>  </ul>
+<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00001.html">backup</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00040.html">List of all members</a>  </div>
+<a href="a00041.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite::Backup Class Reference</div>  </div>
+<div class="title">sqlite::backup Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -102,43 +102,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a363301d27d042970ce86c2487d33351c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a363301d27d042970ce86c2487d33351c">Backup</a> (const <a class="el" href="a00004.html">DBConnection</a> &amp;source, const <a class="el" href="a00004.html">DBConnection</a> &amp;destination, const std::string &amp;sourceName=&quot;main&quot;, const std::string &amp;destinationName=&quot;main&quot;)</td></tr>
-<tr class="memdesc:a363301d27d042970ce86c2487d33351c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a backup object.  <a href="#a363301d27d042970ce86c2487d33351c">More...</a><br/></td></tr>
-<tr class="separator:a363301d27d042970ce86c2487d33351c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ec2f5a0d8db598c15311437c4b9aa43"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43">step</a> (const int pages=-1)</td></tr>
-<tr class="memdesc:a6ec2f5a0d8db598c15311437c4b9aa43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will copy a specified number of pages to the destination database.  <a href="#a6ec2f5a0d8db598c15311437c4b9aa43">More...</a><br/></td></tr>
-<tr class="separator:a6ec2f5a0d8db598c15311437c4b9aa43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a83fc69146f90276d5ccfe308e054c25b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a83fc69146f90276d5ccfe308e054c25b">getTotalPageCount</a> () noexcept</td></tr>
-<tr class="memdesc:a83fc69146f90276d5ccfe308e054c25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of pages in the source database.  <a href="#a83fc69146f90276d5ccfe308e054c25b">More...</a><br/></td></tr>
-<tr class="separator:a83fc69146f90276d5ccfe308e054c25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">getRemainingPageCount</a> () noexcept</td></tr>
-<tr class="memdesc:a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of pages still to be backed up.  <a href="#a5cb7d3bfbe87c8fe07b4eca01f6b04aa">More...</a><br/></td></tr>
-<tr class="separator:a5cb7d3bfbe87c8fe07b4eca01f6b04aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65c099db1b55215c85f962fdc33d2f21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a65c099db1b55215c85f962fdc33d2f21"></a>
-sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a65c099db1b55215c85f962fdc33d2f21">getHandle</a> () noexcept</td></tr>
-<tr class="memdesc:a65c099db1b55215c85f962fdc33d2f21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pointer to the underlying sqlite3_backup object. <br/></td></tr>
-<tr class="separator:a65c099db1b55215c85f962fdc33d2f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62932f9aa6d1a5e313615cc5ca4f67fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a62932f9aa6d1a5e313615cc5ca4f67fe">backup</a> (const <a class="el" href="a00004.html">dbconnection</a> &amp;source, const <a class="el" href="a00004.html">dbconnection</a> &amp;destination, const std::string &amp;sourceName=&quot;main&quot;, const std::string &amp;destinationName=&quot;main&quot;)</td></tr>
+<tr class="memdesc:a62932f9aa6d1a5e313615cc5ca4f67fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a backup object.  <a href="#a62932f9aa6d1a5e313615cc5ca4f67fe">More...</a><br/></td></tr>
+<tr class="separator:a62932f9aa6d1a5e313615cc5ca4f67fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba1c8a938a261ced48d3c01cf8da7676"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676">step</a> (const int pages=-1)</td></tr>
+<tr class="memdesc:aba1c8a938a261ced48d3c01cf8da7676"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will copy a specified number of pages to the destination database.  <a href="#aba1c8a938a261ced48d3c01cf8da7676">More...</a><br/></td></tr>
+<tr class="separator:aba1c8a938a261ced48d3c01cf8da7676"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6d84e51fef3125dd3829d35e24b02a7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#ab6d84e51fef3125dd3829d35e24b02a7">total_page_count</a> () noexcept</td></tr>
+<tr class="memdesc:ab6d84e51fef3125dd3829d35e24b02a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total number of pages in the source database.  <a href="#ab6d84e51fef3125dd3829d35e24b02a7">More...</a><br/></td></tr>
+<tr class="separator:ab6d84e51fef3125dd3829d35e24b02a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9da6a7da53bdd43839024ab13ae72258"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a9da6a7da53bdd43839024ab13ae72258">remaining_page_count</a> () noexcept</td></tr>
+<tr class="memdesc:a9da6a7da53bdd43839024ab13ae72258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of pages still to be backed up.  <a href="#a9da6a7da53bdd43839024ab13ae72258">More...</a><br/></td></tr>
+<tr class="separator:a9da6a7da53bdd43839024ab13ae72258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556162efdf4055ab73275fcaa345c981"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a556162efdf4055ab73275fcaa345c981"></a>
+sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html#a556162efdf4055ab73275fcaa345c981">handle</a> () noexcept</td></tr>
+<tr class="memdesc:a556162efdf4055ab73275fcaa345c981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the pointer to the underlying sqlite3_backup object. <br/></td></tr>
+<tr class="separator:a556162efdf4055ab73275fcaa345c981"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Used to aid in the process of backing up a database. </p>
-<p>The <a class="el" href="a00001.html" title="Used to aid in the process of backing up a database. ">Backup</a> object records state information about an ongoing online backup operation. It us useful either for creating backups of databases or for copying in-memory databases to or from persistent files. </p>
+<p>The backup object records state information about an ongoing online backup operation. It us useful either for creating backups of databases or for copying in-memory databases to or from persistent files. </p>
 
 <p>Definition at line <a class="el" href="a00018_source.html#l00020">20</a> of file <a class="el" href="a00018_source.html">Backup.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a363301d27d042970ce86c2487d33351c"></a>
+<a class="anchor" id="a62932f9aa6d1a5e313615cc5ca4f67fe"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">SQLite::Backup::Backup </td>
+          <td class="memname">sqlite::backup::backup </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">dbconnection</a> &amp;&#160;</td>
           <td class="paramname"><em>source</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00004.html">DBConnection</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="a00004.html">dbconnection</a> &amp;&#160;</td>
           <td class="paramname"><em>destination</em>, </td>
         </tr>
         <tr>
@@ -173,7 +173,7 @@ sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </dl>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a></td><td>If an error occurs when initializing a <a class="el" href="a00001.html" title="Used to aid in the process of backing up a database. ">Backup</a> then an <a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a> will be raised. </td></tr>
+    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">sqlite::exception</a></td><td>If an error occurs when initializing a backup then an <a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">sqlite::exception</a> will be raised. </td></tr>
   </table>
   </dd>
 </dl>
@@ -183,7 +183,7 @@ sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a5cb7d3bfbe87c8fe07b4eca01f6b04aa"></a>
+<a class="anchor" id="a9da6a7da53bdd43839024ab13ae72258"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -191,7 +191,7 @@ sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int SQLite::Backup::getRemainingPageCount </td>
+          <td class="memname">int sqlite::backup::remaining_page_count </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -205,14 +205,43 @@ sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 
 <p>Returns the number of pages still to be backed up. </p>
-<p>The values returned by this function is only updated by <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. </p>
+<p>The values returned by this function is only updated by <a class="el" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676" title="Will copy a specified number of pages to the destination database. ">step()</a>. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next <a class="el" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676" title="Will copy a specified number of pages to the destination database. ">step()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The number of pages still to be backed up. </dd></dl>
 
 <p>Definition at line <a class="el" href="a00017_source.html#l00051">51</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a83fc69146f90276d5ccfe308e054c25b"></a>
+<a class="anchor" id="aba1c8a938a261ced48d3c01cf8da7676"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool sqlite::backup::step </td>
+          <td>(</td>
+          <td class="paramtype">const int&#160;</td>
+          <td class="paramname"><em>pages</em> = <code>-1</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Will copy a specified number of pages to the destination database. </p>
+<p>If pages is negative, all remaining source pages are copied.</p>
+<p>pages the number of pages to copy from source to destination database. </p>
+<dl class="section return"><dt>Returns</dt><dd>The returns value will be true if there are more pages to copy. False otherwise.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">sqlite::exception</a></td><td>If an error occurs when initializing a backup then an <a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">sqlite::exception</a> will be raised. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00017_source.html#l00034">34</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6d84e51fef3125dd3829d35e24b02a7"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -220,7 +249,7 @@ sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int SQLite::Backup::getTotalPageCount </td>
+          <td class="memname">int sqlite::backup::total_page_count </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -234,39 +263,10 @@ sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><div class="memdoc">
 
 <p>Returns the total number of pages in the source database. </p>
-<p>The values returned by this function is only updated by <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next <a class="el" href="a00001.html#a6ec2f5a0d8db598c15311437c4b9aa43" title="Will copy a specified number of pages to the destination database. ">step()</a>. </p>
+<p>The values returned by this function is only updated by <a class="el" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676" title="Will copy a specified number of pages to the destination database. ">step()</a>. If the source database is modified in a way that changes the size of the source database or the number of pages remaining, those changes are not reflected in the output of this method until after the next <a class="el" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676" title="Will copy a specified number of pages to the destination database. ">step()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>The total number of pages in the source database. </dd></dl>
 
 <p>Definition at line <a class="el" href="a00017_source.html#l00046">46</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a6ec2f5a0d8db598c15311437c4b9aa43"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool SQLite::Backup::step </td>
-          <td>(</td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>pages</em> = <code>-1</code></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Will copy a specified number of pages to the destination database. </p>
-<p>If pages is negative, all remaining source pages are copied.</p>
-<p>pages the number of pages to copy from source to destination database. </p>
-<dl class="section return"><dt>Returns</dt><dd>The returne value will be true if there are more pages to copy. False otherwise.</dd></dl>
-<dl class="exception"><dt>Exceptions</dt><dd>
-  <table class="exception">
-    <tr><td class="paramname"><a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a></td><td>If an error occurs when initializing a <a class="el" href="a00001.html" title="Used to aid in the process of backing up a database. ">Backup</a> then an <a class="el" href="a00006.html" title="Encapsulation of the error code and message from SQLite3, based on std::runtime_error. ">SQLite::Exception</a> will be raised. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Definition at line <a class="el" href="a00017_source.html#l00034">34</a> of file <a class="el" href="a00017_source.html">Backup.cpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +277,7 @@ sqlite3_backup *&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:33 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

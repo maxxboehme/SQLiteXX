@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +85,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">SQLiteEnums.h File Reference</div>  </div>
@@ -95,35 +94,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <p><a href="a00029_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:a00038"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html">SQLite</a></td></tr>
-<tr class="memdesc:a00038"><td class="mdescLeft">&#160;</td><td class="mdescRight">SQLiteXX classes and functions are defined in this namespace. <br/></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ad7a8ff5f375eca25eb6e3a51d746a04c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">SQLite::Type</a> : int { <br/>
-&#160;&#160;<a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04caa0faef0851b4294c06f2b94bb1cb2044">SQLite::Type::Integer</a> = SQLITE_INTEGER, 
-<a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04ca22ae0e2b89e5e3d477f988cc36d3272b">SQLite::Type::Float</a> = SQLITE_FLOAT, 
-<a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04cae8016c85ada38bdc5fac616ec1318047">SQLite::Type::Blob</a> = SQLITE_BLOB, 
-<a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04cabbb93ef26e3c101ff11cdd21cab08a94">SQLite::Type::Null</a> = SQLITE_NULL, 
+<tr class="memitem:a7467e5cdd32bbf7fce35aced88682dc0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>datatype</b> : int { <br/>
+&#160;&#160;<b>sqlite::datatype::integer</b> = SQLITE_INTEGER, 
+<b>sqlite::datatype::floating</b> = SQLITE_FLOAT, 
+<b>sqlite::datatype::blob</b> = SQLITE_BLOB, 
+<b>sqlite::datatype::null</b> = SQLITE_NULL, 
 <br/>
-&#160;&#160;<a class="el" href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04ca9dffbf69ffba8bc38bc4e01abf4b1675">SQLite::Type::Text</a> = SQLITE3_TEXT
+&#160;&#160;<b>sqlite::datatype::text</b> = SQLITE3_TEXT
 <br/>
  }</td></tr>
-<tr class="memdesc:ad7a8ff5f375eca25eb6e3a51d746a04c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every value in <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> has one of the following fundamental datatypes.  <a href="a00038.html#ad7a8ff5f375eca25eb6e3a51d746a04c">More...</a><br/></td></tr>
-<tr class="separator:ad7a8ff5f375eca25eb6e3a51d746a04c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32877e51b309dd8f2a28c21c0ba4a6fd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">SQLite::BindType</a> : int { <a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fda84a8921b25f505d0d2077aeb5db4bc16">SQLite::BindType::Static</a>, 
-<a class="el" href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fdab1f023eff9a6b5308d6024e4c6b3d475">SQLite::BindType::Transient</a>
+<tr class="memdesc:a7467e5cdd32bbf7fce35aced88682dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every value in <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> has one of the following fundamental datatypes. <br/></td></tr>
+<tr class="separator:a7467e5cdd32bbf7fce35aced88682dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>bindtype</b> : int { <b>sqlite::bindtype::staticly</b>, 
+<b>sqlite::bindtype::transient</b>
  }</td></tr>
-<tr class="memdesc:a32877e51b309dd8f2a28c21c0ba4a6fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify the way to bind a value to a statement.  <a href="a00038.html#a32877e51b309dd8f2a28c21c0ba4a6fd">More...</a><br/></td></tr>
-<tr class="separator:a32877e51b309dd8f2a28c21c0ba4a6fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify the way to bind a value to a statement. <br/></td></tr>
+<tr class="separator:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:33 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,21 +83,41 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="a00038.html">SQLite</a></li><li class="navelem"><a class="el" href="a00006.html">Exception</a></li>  </ul>
+<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00004.html">dbconnection</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">SQLite::Exception Member List</div>  </div>
+<div class="title">sqlite::dbconnection Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00006.html">SQLite::Exception</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00004.html">sqlite::dbconnection</a>, including all inherited members.</p>
 <table class="directory">
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#ab3e54d1eef4c27734e45a61d27be386b">create_aggregate</a>(const std::string &amp;name, bool is_deterministic=false, const textencoding encoding=textencoding::utf8)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">create_collation</a>(const std::string &amp;name, F &amp;&amp;function, const textencoding encoding=textencoding::utf8)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#ad42c081096ec64f35710aa021f2f4b56">create_function</a>(const std::string &amp;name, F &amp;&amp;function, bool is_deterministic=false, const textencoding encoding=textencoding::utf8)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#a3cc15c8f2784e6b706a5992c8014c2dd">create_general_function</a>(const std::string &amp;name, F &amp;&amp;function, int is_deterministic=false, const textencoding encoding=textencoding::utf8, int nargs=-1)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">dbconnection</a>() noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#a6c17517eb1631c15b64a0c54dd5355ca">dbconnection</a>(const dbconnection &amp;other) noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a31b78d1afbfc6147319eabb9f0e23bc5">dbconnection</a>(dbconnection &amp;&amp;other) noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#a65e20f08669b49b018614cddd47efa77">dbconnection</a>(const std::string &amp;filename, openmode mode=openmode::read_write|openmode::create, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a4de544133c1a430855624c94986ed16c">dbconnection</a>(const std::string &amp;filename, const std::chrono::milliseconds timeout)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#a1ac3a4126d0c5da0773f14e9ac443678">dbconnection</a>(const std::u16string &amp;filename, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>() const noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#adc0120a0d5d39eabcffb7d641b0c40dd">memory</a>()</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#afa13431e657c74ba7beee63fa70eeb93">mutex</a>()</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(const std::string &amp;filename, openmode mode=openmode::read_write|openmode::create)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#ac31065d17d9cbe1e1b3021bf11ff0229">open</a>(const std::u16string &amp;filename)</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#a8c0e145b3687659ec0f76949174651e0">operator bool</a>() const noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#ae7c52ec41d3dfb7f4c8a521af7673bde">operator=</a>(const dbconnection &amp;other) noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#abd91c727842023d54fdb64e6e2e9ac3c">operator=</a>(dbconnection &amp;&amp;other) noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00004.html#add860c9b2c630bcfc178e3a7e878ea1b">row_id</a>() const noexcept</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00004.html#abe5e2bf211f18f2f358f4293d3064679">wide_memory</a>()</td><td class="entry"><a class="el" href="a00004.html">sqlite::dbconnection</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:33 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

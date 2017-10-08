@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,37 +97,37 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>SQLite</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span>sqlite</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00006.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00006.html">Exception</a> : <span class="keyword">public</span> std::runtime_error</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00006.html">   14</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00006.html">exception</a> : <span class="keyword">public</span> std::runtime_error</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> errcode;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">const</span> std::string message;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00006.html">Exception</a>(sqlite3 * <span class="keyword">const</span> connection) :</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00006.html">exception</a>(sqlite3 * <span class="keyword">const</span> connection) :</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            std::runtime_error(sqlite3_errmsg(connection)),</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            errcode(sqlite3_extended_errcode(connection)),</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            message(sqlite3_errmsg(connection))</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {}</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00006.html">Exception</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> code, <span class="keyword">const</span> std::string&amp; message) :</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00006.html">exception</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> code, <span class="keyword">const</span> std::string&amp; message) :</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            std::runtime_error(message),</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;            errcode(code),</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            message(message)</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {}</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    };</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00003.html">   35</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00003.html">BusyException</a>: <span class="keyword">public</span> <a class="code" href="a00006.html">Exception</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00003.html">   35</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00003.html">busy_exception</a>: <span class="keyword">public</span> <a class="code" href="a00006.html">exception</a></div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    {</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00003.html">BusyException</a>(sqlite3 * <span class="keyword">const</span> connection) :</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="a00006.html">Exception</a>(connection)</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00003.html">busy_exception</a>(sqlite3 * <span class="keyword">const</span> connection) :</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="a00006.html">exception</a>(connection)</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {}</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00003.html">BusyException</a>(<span class="keyword">const</span> std::string&amp; message) :</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="a00006.html">Exception</a>(SQLITE_BUSY, message)</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="a00003.html">busy_exception</a>(<span class="keyword">const</span> std::string&amp; message) :</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="a00006.html">exception</a>(SQLITE_BUSY, message)</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    };</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
@@ -140,18 +140,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    };</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> throwErrorCode(sqlite3 *connection);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> throwErrorCode(<span class="keyword">const</span> <span class="keywordtype">int</span> errcode, <span class="keyword">const</span> std::string&amp; message);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> throw_error_code(sqlite3 *connection);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> throw_error_code(<span class="keyword">const</span> <span class="keywordtype">int</span> errcode, <span class="keyword">const</span> std::string&amp; message);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor"></span></div>
-<div class="ttc" id="a00003_html"><div class="ttname"><a href="a00003.html">SQLite::BusyException</a></div><div class="ttdoc">Encapsulation of the SQLITE_BUSY error code derived from SQLite::Exception. </div><div class="ttdef"><b>Definition:</b> <a href="a00024_source.html#l00035">Exception.h:35</a></div></div>
-<div class="ttc" id="a00006_html"><div class="ttname"><a href="a00006.html">SQLite::Exception</a></div><div class="ttdoc">Encapsulation of the error code and message from SQLite3, based on std::runtime_error. </div><div class="ttdef"><b>Definition:</b> <a href="a00024_source.html#l00014">Exception.h:14</a></div></div>
+<div class="ttc" id="a00003_html"><div class="ttname"><a href="a00003.html">sqlite::busy_exception</a></div><div class="ttdoc">Encapsulation of the SQLITE_BUSY error code derived from SQLite::Exception. </div><div class="ttdef"><b>Definition:</b> <a href="a00024_source.html#l00035">Exception.h:35</a></div></div>
+<div class="ttc" id="a00006_html"><div class="ttname"><a href="a00006.html">sqlite::exception</a></div><div class="ttdoc">Encapsulation of the error code and message from SQLite3, based on std::runtime_error. </div><div class="ttdef"><b>Definition:</b> <a href="a00024_source.html#l00014">Exception.h:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 23 2017 04:57:33 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

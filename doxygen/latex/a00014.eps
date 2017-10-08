@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 72.072072
+%%BoundingBox: 0 0 500 74.906367
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,7 +19,7 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 6.937500 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 6.675000 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
@@ -173,10 +173,10 @@
 
 boxfont setfont
 1 boundaspect scale
-(SQLite::Transaction) cw
-(SQLite::DeferredTransaction) cw
-(SQLite::ExclusiveTransaction) cw
-(SQLite::ImmediateTransaction) cw
+(sqlite::transaction) cw
+(sqlite::deferred_transaction) cw
+(sqlite::exclusive_transaction) cw
+(sqlite::immediate_transaction) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -188,10 +188,10 @@ boundx scalefactor div boundy scalefactor div scale
 
 % ----- classes -----
 
- (SQLite::Transaction) 1.000000 1.000000 box
- (SQLite::DeferredTransaction) 0.000000 0.000000 box
- (SQLite::ExclusiveTransaction) 1.000000 0.000000 box
- (SQLite::ImmediateTransaction) 2.000000 0.000000 box
+ (sqlite::transaction) 1.000000 1.000000 box
+ (sqlite::deferred_transaction) 0.000000 0.000000 box
+ (sqlite::exclusive_transaction) 1.000000 0.000000 box
+ (sqlite::immediate_transaction) 2.000000 0.000000 box
 
 % ----- relations -----
 
