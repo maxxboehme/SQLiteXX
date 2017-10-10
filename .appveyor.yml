@@ -2,6 +2,7 @@ version: "{build}"
 
 os:
     - Visual Studio 2015
+    - Visual Studio 2017
 
 # Win32 and x64 are CMake-compatable solution platform names
 # This allows us to pass %PLATFORM% to cmake -A
@@ -28,3 +29,11 @@ build:
 
 test_script:
     - ctest -C %CONFIGURATION% --output-on-failure
+
+after_test:
+    - cmake --build . --target install
+    - cmake -DSQLITEXX_TEST_INSTALL=1 ..
+    - ctest --output-on-failure
+
+matrix:
+    fast_finish: true
