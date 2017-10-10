@@ -32,8 +32,9 @@ test_script:
 
 after_test:
     - cmake --build . --target install
-    - cmake -DSQLITEXX_TEST_INSTALL=1 ..
-    - ctest --output-on-failure
+    - cmake -A%PLATFORM% -DSQLITEXX_TEST_INSTALL=1 ..
+    - cmake --build .
+    - ctest -C %CONFIGURATION% --output-on-failure
 
 matrix:
     fast_finish: true
