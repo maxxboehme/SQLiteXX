@@ -3,20 +3,25 @@
 }
 {\ttfamily \#include $<$sqlite3.\-h$>$}\\*
 {\ttfamily \#include $<$type\-\_\-traits$>$}\\*
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00038}{sqlite}
+\begin{DoxyCompactList}\small\item\em S\-Q\-Lite\-X\-X classes and functions are defined in this namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum {\bfseries openmode} \-: int \{ \\*
-{\bfseries sqlite\-::openmode\-::read\-\_\-only} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-R\-E\-A\-D\-O\-N\-L\-Y, 
-{\bfseries sqlite\-::openmode\-::read\-\_\-write} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-R\-E\-A\-D\-W\-R\-I\-T\-E, 
-{\bfseries sqlite\-::openmode\-::create} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-C\-R\-E\-A\-T\-E, 
-{\bfseries sqlite\-::openmode\-::uri} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-U\-R\-I, 
+enum \hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938}{sqlite\-::openmode} \-: int \{ \\*
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938abefe72871b2de8f4f0e20108517e31fe}{sqlite\-::openmode\-::read\-\_\-only} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-R\-E\-A\-D\-O\-N\-L\-Y, 
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f}{sqlite\-::openmode\-::read\-\_\-write} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-R\-E\-A\-D\-W\-R\-I\-T\-E, 
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5}{sqlite\-::openmode\-::create} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-C\-R\-E\-A\-T\-E, 
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a9305b73d359bd06734fee0b3638079e1}{sqlite\-::openmode\-::uri} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-U\-R\-I, 
 \\*
-{\bfseries sqlite\-::openmode\-::memory} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-M\-E\-M\-O\-R\-Y, 
-{\bfseries sqlite\-::openmode\-::no\-\_\-mutex} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-N\-O\-M\-U\-T\-E\-X, 
-{\bfseries sqlite\-::openmode\-::full\-\_\-mutex} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-F\-U\-L\-L\-M\-U\-T\-E\-X, 
-{\bfseries sqlite\-::openmode\-::shared\-\_\-cache} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-S\-H\-A\-R\-E\-D\-C\-A\-C\-H\-E, 
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938acd69b4957f06cd818d7bf3d61980e291}{sqlite\-::openmode\-::memory} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-M\-E\-M\-O\-R\-Y, 
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938afb79f3efe5bfb497a2fdd85aca8a73bb}{sqlite\-::openmode\-::no\-\_\-mutex} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-N\-O\-M\-U\-T\-E\-X, 
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938addc995071d9f139c13354c2839603fac}{sqlite\-::openmode\-::full\-\_\-mutex} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-F\-U\-L\-L\-M\-U\-T\-E\-X, 
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a799bb323b5a99b0e122ba5aec784d314}{sqlite\-::openmode\-::shared\-\_\-cache} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-S\-H\-A\-R\-E\-D\-C\-A\-C\-H\-E, 
 \\*
-{\bfseries sqlite\-::openmode\-::private\-\_\-cache} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-P\-R\-I\-V\-A\-T\-E\-C\-A\-C\-H\-E
+\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a56ffbad7684376d679b1f0dcf37d8bf7}{sqlite\-::openmode\-::private\-\_\-cache} = S\-Q\-L\-I\-T\-E\-\_\-\-O\-P\-E\-N\-\_\-\-P\-R\-I\-V\-A\-T\-E\-C\-A\-C\-H\-E
  \}
-\begin{DoxyCompactList}\small\item\em Different ways to open a D\-B\-Connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Different ways to open a dbconnection. \end{DoxyCompactList}\end{DoxyCompactItemize}

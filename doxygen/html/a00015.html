@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,19 +83,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00015.html">value</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">sqlite</a></li><li class="navelem"><a class="el" href="a00015.html">value</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00055.html">List of all members</a>  </div>
+<a href="a00054.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">sqlite::value Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>A <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> dynamically typed value object, aka "sqlite3_value".  
+<p>A SQLite dynamically typed value object, aka "sqlite3_value".  
  <a href="a00015.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="a00037_source.html">Value.h</a>&gt;</code></p>
@@ -145,13 +145,13 @@ sqlite3_value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <tr class="memitem:a089b0cb550fd7ca7830ebf1cb43850d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00015.html#a089b0cb550fd7ca7830ebf1cb43850d1">bytes</a> () const noexcept</td></tr>
 <tr class="memdesc:a089b0cb550fd7ca7830ebf1cb43850d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the size in bytes of the value.  <a href="#a089b0cb550fd7ca7830ebf1cb43850d1">More...</a><br/></td></tr>
 <tr class="separator:a089b0cb550fd7ca7830ebf1cb43850d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dbe99607518010c9fd134b0816bb451"><td class="memItemLeft" align="right" valign="top">datatype&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00015.html#a1dbe99607518010c9fd134b0816bb451">type</a> () const noexcept</td></tr>
+<tr class="memitem:a1dbe99607518010c9fd134b0816bb451"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">datatype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00015.html#a1dbe99607518010c9fd134b0816bb451">type</a> () const noexcept</td></tr>
 <tr class="memdesc:a1dbe99607518010c9fd134b0816bb451"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the datatype for the initial datatype of the value.  <a href="#a1dbe99607518010c9fd134b0816bb451">More...</a><br/></td></tr>
 <tr class="separator:a1dbe99607518010c9fd134b0816bb451"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> dynamically typed value object, aka "sqlite3_value". </p>
-<p>value objects represent all values that can be stored in a database table. A value object may be either "protected" or "unprotected" which refers to whether or not a mutex is held. An internal mutex is held for a protected value object but not for an unprotected one. If <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> is compiled to be single-threaded or if <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> is run in one of reduced mutex modes then there is no distinction between protected and unprotected sqlite3_value objects. A value objects will always be "protected" as it stores a sqlite3_value objects created from calling the sqlite3_value_dup() interface which produces a "protected" "sqlite3_value" from an "unprotected" one. Only use a value object in the same thread as the SQL function that created it. </p>
+<div class="textblock"><p>A SQLite dynamically typed value object, aka "sqlite3_value". </p>
+<p>value objects represent all values that can be stored in a database table. A value object may be either "protected" or "unprotected" which refers to whether or not a mutex is held. An internal mutex is held for a protected value object but not for an unprotected one. If SQLite is compiled to be single-threaded or if SQLite is run in one of reduced mutex modes then there is no distinction between protected and unprotected sqlite3_value objects. A value objects will always be "protected" as it stores a sqlite3_value objects created from calling the sqlite3_value_dup() interface which produces a "protected" "sqlite3_value" from an "unprotected" one. Only use a value object in the same thread as the SQL function that created it. </p>
 
 <p>Definition at line <a class="el" href="a00037_source.html#l00027">27</a> of file <a class="el" href="a00037_source.html">Value.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -532,7 +532,7 @@ sqlite3_value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">datatype sqlite::value::type </td>
+          <td class="memname"><a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">datatype</a> sqlite::value::type </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -546,7 +546,7 @@ sqlite3_value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><div class="memdoc">
 
 <p>Returns the datatype for the initial datatype of the value. </p>
-<p>Warning: Other interfaces might change the datatype for an value object. For example, if the datatype is initially sqlite::datatype::integer and <a class="el" href="a00015.html#a6ce81cd7d007013cdc4ac5103ffa76f1" title="Represents the value as a string. ">as_string()</a> is called to extract a text value for that integer, then subsequent calls to <a class="el" href="a00015.html#a1dbe99607518010c9fd134b0816bb451" title="Returns the datatype for the initial datatype of the value. ">type()</a> might return sqlite::datatype::text. Whether or not a persistent internal datatype conversion occurs is undefined and my change from one release of sqlite to the next. </p>
+<p>Warning: Other interfaces might change the datatype for an value object. For example, if the datatype is initially <a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a157db7df530023575515d366c9b672e8" title="64-bit signed integer ">sqlite::datatype::integer</a> and <a class="el" href="a00015.html#a6ce81cd7d007013cdc4ac5103ffa76f1" title="Represents the value as a string. ">as_string()</a> is called to extract a text value for that integer, then subsequent calls to <a class="el" href="a00015.html#a1dbe99607518010c9fd134b0816bb451" title="Returns the datatype for the initial datatype of the value. ">type()</a> might return <a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1" title="a string ">sqlite::datatype::text</a>. Whether or not a persistent internal datatype conversion occurs is undefined and my change from one release of sqlite to the next. </p>
 <dl class="section return"><dt>Returns</dt><dd>The type of the value. </dd></dl>
 
 <p>Definition at line <a class="el" href="a00036_source.html#l00079">79</a> of file <a class="el" href="a00036_source.html">Value.cpp</a>.</p>
@@ -560,7 +560,7 @@ sqlite3_value *&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:04 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:07 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

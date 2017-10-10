@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,25 +83,36 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00007.html">exclusive_transaction</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">sqlite</a></li><li class="navelem"><a class="el" href="a00015.html">value</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">sqlite::exclusive_transaction Member List</div>  </div>
+<div class="title">sqlite::value Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00007.html">sqlite::exclusive_transaction</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00015.html">sqlite::value</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#abe219dd0bf949d569381f9830c7b2d1a">commit</a>()</td><td class="entry"><a class="el" href="a00014.html">sqlite::transaction</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr><td class="entry"><a class="el" href="a00007.html#a9380f63712877dd18432ca82476dd096">exclusive_transaction</a>(dbconnection &amp;connection)</td><td class="entry"><a class="el" href="a00007.html">sqlite::exclusive_transaction</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00014.html#ac5e2efbcd15f1531c00cbcacfa74c3f0">transaction</a>(dbconnection &amp;connection, const TransactionType type)</td><td class="entry"><a class="el" href="a00014.html">sqlite::transaction</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00014.html#a798101cf276674d19708c1958e5b03fb">~transaction</a>() noexcept</td><td class="entry"><a class="el" href="a00014.html">sqlite::transaction</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#a623f5aeec955a49d4ca453658d4c45c5">as_blob</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00015.html#aa86e87cfd02eec52a5f85b6787a5fd66">as_double</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#a29efc5beb5d3a1fcf2f7baa59e810bf6">as_int</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00015.html#afb843fda2733a3a107b86557d74ca60e">as_int64</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#a6ce81cd7d007013cdc4ac5103ffa76f1">as_string</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00015.html#a6edf39b8900fa6b490161994da913236">as_u16string</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#ace86134f202dd8998645dd1f86dcf046">as_uint</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00015.html#a089b0cb550fd7ca7830ebf1cb43850d1">bytes</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#a668839eab925862f57489429305be72d">handle</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00015.html#ab67e08529ef687899b08ad6fa50d4301">operator=</a>(const value &amp;other)</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#aa3d30541555ecc3f54216ce80f2e482f">operator=</a>(value &amp;&amp;other)</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00015.html#a1dbe99607518010c9fd134b0816bb451">type</a>() const noexcept</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#ad297a88d479f1818a65dadd726161785">value</a>(const sqlite3_value *const value)</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"><span class="mlabel">explicit</span></td></tr>
+  <tr><td class="entry"><a class="el" href="a00015.html#aa8e08aeebbd2a89075647a8418a7eae7">value</a>(const value &amp;other)</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00015.html#a0ee5bf64b3377bd2ec6da01b066f62cb">value</a>(value &amp;&amp;other)</td><td class="entry"><a class="el" href="a00015.html">sqlite::value</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:04 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:07 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

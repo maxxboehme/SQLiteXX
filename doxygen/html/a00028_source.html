@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,59 +98,69 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>sqlite</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keyword">enum class</span> openmode : int {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        read_only     = SQLITE_OPEN_READONLY,     </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        read_write    = SQLITE_OPEN_READWRITE,    </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        create       = SQLITE_OPEN_CREATE,       </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        uri          = SQLITE_OPEN_URI,          </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        memory       = SQLITE_OPEN_MEMORY,       </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        no_mutex      = SQLITE_OPEN_NOMUTEX,      </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        full_mutex    = SQLITE_OPEN_FULLMUTEX,    </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        shared_cache  = SQLITE_OPEN_SHAREDCACHE,  </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        private_cache = SQLITE_OPEN_PRIVATECACHE, </div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">   14</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> : int {</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938abefe72871b2de8f4f0e20108517e31fe">read_only</a>     = SQLITE_OPEN_READONLY,     </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">read_write</a>    = SQLITE_OPEN_READWRITE,    </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">create</a>        = SQLITE_OPEN_CREATE,       </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a9305b73d359bd06734fee0b3638079e1">uri</a>           = SQLITE_OPEN_URI,          </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938acd69b4957f06cd818d7bf3d61980e291">memory</a>        = SQLITE_OPEN_MEMORY,       </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938afb79f3efe5bfb497a2fdd85aca8a73bb">no_mutex</a>      = SQLITE_OPEN_NOMUTEX,      </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938addc995071d9f139c13354c2839603fac">full_mutex</a>    = SQLITE_OPEN_FULLMUTEX,    </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a799bb323b5a99b0e122ba5aec784d314">shared_cache</a>  = SQLITE_OPEN_SHAREDCACHE,  </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a56ffbad7684376d679b1f0dcf37d8bf7">private_cache</a> = SQLITE_OPEN_PRIVATECACHE, </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">inline</span> openmode operator&amp;(openmode lhs, openmode rhs) {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>openmode<span class="keyword">&gt;</span>(</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">inline</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> operator&amp;(<a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> lhs, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> rhs) {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a><span class="keyword">&gt;</span>(</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;openmode&gt;::type<span class="keyword">&gt;</span>(lhs) &amp;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;openmode&gt;::type<span class="keyword">&gt;</span>(rhs));</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">inline</span> openmode operator|(openmode lhs, openmode rhs) {</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>openmode<span class="keyword">&gt;</span>(</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">inline</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> operator|(<a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> lhs, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> rhs) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a><span class="keyword">&gt;</span>(</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;openmode&gt;::type<span class="keyword">&gt;</span>(lhs) |</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;openmode&gt;::type<span class="keyword">&gt;</span>(rhs));</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">inline</span> openmode operator^(openmode lhs, openmode rhs) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>openmode<span class="keyword">&gt;</span>(</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">inline</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> operator^(<a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> lhs, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> rhs) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a><span class="keyword">&gt;</span>(</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;openmode&gt;::type<span class="keyword">&gt;</span>(lhs) |</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;openmode&gt;::type<span class="keyword">&gt;</span>(rhs));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">inline</span> openmode operator~(openmode flag) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>openmode<span class="keyword">&gt;</span>(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">inline</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> operator~(<a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> flag) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a><span class="keyword">&gt;</span>(</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keyword">static_cast&lt;</span>std::underlying_type&lt;openmode&gt;::type<span class="keyword">&gt;</span>(flag));</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> openmode&amp; operator&amp;=(openmode &amp;lhs, openmode rhs) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a>&amp; operator&amp;=(<a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> &amp;lhs, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> rhs) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> lhs = lhs &amp; rhs;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> openmode&amp; operator|=(openmode &amp;lhs, openmode rhs) {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a>&amp; operator|=(<a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> &amp;lhs, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> rhs) {</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span> lhs = lhs | rhs;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> openmode&amp; operator^=(openmode &amp;lhs, openmode rhs) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a>&amp; operator^=(<a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> &amp;lhs, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> rhs) {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> lhs = lhs ^ rhs;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938afb79f3efe5bfb497a2fdd85aca8a73bb"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938afb79f3efe5bfb497a2fdd85aca8a73bb">sqlite::openmode::no_mutex</a></div><div class="ttdoc">database connections opens in the multi-thread threading mode as long as the single-thread mode has n...</div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">sqlite::openmode</a></div><div class="ttdeci">openmode</div><div class="ttdoc">Different ways to open a dbconnection. </div><div class="ttdef"><b>Definition:</b> <a href="a00028_source.html#l00014">Open.h:14</a></div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">sqlite::openmode::create</a></div><div class="ttdoc">database will be created if it does not already exist </div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938addc995071d9f139c13354c2839603fac"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938addc995071d9f139c13354c2839603fac">sqlite::openmode::full_mutex</a></div><div class="ttdoc">database connection opens in the serialized threading mode unless single-thread was previously select...</div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938a56ffbad7684376d679b1f0dcf37d8bf7"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a56ffbad7684376d679b1f0dcf37d8bf7">sqlite::openmode::private_cache</a></div><div class="ttdoc">causes the database connection to not participate in shared cache mode even if it is enabled...</div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938a9305b73d359bd06734fee0b3638079e1"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a9305b73d359bd06734fee0b3638079e1">sqlite::openmode::uri</a></div><div class="ttdoc">URI filename interpretation is enabled. </div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938acd69b4957f06cd818d7bf3d61980e291"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938acd69b4957f06cd818d7bf3d61980e291">sqlite::openmode::memory</a></div><div class="ttdoc">open an in memory database </div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">sqlite::openmode::read_write</a></div><div class="ttdoc">opened for reading and writing if possible, or reading only if the file is write protected by the ope...</div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938abefe72871b2de8f4f0e20108517e31fe"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938abefe72871b2de8f4f0e20108517e31fe">sqlite::openmode::read_only</a></div><div class="ttdoc">opened in read-only mode </div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938a799bb323b5a99b0e122ba5aec784d314"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a799bb323b5a99b0e122ba5aec784d314">sqlite::openmode::shared_cache</a></div><div class="ttdoc">causes the database connection to be eligible to use shared cache mode, regardless of whether or not ...</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>SQLiteXX: SQLite Namespace Reference</title>
+<title>SQLiteXX: sqlite Namespace Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -62,6 +62,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow2" class="tabs2">
     <ul class="tablist">
       <li><a href="namespaces.html"><span>Namespace&#160;List</span></a></li>
+      <li><a href="namespacemembers.html"><span>Namespace&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,19 +81,475 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">SQLite Namespace Reference</div>  </div>
+<div class="title">sqlite Namespace Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
 <p>SQLiteXX classes and functions are defined in this namespace.  
 <a href="#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00001.html">backup</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to aid in the process of backing up a database.  <a href="a00001.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00002.html">blob</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A "Binary Large OBject".  <a href="a00002.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html">dbconnection</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class that represents a connection to a database.  <a href="a00004.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00006.html">exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulation of the error code and message from SQLite3, based on std::runtime_error.  <a href="a00006.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00003.html">busy_exception</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encapsulation of the SQLITE_BUSY error code derived from SQLite::Exception.  <a href="a00003.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00009.html">mutex</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helps with serializing access to a database connection.  <a href="a00009.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00010.html">reader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Base class used to help with reading "sqlite3_stmt" information.  <a href="a00010.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00011.html">row</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a returned row when stepping through a "SELECT" statement.  <a href="a00011.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00013.html">statement</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a single SQL statement that has been compiled into binary form and is ready to be evaluated, aka "sqlite3_stmt".  <a href="a00013.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00012.html">row_iterator</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helps when iterating over rows in a "SELECT" statement.  <a href="a00012.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html">transaction</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAII encapsulation of the SQLite Transactions.  <a href="a00014.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00005.html">deferred_transaction</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAII encapsulation of the SQLite deferred transaction.  <a href="a00005.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00008.html">immediate_transaction</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAII encapsulation of the SQLite immediate transaction.  <a href="a00008.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html">exclusive_transaction</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">RAII encapsulation of the SQLite exclusive transaction.  <a href="a00007.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00015.html">value</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A SQLite dynamically typed value object, aka "sqlite3_value".  <a href="a00015.html#details">More...</a><br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac886eded97b0430b2ab92e2d08fcf938"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> : int { <br/>
+&#160;&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938abefe72871b2de8f4f0e20108517e31fe">openmode::read_only</a> = SQLITE_OPEN_READONLY, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">openmode::read_write</a> = SQLITE_OPEN_READWRITE, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">openmode::create</a> = SQLITE_OPEN_CREATE, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a9305b73d359bd06734fee0b3638079e1">openmode::uri</a> = SQLITE_OPEN_URI, 
+<br/>
+&#160;&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938acd69b4957f06cd818d7bf3d61980e291">openmode::memory</a> = SQLITE_OPEN_MEMORY, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938afb79f3efe5bfb497a2fdd85aca8a73bb">openmode::no_mutex</a> = SQLITE_OPEN_NOMUTEX, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938addc995071d9f139c13354c2839603fac">openmode::full_mutex</a> = SQLITE_OPEN_FULLMUTEX, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a799bb323b5a99b0e122ba5aec784d314">openmode::shared_cache</a> = SQLITE_OPEN_SHAREDCACHE, 
+<br/>
+&#160;&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a56ffbad7684376d679b1f0dcf37d8bf7">openmode::private_cache</a> = SQLITE_OPEN_PRIVATECACHE
+<br/>
+ }</td></tr>
+<tr class="memdesc:ac886eded97b0430b2ab92e2d08fcf938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Different ways to open a dbconnection.  <a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">More...</a><br/></td></tr>
+<tr class="separator:ac886eded97b0430b2ab92e2d08fcf938"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7467e5cdd32bbf7fce35aced88682dc0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">datatype</a> : int { <br/>
+&#160;&#160;<a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a157db7df530023575515d366c9b672e8">datatype::integer</a> = SQLITE_INTEGER, 
+<a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a374515b23d6f106696387776a6077d17">datatype::floating</a> = SQLITE_FLOAT, 
+<a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0aee26908bf9629eeb4b37dac350f4754a">datatype::blob</a> = SQLITE_BLOB, 
+<a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a37a6259cc0c1dae299a7866489dff0bd">datatype::null</a> = SQLITE_NULL, 
+<br/>
+&#160;&#160;<a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1">datatype::text</a> = SQLITE3_TEXT
+<br/>
+ }</td></tr>
+<tr class="memdesc:a7467e5cdd32bbf7fce35aced88682dc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Every value in SQLite has one of the following fundamental datatypes.  <a href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">More...</a><br/></td></tr>
+<tr class="separator:a7467e5cdd32bbf7fce35aced88682dc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991d">bindtype</a> : int { <a class="el" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991da29adf7ed88000fbb825808cb1d3667fa">bindtype::statically</a>, 
+<a class="el" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b">bindtype::transiently</a>
+ }</td></tr>
+<tr class="memdesc:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify the way to bind a value to a statement.  <a href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991d">More...</a><br/></td></tr>
+<tr class="separator:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea994c2d3b1e9448cd9c526b44f78890"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a> : int { <a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac">TransactionType::Deferred</a>, 
+<a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1">TransactionType::Immediate</a>, 
+<a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971">TransactionType::Exclusive</a>
+ }</td></tr>
+<tr class="memdesc:aea994c2d3b1e9448cd9c526b44f78890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify the different types of SQLite transactions.  <a href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">More...</a><br/></td></tr>
+<tr class="separator:aea994c2d3b1e9448cd9c526b44f78890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ab443b8f604e88cd8f1e9c796d592e461"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab443b8f604e88cd8f1e9c796d592e461"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ab443b8f604e88cd8f1e9c796d592e461">return_result</a> (sqlite3_context *context, int <a class="el" href="a00015.html">value</a>)</td></tr>
+<tr class="memdesc:ab443b8f604e88cd8f1e9c796d592e461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helpers for setting result of scalar functions. <br/></td></tr>
+<tr class="separator:ab443b8f604e88cd8f1e9c796d592e461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82c17565b2423a151a79f500e05384c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00012.html">row_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a82c17565b2423a151a79f500e05384c7">begin</a> (const <a class="el" href="a00013.html">statement</a> &amp;<a class="el" href="a00013.html">statement</a>) noexcept</td></tr>
+<tr class="memdesc:a82c17565b2423a151a79f500e05384c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first row of a statement.  <a href="#a82c17565b2423a151a79f500e05384c7">More...</a><br/></td></tr>
+<tr class="separator:a82c17565b2423a151a79f500e05384c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb86a852a764bb601061807c9c53107"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00012.html">row_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a9bb86a852a764bb601061807c9c53107">end</a> (const <a class="el" href="a00013.html">statement</a> &amp;<a class="el" href="a00013.html">statement</a>) noexcept</td></tr>
+<tr class="memdesc:a9bb86a852a764bb601061807c9c53107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the end.  <a href="#a9bb86a852a764bb601061807c9c53107">More...</a><br/></td></tr>
+<tr class="separator:a9bb86a852a764bb601061807c9c53107"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3634536982adcefd80f2e5b5a8a105d"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:ac3634536982adcefd80f2e5b5a8a105d"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00038.html#ac3634536982adcefd80f2e5b5a8a105d">execute</a> (const <a class="el" href="a00004.html">dbconnection</a> &amp;connection, const std::string &amp;text, Values &amp;&amp;...values)</td></tr>
+<tr class="memdesc:ac3634536982adcefd80f2e5b5a8a105d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an SQL query on a database connection.  <a href="#ac3634536982adcefd80f2e5b5a8a105d">More...</a><br/></td></tr>
+<tr class="separator:ac3634536982adcefd80f2e5b5a8a105d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8cb158ff2ea9cd6331c9ed8dfde8da"><td class="memTemplParams" colspan="2">template&lt;typename... Values&gt; </td></tr>
+<tr class="memitem:a5d8cb158ff2ea9cd6331c9ed8dfde8da"><td class="memTemplItemLeft" align="right" valign="top">int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00038.html#a5d8cb158ff2ea9cd6331c9ed8dfde8da">execute</a> (const <a class="el" href="a00004.html">dbconnection</a> &amp;connection, const std::u16string &amp;text, Values &amp;&amp;...values)</td></tr>
+<tr class="memdesc:a5d8cb158ff2ea9cd6331c9ed8dfde8da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes an SQL query on a database connection.  <a href="#a5d8cb158ff2ea9cd6331c9ed8dfde8da">More...</a><br/></td></tr>
+<tr class="separator:a5d8cb158ff2ea9cd6331c9ed8dfde8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>SQLiteXX classes and functions are defined in this namespace. </p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a class="anchor" id="ae6a0fc429d821cca9a1b01d36cb0991d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991d">sqlite::bindtype</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to specify the way to bind a value to a statement. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ae6a0fc429d821cca9a1b01d36cb0991da29adf7ed88000fbb825808cb1d3667fa"></a>statically</em>&#160;</td><td class="fielddoc">
+<p>means that the content pointer is constant and will never change. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b"></a>transiently</em>&#160;</td><td class="fielddoc">
+<p>means that the content will likely change in the near future and that SQLite should make its own private copy of the content before returning. </p>
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00029_source.html#l00023">23</a> of file <a class="el" href="a00029_source.html">SQLiteEnums.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7467e5cdd32bbf7fce35aced88682dc0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">sqlite::datatype</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Every value in SQLite has one of the following fundamental datatypes. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a7467e5cdd32bbf7fce35aced88682dc0a157db7df530023575515d366c9b672e8"></a>integer</em>&#160;</td><td class="fielddoc">
+<p>64-bit signed integer </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a7467e5cdd32bbf7fce35aced88682dc0a374515b23d6f106696387776a6077d17"></a>floating</em>&#160;</td><td class="fielddoc">
+<p>64-bit IEEE floating point number </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a7467e5cdd32bbf7fce35aced88682dc0aee26908bf9629eeb4b37dac350f4754a"></a>blob</em>&#160;</td><td class="fielddoc">
+<p>a group and bits </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a7467e5cdd32bbf7fce35aced88682dc0a37a6259cc0c1dae299a7866489dff0bd"></a>null</em>&#160;</td><td class="fielddoc">
+<p>NULL. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1"></a>text</em>&#160;</td><td class="fielddoc">
+<p>a string </p>
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00029_source.html#l00013">13</a> of file <a class="el" href="a00029_source.html">SQLiteEnums.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">sqlite::openmode</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Different ways to open a dbconnection. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938abefe72871b2de8f4f0e20108517e31fe"></a>read_only</em>&#160;</td><td class="fielddoc">
+<p>opened in read-only mode </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f"></a>read_write</em>&#160;</td><td class="fielddoc">
+<p>opened for reading and writing if possible, or reading only if the file is write protected by the operating system. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5"></a>create</em>&#160;</td><td class="fielddoc">
+<p>database will be created if it does not already exist </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938a9305b73d359bd06734fee0b3638079e1"></a>uri</em>&#160;</td><td class="fielddoc">
+<p>URI filename interpretation is enabled. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938acd69b4957f06cd818d7bf3d61980e291"></a>memory</em>&#160;</td><td class="fielddoc">
+<p>open an in memory database </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938afb79f3efe5bfb497a2fdd85aca8a73bb"></a>no_mutex</em>&#160;</td><td class="fielddoc">
+<p>database connections opens in the multi-thread threading mode as long as the single-thread mode has not been set at compile-time or start-time </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938addc995071d9f139c13354c2839603fac"></a>full_mutex</em>&#160;</td><td class="fielddoc">
+<p>database connection opens in the serialized threading mode unless single-thread was previously selected at compile-time or start-time. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938a799bb323b5a99b0e122ba5aec784d314"></a>shared_cache</em>&#160;</td><td class="fielddoc">
+<p>causes the database connection to be eligible to use shared cache mode, regardless of whether or not shared cache is enabled. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ac886eded97b0430b2ab92e2d08fcf938a56ffbad7684376d679b1f0dcf37d8bf7"></a>private_cache</em>&#160;</td><td class="fielddoc">
+<p>causes the database connection to not participate in shared cache mode even if it is enabled. </p>
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00028_source.html#l00014">14</a> of file <a class="el" href="a00028_source.html">Open.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">sqlite::TransactionType</a> : int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Used to specify the different types of SQLite transactions. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac"></a>Deferred</em>&#160;</td><td class="fielddoc">
+<p>means that no locks are acquired on the database until the database is first accessed. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1"></a>Immediate</em>&#160;</td><td class="fielddoc">
+<p>means that no database connection will be able to write to the database or do a BEGIN IMMEDIATE/EXCLUSIVE. </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971"></a>Exclusive</em>&#160;</td><td class="fielddoc">
+<p>means that no other database connection except for read_uncommitted connection will be able to read/write to the database. </p>
+</td></tr>
+</table>
+
+<p>Definition at line <a class="el" href="a00034_source.html#l00017">17</a> of file <a class="el" href="a00034_source.html">Transaction.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="a82c17565b2423a151a79f500e05384c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00012.html">row_iterator</a> sqlite::begin </td>
+          <td>(</td>
+          <td class="paramtype">const statement &amp;&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the first row of a statement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">statement</td><td>the statement to get the first row of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The first row of an executed SQL statement. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00031_source.html#l00006">6</a> of file <a class="el" href="a00031_source.html">Statement.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9bb86a852a764bb601061807c9c53107"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="a00012.html">row_iterator</a> sqlite::end </td>
+          <td>(</td>
+          <td class="paramtype">const statement &amp;&#160;</td>
+          <td class="paramname"><em>statement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the end. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">statement</td><td>the statement to get the end of </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value that signifies that there are no more rows to iterate over. </dd></dl>
+
+<p>Definition at line <a class="el" href="a00031_source.html#l00011">11</a> of file <a class="el" href="a00031_source.html">Statement.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac3634536982adcefd80f2e5b5a8a105d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Values&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sqlite::execute </td>
+          <td>(</td>
+          <td class="paramtype">const dbconnection &amp;&#160;</td>
+          <td class="paramname"><em>connection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Values &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes an SQL query on a database connection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">connection</td><td>a database connection to execute the statement on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>the SQL query </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">values</td><td>possible values to bind to SQL query if containing bind parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00032_source.html#l00642">642</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5d8cb158ff2ea9cd6331c9ed8dfde8da"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename... Values&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int sqlite::execute </td>
+          <td>(</td>
+          <td class="paramtype">const dbconnection &amp;&#160;</td>
+          <td class="paramname"><em>connection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::u16string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Values &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes an SQL query on a database connection. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">connection</td><td>a database connection to execute the statement on </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>UTF-16 SQL query </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">values</td><td>possible values to bind to SQL query if containing bind parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="a00032_source.html#l00657">657</a> of file <a class="el" href="a00032_source.html">Statement.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

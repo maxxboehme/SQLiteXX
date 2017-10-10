@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">Open.h File Reference</div>  </div>
@@ -95,29 +96,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div>
 <p><a href="a00028_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a00038"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html">sqlite</a></td></tr>
+<tr class="memdesc:a00038"><td class="mdescLeft">&#160;</td><td class="mdescRight">SQLiteXX classes and functions are defined in this namespace. <br/></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ac886eded97b0430b2ab92e2d08fcf938"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>openmode</b> : int { <br/>
-&#160;&#160;<b>sqlite::openmode::read_only</b> = SQLITE_OPEN_READONLY, 
-<b>sqlite::openmode::read_write</b> = SQLITE_OPEN_READWRITE, 
-<b>sqlite::openmode::create</b> = SQLITE_OPEN_CREATE, 
-<b>sqlite::openmode::uri</b> = SQLITE_OPEN_URI, 
+<tr class="memitem:ac886eded97b0430b2ab92e2d08fcf938"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">sqlite::openmode</a> : int { <br/>
+&#160;&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938abefe72871b2de8f4f0e20108517e31fe">sqlite::openmode::read_only</a> = SQLITE_OPEN_READONLY, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">sqlite::openmode::read_write</a> = SQLITE_OPEN_READWRITE, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">sqlite::openmode::create</a> = SQLITE_OPEN_CREATE, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a9305b73d359bd06734fee0b3638079e1">sqlite::openmode::uri</a> = SQLITE_OPEN_URI, 
 <br/>
-&#160;&#160;<b>sqlite::openmode::memory</b> = SQLITE_OPEN_MEMORY, 
-<b>sqlite::openmode::no_mutex</b> = SQLITE_OPEN_NOMUTEX, 
-<b>sqlite::openmode::full_mutex</b> = SQLITE_OPEN_FULLMUTEX, 
-<b>sqlite::openmode::shared_cache</b> = SQLITE_OPEN_SHAREDCACHE, 
+&#160;&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938acd69b4957f06cd818d7bf3d61980e291">sqlite::openmode::memory</a> = SQLITE_OPEN_MEMORY, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938afb79f3efe5bfb497a2fdd85aca8a73bb">sqlite::openmode::no_mutex</a> = SQLITE_OPEN_NOMUTEX, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938addc995071d9f139c13354c2839603fac">sqlite::openmode::full_mutex</a> = SQLITE_OPEN_FULLMUTEX, 
+<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a799bb323b5a99b0e122ba5aec784d314">sqlite::openmode::shared_cache</a> = SQLITE_OPEN_SHAREDCACHE, 
 <br/>
-&#160;&#160;<b>sqlite::openmode::private_cache</b> = SQLITE_OPEN_PRIVATECACHE
+&#160;&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a56ffbad7684376d679b1f0dcf37d8bf7">sqlite::openmode::private_cache</a> = SQLITE_OPEN_PRIVATECACHE
 <br/>
  }</td></tr>
-<tr class="memdesc:ac886eded97b0430b2ab92e2d08fcf938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Different ways to open a DBConnection. <br/></td></tr>
+<tr class="memdesc:ac886eded97b0430b2ab92e2d08fcf938"><td class="mdescLeft">&#160;</td><td class="mdescRight">Different ways to open a dbconnection.  <a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">More...</a><br/></td></tr>
 <tr class="separator:ac886eded97b0430b2ab92e2d08fcf938"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sqlite',['SQLite',['../a00038.html',1,'']]]
+  ['sqlite',['sqlite',['../a00038.html',1,'']]]
 ];

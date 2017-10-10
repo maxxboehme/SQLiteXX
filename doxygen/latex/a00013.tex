@@ -21,17 +21,17 @@ Inheritance diagram for sqlite\-:\-:statement\-:\begin{figure}[H]
 \item 
 \hyperlink{a00013_a1355244b2e1153eb26daea61e52e153a}{statement} () noexcept
 \begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\\hyperlink{a00013_ae92826d1d30ee7ea86a5e8ac6aad8aac}{statement} (const \hyperlink{a00004}{dbconnection} \&connection, const std\-::string \&text, Values \&\&...values)
+{\footnotesize template$<$typename... Values$>$ }\\\hyperlink{a00013_ae92826d1d30ee7ea86a5e8ac6aad8aac}{statement} (const \hyperlink{a00004}{dbconnection} \&connection, const std\-::string \&\hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1}{text}, Values \&\&...values)
 \begin{DoxyCompactList}\small\item\em Creates, prepares, and binds values into an S\-Q\-L statement. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\\hyperlink{a00013_a5b4dd3c704336b6373880dce27fe5b71}{statement} (const \hyperlink{a00004}{dbconnection} \&connection, const std\-::u16string \&text, Values \&\&...values)
+{\footnotesize template$<$typename... Values$>$ }\\\hyperlink{a00013_a5b4dd3c704336b6373880dce27fe5b71}{statement} (const \hyperlink{a00004}{dbconnection} \&connection, const std\-::u16string \&\hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1}{text}, Values \&\&...values)
 \begin{DoxyCompactList}\small\item\em Creates, prepares, and binds values into an S\-Q\-L statement. \end{DoxyCompactList}\item 
 \hyperlink{a00013_a558b055f3210c6ab7575dc2c23cb7be2}{operator bool} () const noexcept
-\begin{DoxyCompactList}\small\item\em Used to specify if the statement object has a prepared \hyperlink{a00038}{S\-Q\-Lite} statement. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Used to specify if the statement object has a prepared S\-Q\-Lite statement. \end{DoxyCompactList}\item 
 sqlite3\-\_\-stmt $\ast$ \hyperlink{a00013_aef59d3eb044ce240bd9ca3c8958d4abe}{handle} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns pointer to the underlying \char`\"{}sqlite3\-\_\-stmt\char`\"{} object. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_a6825366938fd914456b63c7e63ddc6f0}{prepare} (\hyperlink{a00004}{dbconnection} const \&connection, const std\-::string \&text, Values \&\&...values)
+{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_a6825366938fd914456b63c7e63ddc6f0}{prepare} (\hyperlink{a00004}{dbconnection} const \&connection, const std\-::string \&\hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1}{text}, Values \&\&...values)
 \begin{DoxyCompactList}\small\item\em Turn an S\-Q\-L query into byte code. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_abb6b5ec78b6ed682f11667f5a611818c}{prepare} (const \hyperlink{a00004}{dbconnection} \&connection, const std\-::u16string \&text, Values \&\&...values)
+{\footnotesize template$<$typename... Values$>$ }\\void \hyperlink{a00013_abb6b5ec78b6ed682f11667f5a611818c}{prepare} (const \hyperlink{a00004}{dbconnection} \&connection, const std\-::u16string \&\hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1}{text}, Values \&\&...values)
 \begin{DoxyCompactList}\small\item\em Turn an S\-Q\-L query into byte code. \end{DoxyCompactList}\item 
 bool \hyperlink{a00013_ad1039653cca9f00708ce570011791b9d}{step} () const 
 \begin{DoxyCompactList}\small\item\em Evaluates a prepared statement. \end{DoxyCompactList}\item 
@@ -41,13 +41,13 @@ void \hyperlink{a00013_a91d16077f086fe6becb4c7bae576b0e7}{bind} (const int index
 \begin{DoxyCompactList}\small\item\em Binds an integer value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
 void \hyperlink{a00013_a80f067e9b5bc981210593d3aac067cc5}{bind} (const int index, const double \hyperlink{a00015}{value}) const 
 \begin{DoxyCompactList}\small\item\em Binds an double value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
-void \hyperlink{a00013_ae6eda84becdf90c4e0a0bb25601dc54d}{bind} (const int index, const void $\ast$const \hyperlink{a00015}{value}, const int size, bindtype type=bindtype\-::transient) const 
+void \hyperlink{a00013_a784339d393006f4ea67bc7004d280106}{bind} (const int index, const void $\ast$const \hyperlink{a00015}{value}, const int size, \hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991d}{bindtype} type=\hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b}{bindtype\-::transiently}) const 
 \begin{DoxyCompactList}\small\item\em Binds an blob value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
 void \hyperlink{a00013_aaaa1ec53616b974e0dce72f3ba88b20f}{bind} (const int index, const \hyperlink{a00002}{blob} \&\hyperlink{a00015}{value}) const 
 \begin{DoxyCompactList}\small\item\em Binds an blob value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
-void \hyperlink{a00013_a778fde6911aba25ea0ca3c6d7a8be870}{bind} (const int index, const char $\ast$const \hyperlink{a00015}{value}, const int size=-\/1, bindtype type=bindtype\-::transient) const 
+void \hyperlink{a00013_aa6dd611fd47f53459006393b378b0536}{bind} (const int index, const char $\ast$const \hyperlink{a00015}{value}, const int size=-\/1, \hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991d}{bindtype} type=\hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b}{bindtype\-::transiently}) const 
 \begin{DoxyCompactList}\small\item\em Binds an string value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
-void \hyperlink{a00013_aa81eabe0c43e779bfaf82e465d76d8a7}{bind} (const int index, const char16\-\_\-t $\ast$const \hyperlink{a00015}{value}, const int size=-\/1, bindtype type=bindtype\-::transient) const 
+void \hyperlink{a00013_ab05bdb6e6f4a096a002b41f22ff1c5ae}{bind} (const int index, const char16\-\_\-t $\ast$const \hyperlink{a00015}{value}, const int size=-\/1, \hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991d}{bindtype} type=\hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b}{bindtype\-::transiently}) const 
 \begin{DoxyCompactList}\small\item\em Binds an U\-T\-F-\/16 string value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
 void \hyperlink{a00013_a8aa321913ed5bf9398d0694f4a222c15}{bind} (const int index, const std\-::string \&\hyperlink{a00015}{value}) const 
 \begin{DoxyCompactList}\small\item\em Binds an string value to a parameter in an S\-Q\-L prepared statement. \end{DoxyCompactList}\item 
@@ -97,9 +97,9 @@ int \hyperlink{a00010_ac4404227950aca8d5f01255a5541dbb4}{get\-\_\-bytes} (const 
 \begin{DoxyCompactList}\small\item\em Returns the size in bytes of the column value. \end{DoxyCompactList}\item 
 int \hyperlink{a00010_a315b97406b5ba48bcd14857192d88d5e}{get\-\_\-bytes} (const std\-::string \&name) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the size in bytes of the column value. \end{DoxyCompactList}\item 
-datatype \hyperlink{a00010_a2b8269e0f9387afa36ab90eb55899dc4}{get\-\_\-type} (const int column) const noexcept
+\hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0}{datatype} \hyperlink{a00010_a2b8269e0f9387afa36ab90eb55899dc4}{get\-\_\-type} (const int column) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the type of the specified column. \end{DoxyCompactList}\item 
-datatype \hyperlink{a00010_ac5ab606cf12aa4d2c9a183998420df44}{get\-\_\-type} (const std\-::string \&name) const noexcept
+\hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0}{datatype} \hyperlink{a00010_ac5ab606cf12aa4d2c9a183998420df44}{get\-\_\-type} (const std\-::string \&name) const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the type of the specified column. \end{DoxyCompactList}\item 
 int \hyperlink{a00010_a7390afddbb1edc788f0afc6ce41f4562}{column\-\_\-count} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the number of columns in the result set returned by the prepared statement. \end{DoxyCompactList}\item 
@@ -235,16 +235,16 @@ Binds an double value to a parameter in an S\-Q\-L prepared statement.
 
 Definition at line 76 of file Statement.\-cpp.
 
-\hypertarget{a00013_ae6eda84becdf90c4e0a0bb25601dc54d}{\index{sqlite\-::statement@{sqlite\-::statement}!bind@{bind}}
+\hypertarget{a00013_a784339d393006f4ea67bc7004d280106}{\index{sqlite\-::statement@{sqlite\-::statement}!bind@{bind}}
 \index{bind@{bind}!sqlite::statement@{sqlite\-::statement}}
 \subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void sqlite\-::statement\-::bind (
 \begin{DoxyParamCaption}
 \item[{const int}]{index, }
 \item[{const void $\ast$const}]{value, }
 \item[{const int}]{size, }
-\item[{bindtype}]{type = {\ttfamily bindtype\-:\-:transient}}
+\item[{{\bf bindtype}}]{type = {\ttfamily {\bf bindtype\-::transiently}}}
 \end{DoxyParamCaption}
-) const}}\label{a00013_ae6eda84becdf90c4e0a0bb25601dc54d}
+) const}}\label{a00013_a784339d393006f4ea67bc7004d280106}
 
 
 Binds an blob value to a parameter in an S\-Q\-L prepared statement. 
@@ -287,16 +287,16 @@ Binds an blob value to a parameter in an S\-Q\-L prepared statement.
 
 Definition at line 92 of file Statement.\-cpp.
 
-\hypertarget{a00013_a778fde6911aba25ea0ca3c6d7a8be870}{\index{sqlite\-::statement@{sqlite\-::statement}!bind@{bind}}
+\hypertarget{a00013_aa6dd611fd47f53459006393b378b0536}{\index{sqlite\-::statement@{sqlite\-::statement}!bind@{bind}}
 \index{bind@{bind}!sqlite::statement@{sqlite\-::statement}}
 \subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void sqlite\-::statement\-::bind (
 \begin{DoxyParamCaption}
 \item[{const int}]{index, }
 \item[{const char $\ast$const}]{value, }
 \item[{const int}]{size = {\ttfamily -\/1}, }
-\item[{bindtype}]{type = {\ttfamily bindtype\-:\-:transient}}
+\item[{{\bf bindtype}}]{type = {\ttfamily {\bf bindtype\-::transiently}}}
 \end{DoxyParamCaption}
-) const}}\label{a00013_a778fde6911aba25ea0ca3c6d7a8be870}
+) const}}\label{a00013_aa6dd611fd47f53459006393b378b0536}
 
 
 Binds an string value to a parameter in an S\-Q\-L prepared statement. 
@@ -316,16 +316,16 @@ Binds an string value to a parameter in an S\-Q\-L prepared statement.
 
 Definition at line 100 of file Statement.\-cpp.
 
-\hypertarget{a00013_aa81eabe0c43e779bfaf82e465d76d8a7}{\index{sqlite\-::statement@{sqlite\-::statement}!bind@{bind}}
+\hypertarget{a00013_ab05bdb6e6f4a096a002b41f22ff1c5ae}{\index{sqlite\-::statement@{sqlite\-::statement}!bind@{bind}}
 \index{bind@{bind}!sqlite::statement@{sqlite\-::statement}}
 \subsubsection[{bind}]{\setlength{\rightskip}{0pt plus 5cm}void sqlite\-::statement\-::bind (
 \begin{DoxyParamCaption}
 \item[{const int}]{index, }
 \item[{const char16\-\_\-t $\ast$const}]{value, }
 \item[{const int}]{size = {\ttfamily -\/1}, }
-\item[{bindtype}]{type = {\ttfamily bindtype\-:\-:transient}}
+\item[{{\bf bindtype}}]{type = {\ttfamily {\bf bindtype\-::transiently}}}
 \end{DoxyParamCaption}
-) const}}\label{a00013_aa81eabe0c43e779bfaf82e465d76d8a7}
+) const}}\label{a00013_ab05bdb6e6f4a096a002b41f22ff1c5ae}
 
 
 Binds an U\-T\-F-\/16 string value to a parameter in an S\-Q\-L prepared statement. 
@@ -837,7 +837,7 @@ Definition at line 146 of file Statement.\-h.
 
 \hypertarget{a00010_a2b8269e0f9387afa36ab90eb55899dc4}{\index{sqlite\-::statement@{sqlite\-::statement}!get\-\_\-type@{get\-\_\-type}}
 \index{get\-\_\-type@{get\-\_\-type}!sqlite::statement@{sqlite\-::statement}}
-\subsubsection[{get\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}datatype {\bf sqlite\-::reader}$<$ {\bf statement}  $>$\-::get\-\_\-type (
+\subsubsection[{get\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf datatype} {\bf sqlite\-::reader}$<$ {\bf statement}  $>$\-::get\-\_\-type (
 \begin{DoxyParamCaption}
 \item[{const int}]{column}
 \end{DoxyParamCaption}
@@ -852,7 +852,7 @@ Returns the type of the specified column.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The sqlite\-::datatype value for a column 
+The \hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0}{sqlite\-::datatype} value for a column 
 \end{DoxyReturn}
 
 
@@ -860,7 +860,7 @@ Definition at line 215 of file Statement.\-h.
 
 \hypertarget{a00010_ac5ab606cf12aa4d2c9a183998420df44}{\index{sqlite\-::statement@{sqlite\-::statement}!get\-\_\-type@{get\-\_\-type}}
 \index{get\-\_\-type@{get\-\_\-type}!sqlite::statement@{sqlite\-::statement}}
-\subsubsection[{get\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}datatype {\bf sqlite\-::reader}$<$ {\bf statement}  $>$\-::get\-\_\-type (
+\subsubsection[{get\-\_\-type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf datatype} {\bf sqlite\-::reader}$<$ {\bf statement}  $>$\-::get\-\_\-type (
 \begin{DoxyParamCaption}
 \item[{const std\-::string \&}]{name}
 \end{DoxyParamCaption}
@@ -875,7 +875,7 @@ Returns the type of the specified column.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The sqlite\-::datatype value for a column 
+The \hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0}{sqlite\-::datatype} value for a column 
 \end{DoxyReturn}
 
 
@@ -1043,10 +1043,10 @@ Definition at line 32 of file Statement.\-cpp.
 ) const\hspace{0.3cm}{\ttfamily [noexcept]}}}\label{a00013_a558b055f3210c6ab7575dc2c23cb7be2}
 
 
-Used to specify if the statement object has a prepared \hyperlink{a00038}{S\-Q\-Lite} statement. 
+Used to specify if the statement object has a prepared S\-Q\-Lite statement. 
 
 \begin{DoxyReturn}{Returns}
-The returns true if the statement object has been assigned a \hyperlink{a00038}{S\-Q\-Lite} prepared statement. 
+The returns true if the statement object has been assigned a S\-Q\-Lite prepared statement. 
 \end{DoxyReturn}
 
 

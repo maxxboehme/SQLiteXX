@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,25 +97,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span>sqlite</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">enum class</span> datatype: int {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        integer  = SQLITE_INTEGER, </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        floating = SQLITE_FLOAT,   </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        blob     = SQLITE_BLOB,    </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        null     = SQLITE_NULL,    </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        text     = SQLITE3_TEXT,   </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">   13</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">datatype</a>: int {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a157db7df530023575515d366c9b672e8">integer</a>  = SQLITE_INTEGER, </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a374515b23d6f106696387776a6077d17">floating</a> = SQLITE_FLOAT,   </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="a00002.html">blob</a>     = SQLITE_BLOB,    </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a37a6259cc0c1dae299a7866489dff0bd">null</a>     = SQLITE_NULL,    </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1">text</a>     = SQLITE3_TEXT,   </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    };</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">enum class</span> bindtype: int {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        staticly,   </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keyword">transient</span> </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991d">   23</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991d">bindtype</a>: int {</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991da29adf7ed88000fbb825808cb1d3667fa">statically</a>,   </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b">transiently</a>   </div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    };</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="a00038_html_ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b"><div class="ttname"><a href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b">sqlite::bindtype::transiently</a></div><div class="ttdoc">means that the content will likely change in the near future and that SQLite should make its own priv...</div></div>
+<div class="ttc" id="a00038_html_ae6a0fc429d821cca9a1b01d36cb0991da29adf7ed88000fbb825808cb1d3667fa"><div class="ttname"><a href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991da29adf7ed88000fbb825808cb1d3667fa">sqlite::bindtype::statically</a></div><div class="ttdoc">means that the content pointer is constant and will never change. </div></div>
+<div class="ttc" id="a00038_html_a7467e5cdd32bbf7fce35aced88682dc0a157db7df530023575515d366c9b672e8"><div class="ttname"><a href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a157db7df530023575515d366c9b672e8">sqlite::datatype::integer</a></div><div class="ttdoc">64-bit signed integer </div></div>
+<div class="ttc" id="a00038_html_a7467e5cdd32bbf7fce35aced88682dc0a374515b23d6f106696387776a6077d17"><div class="ttname"><a href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a374515b23d6f106696387776a6077d17">sqlite::datatype::floating</a></div><div class="ttdoc">64-bit IEEE floating point number </div></div>
+<div class="ttc" id="a00038_html_ae6a0fc429d821cca9a1b01d36cb0991d"><div class="ttname"><a href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991d">sqlite::bindtype</a></div><div class="ttdeci">bindtype</div><div class="ttdoc">Used to specify the way to bind a value to a statement. </div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00023">SQLiteEnums.h:23</a></div></div>
+<div class="ttc" id="a00038_html_a7467e5cdd32bbf7fce35aced88682dc0"><div class="ttname"><a href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0">sqlite::datatype</a></div><div class="ttdeci">datatype</div><div class="ttdoc">Every value in SQLite has one of the following fundamental datatypes. </div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00013">SQLiteEnums.h:13</a></div></div>
+<div class="ttc" id="a00038_html_a7467e5cdd32bbf7fce35aced88682dc0a37a6259cc0c1dae299a7866489dff0bd"><div class="ttname"><a href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a37a6259cc0c1dae299a7866489dff0bd">sqlite::datatype::null</a></div><div class="ttdoc">NULL. </div></div>
+<div class="ttc" id="a00038_html_a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1"><div class="ttname"><a href="a00038.html#a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1">sqlite::datatype::text</a></div><div class="ttdoc">a string </div></div>
+<div class="ttc" id="a00002_html"><div class="ttname"><a href="a00002.html">sqlite::blob</a></div><div class="ttdoc">A &quot;Binary Large OBject&quot;. </div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00020">Blob.h:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

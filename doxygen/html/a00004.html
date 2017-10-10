@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,14 +83,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00004.html">dbconnection</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">sqlite</a></li><li class="navelem"><a class="el" href="a00004.html">dbconnection</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="a00043.html">List of all members</a>  </div>
+<a href="a00042.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">sqlite::dbconnection Class Reference</div>  </div>
 </div><!--header-->
@@ -113,7 +113,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a31b78d1afbfc6147319eabb9f0e23bc5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a31b78d1afbfc6147319eabb9f0e23bc5">dbconnection</a> (<a class="el" href="a00004.html">dbconnection</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a31b78d1afbfc6147319eabb9f0e23bc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy constructor.  <a href="#a31b78d1afbfc6147319eabb9f0e23bc5">More...</a><br/></td></tr>
 <tr class="separator:a31b78d1afbfc6147319eabb9f0e23bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65e20f08669b49b018614cddd47efa77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a65e20f08669b49b018614cddd47efa77">dbconnection</a> (const std::string &amp;filename, openmode mode=openmode::read_write|openmode::create, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)</td></tr>
+<tr class="memitem:a65e20f08669b49b018614cddd47efa77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a65e20f08669b49b018614cddd47efa77">dbconnection</a> (const std::string &amp;filename, <a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> mode=<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">openmode::read_write</a>|<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">openmode::create</a>, const std::chrono::milliseconds timeout=DEFAULT_TIMEOUT)</td></tr>
 <tr class="memdesc:a65e20f08669b49b018614cddd47efa77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the provided database UTF-8 filename.  <a href="#a65e20f08669b49b018614cddd47efa77">More...</a><br/></td></tr>
 <tr class="separator:a65e20f08669b49b018614cddd47efa77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4de544133c1a430855624c94986ed16c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a4de544133c1a430855624c94986ed16c">dbconnection</a> (const std::string &amp;filename, const std::chrono::milliseconds timeout)</td></tr>
@@ -138,11 +138,11 @@ Public Member Functions</h2></td></tr>
 sqlite3 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a> () const noexcept</td></tr>
 <tr class="memdesc:a1a9b022293133991f265c10c1f50800b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns pointer to the underlying "sqlite3" object. <br/></td></tr>
 <tr class="separator:a1a9b022293133991f265c10c1f50800b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84da73c4ff1b162624da3e252c2a86c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a> (const std::string &amp;filename, openmode mode=openmode::read_write|openmode::create)</td></tr>
-<tr class="memdesc:a84da73c4ff1b162624da3e252c2a86c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filename argument.  <a href="#a84da73c4ff1b162624da3e252c2a86c8">More...</a><br/></td></tr>
+<tr class="memitem:a84da73c4ff1b162624da3e252c2a86c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a> (const std::string &amp;filename, <a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> mode=<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">openmode::read_write</a>|<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">openmode::create</a>)</td></tr>
+<tr class="memdesc:a84da73c4ff1b162624da3e252c2a86c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an SQLite database file as specified by the filename argument.  <a href="#a84da73c4ff1b162624da3e252c2a86c8">More...</a><br/></td></tr>
 <tr class="separator:a84da73c4ff1b162624da3e252c2a86c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac31065d17d9cbe1e1b3021bf11ff0229"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#ac31065d17d9cbe1e1b3021bf11ff0229">open</a> (const std::u16string &amp;filename)</td></tr>
-<tr class="memdesc:ac31065d17d9cbe1e1b3021bf11ff0229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filname argument.  <a href="#ac31065d17d9cbe1e1b3021bf11ff0229">More...</a><br/></td></tr>
+<tr class="memdesc:ac31065d17d9cbe1e1b3021bf11ff0229"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open an SQLite database file as specified by the filname argument.  <a href="#ac31065d17d9cbe1e1b3021bf11ff0229">More...</a><br/></td></tr>
 <tr class="separator:ac31065d17d9cbe1e1b3021bf11ff0229"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add860c9b2c630bcfc178e3a7e878ea1b"><td class="memItemLeft" align="right" valign="top">long long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00004.html#add860c9b2c630bcfc178e3a7e878ea1b">row_id</a> () const noexcept</td></tr>
 <tr class="memdesc:add860c9b2c630bcfc178e3a7e878ea1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the rowid of the most recent successful "INSERT" into a rowid table or virtual table on database connection.  <a href="#add860c9b2c630bcfc178e3a7e878ea1b">More...</a><br/></td></tr>
@@ -261,8 +261,8 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">openmode&#160;</td>
-          <td class="paramname"><em>mode</em> = <code>openmode::read_write&#160;|&#160;openmode::create</code>, </td>
+          <td class="paramtype"><a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">openmode::read_write</a>&#160;|&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">openmode::create</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -468,6 +468,7 @@ template&lt;typename F &gt; </div>
 </div><div class="memdoc">
 
 <p>Used to add an SQL collation or redefine the behavior of existing SQL collations. </p>
+<p>The function created should not throw an exception, if so the results is unknown.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">F</td><td>The function type to use to create the function. </td></tr>
@@ -483,7 +484,7 @@ template&lt;typename F &gt; </div>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="a00022_source.html#l00237">237</a> of file <a class="el" href="a00022_source.html">DBConnection.h</a>.</p>
+<p>Definition at line <a class="el" href="a00022_source.html#l00239">239</a> of file <a class="el" href="a00022_source.html">DBConnection.h</a>.</p>
 
 </div>
 </div>
@@ -689,8 +690,8 @@ template&lt;typename F &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">openmode&#160;</td>
-          <td class="paramname"><em>mode</em> = <code>openmode::read_write&#160;|&#160;openmode::create</code>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a>&#160;</td>
+          <td class="paramname"><em>mode</em> = <code><a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">openmode::read_write</a>&#160;|&#160;<a class="el" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">openmode::create</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -700,10 +701,10 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filename argument. </p>
+<p>Open an SQLite database file as specified by the filename argument. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>path to <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>path to SQLite file </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">mode</td><td>specifies the privileges to use when opening the database. </td></tr>
   </table>
   </dd>
@@ -727,11 +728,11 @@ template&lt;typename F &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Open an <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> database file as specified by the filname argument. </p>
+<p>Open an SQLite database file as specified by the filname argument. </p>
 <p>The database file will have UTF-16 native byte order. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>path to <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> file </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">filename</td><td>path to SQLite file </td></tr>
   </table>
   </dd>
 </dl>
@@ -903,7 +904,7 @@ template&lt;typename F &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

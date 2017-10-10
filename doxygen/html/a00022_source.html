@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">dbconnection</a>(</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keyword">const</span> std::string&amp; filename,</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            openmode mode = openmode::read_write | openmode::create,</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> mode = <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">openmode::read_write</a> | <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">openmode::create</a>,</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">const</span> std::chrono::milliseconds timeout = DEFAULT_TIMEOUT);</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">dbconnection</a>(<span class="keyword">const</span> std::string&amp; filename, <span class="keyword">const</span> std::chrono::milliseconds timeout);</div>
@@ -140,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        sqlite3* <a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>() <span class="keyword">const</span> noexcept;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(<span class="keyword">const</span> std::string&amp; filename, openmode mode = openmode::read_write | openmode::create);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(<span class="keyword">const</span> std::string&amp; filename, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> mode = <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">openmode::read_write</a> | <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">openmode::create</a>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(<span class="keyword">const</span> std::u16string&amp; filename);</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
@@ -233,57 +233,60 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            throw_error_code(errorcode, <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        }</div>
 <div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00237"></a><span class="lineno"><a class="line" href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">  237</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">create_collation</a>(</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;            <span class="keyword">const</span> std::string&amp; name,</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            F&amp;&amp; <span class="keyword">function</span>,</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keyword">const</span> textencoding encoding = textencoding::utf8)</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keyword">using</span> CollationType = <span class="keyword">typename</span> collation_traits&lt;F&gt;::f_type;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            CollationType *userFunction = <span class="keyword">new</span> CollationType(<span class="keyword">function</span>);</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            <span class="keywordtype">int</span> flags = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(encoding);</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a name="l00239"></a><span class="lineno"><a class="line" href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">  239</a></span>&#160;        <span class="keywordtype">void</span> <a class="code" href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">create_collation</a>(</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keyword">const</span> std::string&amp; name,</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            F&amp;&amp; <span class="keyword">function</span>,</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keyword">const</span> textencoding encoding = textencoding::utf8)</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keyword">using</span> CollationType = <span class="keyword">typename</span> collation_traits&lt;F&gt;::f_type;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            CollationType *userFunction = <span class="keyword">new</span> CollationType(<span class="keyword">function</span>);</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordtype">int</span> errorcode = sqlite3_create_collation_v2(</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                <a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(),</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                name.c_str(),</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                flags,</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                (<span class="keywordtype">void</span>*)userFunction,</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                &amp;internal_collation_function&lt;CollationType&gt;,</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                &amp;internal_delete&lt;CollationType&gt;);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            throw_error_code(errorcode, <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordtype">void</span> profile(F&amp;&amp; callback, <span class="keywordtype">void</span>* <span class="keyword">const</span> context = <span class="keyword">nullptr</span>)</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;            sqlite3_profile(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), callback, context);</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keyword">using</span> connection_handle = std::shared_ptr&lt;sqlite3&gt;;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        connection_handle m_handle;</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> std::chrono::minutes DEFAULT_TIMEOUT;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    };</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;}</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordtype">int</span> flags = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(encoding);</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            <span class="keywordtype">int</span> errorcode = sqlite3_create_collation_v2(</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                <a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(),</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                name.c_str(),</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                flags,</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                (<span class="keywordtype">void</span>*)userFunction,</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                &amp;internal_collation_function&lt;CollationType&gt;,</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;                &amp;internal_delete&lt;CollationType&gt;);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;            throw_error_code(errorcode, <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;        }</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        <span class="keywordtype">void</span> profile(F&amp;&amp; callback, <span class="keywordtype">void</span>* <span class="keyword">const</span> context = <span class="keyword">nullptr</span>)</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        {</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;            sqlite3_profile(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), callback, context);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        }</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keyword">using</span> connection_handle = std::shared_ptr&lt;sqlite3&gt;;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        connection_handle m_handle;</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> std::chrono::minutes DEFAULT_TIMEOUT;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    };</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="a00024_html"><div class="ttname"><a href="a00024.html">Exception.h</a></div></div>
 <div class="ttc" id="a00004_html_ae7c52ec41d3dfb7f4c8a521af7673bde"><div class="ttname"><a href="a00004.html#ae7c52ec41d3dfb7f4c8a521af7673bde">sqlite::dbconnection::operator=</a></div><div class="ttdeci">dbconnection &amp; operator=(const dbconnection &amp;other) noexcept</div><div class="ttdoc">Copy assignment operator. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00019">DBConnection.cpp:19</a></div></div>
 <div class="ttc" id="a00027_html"><div class="ttname"><a href="a00027.html">Mutex.h</a></div></div>
 <div class="ttc" id="a00004_html_a1a9b022293133991f265c10c1f50800b"><div class="ttname"><a href="a00004.html#a1a9b022293133991f265c10c1f50800b">sqlite::dbconnection::handle</a></div><div class="ttdeci">sqlite3 * handle() const noexcept</div><div class="ttdoc">Returns pointer to the underlying &quot;sqlite3&quot; object. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00084">DBConnection.cpp:84</a></div></div>
-<div class="ttc" id="a00004_html_ab8c7b939c1b6d41259aefa3b7475f3bd"><div class="ttname"><a href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">sqlite::dbconnection::create_collation</a></div><div class="ttdeci">void create_collation(const std::string &amp;name, F &amp;&amp;function, const textencoding encoding=textencoding::utf8)</div><div class="ttdoc">Used to add an SQL collation or redefine the behavior of existing SQL collations. ...</div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00237">DBConnection.h:237</a></div></div>
+<div class="ttc" id="a00004_html_ab8c7b939c1b6d41259aefa3b7475f3bd"><div class="ttname"><a href="a00004.html#ab8c7b939c1b6d41259aefa3b7475f3bd">sqlite::dbconnection::create_collation</a></div><div class="ttdeci">void create_collation(const std::string &amp;name, F &amp;&amp;function, const textencoding encoding=textencoding::utf8)</div><div class="ttdoc">Used to add an SQL collation or redefine the behavior of existing SQL collations. ...</div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00239">DBConnection.h:239</a></div></div>
 <div class="ttc" id="a00004_html_ab3e54d1eef4c27734e45a61d27be386b"><div class="ttname"><a href="a00004.html#ab3e54d1eef4c27734e45a61d27be386b">sqlite::dbconnection::create_aggregate</a></div><div class="ttdeci">void create_aggregate(const std::string &amp;name, bool is_deterministic=false, const textencoding encoding=textencoding::utf8)</div><div class="ttdoc">Used to add SQL aggregate functions or redefine the behavior of existing SQL aggregate functions...</div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00203">DBConnection.h:203</a></div></div>
 <div class="ttc" id="a00004_html_ad42c081096ec64f35710aa021f2f4b56"><div class="ttname"><a href="a00004.html#ad42c081096ec64f35710aa021f2f4b56">sqlite::dbconnection::create_function</a></div><div class="ttdeci">void create_function(const std::string &amp;name, F &amp;&amp;function, bool is_deterministic=false, const textencoding encoding=textencoding::utf8)</div><div class="ttdoc">Used to add SQL functions or redefine the behavior of existing SQL functions. </div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00168">DBConnection.h:168</a></div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">sqlite::openmode</a></div><div class="ttdeci">openmode</div><div class="ttdoc">Different ways to open a dbconnection. </div><div class="ttdef"><b>Definition:</b> <a href="a00028_source.html#l00014">Open.h:14</a></div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5">sqlite::openmode::create</a></div><div class="ttdoc">database will be created if it does not already exist </div></div>
 <div class="ttc" id="a00004_html_a1cfe02390c4b08e78787120edaed6ab7"><div class="ttname"><a href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">sqlite::dbconnection::dbconnection</a></div><div class="ttdeci">dbconnection() noexcept</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00007">DBConnection.cpp:7</a></div></div>
 <div class="ttc" id="a00009_html"><div class="ttname"><a href="a00009.html">sqlite::mutex</a></div><div class="ttdoc">Helps with serializing access to a database connection. </div><div class="ttdef"><b>Definition:</b> <a href="a00027_source.html#l00019">Mutex.h:19</a></div></div>
 <div class="ttc" id="a00004_html_add860c9b2c630bcfc178e3a7e878ea1b"><div class="ttname"><a href="a00004.html#add860c9b2c630bcfc178e3a7e878ea1b">sqlite::dbconnection::row_id</a></div><div class="ttdeci">long long row_id() const noexcept</div><div class="ttdoc">Returns the rowid of the most recent successful &quot;INSERT&quot; into a rowid table or virtual table on datab...</div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00113">DBConnection.cpp:113</a></div></div>
 <div class="ttc" id="a00004_html_abe5e2bf211f18f2f358f4293d3064679"><div class="ttname"><a href="a00004.html#abe5e2bf211f18f2f358f4293d3064679">sqlite::dbconnection::wide_memory</a></div><div class="ttdeci">static dbconnection wide_memory()</div><div class="ttdoc">Create a purely in memory database with UTF-16 as the native byte order. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00065">DBConnection.cpp:65</a></div></div>
 <div class="ttc" id="a00004_html_a3cc15c8f2784e6b706a5992c8014c2dd"><div class="ttname"><a href="a00004.html#a3cc15c8f2784e6b706a5992c8014c2dd">sqlite::dbconnection::create_general_function</a></div><div class="ttdeci">void create_general_function(const std::string &amp;name, F &amp;&amp;function, int is_deterministic=false, const textencoding encoding=textencoding::utf8, int nargs=-1)</div><div class="ttdoc">Used to add SQL functions or redefine the behavior of existing SQL functions. </div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00131">DBConnection.h:131</a></div></div>
 <div class="ttc" id="a00004_html_afa13431e657c74ba7beee63fa70eeb93"><div class="ttname"><a href="a00004.html#afa13431e657c74ba7beee63fa70eeb93">sqlite::dbconnection::mutex</a></div><div class="ttdeci">sqlite::mutex mutex()</div><div class="ttdoc">Returns a mutex that serializes access to the database. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00070">DBConnection.cpp:70</a></div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f">sqlite::openmode::read_write</a></div><div class="ttdoc">opened for reading and writing if possible, or reading only if the file is write protected by the ope...</div></div>
 <div class="ttc" id="a00028_html"><div class="ttname"><a href="a00028.html">Open.h</a></div></div>
 <div class="ttc" id="a00004_html_adc0120a0d5d39eabcffb7d641b0c40dd"><div class="ttname"><a href="a00004.html#adc0120a0d5d39eabcffb7d641b0c40dd">sqlite::dbconnection::memory</a></div><div class="ttdeci">static dbconnection memory()</div><div class="ttdoc">Create a purely in memory database. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00060">DBConnection.cpp:60</a></div></div>
 <div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">sqlite::dbconnection</a></div><div class="ttdoc">Class that represents a connection to a database. </div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00024">DBConnection.h:24</a></div></div>
@@ -291,7 +294,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

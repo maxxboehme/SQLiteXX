@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,19 +83,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00007.html">exclusive_transaction</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">sqlite</a></li><li class="navelem"><a class="el" href="a00007.html">exclusive_transaction</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00054.html">List of all members</a>  </div>
+<a href="a00053.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">sqlite::exclusive_transaction Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>RAII encapsulation of the <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction.  
+<p>RAII encapsulation of the SQLite exclusive transaction.  
  <a href="a00007.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="a00034_source.html">Transaction.h</a>&gt;</code></p>
@@ -112,7 +112,7 @@ Inheritance diagram for sqlite::exclusive_transaction:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a9380f63712877dd18432ca82476dd096"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00007.html#a9380f63712877dd18432ca82476dd096">exclusive_transaction</a> (<a class="el" href="a00004.html">dbconnection</a> &amp;connection)</td></tr>
-<tr class="memdesc:a9380f63712877dd18432ca82476dd096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a strictly scope-based <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction.  <a href="#a9380f63712877dd18432ca82476dd096">More...</a><br/></td></tr>
+<tr class="memdesc:a9380f63712877dd18432ca82476dd096"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements a strictly scope-based SQLite exclusive transaction.  <a href="#a9380f63712877dd18432ca82476dd096">More...</a><br/></td></tr>
 <tr class="separator:a9380f63712877dd18432ca82476dd096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe219dd0bf949d569381f9830c7b2d1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe219dd0bf949d569381f9830c7b2d1a"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014.html#abe219dd0bf949d569381f9830c7b2d1a">commit</a> ()</td></tr>
@@ -120,7 +120,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:abe219dd0bf949d569381f9830c7b2d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>RAII encapsulation of the <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction. </p>
+<div class="textblock"><p>RAII encapsulation of the SQLite exclusive transaction. </p>
 
 <p>Definition at line <a class="el" href="a00034_source.html#l00083">83</a> of file <a class="el" href="a00034_source.html">Transaction.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -146,7 +146,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </table>
 </div><div class="memdoc">
 
-<p>Implements a strictly scope-based <a class="el" href="a00038.html" title="SQLiteXX classes and functions are defined in this namespace. ">SQLite</a> exclusive transaction. </p>
+<p>Implements a strictly scope-based SQLite exclusive transaction. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">connection</td><td>the database connection to begin the transaction on </td></tr>
@@ -164,7 +164,7 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:04 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:07 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

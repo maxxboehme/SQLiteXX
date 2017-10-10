@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -124,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00004.html#a65e20f08669b49b018614cddd47efa77">   35</a></span>&#160;    <a class="code" href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">dbconnection::dbconnection</a>(</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">const</span> std::string&amp; filename,</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        openmode mode,</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> mode,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> std::chrono::milliseconds timeout)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(filename, mode);</div>
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordflow">return</span> m_handle.get();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">   89</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">dbconnection::open</a>(<span class="keyword">const</span> std::string&amp; filename, openmode mode)</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">   89</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">dbconnection::open</a>(<span class="keyword">const</span> std::string&amp; filename, <a class="code" href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">openmode</a> mode)</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        sqlite3 *connection;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <span class="keywordflow">if</span> (SQLITE_OK != sqlite3_open_v2(filename.c_str(), &amp;connection, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(mode), <span class="keyword">nullptr</span>)) {</div>
@@ -208,6 +208,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="a00022_html"><div class="ttname"><a href="a00022.html">DBConnection.h</a></div></div>
 <div class="ttc" id="a00004_html_ae7c52ec41d3dfb7f4c8a521af7673bde"><div class="ttname"><a href="a00004.html#ae7c52ec41d3dfb7f4c8a521af7673bde">sqlite::dbconnection::operator=</a></div><div class="ttdeci">dbconnection &amp; operator=(const dbconnection &amp;other) noexcept</div><div class="ttdoc">Copy assignment operator. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00019">DBConnection.cpp:19</a></div></div>
 <div class="ttc" id="a00004_html_a1a9b022293133991f265c10c1f50800b"><div class="ttname"><a href="a00004.html#a1a9b022293133991f265c10c1f50800b">sqlite::dbconnection::handle</a></div><div class="ttdeci">sqlite3 * handle() const noexcept</div><div class="ttdoc">Returns pointer to the underlying &quot;sqlite3&quot; object. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00084">DBConnection.cpp:84</a></div></div>
+<div class="ttc" id="a00038_html_ac886eded97b0430b2ab92e2d08fcf938"><div class="ttname"><a href="a00038.html#ac886eded97b0430b2ab92e2d08fcf938">sqlite::openmode</a></div><div class="ttdeci">openmode</div><div class="ttdoc">Different ways to open a dbconnection. </div><div class="ttdef"><b>Definition:</b> <a href="a00028_source.html#l00014">Open.h:14</a></div></div>
 <div class="ttc" id="a00006_html"><div class="ttname"><a href="a00006.html">sqlite::exception</a></div><div class="ttdoc">Encapsulation of the error code and message from SQLite3, based on std::runtime_error. </div><div class="ttdef"><b>Definition:</b> <a href="a00024_source.html#l00014">Exception.h:14</a></div></div>
 <div class="ttc" id="a00004_html_a1cfe02390c4b08e78787120edaed6ab7"><div class="ttname"><a href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">sqlite::dbconnection::dbconnection</a></div><div class="ttdeci">dbconnection() noexcept</div><div class="ttdoc">Default constructor. </div><div class="ttdef"><b>Definition:</b> <a href="a00021_source.html#l00007">DBConnection.cpp:7</a></div></div>
 <div class="ttc" id="a00009_html"><div class="ttname"><a href="a00009.html">sqlite::mutex</a></div><div class="ttdoc">Helps with serializing access to a database connection. </div><div class="ttdef"><b>Definition:</b> <a href="a00027_source.html#l00019">Mutex.h:19</a></div></div>
@@ -220,7 +221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

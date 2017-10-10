@@ -20,7 +20,7 @@ Class that represents a connection to a database.
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
 \hyperlink{a00004_a31b78d1afbfc6147319eabb9f0e23bc5}{dbconnection} (\hyperlink{a00004}{dbconnection} \&\&other) noexcept
 \begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
-\hyperlink{a00004_a65e20f08669b49b018614cddd47efa77}{dbconnection} (const std\-::string \&filename, openmode mode=openmode\-::read\-\_\-write$\vert$openmode\-::create, const std\-::chrono\-::milliseconds timeout=D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T)
+\hyperlink{a00004_a65e20f08669b49b018614cddd47efa77}{dbconnection} (const std\-::string \&filename, \hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938}{openmode} mode=\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f}{openmode\-::read\-\_\-write}$\vert$\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5}{openmode\-::create}, const std\-::chrono\-::milliseconds timeout=D\-E\-F\-A\-U\-L\-T\-\_\-\-T\-I\-M\-E\-O\-U\-T)
 \begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/8 filename. \end{DoxyCompactList}\item 
 \hyperlink{a00004_a4de544133c1a430855624c94986ed16c}{dbconnection} (const std\-::string \&filename, const std\-::chrono\-::milliseconds timeout)
 \begin{DoxyCompactList}\small\item\em Open the provided database U\-T\-F-\/8 filename. \end{DoxyCompactList}\item 
@@ -37,10 +37,10 @@ Class that represents a connection to a database.
 \hypertarget{a00004_a1a9b022293133991f265c10c1f50800b}{sqlite3 $\ast$ \hyperlink{a00004_a1a9b022293133991f265c10c1f50800b}{handle} () const noexcept}\label{a00004_a1a9b022293133991f265c10c1f50800b}
 
 \begin{DoxyCompactList}\small\item\em Returns pointer to the underlying \char`\"{}sqlite3\char`\"{} object. \end{DoxyCompactList}\item 
-void \hyperlink{a00004_a84da73c4ff1b162624da3e252c2a86c8}{open} (const std\-::string \&filename, openmode mode=openmode\-::read\-\_\-write$\vert$openmode\-::create)
-\begin{DoxyCompactList}\small\item\em Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filename argument. \end{DoxyCompactList}\item 
+void \hyperlink{a00004_a84da73c4ff1b162624da3e252c2a86c8}{open} (const std\-::string \&filename, \hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938}{openmode} mode=\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a06ad287ea83b37a6f9db3d8d10d72c8f}{openmode\-::read\-\_\-write}$\vert$\hyperlink{a00038_ac886eded97b0430b2ab92e2d08fcf938a76ea0bebb3c22822b4f0dd9c9fd021c5}{openmode\-::create})
+\begin{DoxyCompactList}\small\item\em Open an S\-Q\-Lite database file as specified by the filename argument. \end{DoxyCompactList}\item 
 void \hyperlink{a00004_ac31065d17d9cbe1e1b3021bf11ff0229}{open} (const std\-::u16string \&filename)
-\begin{DoxyCompactList}\small\item\em Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filname argument. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Open an S\-Q\-Lite database file as specified by the filname argument. \end{DoxyCompactList}\item 
 long long \hyperlink{a00004_add860c9b2c630bcfc178e3a7e878ea1b}{row\-\_\-id} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the rowid of the most recent successful \char`\"{}\-I\-N\-S\-E\-R\-T\char`\"{} into a rowid table or virtual table on database connection. \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename F $>$ }\\void \hyperlink{a00004_a3cc15c8f2784e6b706a5992c8014c2dd}{create\-\_\-general\-\_\-function} (const std\-::string \&name, F \&\&function, int is\-\_\-deterministic=false, const textencoding encoding=textencoding\-::utf8, int nargs=-\/1)
@@ -115,7 +115,7 @@ Definition at line 15 of file D\-B\-Connection.\-cpp.
 \subsubsection[{dbconnection}]{\setlength{\rightskip}{0pt plus 5cm}sqlite\-::dbconnection\-::dbconnection (
 \begin{DoxyParamCaption}
 \item[{const std\-::string \&}]{filename, }
-\item[{openmode}]{mode = {\ttfamily openmode\-:\-:read\-\_\-write~$\vert$~openmode\-:\-:create}, }
+\item[{{\bf openmode}}]{mode = {\ttfamily {\bf openmode\-::read\-\_\-write}~$\vert$~{\bf openmode\-::create}}, }
 \item[{const std\-::chrono\-::milliseconds}]{timeout = {\ttfamily DEFAULT\-\_\-TIMEOUT}}
 \end{DoxyParamCaption}
 )}}\label{a00004_a65e20f08669b49b018614cddd47efa77}
@@ -229,6 +229,8 @@ Definition at line 203 of file D\-B\-Connection.\-h.
 
 Used to add an S\-Q\-L collation or redefine the behavior of existing S\-Q\-L collations. 
 
+The function created should not throw an exception, if so the results is unknown.
+
 
 \begin{DoxyTemplParams}{Template Parameters}
 {\em F} & The function type to use to create the function. \\
@@ -245,7 +247,7 @@ Used to add an S\-Q\-L collation or redefine the behavior of existing S\-Q\-L co
 \end{DoxyParams}
 
 
-Definition at line 237 of file D\-B\-Connection.\-h.
+Definition at line 239 of file D\-B\-Connection.\-h.
 
 \hypertarget{a00004_ad42c081096ec64f35710aa021f2f4b56}{\index{sqlite\-::dbconnection@{sqlite\-::dbconnection}!create\-\_\-function@{create\-\_\-function}}
 \index{create\-\_\-function@{create\-\_\-function}!sqlite::dbconnection@{sqlite\-::dbconnection}}
@@ -359,16 +361,16 @@ Definition at line 70 of file D\-B\-Connection.\-cpp.
 \subsubsection[{open}]{\setlength{\rightskip}{0pt plus 5cm}void sqlite\-::dbconnection\-::open (
 \begin{DoxyParamCaption}
 \item[{const std\-::string \&}]{filename, }
-\item[{openmode}]{mode = {\ttfamily openmode\-:\-:read\-\_\-write~$\vert$~openmode\-:\-:create}}
+\item[{{\bf openmode}}]{mode = {\ttfamily {\bf openmode\-::read\-\_\-write}~$\vert$~{\bf openmode\-::create}}}
 \end{DoxyParamCaption}
 )}}\label{a00004_a84da73c4ff1b162624da3e252c2a86c8}
 
 
-Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filename argument. 
+Open an S\-Q\-Lite database file as specified by the filename argument. 
 
 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em filename} & path to \hyperlink{a00038}{S\-Q\-Lite} file \\
+\mbox{\tt in}  & {\em filename} & path to S\-Q\-Lite file \\
 \hline
 \mbox{\tt in}  & {\em mode} & specifies the privileges to use when opening the database. \\
 \hline
@@ -386,11 +388,11 @@ Definition at line 89 of file D\-B\-Connection.\-cpp.
 )}}\label{a00004_ac31065d17d9cbe1e1b3021bf11ff0229}
 
 
-Open an \hyperlink{a00038}{S\-Q\-Lite} database file as specified by the filname argument. 
+Open an S\-Q\-Lite database file as specified by the filname argument. 
 
 The database file will have U\-T\-F-\/16 native byte order. 
 \begin{DoxyParams}[1]{Parameters}
-\mbox{\tt in}  & {\em filename} & path to \hyperlink{a00038}{S\-Q\-Lite} file \\
+\mbox{\tt in}  & {\em filename} & path to S\-Q\-Lite file \\
 \hline
 \end{DoxyParams}
 

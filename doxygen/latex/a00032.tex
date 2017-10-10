@@ -27,14 +27,19 @@ class \hyperlink{a00013}{sqlite\-::statement}
 \begin{DoxyCompactList}\small\item\em Represents a single S\-Q\-L statement that has been compiled into binary form and is ready to be evaluated, aka \char`\"{}sqlite3\-\_\-stmt\char`\"{}. \end{DoxyCompactList}\item 
 class \hyperlink{a00012}{sqlite\-::row\-\_\-iterator}
 \begin{DoxyCompactList}\small\item\em Helps when iterating over rows in a \char`\"{}\-S\-E\-L\-E\-C\-T\char`\"{} statement. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00038}{sqlite}
+\begin{DoxyCompactList}\small\item\em S\-Q\-Lite\-X\-X classes and functions are defined in this namespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-row\-\_\-iterator {\bfseries sqlite\-::begin} (const statement \&statement) noexcept
+row\-\_\-iterator \hyperlink{a00038_a82c17565b2423a151a79f500e05384c7}{sqlite\-::begin} (const statement \&statement) noexcept
 \begin{DoxyCompactList}\small\item\em Returns an iterator to the first row of a statement. \end{DoxyCompactList}\item 
-row\-\_\-iterator {\bfseries sqlite\-::end} (const statement \&statement) noexcept
+row\-\_\-iterator \hyperlink{a00038_a9bb86a852a764bb601061807c9c53107}{sqlite\-::end} (const statement \&statement) noexcept
 \begin{DoxyCompactList}\small\item\em Returns an iterator to the end. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\int {\bfseries sqlite\-::execute} (const dbconnection \&connection, const std\-::string \&text, Values \&\&...values)
+{\footnotesize template$<$typename... Values$>$ }\\int \hyperlink{a00038_ac3634536982adcefd80f2e5b5a8a105d}{sqlite\-::execute} (const dbconnection \&connection, const std\-::string \&text, Values \&\&...values)
 \begin{DoxyCompactList}\small\item\em Executes an S\-Q\-L query on a database connection. \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename... Values$>$ }\\int {\bfseries sqlite\-::execute} (const dbconnection \&connection, const std\-::u16string \&text, Values \&\&...values)
+{\footnotesize template$<$typename... Values$>$ }\\int \hyperlink{a00038_a5d8cb158ff2ea9cd6331c9ed8dfde8da}{sqlite\-::execute} (const dbconnection \&connection, const std\-::u16string \&text, Values \&\&...values)
 \begin{DoxyCompactList}\small\item\em Executes an S\-Q\-L query on a database connection. \end{DoxyCompactList}\end{DoxyCompactItemize}

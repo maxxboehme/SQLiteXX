@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -83,26 +83,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>sqlite</b></li><li class="navelem"><a class="el" href="a00001.html">backup</a></li>  </ul>
+<li class="navelem"><a class="el" href="a00038.html">sqlite</a></li><li class="navelem"><a class="el" href="a00002.html">blob</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">sqlite::backup Member List</div>  </div>
+<div class="title">sqlite::blob Member List</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="a00001.html">sqlite::backup</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="a00002.html">sqlite::blob</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a62932f9aa6d1a5e313615cc5ca4f67fe">backup</a>(const dbconnection &amp;source, const dbconnection &amp;destination, const std::string &amp;sourceName=&quot;main&quot;, const std::string &amp;destinationName=&quot;main&quot;)</td><td class="entry"><a class="el" href="a00001.html">sqlite::backup</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00001.html#a556162efdf4055ab73275fcaa345c981">handle</a>() noexcept</td><td class="entry"><a class="el" href="a00001.html">sqlite::backup</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00001.html#a9da6a7da53bdd43839024ab13ae72258">remaining_page_count</a>() noexcept</td><td class="entry"><a class="el" href="a00001.html">sqlite::backup</a></td><td class="entry"></td></tr>
-  <tr><td class="entry"><a class="el" href="a00001.html#aba1c8a938a261ced48d3c01cf8da7676">step</a>(const int pages=-1)</td><td class="entry"><a class="el" href="a00001.html">sqlite::backup</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="a00001.html#ab6d84e51fef3125dd3829d35e24b02a7">total_page_count</a>() noexcept</td><td class="entry"><a class="el" href="a00001.html">sqlite::backup</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#ad3d7146a3081de7c96a37b9641f83dd6">blob</a>(const void *data, const size_t size)</td><td class="entry"><a class="el" href="a00002.html">sqlite::blob</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00002.html#a1f1bca1ecf4615c4948f3af74814abde">blob</a>(const blob &amp;other)</td><td class="entry"><a class="el" href="a00002.html">sqlite::blob</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#a78501ec4704d95d590457eacc63f39b6">blob</a>(blob &amp;&amp;other)</td><td class="entry"><a class="el" href="a00002.html">sqlite::blob</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00002.html#ad9fc3eb820ef6fa64a4a03224b9dc3de">data</a>() const </td><td class="entry"><a class="el" href="a00002.html">sqlite::blob</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#a1962255cded865181174a67351d58fb8">operator=</a>(const blob &amp;other)</td><td class="entry"><a class="el" href="a00002.html">sqlite::blob</a></td><td class="entry"></td></tr>
+  <tr><td class="entry"><a class="el" href="a00002.html#a93a890b30c970d76fc51ad7ed4bb36c1">operator=</a>(blob &amp;&amp;other)</td><td class="entry"><a class="el" href="a00002.html">sqlite::blob</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="a00002.html#a28b69b40596ded278607604396b86c97">size</a>() const </td><td class="entry"><a class="el" href="a00002.html">sqlite::blob</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

@@ -69,7 +69,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerator</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,19 +101,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">namespace </span>sqlite</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">enum class</span> TransactionType: int {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        Deferred,  </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        Immediate, </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        Exclusive  </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">   17</a></span>&#160;    <span class="keyword">enum class</span> <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a>: int {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac">Deferred</a>,  </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1">Immediate</a>, </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971">Exclusive</a>  </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="a00014.html">   26</a></span>&#160;    <span class="keyword">class </span><a class="code" href="a00014.html">transaction</a></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> TransactionType type;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keyword">const</span> <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a> type;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="a00014.html#ac5e2efbcd15f1531c00cbcacfa74c3f0">transaction</a>(<a class="code" href="a00004.html">dbconnection</a>&amp; connection, <span class="keyword">const</span> TransactionType type);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="a00014.html#ac5e2efbcd15f1531c00cbcacfa74c3f0">transaction</a>(<a class="code" href="a00004.html">dbconnection</a>&amp; connection, <span class="keyword">const</span> <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a> type);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">virtual</span> <a class="code" href="a00014.html#a798101cf276674d19708c1958e5b03fb">~transaction</a>() noexcept;</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
@@ -132,7 +132,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="a00005.html#a18666e756f66c6978bf435cf6b072be7">   63</a></span>&#160;        <a class="code" href="a00005.html#a18666e756f66c6978bf435cf6b072be7">deferred_transaction</a>(<a class="code" href="a00004.html">dbconnection</a>&amp; connection) :</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="a00014.html">transaction</a>(connection, TransactionType::Deferred)</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <a class="code" href="a00014.html">transaction</a>(connection, <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a>::<a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac">Deferred</a>)</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        {}</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    };</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
@@ -140,7 +140,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="a00008.html#a17924d6e15666b8340ee8aab9a88e0d1">   76</a></span>&#160;        <a class="code" href="a00008.html#a17924d6e15666b8340ee8aab9a88e0d1">immediate_transaction</a>(<a class="code" href="a00004.html">dbconnection</a>&amp; connection) :</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="a00014.html">transaction</a>(connection, TransactionType::Immediate)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="a00014.html">transaction</a>(connection, <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a>::<a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1">Immediate</a>)</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {}</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    };</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="a00007.html#a9380f63712877dd18432ca82476dd096">   89</a></span>&#160;        <a class="code" href="a00007.html#a9380f63712877dd18432ca82476dd096">exclusive_transaction</a>(<a class="code" href="a00004.html">dbconnection</a>&amp; connection) :</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="a00014.html">transaction</a>(connection, TransactionType::Exclusive)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <a class="code" href="a00014.html">transaction</a>(connection, <a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a>::<a class="code" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971">Exclusive</a>)</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        {}</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    };</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div>
@@ -158,6 +158,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="a00022_html"><div class="ttname"><a href="a00022.html">DBConnection.h</a></div></div>
 <div class="ttc" id="a00014_html_a798101cf276674d19708c1958e5b03fb"><div class="ttname"><a href="a00014.html#a798101cf276674d19708c1958e5b03fb">sqlite::transaction::~transaction</a></div><div class="ttdeci">virtual ~transaction() noexcept</div><div class="ttdoc">Destructor. </div><div class="ttdef"><b>Definition:</b> <a href="a00033_source.html#l00019">Transaction.cpp:19</a></div></div>
 <div class="ttc" id="a00007_html_a9380f63712877dd18432ca82476dd096"><div class="ttname"><a href="a00007.html#a9380f63712877dd18432ca82476dd096">sqlite::exclusive_transaction::exclusive_transaction</a></div><div class="ttdeci">exclusive_transaction(dbconnection &amp;connection)</div><div class="ttdoc">Implements a strictly scope-based SQLite exclusive transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00089">Transaction.h:89</a></div></div>
+<div class="ttc" id="a00038_html_aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1"><div class="ttname"><a href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1">sqlite::TransactionType::Immediate</a></div><div class="ttdoc">means that no database connection will be able to write to the database or do a BEGIN IMMEDIATE/EXCLU...</div></div>
+<div class="ttc" id="a00038_html_aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971"><div class="ttname"><a href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971">sqlite::TransactionType::Exclusive</a></div><div class="ttdoc">means that no other database connection except for read_uncommitted connection will be able to read/w...</div></div>
 <div class="ttc" id="a00014_html"><div class="ttname"><a href="a00014.html">sqlite::transaction</a></div><div class="ttdoc">RAII encapsulation of the SQLite Transactions. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00026">Transaction.h:26</a></div></div>
 <div class="ttc" id="a00014_html_abe219dd0bf949d569381f9830c7b2d1a"><div class="ttname"><a href="a00014.html#abe219dd0bf949d569381f9830c7b2d1a">sqlite::transaction::commit</a></div><div class="ttdeci">virtual void commit()</div><div class="ttdoc">Commit the transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00033_source.html#l00032">Transaction.cpp:32</a></div></div>
 <div class="ttc" id="a00005_html"><div class="ttname"><a href="a00005.html">sqlite::deferred_transaction</a></div><div class="ttdoc">RAII encapsulation of the SQLite deferred transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00057">Transaction.h:57</a></div></div>
@@ -165,13 +167,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="a00005_html_a18666e756f66c6978bf435cf6b072be7"><div class="ttname"><a href="a00005.html#a18666e756f66c6978bf435cf6b072be7">sqlite::deferred_transaction::deferred_transaction</a></div><div class="ttdeci">deferred_transaction(dbconnection &amp;connection)</div><div class="ttdoc">Implements a strictly scope-based SQLite deferred transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00063">Transaction.h:63</a></div></div>
 <div class="ttc" id="a00008_html"><div class="ttname"><a href="a00008.html">sqlite::immediate_transaction</a></div><div class="ttdoc">RAII encapsulation of the SQLite immediate transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00070">Transaction.h:70</a></div></div>
 <div class="ttc" id="a00008_html_a17924d6e15666b8340ee8aab9a88e0d1"><div class="ttname"><a href="a00008.html#a17924d6e15666b8340ee8aab9a88e0d1">sqlite::immediate_transaction::immediate_transaction</a></div><div class="ttdeci">immediate_transaction(dbconnection &amp;connection)</div><div class="ttdoc">Implements a strictly scope-based SQLite immediate transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00076">Transaction.h:76</a></div></div>
+<div class="ttc" id="a00038_html_aea994c2d3b1e9448cd9c526b44f78890"><div class="ttname"><a href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">sqlite::TransactionType</a></div><div class="ttdeci">TransactionType</div><div class="ttdoc">Used to specify the different types of SQLite transactions. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00017">Transaction.h:17</a></div></div>
+<div class="ttc" id="a00038_html_aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac"><div class="ttname"><a href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac">sqlite::TransactionType::Deferred</a></div><div class="ttdoc">means that no locks are acquired on the database until the database is first accessed. </div></div>
 <div class="ttc" id="a00004_html"><div class="ttname"><a href="a00004.html">sqlite::dbconnection</a></div><div class="ttdoc">Class that represents a connection to a database. </div><div class="ttdef"><b>Definition:</b> <a href="a00022_source.html#l00024">DBConnection.h:24</a></div></div>
 <div class="ttc" id="a00014_html_ac5e2efbcd15f1531c00cbcacfa74c3f0"><div class="ttname"><a href="a00014.html#ac5e2efbcd15f1531c00cbcacfa74c3f0">sqlite::transaction::transaction</a></div><div class="ttdeci">transaction(dbconnection &amp;connection, const TransactionType type)</div><div class="ttdoc">Implements a strictly scope-based SQLite transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00033_source.html#l00010">Transaction.cpp:10</a></div></div>
 <div class="ttc" id="a00007_html"><div class="ttname"><a href="a00007.html">sqlite::exclusive_transaction</a></div><div class="ttdoc">RAII encapsulation of the SQLite exclusive transaction. </div><div class="ttdef"><b>Definition:</b> <a href="a00034_source.html#l00083">Transaction.h:83</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Oct 8 2017 19:43:02 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Oct 10 2017 04:01:06 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

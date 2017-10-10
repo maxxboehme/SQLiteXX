@@ -3,7 +3,7 @@
 }
 
 
-A \hyperlink{a00038}{S\-Q\-Lite} dynamically typed value object, aka \char`\"{}sqlite3\-\_\-value\char`\"{}.  
+A S\-Q\-Lite dynamically typed value object, aka \char`\"{}sqlite3\-\_\-value\char`\"{}.  
 
 
 
@@ -42,14 +42,14 @@ const std\-::u16string \hyperlink{a00015_a6edf39b8900fa6b490161994da913236}{as\-
 \begin{DoxyCompactList}\small\item\em Represents the value as a U\-T\-F-\/16 string. \end{DoxyCompactList}\item 
 int \hyperlink{a00015_a089b0cb550fd7ca7830ebf1cb43850d1}{bytes} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the size in bytes of the value. \end{DoxyCompactList}\item 
-datatype \hyperlink{a00015_a1dbe99607518010c9fd134b0816bb451}{type} () const noexcept
+\hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0}{datatype} \hyperlink{a00015_a1dbe99607518010c9fd134b0816bb451}{type} () const noexcept
 \begin{DoxyCompactList}\small\item\em Returns the datatype for the initial datatype of the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-A \hyperlink{a00038}{S\-Q\-Lite} dynamically typed value object, aka \char`\"{}sqlite3\-\_\-value\char`\"{}. 
+A S\-Q\-Lite dynamically typed value object, aka \char`\"{}sqlite3\-\_\-value\char`\"{}. 
 
-value objects represent all values that can be stored in a database table. A value object may be either \char`\"{}protected\char`\"{} or \char`\"{}unprotected\char`\"{} which refers to whether or not a mutex is held. An internal mutex is held for a protected value object but not for an unprotected one. If \hyperlink{a00038}{S\-Q\-Lite} is compiled to be single-\/threaded or if \hyperlink{a00038}{S\-Q\-Lite} is run in one of reduced mutex modes then there is no distinction between protected and unprotected sqlite3\-\_\-value objects. A value objects will always be \char`\"{}protected\char`\"{} as it stores a sqlite3\-\_\-value objects created from calling the sqlite3\-\_\-value\-\_\-dup() interface which produces a \char`\"{}protected\char`\"{} \char`\"{}sqlite3\-\_\-value\char`\"{} from an \char`\"{}unprotected\char`\"{} one. Only use a value object in the same thread as the S\-Q\-L function that created it. 
+value objects represent all values that can be stored in a database table. A value object may be either \char`\"{}protected\char`\"{} or \char`\"{}unprotected\char`\"{} which refers to whether or not a mutex is held. An internal mutex is held for a protected value object but not for an unprotected one. If S\-Q\-Lite is compiled to be single-\/threaded or if S\-Q\-Lite is run in one of reduced mutex modes then there is no distinction between protected and unprotected sqlite3\-\_\-value objects. A value objects will always be \char`\"{}protected\char`\"{} as it stores a sqlite3\-\_\-value objects created from calling the sqlite3\-\_\-value\-\_\-dup() interface which produces a \char`\"{}protected\char`\"{} \char`\"{}sqlite3\-\_\-value\char`\"{} from an \char`\"{}unprotected\char`\"{} one. Only use a value object in the same thread as the S\-Q\-L function that created it. 
 
 Definition at line 27 of file Value.\-h.
 
@@ -311,7 +311,7 @@ Definition at line 30 of file Value.\-cpp.
 
 \hypertarget{a00015_a1dbe99607518010c9fd134b0816bb451}{\index{sqlite\-::value@{sqlite\-::value}!type@{type}}
 \index{type@{type}!sqlite::value@{sqlite\-::value}}
-\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}datatype sqlite\-::value\-::type (
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf datatype} sqlite\-::value\-::type (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
@@ -320,7 +320,7 @@ Definition at line 30 of file Value.\-cpp.
 
 Returns the datatype for the initial datatype of the value. 
 
-Warning\-: Other interfaces might change the datatype for an value object. For example, if the datatype is initially sqlite\-::datatype\-::integer and \hyperlink{a00015_a6ce81cd7d007013cdc4ac5103ffa76f1}{as\-\_\-string()} is called to extract a text value for that integer, then subsequent calls to \hyperlink{a00015_a1dbe99607518010c9fd134b0816bb451}{type()} might return sqlite\-::datatype\-::text. Whether or not a persistent internal datatype conversion occurs is undefined and my change from one release of sqlite to the next. \begin{DoxyReturn}{Returns}
+Warning\-: Other interfaces might change the datatype for an value object. For example, if the datatype is initially \hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0a157db7df530023575515d366c9b672e8}{sqlite\-::datatype\-::integer} and \hyperlink{a00015_a6ce81cd7d007013cdc4ac5103ffa76f1}{as\-\_\-string()} is called to extract a text value for that integer, then subsequent calls to \hyperlink{a00015_a1dbe99607518010c9fd134b0816bb451}{type()} might return \hyperlink{a00038_a7467e5cdd32bbf7fce35aced88682dc0a1cb251ec0d568de6a929b520c4aed8d1}{sqlite\-::datatype\-::text}. Whether or not a persistent internal datatype conversion occurs is undefined and my change from one release of sqlite to the next. \begin{DoxyReturn}{Returns}
 The type of the value. 
 \end{DoxyReturn}
 
