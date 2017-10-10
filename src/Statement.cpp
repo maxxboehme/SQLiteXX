@@ -83,7 +83,7 @@ namespace sqlite
 
     void statement::bind(const int index, const void * const value, const int size, bindtype type) const
     {
-        if (SQLITE_OK != sqlite3_bind_blob(handle(), index, value, size, type == bindtype::transient ? SQLITE_TRANSIENT : SQLITE_STATIC))
+        if (SQLITE_OK != sqlite3_bind_blob(handle(), index, value, size, type == bindtype::transiently ? SQLITE_TRANSIENT : SQLITE_STATIC))
         {
             throw_last_error();
         }
@@ -99,7 +99,7 @@ namespace sqlite
 
     void statement::bind(const int index, const char * const value, const int size, bindtype type) const
     {
-        if (SQLITE_OK != sqlite3_bind_text(handle(), index, value, size, type == bindtype::transient ? SQLITE_TRANSIENT : SQLITE_STATIC))
+        if (SQLITE_OK != sqlite3_bind_text(handle(), index, value, size, type == bindtype::transiently ? SQLITE_TRANSIENT : SQLITE_STATIC))
         {
             throw_last_error();
         }
@@ -107,7 +107,7 @@ namespace sqlite
 
     void statement::bind(const int index, const char16_t * const value, const int size, bindtype type) const
     {
-        if (SQLITE_OK != sqlite3_bind_text16(handle(), index, value, size, type == bindtype::transient ? SQLITE_TRANSIENT : SQLITE_STATIC))
+        if (SQLITE_OK != sqlite3_bind_text16(handle(), index, value, size, type == bindtype::transiently ? SQLITE_TRANSIENT : SQLITE_STATIC))
         {
             throw_last_error();
         }

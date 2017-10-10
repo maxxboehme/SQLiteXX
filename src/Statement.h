@@ -457,7 +457,7 @@ namespace sqlite
          * @param[in] size  in bytes the size of the blob object
          * @param[in] type  the way to bind this parameter.
          **/
-        void bind(const int index, const void* const value, const int size, bindtype type = bindtype::transient) const;
+        void bind(const int index, const void* const value, const int size, bindtype type = bindtype::transiently) const;
 
         /** Binds an blob value to a parameter in an SQL prepared statement.
          * @param[in] index specifies the index of the SQL parameter to be set
@@ -471,7 +471,7 @@ namespace sqlite
          * @param[in] size  the number of bytes of the value.
          * @param[in] type  the way to bind this parameter.
          **/
-        void bind(const int index, const char* const value, const int size = -1, bindtype type = bindtype::transient) const;
+        void bind(const int index, const char* const value, const int size = -1, bindtype type = bindtype::transiently) const;
 
         /** Binds an UTF-16 string value to a parameter in an SQL prepared statement.
          * @param[in] index specifies the index of the SQL parameter to be set
@@ -479,7 +479,7 @@ namespace sqlite
          * @param[in] size  the number of bytes of the value.
          * @param[in] type  the way to bind this parameter.
          **/
-        void bind(const int index, const char16_t* const value, const int size = -1, bindtype type = bindtype::transient) const;
+        void bind(const int index, const char16_t* const value, const int size = -1, bindtype type = bindtype::transiently) const;
 
         /** Binds an string value to a parameter in an SQL prepared statement.
          * @param[in] index specifies the index of the SQL parameter to be set

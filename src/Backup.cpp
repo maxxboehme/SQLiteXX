@@ -4,7 +4,7 @@
 
 namespace sqlite
 {
-    void save(const dbconnection &source, const std::string &filename)
+    void save(const dbconnection& source, const std::string& filename)
     {
         dbconnection destination(filename);
         backup backup(source, destination);

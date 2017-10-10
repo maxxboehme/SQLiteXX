@@ -72,13 +72,13 @@ namespace sqlite
         using backup_handle = std::unique_ptr<sqlite3_backup, decltype(&sqlite3_backup_finish)>;
         backup_handle m_handle;
 
-        const dbconnection *m_destination = nullptr;
+        const dbconnection* m_destination = nullptr;
 
         backup(const backup& other) = delete;
         backup& operator=(backup& other) = delete;
     };
 
-    void save(const dbconnection &source, const std::string &filename);
+    void save(const dbconnection& source, const std::string& filename);
 }
 
 #endif

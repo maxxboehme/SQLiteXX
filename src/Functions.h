@@ -210,7 +210,7 @@ namespace sqlite
         // This argument is needed so this function can be used in the
         // SQLite create function interface. Adding this line so no warning is generated
         (void)argc;
-        F *userScalarFunction = static_cast<F *>(sqlite3_user_data(context));
+        F* userScalarFunction = static_cast<F*>(sqlite3_user_data(context));
         assert(userScalarFunction != 0);
 
         try {
@@ -229,7 +229,7 @@ namespace sqlite
 
     template <typename F>
     void internal_general_scalar_function(sqlite3_context* context, int argc, sqlite3_value **values) {
-        F *userScalarFunction = static_cast<F *>(sqlite3_user_data(context));
+        F* userScalarFunction = static_cast<F*>(sqlite3_user_data(context));
         assert(userScalarFunction != 0);
 
         try {
@@ -253,18 +253,14 @@ namespace sqlite
 
     template <typename F>
     int internal_collation_function(void* context, int bytes1, const void* string_bytes1, int bytes2, const void* string_bytes2) {
-        F *userCollationFunction = static_cast<F *>(context);
+        F* userCollationFunction = static_cast<F*>(context);
         assert(userCollationFunction != 0);
 
-        try {
-            const std::string string1(static_cast<const char*>(string_bytes1), bytes1);
-            const std::string string2(static_cast<const char*>(string_bytes2), bytes2);
+        const std::string string1(static_cast<const char*>(string_bytes1), bytes1);
+        const std::string string2(static_cast<const char*>(string_bytes2), bytes2);
 
-            int result = (*userCollationFunction)(string1, string2);
-            return result;
-        } catch (...) {
-            return -123456;
-        }
+        int result = (*userCollationFunction)(string1, string2);
+        return result;
     }
 
 

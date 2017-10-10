@@ -228,6 +228,8 @@ namespace sqlite
         }
 
         /** Used to add an SQL collation or redefine the behavior of existing SQL collations.
+         * The function created should not throw an exception, if so the results is unknown.
+         *
          * @tparam F The function type to use to create the function.
          * @param[in] name             the name of the function to be used in an SQL query
          * @param[in] function         the implementation to the function

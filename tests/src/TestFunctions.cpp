@@ -200,7 +200,7 @@ TEST_CASE("Create Aggregate Function", "[Functions]") {
         129
     };
 
-    REQUIRE_NOTHROW(connection.create_aggregate<MySum>("MySum"));
+    REQUIRE_NOTHROW(connection.create_aggregate<MySum>("MySum", true));
 
     int i = 0;
     for (auto row : sqlite::statement(connection, "SELECT MySum(num) FROM test")) {

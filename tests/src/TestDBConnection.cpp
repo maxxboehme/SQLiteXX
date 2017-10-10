@@ -7,6 +7,7 @@
 
 TEST_CASE("Combinations of openmode flags with new database", "[DBConnection]") {
     remove("testDBConnection.db");
+    remove("testDBConnection_utf16.db");
 
     SECTION("Open file as read only but file does not exist") {
         REQUIRE_THROWS_AS(sqlite::dbconnection("testDBConnection.db", sqlite::openmode::read_only), sqlite::exception);

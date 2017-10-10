@@ -21,8 +21,8 @@ namespace sqlite
     /** Used to specify the way to bind a value to a statement.
      */
     enum class bindtype: int {
-        staticly,   ///< means that the content pointer is constant and will never change.
-        transient ///< means that the content will likely change in the near future and that SQLite should make its own private copy of the content before returning.
+        statically,   ///< means that the content pointer is constant and will never change.
+        transiently   ///< means that the content will likely change in the near future and that SQLite should make its own private copy of the content before returning.
     };
 }
 

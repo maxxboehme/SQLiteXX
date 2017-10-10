@@ -11,6 +11,12 @@ TEST_CASE("Initialization with non empty database", "[Backup]") {
     SECTION("Backup to self") {
         REQUIRE_THROWS_AS(sqlite::backup(src, src), sqlite::exception);
     }
+
+    SECTION("Backup to read-only file") {
+        sqlite::dbconnection destination("TestBackup.db", sqlite::openmode::read_only);
+        sqlite::backup backup(src, destination);
+        REQUIRE_THROWS_AS(backup.step(), sqlite::exception);
+    }
 }
 
 TEST_CASE("Backup process", "[Backup]") {
