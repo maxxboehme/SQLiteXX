@@ -13,6 +13,9 @@ TEST_CASE("Initialization with non empty database", "[Backup]") {
     }
 
     SECTION("Backup to read-only file") {
+        remove("TestBackup.db");
+        sqlite::dbconnection create_database("TestBackup.db");
+
         sqlite::dbconnection destination("TestBackup.db", sqlite::openmode::read_only);
         sqlite::backup backup(src, destination);
         REQUIRE_THROWS_AS(backup.step(), sqlite::exception);
