@@ -130,8 +130,9 @@ matrix:
               - BUILD_TYPE='Debug'
           after_success:
               - sudo cmake --build . --target install
-              - make clean
+              - rm -rf *
               - cmake -DSQLITEXX_TEST_INSTALL=1 -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DFORCE_EXTERNAL_PROJECTS:Bool=True ..
+              - cmake --build .
               - ctest --output-on-failure
         - os: linux
           compiler: gcc
@@ -147,8 +148,9 @@ matrix:
               - BUILD_TYPE='Release'
           after_success:
               - cmake --build . --target install
-              - make clean
+              - rm -rf *
               - cmake -DSQLITEXX_TEST_INSTALL=1 -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -DFORCE_EXTERNAL_PROJECTS:Bool=True ..
+              - cmake --build .
               - ctest --output-on-failure
 
         # The following build will deploy doxygen to gh-pages
