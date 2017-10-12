@@ -23,10 +23,14 @@ include(BuildType)
 include(download_dir)
 include(ExternalProjectUtils)
 
-# Add the thrid party dependencies
+# Add the third party dependencies
 find_package(Threads REQUIRED)
 find_package_external(PACKAGE SQLite3 REQUIRE)
 find_package_external(PACKAGE Catch REQUIRE)
+
+# When testing building against installed version of SQLiteXX don't
+# need to build it.
+if (NOT SQLITEXX_TEST_INSTALL)
 
 # Collecting header and source files for SQLiteXX
 file(GLOB SQLITEXX_HEADERS "src/*.h")
@@ -83,6 +87,7 @@ install(
 install(
     FILES ${SQLITEXX_HEADERS}
     DESTINATION ${INCLUDE_INSTALL_DIR})
+endif()
 
 
 # === Setting Up SQLiteXX Tests ===
