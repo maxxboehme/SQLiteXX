@@ -19,7 +19,7 @@ configuration:
 before_build:
     - mkdir build
     - cd build
-    - cmake -DCMAKE_BUILD_TYPE:=%CONFIGURATION% --config %CONFIGURATION% .. -A%PLATFORM%
+    - cmake -DCMAKE_BUILD_TYPE:=%CONFIGURATION% .. -A%PLATFORM%
 
 # build with MSBuild
 build:
@@ -31,10 +31,10 @@ test_script:
     - ctest -C %CONFIGURATION% --output-on-failure
 
 after_test:
-    - cmake --build . --target install
+    - cmake --build . --target install -config %CONFIGURATION%
     - del /S /F /Q *
-    - cmake -DCMAKE_BUILD_TYPE:=%CONFIGURATION% --config %CONFIGURATION% -A%PLATFORM% -DSQLITEXX_TEST_INSTALL=1 ..
-    - cmake --build .
+    - cmake -DCMAKE_BUILD_TYPE:=%CONFIGURATION% -A%PLATFORM% -DSQLITEXX_TEST_INSTALL=1 ..
+    - cmake --build . --config %CONFIGURATION%
     - ctest -C %CONFIGURATION% --output-on-failure
 
 matrix:
