@@ -14,10 +14,10 @@ namespace sqlite
 
     /** Used to specify the different types of SQLite transactions.
      */
-    enum class TransactionType: int {
-        Deferred,  ///< means that no locks are acquired on the database until the database is first accessed.
-        Immediate, ///< means that no database connection will be able to write to the database or do a BEGIN IMMEDIATE/EXCLUSIVE.
-        Exclusive  ///< means that no other database connection except for read_uncommitted connection will be able to read/write to the database.
+    enum class transactiontype: int {
+        deferred,  ///< means that no locks are acquired on the database until the database is first accessed.
+        immediate, ///< means that no database connection will be able to write to the database or do a BEGIN IMMEDIATE/EXCLUSIVE.
+        exclusive  ///< means that no other database connection except for read_uncommitted connection will be able to read/write to the database.
     };
 
 
@@ -26,13 +26,13 @@ namespace sqlite
     class transaction
     {
         public:
-        const TransactionType type;
+        const transactiontype type;
 
         /** Implements a strictly scope-based SQLite transaction.
          * @param[in] connection the database connection to begin the transaction on
          * @param[in] type the transaction type to be used.
          */
-        transaction(dbconnection& connection, const TransactionType type);
+        transaction(dbconnection& connection, const transactiontype type);
 
         /** Destructor.
          * Safely rollback the transaction if it has not been commited.
@@ -61,7 +61,7 @@ namespace sqlite
          * @param[in] connection the database connection to begin the transaction on
          */
         deferred_transaction(dbconnection& connection) :
-            transaction(connection, TransactionType::Deferred)
+            transaction(connection, transactiontype::deferred)
         {}
     };
 
@@ -74,7 +74,7 @@ namespace sqlite
          * @param[in] connection the database connection to begin the transaction on
          */
         immediate_transaction(dbconnection& connection) :
-            transaction(connection, TransactionType::Immediate)
+            transaction(connection, transactiontype::immediate)
         {}
     };
 
@@ -87,7 +87,7 @@ namespace sqlite
          * @param[in] connection the database connection to begin the transaction on
          */
         exclusive_transaction(dbconnection& connection) :
-            transaction(connection, TransactionType::Exclusive)
+            transaction(connection, transactiontype::exclusive)
         {}
     };
 }

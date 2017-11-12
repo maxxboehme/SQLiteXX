@@ -7,7 +7,7 @@ namespace sqlite
     static const char* kRollback = "ROLLBACK";
     static const char* kBegginings[3] = {"BEGIN DEFERRED", "BEGIN IMMEDIATE", "BEGIN EXCLUSIVE"};
 
-    transaction::transaction(dbconnection &connection, const TransactionType type) :
+    transaction::transaction(dbconnection &connection, const transactiontype type) :
         type(type),
         m_connection(connection),
         m_commited(false)
@@ -24,7 +24,7 @@ namespace sqlite
                 sqlite::execute(m_connection, kRollback);
             } catch (sqlite::exception&) {
                 // Don't throw exception in destructor. Already rolling back if
-                // issue occurred
+                // issue occurred.
             }
         }
     }
