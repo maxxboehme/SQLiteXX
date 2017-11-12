@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">const</span> std::chrono::milliseconds timeout)</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(filename, mode);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        sqlite3_busy_timeout(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), timeout.count());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        sqlite3_busy_timeout(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), static_cast&lt;int&gt;(timeout.count()));</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="a00004.html#a4de544133c1a430855624c94986ed16c">   44</a></span>&#160;    <a class="code" href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">dbconnection::dbconnection</a>(</div>
@@ -136,7 +136,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> std::chrono::milliseconds timeout)</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(filename);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        sqlite3_busy_timeout(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), timeout.count());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        sqlite3_busy_timeout(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), static_cast&lt;int&gt;(timeout.count()));</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="a00004.html#a1ac3a4126d0c5da0773f14e9ac443678">   52</a></span>&#160;    <a class="code" href="a00004.html#a1cfe02390c4b08e78787120edaed6ab7">dbconnection::dbconnection</a>(</div>
@@ -144,7 +144,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">const</span> std::chrono::milliseconds timeout)</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="a00004.html#a84da73c4ff1b162624da3e252c2a86c8">open</a>(filename);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        sqlite3_busy_timeout(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), timeout.count());</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        sqlite3_busy_timeout(<a class="code" href="a00004.html#a1a9b022293133991f265c10c1f50800b">handle</a>(), static_cast&lt;int&gt;(timeout.count()));</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="a00004.html#adc0120a0d5d39eabcffb7d641b0c40dd">   60</a></span>&#160;    <a class="code" href="a00004.html">dbconnection</a> <a class="code" href="a00004.html#adc0120a0d5d39eabcffb7d641b0c40dd">dbconnection::memory</a>()</div>
@@ -221,7 +221,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 12 2017 03:54:46 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 12 2017 05:33:14 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

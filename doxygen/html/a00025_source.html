@@ -303,11 +303,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            <span class="keyword">auto</span> result = invoke(*userScalarFunction, values);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            <a class="code" href="a00038.html#ab443b8f604e88cd8f1e9c796d592e461">return_result</a>(context, result);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc &amp;e) {</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc&amp;) {</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;            sqlite3_result_error_nomem(context);</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a> &amp;e) {</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a>&amp; e) {</div>
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;            sqlite3_result_error(context, e.what(), e.errcode);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e) {</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;            sqlite3_result_error(context, e.what(), SQLITE_ABORT);</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;            sqlite3_result_error_code(context, SQLITE_ABORT);</div>
@@ -327,11 +327,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
 <div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keyword">auto</span> result = (*userScalarFunction)(argValues);</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <a class="code" href="a00038.html#ab443b8f604e88cd8f1e9c796d592e461">return_result</a>(context, result);</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc &amp;e) {</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc&amp;) {</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            sqlite3_result_error_nomem(context);</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a> &amp;e) {</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a>&amp; e) {</div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            sqlite3_result_error(context, e.what(), e.errcode);</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e) {</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            sqlite3_result_error(context, e.what(), SQLITE_ABORT);</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            sqlite3_result_error_code(context, SQLITE_ABORT);</div>
@@ -391,11 +391,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;        <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            wrapper-&gt;step(context, argc, values);</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc &amp;e) {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc&amp;) {</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            sqlite3_result_error_nomem(context);</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a> &amp;e) {</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a>&amp; e) {</div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            sqlite3_result_error(context, e.what(), e.errcode);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e) {</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;            sqlite3_result_error(context, e.what(), SQLITE_ABORT);</div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;            sqlite3_result_error_code(context, SQLITE_ABORT);</div>
@@ -410,11 +410,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <span class="keywordflow">try</span> {</div>
 <div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            wrapper-&gt;finalize(context);</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            wrapper-&gt;reset();</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc &amp;e) {</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::bad_alloc&amp;) {</div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            sqlite3_result_error_nomem(context);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a> &amp;e) {</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> <a class="code" href="a00006.html">sqlite::exception</a>&amp; e) {</div>
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            sqlite3_result_error(context, e.what(), e.errcode);</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e) {</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        } <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception&amp; e) {</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;            sqlite3_result_error(context, e.what(), SQLITE_ABORT);</div>
 <div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        } <span class="keywordflow">catch</span> (...) {</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            sqlite3_result_error_code(context, SQLITE_ABORT);</div>
@@ -439,7 +439,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Oct 12 2017 03:54:46 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 12 2017 05:33:14 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
