@@ -12,8 +12,8 @@ TEST_CASE("Query in Memory Database", "[Statement]") {
         REQUIRE_THROWS_AS(sqlite::execute(connection, "SELECT * FROM test"), sqlite::exception);
     }
 
-    sqlite::statement query(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
-    REQUIRE_NOTHROW(query.execute());
+    sqlite::statement createTable(connection, "CREATE TABLE test (id INTEGER PRIMARY KEY, value TEXT)");
+    REQUIRE_NOTHROW(createTable.execute());
 
     SECTION("Create a Statement with no parameter") {
         sqlite::statement query(connection, "SELECT * FROM test");

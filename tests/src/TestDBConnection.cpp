@@ -125,8 +125,8 @@ TEST_CASE("DBConnectionTest Assignment Operators", "[DBConnection]") {
     REQUIRE(sqlite::execute(connection, "CREATE TABLE test (txt1 TEXT, txt2 TEXT)") == 0);
     REQUIRE(sqlite::execute(connection, "INSERT INTO test VALUES (\"first\", \"second\")") == 1);
 
-    sqlite::statement query(connection, "SELECT * FROM test");
-    REQUIRE(query.column_count() == 2);
+    sqlite::statement selectStatement(connection, "SELECT * FROM test");
+    REQUIRE(selectStatement.column_count() == 2);
 
     SECTION("L-value assignment operator") {
         sqlite::dbconnection testConnection;

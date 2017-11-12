@@ -216,11 +216,11 @@ namespace sqlite
         try {
             auto result = invoke(*userScalarFunction, values);
             return_result(context, result);
-        } catch (const std::bad_alloc &e) {
+        } catch (const std::bad_alloc&) {
             sqlite3_result_error_nomem(context);
-        } catch (const sqlite::exception &e) {
+        } catch (const sqlite::exception& e) {
             sqlite3_result_error(context, e.what(), e.errcode);
-        } catch (const std::exception &e) {
+        } catch (const std::exception& e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);
         } catch (...) {
             sqlite3_result_error_code(context, SQLITE_ABORT);
@@ -240,11 +240,11 @@ namespace sqlite
 
             auto result = (*userScalarFunction)(argValues);
             return_result(context, result);
-        } catch (const std::bad_alloc &e) {
+        } catch (const std::bad_alloc&) {
             sqlite3_result_error_nomem(context);
-        } catch (const sqlite::exception &e) {
+        } catch (const sqlite::exception& e) {
             sqlite3_result_error(context, e.what(), e.errcode);
-        } catch (const std::exception &e) {
+        } catch (const std::exception& e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);
         } catch (...) {
             sqlite3_result_error_code(context, SQLITE_ABORT);
@@ -304,11 +304,11 @@ namespace sqlite
 
         try {
             wrapper->step(context, argc, values);
-        } catch (const std::bad_alloc &e) {
+        } catch (const std::bad_alloc&) {
             sqlite3_result_error_nomem(context);
-        } catch (const sqlite::exception &e) {
+        } catch (const sqlite::exception& e) {
             sqlite3_result_error(context, e.what(), e.errcode);
-        } catch (const std::exception &e) {
+        } catch (const std::exception& e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);
         } catch (...) {
             sqlite3_result_error_code(context, SQLITE_ABORT);
@@ -323,11 +323,11 @@ namespace sqlite
         try {
             wrapper->finalize(context);
             wrapper->reset();
-        } catch (const std::bad_alloc &e) {
+        } catch (const std::bad_alloc&) {
             sqlite3_result_error_nomem(context);
-        } catch (const sqlite::exception &e) {
+        } catch (const sqlite::exception& e) {
             sqlite3_result_error(context, e.what(), e.errcode);
-        } catch (const std::exception &e) {
+        } catch (const std::exception& e) {
             sqlite3_result_error(context, e.what(), SQLITE_ABORT);
         } catch (...) {
             sqlite3_result_error_code(context, SQLITE_ABORT);

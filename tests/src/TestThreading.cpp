@@ -97,7 +97,7 @@ void table_insert_transaction_default_busy_timeout(std::string filename, std::st
         retry = false; \
         try { \
             sqlite::execute(connection, statement, __VA_ARGS__); \
-        } catch (sqlite::busy_exception &) { \
+        } catch (const sqlite::busy_exception&) { \
             retry = true; \
         } \
     } while (retry)
@@ -117,7 +117,7 @@ void table_insert_using_busy_exception(std::string filename, std::string text, i
             retry = false;
             try {
                 sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
-            } catch (sqlite::busy_exception &e) {
+            } catch (const sqlite::busy_exception&) {
                 retry = true;
             }
         } while (retry);
@@ -134,7 +134,7 @@ void table_insert_deferredtransaction_busy_exception(std::string filename, std::
             for (int i = 0; i < count; ++i) {
                 sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
             }
-        } catch (sqlite::busy_exception &e) {
+        } catch (const sqlite::busy_exception&) {
             retry = true;
         }
         if (!retry) {
@@ -142,7 +142,7 @@ void table_insert_deferredtransaction_busy_exception(std::string filename, std::
                 retry = false;
                 try {
                     t.commit();
-                } catch (sqlite::busy_exception &e) {
+                } catch (const sqlite::busy_exception&) {
                     retry = true;
                 }
             } while (retry);
@@ -161,7 +161,7 @@ void table_insert_immediatetransaction_busy_exception(std::string filename, std:
                 sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
             }
             t.commit();
-        } catch (sqlite::busy_exception &e) {
+        } catch (const sqlite::busy_exception&) {
             retry = true;
         }
     } while (retry);
@@ -178,7 +178,7 @@ void table_insert_exclusivetransaction_busy_exception(std::string filename, std:
                 sqlite::execute(connection, "INSERT INTO test VALUES (NULL, ?)", text);
             }
             t.commit();
-        } catch (sqlite::busy_exception &e) {
+        } catch (const sqlite::busy_exception&) {
             retry = true;
         }
     } while (retry);
@@ -212,7 +212,7 @@ TEST_CASE("Thread-local connection", "[Threading]") {
         }
 
         sqlite::dbconnection connection(testFile.c_str());
-        int numRows = 0;
+        unsigned int numRows = 0;
         for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
             REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());
@@ -231,7 +231,7 @@ TEST_CASE("Thread-local connection", "[Threading]") {
         }
 
         sqlite::dbconnection connection(testFile.c_str());
-        int numRows = 0;
+        unsigned int numRows = 0;
         for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
             REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());
@@ -250,7 +250,7 @@ TEST_CASE("Thread-local connection", "[Threading]") {
         }
 
         sqlite::dbconnection connection(testFile.c_str());
-        int numRows = 0;
+        unsigned int numRows = 0;
         for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
             REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());
@@ -270,7 +270,7 @@ TEST_CASE("Thread-local connection", "[Threading]") {
         }
 
         sqlite::dbconnection connection(testFile.c_str());
-        int numRows = 0;
+        unsigned int numRows = 0;
         for (auto row : sqlite::statement(connection, "SELECT * FROM test")) {
             ++numRows;
             REQUIRE(expectedStringValues.find(row.get_string(1)) != expectedStringValues.end());

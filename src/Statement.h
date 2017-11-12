@@ -264,8 +264,8 @@ namespace sqlite
 
             const int columnCount = column_count();
             for (int i = 0; i < columnCount; ++i) {
-                const char * name = sqlite3_column_name(static_cast<T const *>(this)->handle(), i);
-                columnNamesToIndex[name] = i;
+                const char* columnName = sqlite3_column_name(static_cast<T const *>(this)->handle(), i);
+                columnNamesToIndex[columnName] = i;
             }
 
             const std::map<std::string, int>::const_iterator index = columnNamesToIndex.find(name);

@@ -38,7 +38,7 @@ namespace sqlite
         const std::chrono::milliseconds timeout)
     {
         open(filename, mode);
-        sqlite3_busy_timeout(handle(), timeout.count());
+        sqlite3_busy_timeout(handle(), static_cast<int>(timeout.count()));
     }
 
     dbconnection::dbconnection(
@@ -46,7 +46,7 @@ namespace sqlite
         const std::chrono::milliseconds timeout)
     {
         open(filename);
-        sqlite3_busy_timeout(handle(), timeout.count());
+        sqlite3_busy_timeout(handle(), static_cast<int>(timeout.count()));
     }
 
     dbconnection::dbconnection(
@@ -54,7 +54,7 @@ namespace sqlite
         const std::chrono::milliseconds timeout)
     {
         open(filename);
-        sqlite3_busy_timeout(handle(), timeout.count());
+        sqlite3_busy_timeout(handle(), static_cast<int>(timeout.count()));
     }
 
     dbconnection dbconnection::memory()

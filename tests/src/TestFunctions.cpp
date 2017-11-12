@@ -305,7 +305,6 @@ class BadAllocAggregateFinalize {
 
     double finalize() {
         throw std::bad_alloc();
-        return m_sum;
     }
 
     private:
@@ -324,7 +323,6 @@ class SQLiteExceptionAggregateFinalize {
 
     double finalize() {
         throw sqlite::exception(1, "test Exception");
-        return m_sum;
     }
 
     private:
@@ -343,7 +341,6 @@ class StdExceptionAggregateFinalize {
 
     double finalize() {
         throw std::exception();
-        return m_sum;
     }
 
     private:
@@ -362,7 +359,6 @@ class RandomExceptionAggregateFinalize {
 
     double finalize() {
         throw "test exception";
-        return m_sum;
     }
 
     private:
@@ -383,28 +379,24 @@ TEST_CASE("Throwing Exceptions from functions", "[Functions]") {
                 "badAlloc",
                 [](const std::vector<sqlite::value>&) -> int {
                     throw std::bad_alloc();
-                    return 1;
                 });
 
         connection.create_general_function(
                 "SQLiteException",
                 [](const std::vector<sqlite::value>&) -> int {
                     throw sqlite::exception(1, "test Exception");
-                    return 1;
                 });
 
         connection.create_general_function(
                 "stdException",
                 [](const std::vector<sqlite::value>&) -> int {
                     throw std::exception();
-                    return 1;
                 });
 
         connection.create_general_function(
                 "randomException",
                 [](const std::vector<sqlite::value>&) -> int {
                     throw "test Exception";
-                    return 1;
                 });
 
 
@@ -419,28 +411,24 @@ TEST_CASE("Throwing Exceptions from functions", "[Functions]") {
                 "badAlloc",
                 [](int) -> int {
                     throw std::bad_alloc();
-                    return 1;
                 });
 
         connection.create_function(
                 "SQLiteException",
                 [](int) -> int {
                     throw sqlite::exception(1, "test Exception");
-                    return 1;
                 });
 
         connection.create_function(
                 "stdException",
                 [](int) -> int {
                     throw std::exception();
-                    return 1;
                 });
 
         connection.create_function(
                 "randomException",
                 [](int) -> int {
                     throw "test Exception";
-                    return 1;
                 });
 
 
