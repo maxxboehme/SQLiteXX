@@ -33,7 +33,7 @@ test_script:
 after_test:
     - cmake --build . --target install
     - del /S /F /Q *
-    - cmake -A%PLATFORM% -DSQLITEXX_TEST_INSTALL=1 ..
+    - cmake -DCMAKE_BUILD_TYPE:=%CONFIGURATION% --config %CONFIGURATION% -A%PLATFORM% -DSQLITEXX_TEST_INSTALL=1 ..
     - cmake --build .
     - ctest -C %CONFIGURATION% --output-on-failure
 
