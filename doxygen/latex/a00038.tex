@@ -69,9 +69,9 @@ enum \hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991d}{bindtype} \-: int \{ \
 \hyperlink{a00038_ae6a0fc429d821cca9a1b01d36cb0991dad51ecd4c7c8454ddc870989523c01d4b}{bindtype\-::transiently}
  \}
 \begin{DoxyCompactList}\small\item\em Used to specify the way to bind a value to a statement. \end{DoxyCompactList}\item 
-enum \hyperlink{a00038_aea994c2d3b1e9448cd9c526b44f78890}{Transaction\-Type} \-: int \{ \hyperlink{a00038_aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac}{Transaction\-Type\-::\-Deferred}, 
-\hyperlink{a00038_aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1}{Transaction\-Type\-::\-Immediate}, 
-\hyperlink{a00038_aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971}{Transaction\-Type\-::\-Exclusive}
+enum \hyperlink{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8}{transactiontype} \-: int \{ \hyperlink{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8a43fff3df3fc0b3417c86dc3040fb2d86}{transactiontype\-::deferred}, 
+\hyperlink{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8a516ff1e73f558b0ae701ae4561a63e2c}{transactiontype\-::immediate}, 
+\hyperlink{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8aa4293995cfbfa9ce60ce71ade2ff75f7}{transactiontype\-::exclusive}
  \}
 \begin{DoxyCompactList}\small\item\em Used to specify the different types of S\-Q\-Lite transactions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
@@ -174,9 +174,9 @@ Different ways to open a dbconnection.
 
 Definition at line 14 of file Open.\-h.
 
-\hypertarget{a00038_aea994c2d3b1e9448cd9c526b44f78890}{\index{sqlite@{sqlite}!Transaction\-Type@{Transaction\-Type}}
-\index{Transaction\-Type@{Transaction\-Type}!sqlite@{sqlite}}
-\subsubsection[{Transaction\-Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sqlite\-::\-Transaction\-Type} \-: int\hspace{0.3cm}{\ttfamily [strong]}}}\label{a00038_aea994c2d3b1e9448cd9c526b44f78890}
+\hypertarget{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8}{\index{sqlite@{sqlite}!transactiontype@{transactiontype}}
+\index{transactiontype@{transactiontype}!sqlite@{sqlite}}
+\subsubsection[{transactiontype}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf sqlite\-::transactiontype} \-: int\hspace{0.3cm}{\ttfamily [strong]}}}\label{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8}
 
 
 Used to specify the different types of S\-Q\-Lite transactions. 
@@ -184,12 +184,12 @@ Used to specify the different types of S\-Q\-Lite transactions.
 \begin{Desc}
 \item[Enumerator]\par
 \begin{description}
-\index{Deferred@{Deferred}!sqlite@{sqlite}}\index{sqlite@{sqlite}!Deferred@{Deferred}}\item[{\em 
-\hypertarget{a00038_aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac}{Deferred}\label{a00038_aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac}
-}]means that no locks are acquired on the database until the database is first accessed. \index{Immediate@{Immediate}!sqlite@{sqlite}}\index{sqlite@{sqlite}!Immediate@{Immediate}}\item[{\em 
-\hypertarget{a00038_aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1}{Immediate}\label{a00038_aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1}
-}]means that no database connection will be able to write to the database or do a B\-E\-G\-I\-N I\-M\-M\-E\-D\-I\-A\-T\-E/\-E\-X\-C\-L\-U\-S\-I\-V\-E. \index{Exclusive@{Exclusive}!sqlite@{sqlite}}\index{sqlite@{sqlite}!Exclusive@{Exclusive}}\item[{\em 
-\hypertarget{a00038_aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971}{Exclusive}\label{a00038_aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971}
+\index{deferred@{deferred}!sqlite@{sqlite}}\index{sqlite@{sqlite}!deferred@{deferred}}\item[{\em 
+\hypertarget{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8a43fff3df3fc0b3417c86dc3040fb2d86}{deferred}\label{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8a43fff3df3fc0b3417c86dc3040fb2d86}
+}]means that no locks are acquired on the database until the database is first accessed. \index{immediate@{immediate}!sqlite@{sqlite}}\index{sqlite@{sqlite}!immediate@{immediate}}\item[{\em 
+\hypertarget{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8a516ff1e73f558b0ae701ae4561a63e2c}{immediate}\label{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8a516ff1e73f558b0ae701ae4561a63e2c}
+}]means that no database connection will be able to write to the database or do a B\-E\-G\-I\-N I\-M\-M\-E\-D\-I\-A\-T\-E/\-E\-X\-C\-L\-U\-S\-I\-V\-E. \index{exclusive@{exclusive}!sqlite@{sqlite}}\index{sqlite@{sqlite}!exclusive@{exclusive}}\item[{\em 
+\hypertarget{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8aa4293995cfbfa9ce60ce71ade2ff75f7}{exclusive}\label{a00038_a6b830ddde90f9bf8b2b59b395a66ceb8aa4293995cfbfa9ce60ce71ade2ff75f7}
 }]means that no other database connection except for read\-\_\-uncommitted connection will be able to read/write to the database. \end{description}
 \end{Desc}
 

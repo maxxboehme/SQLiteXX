@@ -175,12 +175,12 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify the way to bind a value to a statement.  <a href="a00038.html#ae6a0fc429d821cca9a1b01d36cb0991d">More...</a><br/></td></tr>
 <tr class="separator:ae6a0fc429d821cca9a1b01d36cb0991d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea994c2d3b1e9448cd9c526b44f78890"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">TransactionType</a> : int { <a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac">TransactionType::Deferred</a>, 
-<a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1">TransactionType::Immediate</a>, 
-<a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971">TransactionType::Exclusive</a>
+<tr class="memitem:a6b830ddde90f9bf8b2b59b395a66ceb8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038.html#a6b830ddde90f9bf8b2b59b395a66ceb8">transactiontype</a> : int { <a class="el" href="a00038.html#a6b830ddde90f9bf8b2b59b395a66ceb8a43fff3df3fc0b3417c86dc3040fb2d86">transactiontype::deferred</a>, 
+<a class="el" href="a00038.html#a6b830ddde90f9bf8b2b59b395a66ceb8a516ff1e73f558b0ae701ae4561a63e2c">transactiontype::immediate</a>, 
+<a class="el" href="a00038.html#a6b830ddde90f9bf8b2b59b395a66ceb8aa4293995cfbfa9ce60ce71ade2ff75f7">transactiontype::exclusive</a>
  }</td></tr>
-<tr class="memdesc:aea994c2d3b1e9448cd9c526b44f78890"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify the different types of SQLite transactions.  <a href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">More...</a><br/></td></tr>
-<tr class="separator:aea994c2d3b1e9448cd9c526b44f78890"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a6b830ddde90f9bf8b2b59b395a66ceb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used to specify the different types of SQLite transactions.  <a href="a00038.html#a6b830ddde90f9bf8b2b59b395a66ceb8">More...</a><br/></td></tr>
+<tr class="separator:a6b830ddde90f9bf8b2b59b395a66ceb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -332,7 +332,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
 
 </div>
 </div>
-<a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890"></a>
+<a class="anchor" id="a6b830ddde90f9bf8b2b59b395a66ceb8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -340,7 +340,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="a00038.html#aea994c2d3b1e9448cd9c526b44f78890">sqlite::TransactionType</a> : int</td>
+          <td class="memname">enum <a class="el" href="a00038.html#a6b830ddde90f9bf8b2b59b395a66ceb8">sqlite::transactiontype</a> : int</td>
         </tr>
       </table>
   </td>
@@ -352,13 +352,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a000
 
 <p>Used to specify the different types of SQLite transactions. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890a4ed71db54748b36eeb398876b0c747ac"></a>Deferred</em>&#160;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="a6b830ddde90f9bf8b2b59b395a66ceb8a43fff3df3fc0b3417c86dc3040fb2d86"></a>deferred</em>&#160;</td><td class="fielddoc">
 <p>means that no locks are acquired on the database until the database is first accessed. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890a43f6615bbb2c40a5306ff804094420b1"></a>Immediate</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a6b830ddde90f9bf8b2b59b395a66ceb8a516ff1e73f558b0ae701ae4561a63e2c"></a>immediate</em>&#160;</td><td class="fielddoc">
 <p>means that no database connection will be able to write to the database or do a BEGIN IMMEDIATE/EXCLUSIVE. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="aea994c2d3b1e9448cd9c526b44f78890a2ef50b4c466304dc6ac77bac8a779971"></a>Exclusive</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="a6b830ddde90f9bf8b2b59b395a66ceb8aa4293995cfbfa9ce60ce71ade2ff75f7"></a>exclusive</em>&#160;</td><td class="fielddoc">
 <p>means that no other database connection except for read_uncommitted connection will be able to read/write to the database. </p>
 </td></tr>
 </table>
@@ -549,7 +549,7 @@ template&lt;typename... Values&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Nov 12 2017 16:14:52 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Nov 12 2017 17:17:25 for SQLiteXX by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>
